@@ -66,14 +66,14 @@ void CN3Mp3::Release()
 {
 	ClearGraph();
 
-	// ÀÎÅÍÆäÀÌ½ºµéÀ» ¸±¸®Áî ÇÑ´Ù
+	// ì¸í„°í˜ì´ìŠ¤ë“¤ì„ ë¦´ë¦¬ì¦ˆ í•œë‹¤
 	if(m_pMediaEvent) { m_pMediaEvent->Release(); m_pMediaEvent = NULL; }
 	if(m_pBasicAudio) { m_pBasicAudio->Release(); m_pBasicAudio = NULL; }
 	if(m_pMediaSeeking) { m_pMediaSeeking->Release(); m_pMediaSeeking = NULL; }
 	if(m_pMediaControl) { m_pMediaControl->Release(); m_pMediaControl = NULL; }
 	if(m_pGraphBuilder) { m_pGraphBuilder->Release(); m_pGraphBuilder = NULL; }
 
-	// COMÀ» uninitializeÇÑ´Ù
+	// COMì„ uninitializeí•œë‹¤
 	CoUninitialize ();
 }
 
@@ -88,32 +88,32 @@ bool CN3Mp3::ClearGraph()
 	IEnumFilters*	pFilterEnum;
 	IBaseFilter**	ppFilters;
 
-	if(m_pMediaControl) m_pMediaControl->Stop();	// ¿¬ÁÖ¸¦ ¸ØÃá´Ù.
+	if(m_pMediaControl) m_pMediaControl->Stop();	// ì—°ì£¼ë¥¼ ë©ˆì¶˜ë‹¤.
 
-	// ±×·¡ÇÁ ³»ÀÇ ¸ğµç ÇÊÅÍ¸¦ ¾ò±â À§ÇØ EnumFilters Æ÷ÀÎÅÍ¸¦ ¾ò´Â´Ù
+	// ê·¸ë˜í”„ ë‚´ì˜ ëª¨ë“  í•„í„°ë¥¼ ì–»ê¸° ìœ„í•´ EnumFilters í¬ì¸í„°ë¥¼ ì–»ëŠ”ë‹¤
 	if (m_pGraphBuilder->EnumFilters(&pFilterEnum) != S_OK)	return false;
 
 	int iFiltCount = 0;
 	int iPos = 0;
 
-	// ÇÊÅÍÀÇ °¹¼ö¸¦ ÆÄ¾Ç
+	// í•„í„°ì˜ ê°¯ìˆ˜ë¥¼ íŒŒì•…
 	while (S_OK == pFilterEnum->Skip (1)) iFiltCount++;
 
 	ppFilters = reinterpret_cast <IBaseFilter **> (_alloca (sizeof (IBaseFilter *) * iFiltCount));
 	
 	pFilterEnum->Reset ();
 
-	// ÇÊÅÍ¿¡ ´ëÇÑ Æ÷ÀÎÅÍ¸¦ ¸ğµÎ ¾ò¾î¿Â´Ù
+	// í•„í„°ì— ëŒ€í•œ í¬ì¸í„°ë¥¼ ëª¨ë‘ ì–»ì–´ì˜¨ë‹¤
 	while (S_OK == pFilterEnum->Next (1, &(ppFilters[iPos++]), NULL));
 
 	if(pFilterEnum) { pFilterEnum->Release(); pFilterEnum = NULL; }
 
-	// ¸ğµç ÇÊÅÍ¸¦ ±×·¡ÇÁ¿¡¼­ Á¦°ÅÇÑ´Ù
+	// ëª¨ë“  í•„í„°ë¥¼ ê·¸ë˜í”„ì—ì„œ ì œê±°í•œë‹¤
 	for (iPos = 0; iPos < iFiltCount; iPos++)
 	{
 		m_pGraphBuilder->RemoveFilter (ppFilters[iPos]);
 		if(!ppFilters[iPos]) continue;
-		while (ppFilters[iPos]->Release () != 0);	// ref count ¼ö ¸¸Å­ ÇÑ´Ù
+		while (ppFilters[iPos]->Release () != 0);	// ref count ìˆ˜ ë§Œí¼ í•œë‹¤
 		ppFilters[iPos] = NULL;
 	}
 

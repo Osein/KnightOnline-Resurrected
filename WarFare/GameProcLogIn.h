@@ -21,13 +21,13 @@ public:
 	class CN3Camera*	m_pCamera;
 	class CN3Light*		m_pLights[3];
 
-	bool m_bLogIn; // ·Î±×ÀÎ Áßº¹ ¹æÁö..
+	bool m_bLogIn; // ë¡œê·¸ì¸ ì¤‘ë³µ ë°©ì§€..
 
 public:
 	void	MsgRecv_GameServerGroupList(DataPack* pDataPack, int& iOffset);
 	void	MsgRecv_AccountLogIn(int iCmd, DataPack* pDataPack, int& iOffset);
 	int		MsgRecv_VersionCheck(DataPack* pDataPack, int& iOffset); // virtual
-	int		MsgRecv_GameServerLogIn(DataPack* pDataPack, int& iOffset); // virtual - ±¹°¡ ¹øÈ£¸¦ ¸®ÅÏÇÑ´Ù.
+	int		MsgRecv_GameServerLogIn(DataPack* pDataPack, int& iOffset); // virtual - êµ­ê°€ ë²ˆí˜¸ë¥¼ ë¦¬í„´í•œë‹¤.
 
 	bool	MsgSend_AccountLogIn(enum e_LogInClassification eLIC);
 
@@ -41,7 +41,7 @@ protected:
 
 public:
 
-	void ConnectToGameServer(); // °í¸¥ °ÔÀÓ ¼­¹ö¿¡ Á¢¼Ó
+	void ConnectToGameServer(); // ê³ ë¥¸ ê²Œì„ ì„œë²„ì— ì ‘ì†
 	CGameProcLogIn();
 	virtual ~CGameProcLogIn();
 //	void PacketSend_MGameLogin();

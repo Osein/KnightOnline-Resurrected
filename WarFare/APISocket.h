@@ -14,9 +14,9 @@
 #include <string>
 
 #define WM_SOCKETMSG	(WM_USER+1)
-#define RECEIVE_BUF_SIZE	262144 // ÃÖ´ë ¹öÆÛ..
+#define RECEIVE_BUF_SIZE	262144 // ìµœëŒ€ ë²„í¼..
 
-#define _CRYPTION		// ¾ÏÈ£È­ »ç¿ë
+#define _CRYPTION		// ì•”í˜¸í™” ì‚¬ìš©
 #ifdef _CRYPTION
 #include "JvCryption.h"
 #endif
@@ -84,7 +84,7 @@ public:
 			if (sc) CopyMemory(pData+fc, m_pBuffer, sc);
 		}
 	}
-	int		GetOutData(BYTE *pData) //HeadPos, º¯È­
+	int		GetOutData(BYTE *pData) //HeadPos, ë³€í™”
 	{
 		int len = GetValidCount();
 		int fc, sc;
@@ -114,7 +114,7 @@ public:
 	}
 	BYTE&	GetHeadData(){return m_pBuffer[m_iHeadPos];}
 	//1 Byte Operation;
-	//false : ¸ğµçµ¥ÀÌÅÍ ´ÙºüÁü, TRUE: Á¤»óÀûÀ¸·Î ÁøÇàÁß
+	//false : ëª¨ë“ ë°ì´í„° ë‹¤ë¹ ì§, TRUE: ì •ìƒì ìœ¼ë¡œ ì§„í–‰ì¤‘
 	BOOL	HeadIncrease(int increasement=1)
 	{
 		__ASSERT(increasement<=GetValidCount(),"1");
@@ -134,10 +134,10 @@ public:
 		return count;
 	}
 protected:
-	//over flow ¸ÕÀú Á¡°ËÇÑ ÈÄ IndexOverFlow Á¡°Ë
+	//over flow ë¨¼ì € ì ê²€í•œ í›„ IndexOverFlow ì ê²€
 	BOOL	IsOverFlowCondition(int &len) {return (len >= m_iBufSize-GetValidCount()) ? TRUE: FALSE;}
 	BOOL	IsIndexOverFlow(int &len) {return (len+m_iTailPos>=m_iBufSize) ? TRUE:FALSE;}
-	void	BufferResize() //overflow condition ÀÏ¶§ size¸¦ ÇöÀçÀÇ µÎ¹è·Î ´Ã¸²
+	void	BufferResize() //overflow condition ì¼ë•Œ sizeë¥¼ í˜„ì¬ì˜ ë‘ë°°ë¡œ ëŠ˜ë¦¼
 	{
 		int prevBufSize = m_iBufSize;
 		m_iBufSize <<= 1;
@@ -169,7 +169,7 @@ public:
 
 #ifdef _CRYPTION
 protected:
-	static BOOL			s_bCryptionFlag;			//0 : ºñ¾ÏÈ£È­ , 1 : ¾ÏÈ£È­
+	static BOOL			s_bCryptionFlag;			//0 : ë¹„ì•”í˜¸í™” , 1 : ì•”í˜¸í™”
 //	static _int64		s_PublicKey;
 //	static _int64		s_PrivateKey;				// = 0x1234567890123456;
 	static CJvCryption	s_JvCrypt;
@@ -248,7 +248,7 @@ public:
 	int					m_iSendByteCount;
 	std::queue< DataPack* >	m_qRecvPkt;
 
-	BOOL	m_bEnableSend; // º¸³»±â °¡´É..?
+	BOOL	m_bEnableSend; // ë³´ë‚´ê¸° ê°€ëŠ¥..?
 public:
 	int		Connect(HWND hWnd, const char* pszIP, DWORD port);
 	void	Disconnect();
@@ -264,7 +264,7 @@ public:
 	void	Send(BYTE* pData, int nSize);
 
 
-	//ÆĞÅ¶ ¸¸µé±â ÇÔ¼ö
+	//íŒ¨í‚· ë§Œë“¤ê¸° í•¨ìˆ˜
 	static	void	MP_AddByte(BYTE *dest, int& iOffset, BYTE byte) { CopyMemory(dest+iOffset, &byte, 1); iOffset ++; }
 	static	void	MP_AddShort(BYTE *dest, int& iOffset, short value) { CopyMemory(dest+iOffset, &value, 2); iOffset += 2; }
 	static	void	MP_AddWord(BYTE *dest, int& offset, WORD value) { CopyMemory(dest+offset, &value, 2); offset += 2; }
@@ -280,7 +280,7 @@ public:
 
 	}
 
-	//ÆĞÅ¶ Parsing ÇÔ¼ö
+	//íŒ¨í‚· Parsing í•¨ìˆ˜
 	static	BYTE&		Parse_GetByte(const BYTE* buf, int &iOffset) { iOffset ++; return *(BYTE*)(buf+iOffset-1); }
 	static	short&		Parse_GetShort(const BYTE* buf, int& iOffset) { iOffset += 2; return *(short*)(buf+iOffset-2); }
 	static  WORD&		Parse_GetWord(const BYTE* buf, int &iOffset) { iOffset += 2; return *(PWORD)(buf+iOffset-2); }

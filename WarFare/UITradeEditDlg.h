@@ -33,7 +33,7 @@ public:
 	virtual ~CUITradeEditDlg();
 
 	int					GetQuantity();
-	void				SetQuantity(int iQuantity); // "edit_trade" Edit Control ¿¡¼­ Á¤¼ö°ªÀ» ¹®ÀÚ¿­·Î ¼¼ÆÃÇÑ´Ù..
+	void				SetQuantity(int iQuantity); // "edit_trade" Edit Control ì—ì„œ ì •ìˆ˜ê°’ì„ ë¬¸ìì—´ë¡œ ì„¸íŒ…í•œë‹¤..
 
 	virtual void		Release();
 	virtual bool		ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg);

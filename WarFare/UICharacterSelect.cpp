@@ -55,7 +55,7 @@ bool CUICharacterSelect::Load(HANDLE hFile)
 	m_pBtnExit = this->GetChildByID("bt_exit");		__ASSERT(m_pBtnExit, "NULL UI Component!!");
 	m_pBtnDelete = this->GetChildByID("bt_delete");	__ASSERT(m_pBtnDelete, "NULL UI Component!!");
 
-	// À§Ä¡¸¦ È­¸é ÇØ»óµµ¿¡ ¸Â°Ô ¹Ù²Ù±â...
+	// ìœ„ì¹˜ë¥¼ í™”ë©´ í•´ìƒë„ì— ë§žê²Œ ë°”ê¾¸ê¸°...
 	POINT pt;
 	RECT rc = this->GetRegion();
 	float fRatio = (float)s_CameraData.vp.Width / (rc.right - rc.left);
@@ -100,7 +100,7 @@ bool CUICharacterSelect::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
 		else
 		if ( pSender->m_szID == "bt_exit" )	// Elmorad
 		{
-//			CGameProcedure::ProcActiveSet((CGameProcedure*)CGameProcedure::s_pProcLogIn); // ·Î±×ÀÎÀ¸·Î µ¹¾Æ°£´Ù..
+//			CGameProcedure::ProcActiveSet((CGameProcedure*)CGameProcedure::s_pProcLogIn); // ë¡œê·¸ì¸ìœ¼ë¡œ ëŒì•„ê°„ë‹¤..
 			std::string szMsg; ::_LoadStringFromResource(IDS_CONFIRM_EXIT_GAME, szMsg);
 			CGameProcedure::MessageBoxPost(szMsg, "", MB_YESNO, BEHAVIOR_EXIT);
 		}
@@ -178,7 +178,7 @@ DWORD CUICharacterSelect::MouseProc(DWORD dwFlags, const POINT &ptCur, const POI
 	DWORD dwRet = UI_MOUSEPROC_NONE;
 	if (!m_bVisible) return dwRet;
 
-	// UI ¿òÁ÷ÀÌ´Â ÄÚµå
+	// UI ì›€ì§ì´ëŠ” ì½”ë“œ
 	if (UI_STATE_COMMON_MOVE == m_eState)
 	{
 		if (dwFlags&UI_MOUSE_LBCLICKED)
@@ -193,36 +193,36 @@ DWORD CUICharacterSelect::MouseProc(DWORD dwFlags, const POINT &ptCur, const POI
 		return dwRet;
 	}
 
-	if(false == IsIn(ptCur.x, ptCur.y))	// ¿µ¿ª ¹ÛÀÌ¸é
+	if(false == IsIn(ptCur.x, ptCur.y))	// ì˜ì—­ ë°–ì´ë©´
 	{
 		if(false == IsIn(ptOld.x, ptOld.y))
 		{
-			return dwRet;// ÀÌÀü ÁÂÇ¥µµ ¿µ¿ª ¹ÛÀÌ¸é 
+			return dwRet;// ì´ì „ ì¢Œí‘œë„ ì˜ì—­ ë°–ì´ë©´ 
 		}
 	}
 	else
 	{
-		// tool tip °ü·Ã
+		// tool tip ê´€ë ¨
 		if (s_pTooltipCtrl) s_pTooltipCtrl->SetText(m_szToolTip);
 	}
 
 	if(m_pChildUI && m_pChildUI->IsVisible())
 		return dwRet;
 
-	// child¿¡°Ô ¸Þ¼¼Áö Àü´Þ
+	// childì—ê²Œ ë©”ì„¸ì§€ ì „ë‹¬
 	for(UIListItor itor = m_Children.begin(); m_Children.end() != itor; ++itor)
 	{
 		CN3UIBase* pChild = (*itor);
 		DWORD dwChildRet = pChild->MouseProc(dwFlags, ptCur, ptOld);
 		if (UI_MOUSEPROC_DONESOMETHING & dwChildRet)
-		{	// ÀÌ°æ¿ì¿¡´Â ¸Õ°¡ Æ÷Ä¿½º¸¦ ¹ÞÀº °æ¿ìÀÌ´Ù.
+		{	// ì´ê²½ìš°ì—ëŠ” ë¨¼ê°€ í¬ì»¤ìŠ¤ë¥¼ ë°›ì€ ê²½ìš°ì´ë‹¤.
 
 			dwRet |= (UI_MOUSEPROC_CHILDDONESOMETHING|UI_MOUSEPROC_DONESOMETHING);
 			return dwRet;
 		}
 	}
 
-	// UI ¿òÁ÷ÀÌ´Â ÄÚµå
+	// UI ì›€ì§ì´ëŠ” ì½”ë“œ
 	if (UI_STATE_COMMON_MOVE != m_eState && 
 			PtInRect(&m_rcMovable, ptCur) && (dwFlags&UI_MOUSE_LBCLICK) )
 	{

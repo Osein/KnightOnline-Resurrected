@@ -32,11 +32,11 @@ public:
 	BOOL	IsPartner();
 
 	BOOL	CreateSmq(BOOL Server);
-	//ÀÐÀº µ¥ÀÌÅ¸¸¦ ¹öÆÛ¿¡ ÀúÀåÇÑ´Ù.
+	//ì½ì€ ë°ì´íƒ€ë¥¼ ë²„í¼ì— ì €ìž¥í•œë‹¤.
 	void	SetReadData();
-	//ÀÐÀº µ¥ÀÌÅ¸¸¦ ¹öÆÛ¿¡ °¡Á®¿Â´Ù.
+	//ì½ì€ ë°ì´íƒ€ë¥¼ ë²„í¼ì— ê°€ì ¸ì˜¨ë‹¤.
 	void	GetReadData(LPSTR data, int nLength);
-	//¸Þ¼¼Àç¸¦ º¸³¾ À©µµ¿ì ÇÃ·¡¸¦ ¼³Á¤ÇÑ´Ù.
+	//ë©”ì„¸ìž¬ë¥¼ ë³´ë‚¼ ìœˆë„ìš° í”Œëž˜ë¥¼ ì„¤ì •í•œë‹¤.
 	void	SetHwnd(HWND hwnd);
 	void	CloseSmq();
 	BOOL	IsData();
@@ -45,8 +45,8 @@ public:
 	HANDLE	m_hrMMFile;
 	HANDLE	m_hsMMFile;
 	char*	m_lpMMFile;
-	HWND	m_hwnd;			//¸Þ¼¼Áö¸¦ Àü´ÞÇÒ À©µµ¿ì ÇÃ·¯±×
-	BYTE    abIn[1024+1];//ÄÄÆ÷Æ®¿¡¼­ µé¾î¿À´Â µ¥ÀÌÅ¸
+	HWND	m_hwnd;			//ë©”ì„¸ì§€ë¥¼ ì „ë‹¬í•  ìœˆë„ìš° í”ŒëŸ¬ê·¸
+	BYTE    abIn[1024+1];//ì»´í¬íŠ¸ì—ì„œ ë“¤ì–´ì˜¤ëŠ” ë°ì´íƒ€
 	BOOL	fConnected;
 	_SMQ_HEADER		*Txd, *Rxd;
 };

@@ -15,7 +15,7 @@ int			CAPISocket::s_nInstanceCount = 0;
 
 
 #ifdef _CRYPTION
-BOOL		DataPack::s_bCryptionFlag = FALSE;			//0 : ºñ¾ÏÈ£È­ , 1 : ¾ÏÈ£È­
+BOOL		DataPack::s_bCryptionFlag = FALSE;			//0 : ë¹„ì•”í˜¸í™” , 1 : ì•”í˜¸í™”
 //_int64		DataPack::s_PublicKey;
 //_int64		DataPack::s_PrivateKey = 0x1234567890123456;
 CJvCryption	DataPack::s_JvCrypt;
@@ -49,7 +49,7 @@ const WORD PACKET_TAIL = 0X55AA;
 
 
 #ifdef _CRYPTION
-// bSend°¡ TRUEÀÌ¸é Encrypt, FALSEÀÌ¸é DecryptÇØÁØ´Ù.
+// bSendê°€ TRUEì´ë©´ Encrypt, FALSEì´ë©´ Decryptí•´ì¤€ë‹¤.
 DataPack::DataPack(int size, BYTE *pData, BOOL bSend)
 {
 	static BYTE pTIBuf[RECEIVE_BUF_SIZE];
@@ -58,7 +58,7 @@ DataPack::DataPack(int size, BYTE *pData, BOOL bSend)
 	if (TRUE == s_bCryptionFlag)
 	{
 		if (bSend)
-		{	// ¼­¹ö·Î º¸³¾°Í (ÀÏ¹İ -> ¾ÏÈ£È­µÈ°Í)
+		{	// ì„œë²„ë¡œ ë³´ë‚¼ê²ƒ (ì¼ë°˜ -> ì•”í˜¸í™”ëœê²ƒ)
 			// inmate - cryption
 			if(TRUE == s_bCryptionFlag)
 			{
@@ -66,7 +66,7 @@ DataPack::DataPack(int size, BYTE *pData, BOOL bSend)
 
 				++s_wSendVal;
 
-				pTIBuf[0] = 0xfc; // ¾ÏÈ£°¡ Á¤È®ÇÑÁö
+				pTIBuf[0] = 0xfc; // ì•”í˜¸ê°€ ì •í™•í•œì§€
 				memcpy( pTIBuf+1, &s_wSendVal, sizeof(WORD) );
 				pTIBuf[3] = 0x00;
 				memcpy( pTIBuf+4, pData, size );
@@ -86,9 +86,9 @@ DataPack::DataPack(int size, BYTE *pData, BOOL bSend)
 			}
 		}
 		else
-		{	// ¼­¹ö·ÎºÎÅÍ ¹ŞÀº µ¥ÀÌÅ¸(¾ÏÈ£È­µÈ°Í -> ÀÏ¹İ)
+		{	// ì„œë²„ë¡œë¶€í„° ë°›ì€ ë°ì´íƒ€(ì•”í˜¸í™”ëœê²ƒ -> ì¼ë°˜)
 			s_JvCrypt.JvDecryptionFast( size, pData, pTBuf );
-			if(pTBuf[0] != 0xfc) // ¾ĞÃà Ç¬ µ¥ÀÌÅÍ ¿À·ù ÀÏ°æ¿ì
+			if(pTBuf[0] != 0xfc) // ì••ì¶• í‘¼ ë°ì´í„° ì˜¤ë¥˜ ì¼ê²½ìš°
 			{
 				m_Size = 0;
 				m_pData = NULL;
@@ -104,7 +104,7 @@ DataPack::DataPack(int size, BYTE *pData, BOOL bSend)
 		}
 	}
 	else
-	{	// ¾ÏÈ£È­°¡ ¾Æ´Ï´Ù.
+	{	// ì•”í˜¸í™”ê°€ ì•„ë‹ˆë‹¤.
 		m_Size = size;
 		m_pData = new BYTE[size+1];
 		CopyMemory(m_pData, pData, size);
@@ -132,7 +132,7 @@ CAPISocket::CAPISocket()
 
 	m_iSendByteCount = 0;
 	m_bConnected = FALSE;
-	m_bEnableSend = TRUE; // º¸³»±â °¡´É..?
+	m_bEnableSend = TRUE; // ë³´ë‚´ê¸° ê°€ëŠ¥..?
 }
 
 CAPISocket::~CAPISocket()
@@ -160,7 +160,7 @@ void CAPISocket::Release()
 
 	m_iSendByteCount = 0;
 
-	// Åë°è¸¦ ½áÁØ´Ù..
+	// í†µê³„ë¥¼ ì¨ì¤€ë‹¤..
 #ifdef _DEBUG
 /*	DWORD dwRWC = 0;
 	char szFN1[256] = "", szFN2[256] = "";
@@ -175,7 +175,7 @@ void CAPISocket::Release()
 	char szBuff[64] = "";
 	char szCmd[32] = "";
 
-	strcpy(szBuff, "Packet\t¾ç\tÈ½¼ö\r\n");
+	strcpy(szBuff, "Packet\tì–‘\tíšŸìˆ˜\r\n");
 	WriteFile(hFile1, szBuff, lstrlen(szBuff), &dwRWC, NULL);
 	WriteFile(hFile2, szBuff, lstrlen(szBuff), &dwRWC, NULL);
 
@@ -228,10 +228,10 @@ void CAPISocket::Disconnect()
 	m_dwPort = 0;
 
 	m_bConnected = FALSE;
-	m_bEnableSend = TRUE; // º¸³»±â °¡´É..?
+	m_bEnableSend = TRUE; // ë³´ë‚´ê¸° ê°€ëŠ¥..?
 
 #ifdef _CRYPTION
-	DataPack::InitCrypt(0); // ¾ÏÈ£È­ ÇØÁ¦..
+	DataPack::InitCrypt(0); // ì•”í˜¸í™” í•´ì œ..
 #endif // #ifdef _CRYPTION
 }
 
@@ -286,7 +286,7 @@ int CAPISocket::Connect(HWND hWnd, const char* pszIP, DWORD dwPort)
 		return iErrCode;
 	}
 
-	// ¼ÒÄÏ ¿É¼Ç
+	// ì†Œì¼“ ì˜µì…˜
 	int iRecvBufferLen = RECEIVE_BUF_SIZE;
 	int iErr = setsockopt(m_hSocket, SOL_SOCKET, SO_RCVBUF, (char*)&iRecvBufferLen, 4);
   
@@ -378,7 +378,7 @@ BOOL CAPISocket::ReceiveProcess()
 			short siCore = *((short*)(pData+2));
 			if ( siCore <= iCount )
 			{
-				if ( PACKET_TAIL == ntohs(*((WORD*)(pData+iCount-2))) ) // ÆĞÅ¶ ²¿¸® ºÎºĞ °Ë»ç..
+				if ( PACKET_TAIL == ntohs(*((WORD*)(pData+iCount-2))) ) // íŒ¨í‚· ê¼¬ë¦¬ ë¶€ë¶„ ê²€ì‚¬..
 				{
 					
 #ifdef _CRYPTION
@@ -388,7 +388,7 @@ BOOL CAPISocket::ReceiveProcess()
 #endif
 
 					m_qRecvPkt.push(pDP);
-					m_CB.HeadIncrease(siCore + 6); // È¯Çü ¹öÆÛ ÀÎµ¦½º Áõ°¡ ½ÃÅ°±â..
+					m_CB.HeadIncrease(siCore + 6); // í™˜í˜• ë²„í¼ ì¸ë±ìŠ¤ ì¦ê°€ ì‹œí‚¤ê¸°..
 					bFoundTail = TRUE;
 #ifdef _DEBUG
 					BYTE byCmd = pData[4];
@@ -400,9 +400,9 @@ BOOL CAPISocket::ReceiveProcess()
 		}
 		else
 		{
-			// ÆĞÅ¶ÀÌ ±úÁ³´Ù??
+			// íŒ¨í‚·ì´ ê¹¨ì¡Œë‹¤??
 			__ASSERT(0, "broken packet header.. skip!");
-			m_CB.HeadIncrease(iCount); // È¯Çü ¹öÆÛ ÀÎµ¦½º Áõ°¡ ½ÃÅ°±â..
+			m_CB.HeadIncrease(iCount); // í™˜í˜• ë²„í¼ ì¸ë±ìŠ¤ ì¦ê°€ ì‹œí‚¤ê¸°..
 		}
 
 		delete[] pData, pData = NULL;
@@ -413,13 +413,13 @@ BOOL CAPISocket::ReceiveProcess()
 
 void CAPISocket::Send(BYTE* pData, int nSize)
 {
-	if(!m_bEnableSend) return; // º¸³»±â °¡´É..?
+	if(!m_bEnableSend) return; // ë³´ë‚´ê¸° ê°€ëŠ¥..?
 	if (INVALID_SOCKET == m_hSocket || FALSE == m_bConnected)	return;
 
 
 	
 #ifdef _CRYPTION
-	DataPack DP(nSize, pData, TRUE);	// ¾ÏÈ£È­(s_bCryptionFlag°¡ FALSEÀÏ¶§´Â ¾ÏÈ£È­ÇÏÁö ¾ÊÀ½)
+	DataPack DP(nSize, pData, TRUE);	// ì•”í˜¸í™”(s_bCryptionFlagê°€ FALSEì¼ë•ŒëŠ” ì•”í˜¸í™”í•˜ì§€ ì•ŠìŒ)
 	nSize = DP.m_Size;
 	pData = DP.m_pData;
 #endif
@@ -458,7 +458,7 @@ void CAPISocket::Send(BYTE* pData, int nSize)
 	}
 
 #ifdef _DEBUG
-	BYTE byCmd = pData[0]; // Åë°è ³Ö±â..
+	BYTE byCmd = pData[0]; // í†µê³„ ë„£ê¸°..
 
 //	__SocketStatisics SS;
 //	SS.dwTime = GetTickCount();

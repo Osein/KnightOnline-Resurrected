@@ -36,35 +36,35 @@ static char THIS_FILE[]=__FILE__;
 #define new DEBUG_NEW
 #endif
 
-static bool g_bItemClassGroup[26][26] = {	// [¾ÆÀÌÅÛ][ÇÃ·¹ÀÌ¾î]	
-//	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }	// ÃÊ±â±×·ì
+static bool g_bItemClassGroup[26][26] = {	// [ì•„ì´í…œ][í”Œë ˆì´ì–´]	
+//	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }	// ì´ˆê¸°ê·¸ë£¹
 //	  0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25
-	{ 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1 },	// 0¹ø Group
-	{ 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1 },	// 1¹ø Group
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 },	// 2¹ø Group
-	{ 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1 },	// 3¹ø Group
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },	// 4¹ø Group
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },	// 5¹ø Group
-	{ 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 },	// 6¹ø Group
-	{ 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 },	// 7¹ø Group
-	{ 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 },	// 8¹ø Group
-	{ 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1 },	// 9¹ø Group
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0 },	// 10¹ø Group
-	{ 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1 },	// 11¹ø Group
-	{ 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1 },	// 12¹ø Group
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0 },	// 13¹ø Group
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1 },	// 14¹ø Group
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },	// 15¹ø Group
-	{ 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0 },	// 16¹ø Group
-	{ 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0 },	// 17¹ø Group
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 },	// 18¹ø Group
-	{ 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0 },	// 19¹ø Group
-	{ 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0 },	// 20¹ø Group
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1 },	// 21¹ø Group
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1 },	// 22¹ø Group
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1 },	// 23¹ø Group
-	{ 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0 },	// 24¹ø Group
-	{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 } };	// 25¹ø Group (¸ğµç Class)
+	{ 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1 },	// 0ë²ˆ Group
+	{ 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1 },	// 1ë²ˆ Group
+	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 },	// 2ë²ˆ Group
+	{ 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1 },	// 3ë²ˆ Group
+	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },	// 4ë²ˆ Group
+	{ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },	// 5ë²ˆ Group
+	{ 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 },	// 6ë²ˆ Group
+	{ 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 },	// 7ë²ˆ Group
+	{ 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 },	// 8ë²ˆ Group
+	{ 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1 },	// 9ë²ˆ Group
+	{ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0 },	// 10ë²ˆ Group
+	{ 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1 },	// 11ë²ˆ Group
+	{ 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1 },	// 12ë²ˆ Group
+	{ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0 },	// 13ë²ˆ Group
+	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1 },	// 14ë²ˆ Group
+	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },	// 15ë²ˆ Group
+	{ 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0 },	// 16ë²ˆ Group
+	{ 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0 },	// 17ë²ˆ Group
+	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 },	// 18ë²ˆ Group
+	{ 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0 },	// 19ë²ˆ Group
+	{ 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0 },	// 20ë²ˆ Group
+	{ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1 },	// 21ë²ˆ Group
+	{ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1 },	// 22ë²ˆ Group
+	{ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1 },	// 23ë²ˆ Group
+	{ 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0 },	// 24ë²ˆ Group
+	{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 } };	// 25ë²ˆ Group (ëª¨ë“  Class)
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -78,9 +78,9 @@ CUIInventory::CUIInventory()
 	m_pUITooltipDlg = NULL;
 	CN3UIWndBase::m_sRecoveryJobInfo.m_bWaitFromServer = false;
 
-	m_bOpenningNow = false; // ¿­¸®°í ÀÖ´Ù..
-	m_bClosingNow = false;	// ´İÈ÷°í ÀÖ´Ù..
-	m_fMoveDelta = 0; // ºÎµå·´°Ô ¿­¸®°í ´İÈ÷°Ô ¸¸µé±â À§ÇØ¼­ ÇöÀçÀ§Ä¡ °è»ê¿¡ ºÎµ¿¼Ò¼öÁ¡À» ¾´´Ù..
+	m_bOpenningNow = false; // ì—´ë¦¬ê³  ìˆë‹¤..
+	m_bClosingNow = false;	// ë‹«íˆê³  ìˆë‹¤..
+	m_fMoveDelta = 0; // ë¶€ë“œëŸ½ê²Œ ì—´ë¦¬ê³  ë‹«íˆê²Œ ë§Œë“¤ê¸° ìœ„í•´ì„œ í˜„ì¬ìœ„ì¹˜ ê³„ì‚°ì— ë¶€ë™ì†Œìˆ˜ì ì„ ì“´ë‹¤..
 
 	m_bDestoyDlgAlive	= false;
 	m_pText_Weight = NULL;
@@ -116,9 +116,9 @@ void CUIInventory::Release()
 		}
 	}
 
-	m_bOpenningNow = false; // ¿­¸®°í ÀÖ´Ù..
-	m_bClosingNow = false;	// ´İÈ÷°í ÀÖ´Ù..
-	m_fMoveDelta = 0; // ºÎµå·´°Ô ¿­¸®°í ´İÈ÷°Ô ¸¸µé±â À§ÇØ¼­ ÇöÀçÀ§Ä¡ °è»ê¿¡ ºÎµ¿¼Ò¼öÁ¡À» ¾´´Ù..
+	m_bOpenningNow = false; // ì—´ë¦¬ê³  ìˆë‹¤..
+	m_bClosingNow = false;	// ë‹«íˆê³  ìˆë‹¤..
+	m_fMoveDelta = 0; // ë¶€ë“œëŸ½ê²Œ ì—´ë¦¬ê³  ë‹«íˆê²Œ ë§Œë“¤ê¸° ìœ„í•´ì„œ í˜„ì¬ìœ„ì¹˜ ê³„ì‚°ì— ë¶€ë™ì†Œìˆ˜ì ì„ ì“´ë‹¤..
 	m_pText_Weight = NULL;
 }
 
@@ -183,7 +183,7 @@ void CUIInventory::Open(e_InvenState eIS)
 		pStatic->SetStringAsInt(CGameBase::s_pPlayer->m_InfoExt.iGold);
 	}
 	
-	// ½º¸£¸¤ ¿­¸°´Ù!!
+	// ìŠ¤ë¥´ë¥µ ì—´ë¦°ë‹¤!!
 	SetVisible(true);
 	this->SetPos(CN3Base::s_CameraData.vp.Width, 10);
 	m_fMoveDelta = 0;
@@ -223,24 +223,24 @@ void CUIInventory::Close(bool bByKey)
 	SetState(UI_STATE_COMMON_NONE);
 	CN3UIWndBase::AllHighLightIconFree();
 
-	// ½º¸£¸¤ ´İÈù´Ù..!!
-//	SetVisible(false); // ´Ù ´İÈ÷°í ³ª¼­ ÇØÁØ´Ù..
+	// ìŠ¤ë¥´ë¥µ ë‹«íŒë‹¤..!!
+//	SetVisible(false); // ë‹¤ ë‹«íˆê³  ë‚˜ì„œ í•´ì¤€ë‹¤..
 	RECT rc = this->GetRegion();
 	this->SetPos(CN3Base::s_CameraData.vp.Width - (rc.right - rc.left), 10);
 	m_fMoveDelta = 0;
 	m_bOpenningNow = false;
 	m_bClosingNow = true;
 
-	if(m_pSnd_CloseUI) m_pSnd_CloseUI->Play(); // ´İ´Â ¼Ò¸®..
+	if(m_pSnd_CloseUI) m_pSnd_CloseUI->Play(); // ë‹«ëŠ” ì†Œë¦¬..
 
 	m_iRBtnDownOffs = -1;
 }
 
 void CUIInventory::Tick()
 {
-	if (!m_bVisible) return;	// º¸ÀÌÁö ¾ÊÀ¸¸é ÀÚ½ÄµéÀ» tickÇÏÁö ¾Ê´Â´Ù.
+	if (!m_bVisible) return;	// ë³´ì´ì§€ ì•Šìœ¼ë©´ ìì‹ë“¤ì„ tickí•˜ì§€ ì•ŠëŠ”ë‹¤.
 
-	if(m_bOpenningNow) // ¿À¸¥ÂÊ¿¡¼­ ¿ŞÂÊÀ¸·Î ½º¸£¸¤...¿­·Á¾ß ÇÑ´Ù¸é..
+	if(m_bOpenningNow) // ì˜¤ë¥¸ìª½ì—ì„œ ì™¼ìª½ìœ¼ë¡œ ìŠ¤ë¥´ë¥µ...ì—´ë ¤ì•¼ í•œë‹¤ë©´..
 	{
 		POINT ptCur = this->GetPos();
 		RECT rc = this->GetRegion();
@@ -253,7 +253,7 @@ void CUIInventory::Tick()
 
 		int iXLimit = CN3Base::s_CameraData.vp.Width - (int)fWidth;
 		ptCur.x = CN3Base::s_CameraData.vp.Width - (int)m_fMoveDelta;
-		if(ptCur.x <= iXLimit) // ´Ù¿­·È´Ù!!
+		if(ptCur.x <= iXLimit) // ë‹¤ì—´ë ¸ë‹¤!!
 		{
 			ptCur.x = iXLimit;
 			m_bOpenningNow = false;
@@ -263,7 +263,7 @@ void CUIInventory::Tick()
 
 		CN3UIWndBase::AllHighLightIconFree();
 	}
-	else if(m_bClosingNow) // ¿À¸¥ÂÊ¿¡¼­ ¿ŞÂÊÀ¸·Î ½º¸£¸¤...¿­·Á¾ß ÇÑ´Ù¸é..
+	else if(m_bClosingNow) // ì˜¤ë¥¸ìª½ì—ì„œ ì™¼ìª½ìœ¼ë¡œ ìŠ¤ë¥´ë¥µ...ì—´ë ¤ì•¼ í•œë‹¤ë©´..
 	{
 		POINT ptCur = this->GetPos();
 		RECT rc = this->GetRegion();
@@ -276,12 +276,12 @@ void CUIInventory::Tick()
 
 		int iXLimit = CN3Base::s_CameraData.vp.Width;
 		ptCur.x = CN3Base::s_CameraData.vp.Width - (int)(fWidth - m_fMoveDelta);
-		if(ptCur.x >= iXLimit) // ´Ù ´İÇû´Ù..!!
+		if(ptCur.x >= iXLimit) // ë‹¤ ë‹«í˜”ë‹¤..!!
 		{
 			ptCur.x = iXLimit;
 			m_bClosingNow = false;
 
-			this->SetVisibleWithNoSound(false, false, true); // ´Ù ´İÇûÀ¸´Ï ´«¿¡¼­ ¾Èº¸ÀÌ°Ô ÇÑ´Ù.
+			this->SetVisibleWithNoSound(false, false, true); // ë‹¤ ë‹«í˜”ìœ¼ë‹ˆ ëˆˆì—ì„œ ì•ˆë³´ì´ê²Œ í•œë‹¤.
 		}
 
 		this->SetPos(ptCur.x, ptCur.y);
@@ -298,7 +298,7 @@ void CUIInventory::Tick()
 
 void CUIInventory::Render()
 {
-	if (!m_bVisible) return;	// º¸ÀÌÁö ¾ÊÀ¸¸é ÀÚ½ÄµéÀ» renderÇÏÁö ¾Ê´Â´Ù.
+	if (!m_bVisible) return;	// ë³´ì´ì§€ ì•Šìœ¼ë©´ ìì‹ë“¤ì„ renderí•˜ì§€ ì•ŠëŠ”ë‹¤.
 	POINT ptCur = CGameProcedure::s_pLocalInput->MouseGetPos();
 	m_pUITooltipDlg->DisplayTooltipsDisable();
 	RECT rUser = m_pArea_User->GetRegion();
@@ -307,7 +307,7 @@ void CUIInventory::Render()
 	__IconItemSkill* spItem = NULL;
 
 	RECT rcRegion;
-	SetRect(&rcRegion, rUser.left, rUser.top, rUser.right, rUser.bottom);			// ¿µ¿ª ÁöÁ¤
+	SetRect(&rcRegion, rUser.left, rUser.top, rUser.right, rUser.bottom);			// ì˜ì—­ ì§€ì •
 	char strDummy[32];
 	lstrcpy(strDummy, "elmo_ecli666");
 
@@ -335,13 +335,13 @@ void CUIInventory::Render()
 	if ( (GetState() == UI_STATE_ICON_MOVING) && (CN3UIWndBase::m_sSelectedIconInfo.pItemSelect))
 		CN3UIWndBase::m_sSelectedIconInfo.pItemSelect->pUIIcon->Render();		
 
-	// °¹¼ö Ç¥½ÃµÇ¾ß ÇÒ ¾ÆÀÌÅÛ °¹¼ö Ç¥½Ã..
+	// ê°¯ìˆ˜ í‘œì‹œë˜ì•¼ í•  ì•„ì´í…œ ê°¯ìˆ˜ í‘œì‹œ..
 	for( int i = 0; i < MAX_ITEM_INVENTORY; i++ )
 	{
 		if ( m_pMyInvWnd[i] && ((m_pMyInvWnd[i]->pItemBasic->byContable == UIITEM_TYPE_COUNTABLE) || 
 					(m_pMyInvWnd[i]->pItemBasic->byContable == UIITEM_TYPE_COUNTABLE_SMALL)) )
 		{
-			// string ¾ò±â..
+			// string ì–»ê¸°..
 			CN3UIString* pStr = GetChildStringByiOrder(i);
 			if(pStr) 
 			{
@@ -366,14 +366,14 @@ void CUIInventory::Render()
 		}
 		else
 		{
-			// string ¾ò±â..
+			// string ì–»ê¸°..
 			CN3UIString* pStr = GetChildStringByiOrder(i);
 			if(pStr) 
 				pStr->SetVisible(false);
 		}
 	}
 
-	// ¼ö¸®¸ğµåÀÌ¸é.. ¸®ÅÏ;
+	// ìˆ˜ë¦¬ëª¨ë“œì´ë©´.. ë¦¬í„´;
 	if (m_eInvenState == INV_STATE_REPAIR) { CGameProcedure::s_pProcMain->m_pUIRepairTooltip->Render(); return;	}
 	
 	if ( bTooltipRender && spItem )
@@ -536,7 +536,7 @@ DWORD CUIInventory::MouseProc(DWORD dwFlags, const POINT& ptCur, const POINT& pt
 	if (!m_bVisible) return dwRet;
 	if (CN3UIWndBase::m_sRecoveryJobInfo.m_bWaitFromServer) { dwRet |= CN3UIBase::MouseProc(dwFlags, ptCur, ptOld);  return dwRet; }
 
-	// ¼ö¸®¸ğµåÀÌ¸é.. ¸®ÅÏ;
+	// ìˆ˜ë¦¬ëª¨ë“œì´ë©´.. ë¦¬í„´;
 	if (m_eInvenState == INV_STATE_REPAIR) { dwRet |= CN3UIBase::MouseProc(dwFlags, ptCur, ptOld);  return dwRet; }
 
 	if (m_bDestoyDlgAlive)	
@@ -548,7 +548,7 @@ DWORD CUIInventory::MouseProc(DWORD dwFlags, const POINT& ptCur, const POINT& pt
 		if (!pImg->IsIn(ptCur.x, ptCur.y))
 		{
 			//this_ui_add_start
-			//ÆÄ±«ÇÏ´Â Ã¢ÀÌ ¿­·ÁÀÖÀ»¶§ ±×Ã¢À» ¹ş¾î³ª¼­ ÀÎº¥Åä¸®Ã¢¿¡¼­ Å¬¸¯°ú °°Àº Çàµ¿À» ÇÏ¸é Ä³¸¯ÅÍ°¡ ÀÌµ¿À» ÇØ¼­ ¹æÁöÇÏ´Â Â÷¿ø¿¡¼­...
+			//íŒŒê´´í•˜ëŠ” ì°½ì´ ì—´ë ¤ìˆì„ë•Œ ê·¸ì°½ì„ ë²—ì–´ë‚˜ì„œ ì¸ë²¤í† ë¦¬ì°½ì—ì„œ í´ë¦­ê³¼ ê°™ì€ í–‰ë™ì„ í•˜ë©´ ìºë¦­í„°ê°€ ì´ë™ì„ í•´ì„œ ë°©ì§€í•˜ëŠ” ì°¨ì›ì—ì„œ...
 			if(IsIn(ptCur.x, ptCur.y))
 				dwRet |= UI_MOUSEPROC_INREGION;
 			//this_ui_add_end
@@ -565,7 +565,7 @@ DWORD CUIInventory::MouseProc(DWORD dwFlags, const POINT& ptCur, const POINT& pt
 		return dwRet;
 	}
 
-	// µå·¡±× µÇ´Â ¾ÆÀÌÄÜ °»½Å..
+	// ë“œë˜ê·¸ ë˜ëŠ” ì•„ì´ì½˜ ê°±ì‹ ..
 	if ( (GetState() == UI_STATE_ICON_MOVING) && 
 			(CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.UIWnd == UIWND_INVENTORY) &&
 			(CN3UIWndBase::m_sSelectedIconInfo.pItemSelect) )
@@ -579,8 +579,8 @@ DWORD CUIInventory::MouseProc(DWORD dwFlags, const POINT& ptCur, const POINT& pt
 
 void CUIInventory::SendInvMsg(BYTE bDir, int iItemID, int SrcPos, int DestPos)
 {
-	BYTE byBuff[100];												// ¹öÆÛ.. 
-	int iOffset=0;												// ¿É¼Â..
+	BYTE byBuff[100];												// ë²„í¼.. 
+	int iOffset=0;												// ì˜µì…‹..
 
 	CAPISocket::MP_AddByte(byBuff, iOffset, N3_ITEM_MOVE);				// Item Move
 	CAPISocket::MP_AddByte(byBuff, iOffset, bDir);						
@@ -590,7 +590,7 @@ void CUIInventory::SendInvMsg(BYTE bDir, int iItemID, int SrcPos, int DestPos)
 
 	TRACE("Send Inv Move %d, %d, %d, %d \n", bDir, iItemID, SrcPos, DestPos );
 
-	CGameProcedure::s_pProcMain->s_pSocket->Send(byBuff, iOffset);									// º¸³¿..
+	CGameProcedure::s_pProcMain->s_pSocket->Send(byBuff, iOffset);									// ë³´ëƒ„..
 }
 
 int CUIInventory::GetInvDestinationIndex(__IconItemSkill* spItem)
@@ -617,7 +617,7 @@ int	CUIInventory::GetArmDestinationIndex(__IconItemSkill* spItem)
 
 	e_PartPosition ePart;
 	e_PlugPosition ePlug;
-	e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, NULL, ePart, ePlug); // ¾ÆÀÌÅÛ¿¡ µû¸¥ ÆÄÀÏ ÀÌ¸§À» ¸¸µé¾î¼­
+	e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, NULL, ePart, ePlug); // ì•„ì´í…œì— ë”°ë¥¸ íŒŒì¼ ì´ë¦„ì„ ë§Œë“¤ì–´ì„œ
 	if(ITEM_TYPE_UNKNOWN == eType) return false;
 
 	if ( IsValidRaceAndClass(pItem, CN3UIWndBase::m_sSelectedIconInfo.pItemSelect->pItemExt) )
@@ -625,9 +625,9 @@ int	CUIInventory::GetArmDestinationIndex(__IconItemSkill* spItem)
 		switch ( pItem->byAttachPoint )
 		{
 			case ITEM_ATTACH_POS_DUAL:
-				if (m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT] && m_pMySlot[ITEM_SLOT_POS_HAND_LEFT])	// ¾çÂÊ¿¡ ÀÖ´Â °æ¿ì..
-					return ITEM_SLOT_POS_HAND_RIGHT;				// µÑ´Ù ÀÖÀ¸¸é ¿À¸¥ÂÊ..
-				if (!m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT])	// ¿À¸¥ÂÊ¿¡ ¾ø´Â °æ¿ì..
+				if (m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT] && m_pMySlot[ITEM_SLOT_POS_HAND_LEFT])	// ì–‘ìª½ì— ìˆëŠ” ê²½ìš°..
+					return ITEM_SLOT_POS_HAND_RIGHT;				// ë‘˜ë‹¤ ìˆìœ¼ë©´ ì˜¤ë¥¸ìª½..
+				if (!m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT])	// ì˜¤ë¥¸ìª½ì— ì—†ëŠ” ê²½ìš°..
 					return ITEM_SLOT_POS_HAND_RIGHT;
 				else
 				{
@@ -644,24 +644,24 @@ int	CUIInventory::GetArmDestinationIndex(__IconItemSkill* spItem)
 			case ITEM_ATTACH_POS_HAND_LEFT:
 				return ITEM_SLOT_POS_HAND_LEFT;
 
-			case ITEM_ATTACH_POS_TWOHAND_RIGHT:				// ¾ç¼Õ°ËÀ» ¿À¸¥¼Õ¿¡ Âû¶§..
-				if (m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT] && m_pMySlot[ITEM_SLOT_POS_HAND_LEFT])	// ¾çÂÊ¿¡ ÀÖ´Â °æ¿ì..
+			case ITEM_ATTACH_POS_TWOHAND_RIGHT:				// ì–‘ì†ê²€ì„ ì˜¤ë¥¸ì†ì— ì°°ë•Œ..
+				if (m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT] && m_pMySlot[ITEM_SLOT_POS_HAND_LEFT])	// ì–‘ìª½ì— ìˆëŠ” ê²½ìš°..
 					return -1;
 				else 
 					return ITEM_SLOT_POS_HAND_RIGHT;
 
-			case ITEM_ATTACH_POS_TWOHAND_LEFT:				// ¾ç¼Õ°ËÀ» ¿À¸¥¼Õ¿¡ Âû¶§..
-				if (m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT] && m_pMySlot[ITEM_SLOT_POS_HAND_LEFT])	// ¾çÂÊ¿¡ ÀÖ´Â °æ¿ì..
+			case ITEM_ATTACH_POS_TWOHAND_LEFT:				// ì–‘ì†ê²€ì„ ì˜¤ë¥¸ì†ì— ì°°ë•Œ..
+				if (m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT] && m_pMySlot[ITEM_SLOT_POS_HAND_LEFT])	// ì–‘ìª½ì— ìˆëŠ” ê²½ìš°..
 					return -1;
 				else 
 					return ITEM_SLOT_POS_HAND_LEFT;
 
 			case ITEM_ATTACH_POS_EAR:
-				if (!m_pMySlot[ITEM_SLOT_POS_EAR_RIGHT])	// ¿À¸¥ÂÊ¿¡ ¾ø´Â °æ¿ì..
+				if (!m_pMySlot[ITEM_SLOT_POS_EAR_RIGHT])	// ì˜¤ë¥¸ìª½ì— ì—†ëŠ” ê²½ìš°..
 					return ITEM_SLOT_POS_EAR_RIGHT;
-				if (!m_pMySlot[ITEM_SLOT_POS_EAR_LEFT])		// ¿ŞÂÊ¿¡ ¾ø´Â °æ¿ì..
+				if (!m_pMySlot[ITEM_SLOT_POS_EAR_LEFT])		// ì™¼ìª½ì— ì—†ëŠ” ê²½ìš°..
 					return ITEM_SLOT_POS_EAR_LEFT;
-				return ITEM_SLOT_POS_EAR_RIGHT;				// µÑ´Ù ÀÖÀ¸¸é ¿À¸¥ÂÊ..
+				return ITEM_SLOT_POS_EAR_RIGHT;				// ë‘˜ë‹¤ ìˆìœ¼ë©´ ì˜¤ë¥¸ìª½..
 
 			case ITEM_ATTACH_POS_HEAD:		
 				return ITEM_SLOT_POS_HEAD;
@@ -679,11 +679,11 @@ int	CUIInventory::GetArmDestinationIndex(__IconItemSkill* spItem)
 				return ITEM_SLOT_POS_BELT;
 
 			case ITEM_ATTACH_POS_FINGER:
-				if (!m_pMySlot[ITEM_SLOT_POS_RING_RIGHT])	// ¿À¸¥ÂÊ¿¡ ¾ø´Â °æ¿ì..
+				if (!m_pMySlot[ITEM_SLOT_POS_RING_RIGHT])	// ì˜¤ë¥¸ìª½ì— ì—†ëŠ” ê²½ìš°..
 					return ITEM_SLOT_POS_RING_RIGHT;
-				if (!m_pMySlot[ITEM_SLOT_POS_RING_LEFT])		// ¿ŞÂÊ¿¡ ¾ø´Â °æ¿ì..
+				if (!m_pMySlot[ITEM_SLOT_POS_RING_LEFT])		// ì™¼ìª½ì— ì—†ëŠ” ê²½ìš°..
 					return ITEM_SLOT_POS_RING_LEFT;
-				return ITEM_SLOT_POS_RING_RIGHT;				// µÑ´Ù ÀÖÀ¸¸é ¿À¸¥ÂÊ..
+				return ITEM_SLOT_POS_RING_RIGHT;				// ë‘˜ë‹¤ ìˆìœ¼ë©´ ì˜¤ë¥¸ìª½..
 
 			case ITEM_ATTACH_POS_LOWER:
 				return ITEM_SLOT_POS_LOWER;
@@ -703,7 +703,7 @@ int	CUIInventory::GetArmDestinationIndex(__IconItemSkill* spItem)
 
 bool CUIInventory::CheckIconDropIfSuccessSendToServer(__IconItemSkill* spItem)
 {
-	// ¸ÕÀú ¾ÆÀÌÅÛÀÌ µé¾î°¥ ¼ö ÀÖ´ÂÁö °Ë»çÇÏ°í..
+	// ë¨¼ì € ì•„ì´í…œì´ ë“¤ì–´ê°ˆ ìˆ˜ ìˆëŠ”ì§€ ê²€ì‚¬í•˜ê³ ..
 	bool  bFound = false;
 	bool  bArm = true;
 	CN3UIArea* pArea;
@@ -738,11 +738,11 @@ bool CUIInventory::CheckIconDropIfSuccessSendToServer(__IconItemSkill* spItem)
 			}
 		}
 
-		if ( !bFound )		// ¸ø Ã£¾ÒÀ¸¸é ÀÎº¥Åä¸® Ä³¸¯ÅÍ ¿µ¿ª °Ë»ö..
+		if ( !bFound )		// ëª» ì°¾ì•˜ìœ¼ë©´ ì¸ë²¤í† ë¦¬ ìºë¦­í„° ì˜ì—­ ê²€ìƒ‰..
 		{
 			if ( m_pArea_User->IsIn(ptCur.x, ptCur.y) )
 			{	
-				// ÀÎº¥ ¿µ¿ªÀÇ ¾ÆÀÌÄÜÀÌ ¾Æ´Ï¸é.. false return..
+				// ì¸ë²¤ ì˜ì—­ì˜ ì•„ì´ì½˜ì´ ì•„ë‹ˆë©´.. false return..
 				if (CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.UIWndDistrict == UIWND_DISTRICT_INVENTORY_INV)
 				{
 					iDestiOrder = GetArmDestinationIndex(CN3UIWndBase::m_sSelectedIconInfo.pItemSelect);
@@ -777,10 +777,10 @@ bool CUIInventory::CheckIconDropIfSuccessSendToServer(__IconItemSkill* spItem)
 		}
 	}
 
-	if ( !bFound )	return false;	// ¸ø Ã£¾ÒÀ¸¹Ç·Î.. ½ÇÆĞ..
+	if ( !bFound )	return false;	// ëª» ì°¾ì•˜ìœ¼ë¯€ë¡œ.. ì‹¤íŒ¨..
 
-	// º»°İÀûÀ¸·Î Recovery Info¸¦ È°¿ëÇÏ±â ½ÃÀÛÇÑ´Ù.. 
-	// ¸ÕÀú WaitFromServer¸¦ OnÀ¸·Î ÇÏ°í.. Select Info¸¦ Recovery Info·Î º¹»ç..
+	// ë³¸ê²©ì ìœ¼ë¡œ Recovery Infoë¥¼ í™œìš©í•˜ê¸° ì‹œì‘í•œë‹¤.. 
+	// ë¨¼ì € WaitFromServerë¥¼ Onìœ¼ë¡œ í•˜ê³ .. Select Infoë¥¼ Recovery Infoë¡œ ë³µì‚¬..
 	CN3UIWndBase::m_sRecoveryJobInfo.m_bWaitFromServer				= true;
 	CN3UIWndBase::m_sRecoveryJobInfo.pItemSource					= CN3UIWndBase::m_sSelectedIconInfo.pItemSelect;
 	CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.UIWnd			= CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.UIWnd;
@@ -788,18 +788,18 @@ bool CUIInventory::CheckIconDropIfSuccessSendToServer(__IconItemSkill* spItem)
 	CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder		= CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.iOrder;
 	CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.UIWnd			= UIWND_INVENTORY;
 	CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget					= NULL;
-	// °Ë»çÇÏ´Â µµÁß¿¡ Recovery InfoÁß¿¡ pItemTarget¸¦ ÇÊ¿äÇÏ´Ù¸é ÀÛ¼ºÇÏ°í false¸¦ ¸®ÅÏÇÒ¶§´Â ¿ø·¡´ë·Î..
+	// ê²€ì‚¬í•˜ëŠ” ë„ì¤‘ì— Recovery Infoì¤‘ì— pItemTargetë¥¼ í•„ìš”í•˜ë‹¤ë©´ ì‘ì„±í•˜ê³  falseë¥¼ ë¦¬í„´í• ë•ŒëŠ” ì›ë˜ëŒ€ë¡œ..
 
 	// Arm -> Arm
 	if ( (CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.UIWndDistrict == UIWND_DISTRICT_INVENTORY_SLOT) && bArm )
 	{
-		// ±âÁ¸ ¾ÆÀÌÄÜÀÌ ÀÖ´ÂÁö »ìÆìº¸°í ±âÁ¸ ¾ÆÀÌÅÛÀÌ ¾øÀ¸¸é..
+		// ê¸°ì¡´ ì•„ì´ì½˜ì´ ìˆëŠ”ì§€ ì‚´í´ë³´ê³  ê¸°ì¡´ ì•„ì´í…œì´ ì—†ìœ¼ë©´..
 		if ( !m_pMySlot[iDestiOrder] )
 		{
 			if ( IsValidPosFromArmToArm(iDestiOrder) )
 			{
-				// ¾ÆÀÌÄÜÀÌ µé¾î°¥ ¼ö ÀÖÀ¸¸é.. ¼­¹ö°¡ ½ÇÆĞ¸¦ ÁÙ °æ¿ì¸¦ ´ëºñÇØ¼­ ¹é¾÷ Á¤º¸¸¦ ÀÛ¼º.. 
-				// ±×¸®°í ¼­¹ö°¡ ¼º°øÀ» ÁÙ °æ¿ì ÇØ¾ßÇÒ ÀÛ¾÷ Á¤º¸¸¦ ÀÛ¼º..
+				// ì•„ì´ì½˜ì´ ë“¤ì–´ê°ˆ ìˆ˜ ìˆìœ¼ë©´.. ì„œë²„ê°€ ì‹¤íŒ¨ë¥¼ ì¤„ ê²½ìš°ë¥¼ ëŒ€ë¹„í•´ì„œ ë°±ì—… ì •ë³´ë¥¼ ì‘ì„±.. 
+				// ê·¸ë¦¬ê³  ì„œë²„ê°€ ì„±ê³µì„ ì¤„ ê²½ìš° í•´ì•¼í•  ì‘ì—… ì •ë³´ë¥¼ ì‘ì„±..
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.UIWndDistrict	= UIWND_DISTRICT_INVENTORY_SLOT;				
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.iOrder			= iDestiOrder;
 
@@ -817,24 +817,24 @@ bool CUIInventory::CheckIconDropIfSuccessSendToServer(__IconItemSkill* spItem)
 				return false;
 			}
 		}
-		// ±âÁ¸ ¾ÆÀÌÄÜÀÌ ÀÖÀ¸¸é..
+		// ê¸°ì¡´ ì•„ì´ì½˜ì´ ìˆìœ¼ë©´..
 		else
 		{
-			// ¾ÆÀÌÄÜÀÌ µé¾î°¥ ¼ö ÀÖÀ¸¸é..
+			// ì•„ì´ì½˜ì´ ë“¤ì–´ê°ˆ ìˆ˜ ìˆìœ¼ë©´..
 			if ( IsValidPosFromArmToArm(iDestiOrder) )
 			{
-				// ±âÁ¸ ¾ÆÀÌÄÜ Á¤º¸¸¦ pItemTarget°ú UIWndTargetStart¸¦ ¼ÂÆÃÇÏ°í..
+				// ê¸°ì¡´ ì•„ì´ì½˜ ì •ë³´ë¥¼ pItemTargetê³¼ UIWndTargetStartë¥¼ ì…‹íŒ…í•˜ê³ ..
 				CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget					= m_pMySlot[iDestiOrder];
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetStart.UIWnd			= UIWND_INVENTORY;
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetStart.UIWndDistrict = UIWND_DISTRICT_INVENTORY_SLOT;
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetStart.iOrder		= iDestiOrder;
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetEnd.UIWnd			= UIWND_INVENTORY;
 
-				// ±× ¹İ´ëµµ °¡´ÉÇÏ¸é..
+				// ê·¸ ë°˜ëŒ€ë„ ê°€ëŠ¥í•˜ë©´..
 				if ( IsValidPosFromArmToArmInverse(CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder) )
 				{
-					// ¾ÆÀÌÄÜÀÌ µé¾î°¥ ¼ö ÀÖÀ¸¸é.. ¼­¹ö°¡ ½ÇÆĞ¸¦ ÁÙ °æ¿ì¸¦ ´ëºñÇØ¼­ ¹é¾÷ Á¤º¸¸¦ ÀÛ¼º.. 
-					// ±×¸®°í ¼­¹ö°¡ ¼º°øÀ» ÁÙ °æ¿ì ÇØ¾ßÇÒ ÀÛ¾÷ Á¤º¸¸¦ ÀÛ¼º..
+					// ì•„ì´ì½˜ì´ ë“¤ì–´ê°ˆ ìˆ˜ ìˆìœ¼ë©´.. ì„œë²„ê°€ ì‹¤íŒ¨ë¥¼ ì¤„ ê²½ìš°ë¥¼ ëŒ€ë¹„í•´ì„œ ë°±ì—… ì •ë³´ë¥¼ ì‘ì„±.. 
+					// ê·¸ë¦¬ê³  ì„œë²„ê°€ ì„±ê³µì„ ì¤„ ê²½ìš° í•´ì•¼í•  ì‘ì—… ì •ë³´ë¥¼ ì‘ì„±..
 					CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.UIWndDistrict	= UIWND_DISTRICT_INVENTORY_SLOT;				
 					CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.iOrder			= iDestiOrder;
 
@@ -860,12 +860,12 @@ bool CUIInventory::CheckIconDropIfSuccessSendToServer(__IconItemSkill* spItem)
 	// Arm -> Inv
 	else if ( (CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.UIWndDistrict == UIWND_DISTRICT_INVENTORY_SLOT) && !bArm )
 	{
-		// ±âÁ¸ ¾ÆÀÌÄÜÀÌ ÀÖ´ÂÁö »ìÆìº¸°í ±âÁ¸ ¾ÆÀÌÅÛÀÌ ¾øÀ¸¸é..
+		// ê¸°ì¡´ ì•„ì´ì½˜ì´ ìˆëŠ”ì§€ ì‚´í´ë³´ê³  ê¸°ì¡´ ì•„ì´í…œì´ ì—†ìœ¼ë©´..
 		if ( !m_pMyInvWnd[iDestiOrder] )
 		{
-			// ¾ÆÀÌÄÜÀº ´ç¿¬È÷ µé¾î°¥ ¼ö ÀÖ´ç.. ^^
-			// ¾ÆÀÌÄÜÀÌ µé¾î°¥ ¼ö ÀÖÀ¸¸é.. ¼­¹ö°¡ ½ÇÆĞ¸¦ ÁÙ °æ¿ì¸¦ ´ëºñÇØ¼­ ¹é¾÷ Á¤º¸¸¦ ÀÛ¼º.. 
-			// ±×¸®°í ¼­¹ö°¡ ¼º°øÀ» ÁÙ °æ¿ì ÇØ¾ßÇÒ ÀÛ¾÷ Á¤º¸¸¦ ÀÛ¼º..
+			// ì•„ì´ì½˜ì€ ë‹¹ì—°íˆ ë“¤ì–´ê°ˆ ìˆ˜ ìˆë‹¹.. ^^
+			// ì•„ì´ì½˜ì´ ë“¤ì–´ê°ˆ ìˆ˜ ìˆìœ¼ë©´.. ì„œë²„ê°€ ì‹¤íŒ¨ë¥¼ ì¤„ ê²½ìš°ë¥¼ ëŒ€ë¹„í•´ì„œ ë°±ì—… ì •ë³´ë¥¼ ì‘ì„±.. 
+			// ê·¸ë¦¬ê³  ì„œë²„ê°€ ì„±ê³µì„ ì¤„ ê²½ìš° í•´ì•¼í•  ì‘ì—… ì •ë³´ë¥¼ ì‘ì„±..
 			CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.UIWndDistrict	= UIWND_DISTRICT_INVENTORY_INV;				
 			CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.iOrder			= iDestiOrder;
 
@@ -875,10 +875,10 @@ bool CUIInventory::CheckIconDropIfSuccessSendToServer(__IconItemSkill* spItem)
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder, iDestiOrder);
 			return true;
 		}
-		// ±âÁ¸ ¾ÆÀÌÄÜÀÌ ÀÖÀ¸¸é..
+		// ê¸°ì¡´ ì•„ì´ì½˜ì´ ìˆìœ¼ë©´..
 		else
 		{
-			// ÀÎº¥Åä¸® ºó½½·ÔÀ» Ã£¾Æ µé¾î°£´Ù..
+			// ì¸ë²¤í† ë¦¬ ë¹ˆìŠ¬ë¡¯ì„ ì°¾ì•„ ë“¤ì–´ê°„ë‹¤..
 			bFound = false;
 			for( i = 0; i < MAX_ITEM_INVENTORY; i++ )
 			{
@@ -889,10 +889,10 @@ bool CUIInventory::CheckIconDropIfSuccessSendToServer(__IconItemSkill* spItem)
 				}
 			}
 
-			if ( bFound )	// ºó ½½·ÔÀ» Ã£¾ÒÀ¸¸é..
+			if ( bFound )	// ë¹ˆ ìŠ¬ë¡¯ì„ ì°¾ì•˜ìœ¼ë©´..
 			{
-				// ¾ÆÀÌÄÜÀÌ µé¾î°¥ ¼ö ÀÖÀ¸¸é.. ¼­¹ö°¡ ½ÇÆĞ¸¦ ÁÙ °æ¿ì¸¦ ´ëºñÇØ¼­ ¹é¾÷ Á¤º¸¸¦ ÀÛ¼º.. 
-				// ±×¸®°í ¼­¹ö°¡ ¼º°øÀ» ÁÙ °æ¿ì ÇØ¾ßÇÒ ÀÛ¾÷ Á¤º¸¸¦ ÀÛ¼º..
+				// ì•„ì´ì½˜ì´ ë“¤ì–´ê°ˆ ìˆ˜ ìˆìœ¼ë©´.. ì„œë²„ê°€ ì‹¤íŒ¨ë¥¼ ì¤„ ê²½ìš°ë¥¼ ëŒ€ë¹„í•´ì„œ ë°±ì—… ì •ë³´ë¥¼ ì‘ì„±.. 
+				// ê·¸ë¦¬ê³  ì„œë²„ê°€ ì„±ê³µì„ ì¤„ ê²½ìš° í•´ì•¼í•  ì‘ì—… ì •ë³´ë¥¼ ì‘ì„±..
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.UIWndDistrict	= UIWND_DISTRICT_INVENTORY_INV;				
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.iOrder			= i;
 
@@ -914,14 +914,14 @@ bool CUIInventory::CheckIconDropIfSuccessSendToServer(__IconItemSkill* spItem)
 	// Inv -> Arm
 	else if ( (CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.UIWndDistrict == UIWND_DISTRICT_INVENTORY_INV) && bArm )
 	{
-		// °Ë¿¡ ÀåÂøÇÏ´Â °æ¿ì´Â ±âÁ¸ ¾ÆÀÌÄÜÀÌ ÀÖ´ÂÁö »ìÆìº¼ ÇÊ¿ä°¡ ¾ø´Ù.. ¿Ö³Ä¸é, °Ë»çÇÏ´Â ÇÔ¼ö°¡ ÇÏ´Ï±î..
-		// ±âÁ¸ ¾ÆÀÌÄÜÀÌ ÀÖ´ÂÁö »ìÆìº¸°í ±âÁ¸ ¾ÆÀÌÅÛÀÌ ¾øÀ¸¸é..
+		// ê²€ì— ì¥ì°©í•˜ëŠ” ê²½ìš°ëŠ” ê¸°ì¡´ ì•„ì´ì½˜ì´ ìˆëŠ”ì§€ ì‚´í´ë³¼ í•„ìš”ê°€ ì—†ë‹¤.. ì™œëƒë©´, ê²€ì‚¬í•˜ëŠ” í•¨ìˆ˜ê°€ í•˜ë‹ˆê¹Œ..
+		// ê¸°ì¡´ ì•„ì´ì½˜ì´ ìˆëŠ”ì§€ ì‚´í´ë³´ê³  ê¸°ì¡´ ì•„ì´í…œì´ ì—†ìœ¼ë©´..
 		if ( !m_pMySlot[iDestiOrder] )
 		{
 			if ( IsValidPosFromInvToArm(iDestiOrder) )
 			{
-				// ¾ÆÀÌÄÜÀÌ µé¾î°¥ ¼ö ÀÖÀ¸¸é.. ¼­¹ö°¡ ½ÇÆĞ¸¦ ÁÙ °æ¿ì¸¦ ´ëºñÇØ¼­ ¹é¾÷ Á¤º¸¸¦ ÀÛ¼º.. 
-				// ±×¸®°í ¼­¹ö°¡ ¼º°øÀ» ÁÙ °æ¿ì ÇØ¾ßÇÒ ÀÛ¾÷ Á¤º¸¸¦ ÀÛ¼º..
+				// ì•„ì´ì½˜ì´ ë“¤ì–´ê°ˆ ìˆ˜ ìˆìœ¼ë©´.. ì„œë²„ê°€ ì‹¤íŒ¨ë¥¼ ì¤„ ê²½ìš°ë¥¼ ëŒ€ë¹„í•´ì„œ ë°±ì—… ì •ë³´ë¥¼ ì‘ì„±.. 
+				// ê·¸ë¦¬ê³  ì„œë²„ê°€ ì„±ê³µì„ ì¤„ ê²½ìš° í•´ì•¼í•  ì‘ì—… ì •ë³´ë¥¼ ì‘ì„±..
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.UIWndDistrict	= UIWND_DISTRICT_INVENTORY_SLOT;				
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.iOrder			= iDestiOrder;
 
@@ -939,17 +939,17 @@ bool CUIInventory::CheckIconDropIfSuccessSendToServer(__IconItemSkill* spItem)
 				return false;
 			}
 		}
-		// ±âÁ¸ ¾ÆÀÌÄÜÀÌ ÀÖÀ¸¸é..
+		// ê¸°ì¡´ ì•„ì´ì½˜ì´ ìˆìœ¼ë©´..
 		else
 		{
 			if ( IsValidPosFromInvToArm(iDestiOrder) )
 			{
-				// ¾ÆÀÌÄÜÀÌ µé¾î°¥ ¼ö ÀÖÀ¸¸é.. ¼­¹ö°¡ ½ÇÆĞ¸¦ ÁÙ °æ¿ì¸¦ ´ëºñÇØ¼­ ¹é¾÷ Á¤º¸¸¦ ÀÛ¼º.. 
-				// ±×¸®°í ¼­¹ö°¡ ¼º°øÀ» ÁÙ °æ¿ì ÇØ¾ßÇÒ ÀÛ¾÷ Á¤º¸¸¦ ÀÛ¼º..
+				// ì•„ì´ì½˜ì´ ë“¤ì–´ê°ˆ ìˆ˜ ìˆìœ¼ë©´.. ì„œë²„ê°€ ì‹¤íŒ¨ë¥¼ ì¤„ ê²½ìš°ë¥¼ ëŒ€ë¹„í•´ì„œ ë°±ì—… ì •ë³´ë¥¼ ì‘ì„±.. 
+				// ê·¸ë¦¬ê³  ì„œë²„ê°€ ì„±ê³µì„ ì¤„ ê²½ìš° í•´ì•¼í•  ì‘ì—… ì •ë³´ë¥¼ ì‘ì„±..
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.UIWndDistrict	= UIWND_DISTRICT_INVENTORY_SLOT;				
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.iOrder			= iDestiOrder;
 
-				// °Ë¿¡ ÀåÂøÇÏ´Â °æ¿ì°¡ ¾Æ´Ï¸é..
+				// ê²€ì— ì¥ì°©í•˜ëŠ” ê²½ìš°ê°€ ì•„ë‹ˆë©´..
 				if ( (iDestiOrder != ITEM_SLOT_POS_HAND_RIGHT) && (iDestiOrder != ITEM_SLOT_POS_HAND_LEFT) )
 				{
 					CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget					= m_pMySlot[iDestiOrder];
@@ -978,11 +978,11 @@ bool CUIInventory::CheckIconDropIfSuccessSendToServer(__IconItemSkill* spItem)
 	// Inv -> Inv
 	else if ( (CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.UIWndDistrict == UIWND_DISTRICT_INVENTORY_INV) && !bArm )
 	{
-		// ±âÁ¸ ¾ÆÀÌÄÜÀÌ ÀÖ´ÂÁö »ìÆìº¸°í ±âÁ¸ ¾ÆÀÌÅÛÀÌ ¾øÀ¸¸é..
+		// ê¸°ì¡´ ì•„ì´ì½˜ì´ ìˆëŠ”ì§€ ì‚´í´ë³´ê³  ê¸°ì¡´ ì•„ì´í…œì´ ì—†ìœ¼ë©´..
 		if ( !m_pMyInvWnd[iDestiOrder] )
 		{
-			// ¾ÆÀÌÄÜÀÌ µé¾î°¥ ¼ö ÀÖÀ¸¸é.. ¼­¹ö°¡ ½ÇÆĞ¸¦ ÁÙ °æ¿ì¸¦ ´ëºñÇØ¼­ ¹é¾÷ Á¤º¸¸¦ ÀÛ¼º.. 
-			// ±×¸®°í ¼­¹ö°¡ ¼º°øÀ» ÁÙ °æ¿ì ÇØ¾ßÇÒ ÀÛ¾÷ Á¤º¸¸¦ ÀÛ¼º..
+			// ì•„ì´ì½˜ì´ ë“¤ì–´ê°ˆ ìˆ˜ ìˆìœ¼ë©´.. ì„œë²„ê°€ ì‹¤íŒ¨ë¥¼ ì¤„ ê²½ìš°ë¥¼ ëŒ€ë¹„í•´ì„œ ë°±ì—… ì •ë³´ë¥¼ ì‘ì„±.. 
+			// ê·¸ë¦¬ê³  ì„œë²„ê°€ ì„±ê³µì„ ì¤„ ê²½ìš° í•´ì•¼í•  ì‘ì—… ì •ë³´ë¥¼ ì‘ì„±..
 			CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.UIWndDistrict	= UIWND_DISTRICT_INVENTORY_INV;				
 			CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.iOrder			= iDestiOrder;
 
@@ -992,7 +992,7 @@ bool CUIInventory::CheckIconDropIfSuccessSendToServer(__IconItemSkill* spItem)
 				CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder, iDestiOrder);
 			return true;
 		}
-		// ±âÁ¸ ¾ÆÀÌÄÜÀÌ ÀÖÀ¸¸é.. 
+		// ê¸°ì¡´ ì•„ì´ì½˜ì´ ìˆìœ¼ë©´.. 
 		else
 		{
 			CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.UIWndDistrict	= UIWND_DISTRICT_INVENTORY_INV;				
@@ -1024,13 +1024,13 @@ inline	bool CUIInventory::InvOpsSomething(__IconItemSkill* spItem)
 	if (!spItem) return false;
 	CN3UIArea* pArea = NULL;
 
-	// °Ë»çÇÑ´Ù..¼º°øÀÌ¸é ¼­¹ö¿¡°Ô º¸³¿..
+	// ê²€ì‚¬í•œë‹¤..ì„±ê³µì´ë©´ ì„œë²„ì—ê²Œ ë³´ëƒ„..
 	if ( CheckIconDropIfSuccessSendToServer(spItem) )												
 	{																								
-		// ¾ÆÀÌÄÜ ÀÌµ¿.. Source.. °°Àº ¾ÆÀÌÄÜ ³»¿¡¼­ ¿òÁ÷ÀÌ´Â °Å¸é.. ±»ÀÌ Á¦°ÅÇÏ°í Ãß°¡ÇÒ  ÇÊ¿ä¾øÀÌ ÀÌµ¿¸¸ ÇÏ¸é µÈ´Ù..
+		// ì•„ì´ì½˜ ì´ë™.. Source.. ê°™ì€ ì•„ì´ì½˜ ë‚´ì—ì„œ ì›€ì§ì´ëŠ” ê±°ë©´.. êµ³ì´ ì œê±°í•˜ê³  ì¶”ê°€í•   í•„ìš”ì—†ì´ ì´ë™ë§Œ í•˜ë©´ ëœë‹¤..
 		if ( CN3UIWndBase::m_sRecoveryJobInfo.pItemSource )											
 		{																							
-			// Á¦°Å..
+			// ì œê±°..
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.UIWndDistrict )				
 			{																						
 				case UIWND_DISTRICT_INVENTORY_SLOT:														
@@ -1044,7 +1044,7 @@ inline	bool CUIInventory::InvOpsSomething(__IconItemSkill* spItem)
 		}																							
 		if ( CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget )											
 		{																							
-			// Á¦°Å..
+			// ì œê±°..
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetStart.UIWndDistrict )				
 			{																							
 				case UIWND_DISTRICT_INVENTORY_SLOT:													
@@ -1057,12 +1057,12 @@ inline	bool CUIInventory::InvOpsSomething(__IconItemSkill* spItem)
 			}																						
 		}																							
 
-		// ¾ÆÀÌÄÜ ÀÌµ¿.. Source.. °°Àº ¾ÆÀÌÄÜ ³»¿¡¼­ ¿òÁ÷ÀÌ´Â °Å¸é.. ±»ÀÌ Á¦°ÅÇÏ°í Ãß°¡ÇÒ  ÇÊ¿ä¾øÀÌ ÀÌµ¿¸¸ ÇÏ¸é µÈ´Ù..
+		// ì•„ì´ì½˜ ì´ë™.. Source.. ê°™ì€ ì•„ì´ì½˜ ë‚´ì—ì„œ ì›€ì§ì´ëŠ” ê±°ë©´.. êµ³ì´ ì œê±°í•˜ê³  ì¶”ê°€í•   í•„ìš”ì—†ì´ ì´ë™ë§Œ í•˜ë©´ ëœë‹¤..
 		if ( CN3UIWndBase::m_sRecoveryJobInfo.pItemSource )											
 		{																								
 			__IconItemSkill*	spItem = CN3UIWndBase::m_sRecoveryJobInfo.pItemSource;				
 
-			// Ãß°¡..
+			// ì¶”ê°€..
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.UIWndDistrict )				
 			{																						
 				case UIWND_DISTRICT_INVENTORY_SLOT:													
@@ -1085,7 +1085,7 @@ inline	bool CUIInventory::InvOpsSomething(__IconItemSkill* spItem)
 		{																																	
 			__IconItemSkill*	spItem = CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget;														
 
-			// Ãß°¡..
+			// ì¶”ê°€..
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetEnd.UIWndDistrict )														
 			{																																
 				case UIWND_DISTRICT_INVENTORY_SLOT:																								
@@ -1123,12 +1123,12 @@ bool CUIInventory::ReceiveIconDrop(__IconItemSkill* spItem, POINT ptCur)
 	if (!m_bVisible) return false;
 	if (!spItem) return false;
 
-	// ³»°¡ °¡Á³´ø ¾ÆÀÌÄÜÀÌ ¾Æ´Ï¸é..
+	// ë‚´ê°€ ê°€ì¡Œë˜ ì•„ì´ì½˜ì´ ì•„ë‹ˆë©´..
 	if ( CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.UIWnd != m_eUIWnd )
 		return false;
 
-	// ³»°¡ °¡Á³´ø ¾ÆÀÌÄÜÀÌ°í ÀÎº¥Åä¸® ³»¿¡¼­ Áï, Arm->Arm, Arm->Inv, Inv->Arm, Inv->InvÀÌ´Ù..
-	// ¼±ÅÃµÈ ¾ÆÀÌÄÜ°ú °°À¸¸é.. 
+	// ë‚´ê°€ ê°€ì¡Œë˜ ì•„ì´ì½˜ì´ê³  ì¸ë²¤í† ë¦¬ ë‚´ì—ì„œ ì¦‰, Arm->Arm, Arm->Inv, Inv->Arm, Inv->Invì´ë‹¤..
+	// ì„ íƒëœ ì•„ì´ì½˜ê³¼ ê°™ìœ¼ë©´.. 
 	switch ( CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.UIWndDistrict )
 	{
 		case UIWND_DISTRICT_INVENTORY_SLOT:
@@ -1154,7 +1154,7 @@ bool CUIInventory::ReceiveIconDrop(__IconItemSkill* spItem, POINT ptCur)
 	{
 		m_bDestoyDlgAlive = true;
 
-		// ¿òÁ÷ÀÏ ¼ö ¾ø´Ù..
+		// ì›€ì§ì¼ ìˆ˜ ì—†ë‹¤..
 		RECT rect = { 0, 0, 0, 0 };
 
 		switch ( CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.UIWndDistrict )
@@ -1195,15 +1195,15 @@ void CUIInventory::ReceiveResultFromServer(BYTE bResult)
 {
 	CN3UIArea* pArea = NULL;
 
-	if (bResult == 0x01)		// ¼º°ø..
+	if (bResult == 0x01)		// ì„±ê³µ..
 	{
-		// ¾ÆÀÌÄÜÀº ¹Ù²î¾úÀ¸´Ï ½ÇÁ¦ µ¥ÀÌÅÍ¸¦ ÀÌµ¿..
+		// ì•„ì´ì½˜ì€ ë°”ë€Œì—ˆìœ¼ë‹ˆ ì‹¤ì œ ë°ì´í„°ë¥¼ ì´ë™..
 		if ( CN3UIWndBase::m_sRecoveryJobInfo.pItemSource )
 		{
 			__IconItemSkill*	spItem = CN3UIWndBase::m_sRecoveryJobInfo.pItemSource;
 			e_ItemSlot eSlot = ITEM_SLOT_UNKNOWN;
 
-			// Á¦°Å..
+			// ì œê±°..
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.UIWndDistrict )
 			{
 				case UIWND_DISTRICT_INVENTORY_SLOT:
@@ -1220,7 +1220,7 @@ void CUIInventory::ReceiveResultFromServer(BYTE bResult)
 			if (!spItem) return;
 			e_ItemSlot eSlot = ITEM_SLOT_UNKNOWN;
 
-			// Á¦°Å..
+			// ì œê±°..
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetStart.UIWndDistrict )
 			{
 				case UIWND_DISTRICT_INVENTORY_SLOT:
@@ -1231,13 +1231,13 @@ void CUIInventory::ReceiveResultFromServer(BYTE bResult)
 			}
 		}
 
-		// ¾ÆÀÌÄÜÀº ¹Ù²î¾úÀ¸´Ï ½ÇÁ¦ µ¥ÀÌÅÍ¸¦ ÀÌµ¿..
+		// ì•„ì´ì½˜ì€ ë°”ë€Œì—ˆìœ¼ë‹ˆ ì‹¤ì œ ë°ì´í„°ë¥¼ ì´ë™..
 		if ( CN3UIWndBase::m_sRecoveryJobInfo.pItemSource )
 		{
 			__IconItemSkill*	spItem = CN3UIWndBase::m_sRecoveryJobInfo.pItemSource;
 			if (!spItem) return;
 
-			// Ãß°¡..
+			// ì¶”ê°€..
 			e_ItemSlot eSlot = ITEM_SLOT_UNKNOWN;
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.UIWndDistrict )
 			{
@@ -1255,7 +1255,7 @@ void CUIInventory::ReceiveResultFromServer(BYTE bResult)
 			if (!spItem) return;
 			e_ItemSlot eSlot = ITEM_SLOT_UNKNOWN;
 
-			// Ãß°¡..
+			// ì¶”ê°€..
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetEnd.UIWndDistrict )
 			{
 				case UIWND_DISTRICT_INVENTORY_SLOT:
@@ -1266,12 +1266,12 @@ void CUIInventory::ReceiveResultFromServer(BYTE bResult)
 			}
 		}
 	}
-	else						// ½ÇÆĞ..
+	else						// ì‹¤íŒ¨..
 	{
-		// ¾ÆÀÌÄÜÀ» ¿ø»óÅÂ·Î..
+		// ì•„ì´ì½˜ì„ ì›ìƒíƒœë¡œ..
 		if ( CN3UIWndBase::m_sRecoveryJobInfo.pItemSource )
 		{
-			// Á¦°Å..
+			// ì œê±°..
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceEnd.UIWndDistrict )
 			{
 				case UIWND_DISTRICT_INVENTORY_SLOT:
@@ -1284,10 +1284,10 @@ void CUIInventory::ReceiveResultFromServer(BYTE bResult)
 			}
 		}
 
-		// ¾ÆÀÌÄÜ ÀÌµ¿.. Target..
+		// ì•„ì´ì½˜ ì´ë™.. Target..
 		if ( CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget )
 		{
-			// Á¦°Å..
+			// ì œê±°..
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetEnd.UIWndDistrict )
 			{
 				case UIWND_DISTRICT_INVENTORY_SLOT:
@@ -1304,7 +1304,7 @@ void CUIInventory::ReceiveResultFromServer(BYTE bResult)
 		{
 			__IconItemSkill*	spItem = CN3UIWndBase::m_sRecoveryJobInfo.pItemSource;
 
-			// Ãß°¡..
+			// ì¶”ê°€..
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.UIWndDistrict )
 			{
 				case UIWND_DISTRICT_INVENTORY_SLOT:
@@ -1323,12 +1323,12 @@ void CUIInventory::ReceiveResultFromServer(BYTE bResult)
 			}
 		}
 
-		// ¾ÆÀÌÄÜ ÀÌµ¿.. Target..
+		// ì•„ì´ì½˜ ì´ë™.. Target..
 		if ( CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget )
 		{
 			__IconItemSkill*	spItem = CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget;
 
-			// Ãß°¡..
+			// ì¶”ê°€..
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetStart.UIWndDistrict )
 			{
 				case UIWND_DISTRICT_INVENTORY_SLOT:
@@ -1456,7 +1456,7 @@ bool CUIInventory::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
 	{
 		if(pSender->m_szID == "btn_close")
 		{
-			// ÀÎº¥Åä¸®¸¸ ¶° ÀÖÀ»¶§..
+			// ì¸ë²¤í† ë¦¬ë§Œ ë–  ìˆì„ë•Œ..
 			Close();
 		}
 	}
@@ -1507,8 +1507,8 @@ bool CUIInventory::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
 			break;
 
 		case UIMSG_AREA_DOWN_FIRST:
-			// °³ÀÎ°£ °Å·¡ÁßÀÌ°í.. ³» ¾ÆÀÌµğ°¡ "area_gold"ÀÌ¸é..  
-			// SubProcPerTrade¿¡ ÇÔ¼ö¸¦ È£Ãâ..	( ±× ÇÔ¼ö´Â editÇÏ´Â ÁßÀÌ ¾Æ´Ï¸é.. È£Ãâ)
+			// ê°œì¸ê°„ ê±°ë˜ì¤‘ì´ê³ .. ë‚´ ì•„ì´ë””ê°€ "area_gold"ì´ë©´..  
+			// SubProcPerTradeì— í•¨ìˆ˜ë¥¼ í˜¸ì¶œ..	( ê·¸ í•¨ìˆ˜ëŠ” edití•˜ëŠ” ì¤‘ì´ ì•„ë‹ˆë©´.. í˜¸ì¶œ)
 			if ( (CGameProcedure::s_pProcMain->m_pSubProcPerTrade->m_ePerTradeState == PER_TRADE_STATE_NORMAL) &&
 				(pSender->m_szID.compare("area_gold") == 0)	)
 					CGameProcedure::s_pProcMain->m_pSubProcPerTrade->RequestItemCountEdit();
@@ -1538,9 +1538,9 @@ bool CUIInventory::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
 			break;
 
 		case UIMSG_ICON_UP:
-			// ¾ÆÀÌÄÜ ¸Å´ÏÀú À©µµ¿ìµéÀ» µ¹¾Æ ´Ù´Ï¸é¼­ °Ë»ç..
+			// ì•„ì´ì½˜ ë§¤ë‹ˆì € ìœˆë„ìš°ë“¤ì„ ëŒì•„ ë‹¤ë‹ˆë©´ì„œ ê²€ì‚¬..
 			if ( !CGameProcedure::s_pUIMgr->BroadcastIconDropMsg(CN3UIWndBase::m_sSelectedIconInfo.pItemSelect) )
-				// ¾ÆÀÌÄÜ À§Ä¡ ¿ø·¡´ë·Î..
+				// ì•„ì´ì½˜ ìœ„ì¹˜ ì›ë˜ëŒ€ë¡œ..
 				IconRestore();
 			else
 			{
@@ -1560,7 +1560,7 @@ bool CUIInventory::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
 		case UIMSG_ICON_DBLCLK:
 			SetState(UI_STATE_COMMON_NONE);
 
-			// ¾ÆÀÌÄÜ À§Ä¡ ¿ø·¡´ë·Î..
+			// ì•„ì´ì½˜ ìœ„ì¹˜ ì›ë˜ëŒ€ë¡œ..
 			IconRestore();				
 			break;			
 	}
@@ -1577,7 +1577,7 @@ bool CUIInventory::IsValidRaceAndClass(__TABLE_ITEM_BASIC* pItem, __TABLE_ITEM_E
 
 	if (!pItem) return false;
 
-	// Á¾Á·..
+	// ì¢…ì¡±..
 	switch ( pItem->byNeedRace )
 	{
 		case 0:
@@ -1597,7 +1597,7 @@ bool CUIInventory::IsValidRaceAndClass(__TABLE_ITEM_BASIC* pItem, __TABLE_ITEM_E
 	std::string szMsg;
 	if ( bValid )
 	{
-		// Á÷¾÷..		
+		// ì§ì—…..		
 		if (pItem->byNeedClass != 0)
 		{
 			switch (pItem->byNeedClass)
@@ -1876,7 +1876,7 @@ bool CUIInventory::IsValidPosFromInvToArm(int iOrder)
 
 	e_PartPosition ePart;
 	e_PlugPosition ePlug;
-	e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, NULL, ePart, ePlug); // ¾ÆÀÌÅÛ¿¡ µû¸¥ ÆÄÀÏ ÀÌ¸§À» ¸¸µé¾î¼­
+	e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, NULL, ePart, ePlug); // ì•„ì´í…œì— ë”°ë¥¸ íŒŒì¼ ì´ë¦„ì„ ë§Œë“¤ì–´ì„œ
 	if(ITEM_TYPE_UNKNOWN == eType) return false;
 
 	if ( IsValidRaceAndClass(pItem, CN3UIWndBase::m_sSelectedIconInfo.pItemSelect->pItemExt) )
@@ -1929,19 +1929,19 @@ bool CUIInventory::IsValidPosFromInvToArm(int iOrder)
 				}
 				break;
 
-			case ITEM_SLOT_POS_HAND_RIGHT:				// ¿À¸¥¼Õ..
+			case ITEM_SLOT_POS_HAND_RIGHT:				// ì˜¤ë¥¸ì†..
 				switch ( pItem->byAttachPoint )
 				{
 					case ITEM_ATTACH_POS_DUAL:
 					case ITEM_ATTACH_POS_HAND_RIGHT:
-						// ¿Ï¼Õ¿¡ ¾ç¼Õ ¹«±â°¡ ÀÖ´ÂÁö ¾Ë¾Æº»´ç..
+						// ì™„ì†ì— ì–‘ì† ë¬´ê¸°ê°€ ìˆëŠ”ì§€ ì•Œì•„ë³¸ë‹¹..
 						if ( (m_pMySlot[ITEM_SLOT_POS_HAND_LEFT]) 
 							&& (m_pMySlot[ITEM_SLOT_POS_HAND_LEFT]->pItemBasic->byAttachPoint == ITEM_ATTACH_POS_TWOHAND_LEFT) )
 						{
-							// ¿À¸¥¼Õ¿¡ ¹«±â°¡ ÀÖ´Â °æ¿ì false ¸®ÅÏ.. ^^
+							// ì˜¤ë¥¸ì†ì— ë¬´ê¸°ê°€ ìˆëŠ” ê²½ìš° false ë¦¬í„´.. ^^
 							if (m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT]) 
 								return false;
-							// ¿À¸¥¼Õ¿¡ ¹«±â°¡ ¾ø´Â °æ¿ì.. ¿Ş¼Õ ¹«±â°¡ ÀÎº¥Åä¸®·Î.. ^^ 
+							// ì˜¤ë¥¸ì†ì— ë¬´ê¸°ê°€ ì—†ëŠ” ê²½ìš°.. ì™¼ì† ë¬´ê¸°ê°€ ì¸ë²¤í† ë¦¬ë¡œ.. ^^ 
 							else
 							{
 								CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget					= m_pMySlot[ITEM_SLOT_POS_HAND_LEFT];
@@ -1954,9 +1954,9 @@ bool CUIInventory::IsValidPosFromInvToArm(int iOrder)
 								return true;
 							}
 						}
-						else	// ¿Ş¼Õ¿¡ ¾ç¼Õ¹«±â°¡ ¾ø´Â °æ¿ì.. 
+						else	// ì™¼ì†ì— ì–‘ì†ë¬´ê¸°ê°€ ì—†ëŠ” ê²½ìš°.. 
 						{
-							// ¿À¸¥¼Õ¿¡ ¹«±â°¡ ÀÖ´Â °æ¿ì.. Item Exchange.. ^^
+							// ì˜¤ë¥¸ì†ì— ë¬´ê¸°ê°€ ìˆëŠ” ê²½ìš°.. Item Exchange.. ^^
 							if (m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT]) 
 							{
 								CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget					= m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT];
@@ -1968,19 +1968,19 @@ bool CUIInventory::IsValidPosFromInvToArm(int iOrder)
 								CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetEnd.iOrder			= CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder;
 								return true;
 							}
-							// ¿À¸¥¼Õ¿¡ ¹«±â°¡ ¾ø´Â °æ¿ì..  true ¸®ÅÏ..
+							// ì˜¤ë¥¸ì†ì— ë¬´ê¸°ê°€ ì—†ëŠ” ê²½ìš°..  true ë¦¬í„´..
 							else
 								return true;
 						}
 						break;
 
-					case ITEM_ATTACH_POS_TWOHAND_RIGHT:				// ¾ç¼Õ°ËÀ» ¿À¸¥¼Õ¿¡ Âû¶§..
-						if ( m_pMySlot[ITEM_SLOT_POS_HAND_LEFT] )	// ¿Ş¼Õ¿¡ ¹«±â°¡ ÀÖ°í..
+					case ITEM_ATTACH_POS_TWOHAND_RIGHT:				// ì–‘ì†ê²€ì„ ì˜¤ë¥¸ì†ì— ì°°ë•Œ..
+						if ( m_pMySlot[ITEM_SLOT_POS_HAND_LEFT] )	// ì™¼ì†ì— ë¬´ê¸°ê°€ ìˆê³ ..
 						{
-							// ¿À¸¥¼Õ¿¡ ¹«±â°¡ ÀÖ´Â °æ¿ì false ¸®ÅÏ.. ^^
+							// ì˜¤ë¥¸ì†ì— ë¬´ê¸°ê°€ ìˆëŠ” ê²½ìš° false ë¦¬í„´.. ^^
 							if (m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT]) 
 								return false;
-							// ¿À¸¥¼Õ¿¡ ¹«±â°¡ ¾ø´Â °æ¿ì .. ¿Ş¼ÕÀÇ ¹«±â°¡ ÀÎº¥Åä¸®·Î.. ^^
+							// ì˜¤ë¥¸ì†ì— ë¬´ê¸°ê°€ ì—†ëŠ” ê²½ìš° .. ì™¼ì†ì˜ ë¬´ê¸°ê°€ ì¸ë²¤í† ë¦¬ë¡œ.. ^^
 							else
 							{
 								CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget					= m_pMySlot[ITEM_SLOT_POS_HAND_LEFT];
@@ -1993,9 +1993,9 @@ bool CUIInventory::IsValidPosFromInvToArm(int iOrder)
 								return true;
 							}
 						}
-						else										// ¿Ş¼Õ¿¡ ¹«±â°¡ ¾ø°í..	
+						else										// ì™¼ì†ì— ë¬´ê¸°ê°€ ì—†ê³ ..	
 						{
-							// ¿À¸¥¼Õ¿¡ ¹«±â°¡ ÀÖ´Â °æ¿ì.. Item Exchange.. ^^
+							// ì˜¤ë¥¸ì†ì— ë¬´ê¸°ê°€ ìˆëŠ” ê²½ìš°.. Item Exchange.. ^^
 							if (m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT]) 
 							{
 								CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget					= m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT];
@@ -2007,7 +2007,7 @@ bool CUIInventory::IsValidPosFromInvToArm(int iOrder)
 								CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetEnd.iOrder			= CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder;
 								return true;
 							}
-							// ¿À¸¥¼Õ¿¡ ¹«±â°¡ ¾ø´Â °æ¿ì..  true ¸®ÅÏ..
+							// ì˜¤ë¥¸ì†ì— ë¬´ê¸°ê°€ ì—†ëŠ” ê²½ìš°..  true ë¦¬í„´..
 							else
 								return true;
 						}
@@ -2020,14 +2020,14 @@ bool CUIInventory::IsValidPosFromInvToArm(int iOrder)
 				{
 					case ITEM_ATTACH_POS_DUAL:
 					case ITEM_ATTACH_POS_HAND_LEFT:
-						// ¿À¸¥¼Õ¿¡ ¾ç¼Õ ¹«±â°¡ ÀÖ´ÂÁö ¾Ë¾Æº»´ç..
+						// ì˜¤ë¥¸ì†ì— ì–‘ì† ë¬´ê¸°ê°€ ìˆëŠ”ì§€ ì•Œì•„ë³¸ë‹¹..
 						if ( (m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT]) 
 							&& (m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT]->pItemBasic->byAttachPoint == ITEM_ATTACH_POS_TWOHAND_RIGHT) )
 						{
-							// ¿Ş¼Õ¿¡ ¹«±â°¡ ÀÖ´Â °æ¿ì false ¸®ÅÏ.. ^^
+							// ì™¼ì†ì— ë¬´ê¸°ê°€ ìˆëŠ” ê²½ìš° false ë¦¬í„´.. ^^
 							if (m_pMySlot[ITEM_SLOT_POS_HAND_LEFT]) 
 								return false;
-							// ¿Ş¼Õ¿¡ ¹«±â°¡ ¾ø´Â °æ¿ì.. ¿À¸¥¼Õ ¹«±â°¡ ÀÎº¥Åä¸®·Î.. ^^ 
+							// ì™¼ì†ì— ë¬´ê¸°ê°€ ì—†ëŠ” ê²½ìš°.. ì˜¤ë¥¸ì† ë¬´ê¸°ê°€ ì¸ë²¤í† ë¦¬ë¡œ.. ^^ 
 							else
 							{
 								CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget					= m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT];
@@ -2040,9 +2040,9 @@ bool CUIInventory::IsValidPosFromInvToArm(int iOrder)
 								return true;
 							}
 						}
-						else	// ¿À¸¥¼Õ¿¡ ¾ç¼Õ¹«±â°¡ ¾ø´Â °æ¿ì.. 
+						else	// ì˜¤ë¥¸ì†ì— ì–‘ì†ë¬´ê¸°ê°€ ì—†ëŠ” ê²½ìš°.. 
 						{
-							// ¿Ş¼Õ¿¡ ¹«±â°¡ ÀÖ´Â °æ¿ì.. Item Exchange.. ^^
+							// ì™¼ì†ì— ë¬´ê¸°ê°€ ìˆëŠ” ê²½ìš°.. Item Exchange.. ^^
 							if (m_pMySlot[ITEM_SLOT_POS_HAND_LEFT]) 
 							{
 								CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget					= m_pMySlot[ITEM_SLOT_POS_HAND_LEFT];
@@ -2054,19 +2054,19 @@ bool CUIInventory::IsValidPosFromInvToArm(int iOrder)
 								CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetEnd.iOrder			= CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder;
 								return true;
 							}
-							// ¿Ş¼Õ¿¡ ¹«±â°¡ ¾ø´Â °æ¿ì..  true ¸®ÅÏ..
+							// ì™¼ì†ì— ë¬´ê¸°ê°€ ì—†ëŠ” ê²½ìš°..  true ë¦¬í„´..
 							else
 								return true;
 						}
 						break;
 
-					case ITEM_ATTACH_POS_TWOHAND_LEFT:				// ¾ç¼Õ°ËÀ» ¿Ş¼Õ¿¡ Âû¶§..
-						if ( m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT] )	// ¿À¸¥¼Õ¿¡ ¹«±â°¡ ÀÖ°í..
+					case ITEM_ATTACH_POS_TWOHAND_LEFT:				// ì–‘ì†ê²€ì„ ì™¼ì†ì— ì°°ë•Œ..
+						if ( m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT] )	// ì˜¤ë¥¸ì†ì— ë¬´ê¸°ê°€ ìˆê³ ..
 						{
-							// ¿Ş¼Õ¿¡ ¹«±â°¡ ÀÖ´Â °æ¿ì false ¸®ÅÏ.. ^^
+							// ì™¼ì†ì— ë¬´ê¸°ê°€ ìˆëŠ” ê²½ìš° false ë¦¬í„´.. ^^
 							if (m_pMySlot[ITEM_SLOT_POS_HAND_LEFT]) 
 								return false;
-							// ¿Ş¼Õ¿¡ ¹«±â°¡ ¾ø´Â °æ¿ì.. ¿À¸¥¼Õ ¹«±â°¡ ÀÎº¥Åä¸®·Î.. ^^ 
+							// ì™¼ì†ì— ë¬´ê¸°ê°€ ì—†ëŠ” ê²½ìš°.. ì˜¤ë¥¸ì† ë¬´ê¸°ê°€ ì¸ë²¤í† ë¦¬ë¡œ.. ^^ 
 							else
 							{
 								CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget					= m_pMySlot[ITEM_SLOT_POS_HAND_RIGHT];
@@ -2079,9 +2079,9 @@ bool CUIInventory::IsValidPosFromInvToArm(int iOrder)
 								return true;
 							}
 						}
-						else	// ¿À¸¥¼Õ¿¡ ¾ç¼Õ¹«±â°¡ ¾ø´Â °æ¿ì.. 
+						else	// ì˜¤ë¥¸ì†ì— ì–‘ì†ë¬´ê¸°ê°€ ì—†ëŠ” ê²½ìš°.. 
 						{
-							// ¿Ş¼Õ¿¡ ¹«±â°¡ ÀÖ´Â °æ¿ì.. Item Exchange.. ^^
+							// ì™¼ì†ì— ë¬´ê¸°ê°€ ìˆëŠ” ê²½ìš°.. Item Exchange.. ^^
 							if (m_pMySlot[ITEM_SLOT_POS_HAND_LEFT]) 
 							{
 								CN3UIWndBase::m_sRecoveryJobInfo.pItemTarget					= m_pMySlot[ITEM_SLOT_POS_HAND_LEFT];
@@ -2093,7 +2093,7 @@ bool CUIInventory::IsValidPosFromInvToArm(int iOrder)
 								CN3UIWndBase::m_sRecoveryJobInfo.UIWndTargetEnd.iOrder			= CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder;
 								return true;
 							}
-							// ¿Ş¼Õ¿¡ ¹«±â°¡ ¾ø´Â °æ¿ì..  true ¸®ÅÏ..
+							// ì™¼ì†ì— ë¬´ê¸°ê°€ ì—†ëŠ” ê²½ìš°..  true ë¦¬í„´..
 							else
 								return true;
 						}
@@ -2161,7 +2161,7 @@ bool CUIInventory::IsValidPosFromArmToArm(int iOrder)
 
 	e_PartPosition ePart;
 	e_PlugPosition ePlug;
-	e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, NULL, ePart, ePlug); // ¾ÆÀÌÅÛ¿¡ µû¸¥ ÆÄÀÏ ÀÌ¸§À» ¸¸µé¾î¼­
+	e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, NULL, ePart, ePlug); // ì•„ì´í…œì— ë”°ë¥¸ íŒŒì¼ ì´ë¦„ì„ ë§Œë“¤ì–´ì„œ
 	if(ITEM_TYPE_UNKNOWN == eType) return false;
 
 	if ( IsValidRaceAndClass(pItem, CN3UIWndBase::m_sSelectedIconInfo.pItemSelect->pItemExt) )
@@ -2220,7 +2220,7 @@ bool CUIInventory::IsValidPosFromArmToArmInverse(int iOrder)
 
 	e_PartPosition ePart;
 	e_PlugPosition ePlug;
-	e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, NULL, ePart, ePlug); // ¾ÆÀÌÅÛ¿¡ µû¸¥ ÆÄÀÏ ÀÌ¸§À» ¸¸µé¾î¼­
+	e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, NULL, ePart, ePlug); // ì•„ì´í…œì— ë”°ë¥¸ íŒŒì¼ ì´ë¦„ì„ ë§Œë“¤ì–´ì„œ
 	if(ITEM_TYPE_UNKNOWN == eType) return false;
 
 	if ( IsValidRaceAndClass(pItem, CN3UIWndBase::m_sSelectedIconInfo.pItemSelect->pItemExt) )
@@ -2275,7 +2275,7 @@ void CUIInventory::ItemAdd(__TABLE_ITEM_BASIC* pItem, __TABLE_ITEM_EXT* pItemExt
 	std::string szFN;
 	e_PartPosition ePart;
 	e_PlugPosition ePlug;
-	e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, &szFN, NULL, ePart, ePlug); // ¾ÆÀÌÅÛ¿¡ µû¸¥ ÆÄÀÏ ÀÌ¸§À» ¸¸µé¾î¼­
+	e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, &szFN, NULL, ePart, ePlug); // ì•„ì´í…œì— ë”°ë¥¸ íŒŒì¼ ì´ë¦„ì„ ë§Œë“¤ì–´ì„œ
 
 	if(ITEM_TYPE_PLUG == eType)
 	{
@@ -2283,7 +2283,7 @@ void CUIInventory::ItemAdd(__TABLE_ITEM_BASIC* pItem, __TABLE_ITEM_EXT* pItemExt
 		else if(ITEM_SLOT_HAND_RIGHT == eSlot) ePlug = PLUG_POS_RIGHTHAND;
 		else { __ASSERT(0, "Invalid Item Plug Position"); }
 
-		CGameBase::s_pPlayer->PlugSet(ePlug, szFN, pItem, pItemExt); // ÇÃ·¯±× ¼ÂÆÃ..
+		CGameBase::s_pPlayer->PlugSet(ePlug, szFN, pItem, pItemExt); // í”ŒëŸ¬ê·¸ ì…‹íŒ…..
 		CGameBase::s_pPlayer->DurabilitySet(eSlot, m_pMySlot[eSlot]->iDurability);
 	}
 	else if(ITEM_TYPE_PART == eType)
@@ -2295,13 +2295,13 @@ void CUIInventory::ItemAdd(__TABLE_ITEM_BASIC* pItem, __TABLE_ITEM_EXT* pItemExt
 
 void CUIInventory::ItemDelete(__TABLE_ITEM_BASIC* pItem, __TABLE_ITEM_EXT* pItemExt, e_ItemSlot eSlot)
 {
-	__TABLE_PLAYER_LOOKS* pLooks = CGameBase::s_pTbl_UPC_Looks->Find(CGameBase::s_pPlayer->m_InfoBase.eRace);	// User Player Character Skin ±¸Á¶Ã¼ Æ÷ÀÎÅÍ..
+	__TABLE_PLAYER_LOOKS* pLooks = CGameBase::s_pTbl_UPC_Looks->Find(CGameBase::s_pPlayer->m_InfoBase.eRace);	// User Player Character Skin êµ¬ì¡°ì²´ í¬ì¸í„°..
 	__ASSERT(pLooks, "NULL Basic Looks!");
 	if(NULL == pLooks) return;
 
 	e_PartPosition ePart;
 	e_PlugPosition ePlug;
-	e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, NULL, ePart, ePlug); // ¾ÆÀÌÅÛ¿¡ µû¸¥ ÆÄÀÏ ÀÌ¸§À» ¸¸µé¾î¼­
+	e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, NULL, ePart, ePlug); // ì•„ì´í…œì— ë”°ë¥¸ íŒŒì¼ ì´ë¦„ì„ ë§Œë“¤ì–´ì„œ
 	
 	if(pLooks)
 	{
@@ -2310,7 +2310,7 @@ void CUIInventory::ItemDelete(__TABLE_ITEM_BASIC* pItem, __TABLE_ITEM_EXT* pItem
 			if(ITEM_SLOT_HAND_LEFT == eSlot) ePlug = PLUG_POS_LEFTHAND;
 			else if(ITEM_SLOT_HAND_RIGHT == eSlot) ePlug = PLUG_POS_RIGHTHAND;
 
-			CGameBase::s_pPlayer->PlugSet(ePlug, "", NULL, NULL); // ÇÃ·¯±× ¼ÂÆÃ..
+			CGameBase::s_pPlayer->PlugSet(ePlug, "", NULL, NULL); // í”ŒëŸ¬ê·¸ ì…‹íŒ…..
 		}
 		else if(ITEM_TYPE_PART == eType)
 		{
@@ -2340,7 +2340,7 @@ void CUIInventory::DurabilityChange(e_ItemSlot eSlot, int iDurability)
 			if(m_pMySlot[eSlot]->pUIIcon && m_pMySlot[eSlot]->pItemBasic) 
 			{
 				m_pMySlot[eSlot]->pUIIcon->SetStyle(m_pMySlot[eSlot]->pUIIcon->GetStyle() | UISTYLE_DURABILITY_EXHAUST);
-				// ¸Ş½ÃÁö ¹Ú½º Ãâ·Â..
+				// ë©”ì‹œì§€ ë°•ìŠ¤ ì¶œë ¥..
 				::_LoadStringFromResource(IDS_DURABILITY_EXOAST, szDur);
 				wsprintf(szBuf, szDur.c_str(), m_pMySlot[eSlot]->pItemBasic->szName.c_str() );
 				CGameProcedure::s_pProcMain->MsgOutput(szBuf, 0xffff3b3b);
@@ -2383,31 +2383,31 @@ void CUIInventory::ItemCountChange(int iDistrict, int iIndex, int iCount, int iI
 	switch (iDistrict)
 	{
 		case 0x00:
-			if (m_pMySlot[iIndex] && ( (m_pMySlot[iIndex]->pItemBasic->dwID+m_pMySlot[iIndex]->pItemExt->dwID) != iID ) )	// ¾û¶×ÇÑ ¾ÆÀÌÅÛÀÌ ÀÖ´Â°æ¿ì..
+			if (m_pMySlot[iIndex] && ( (m_pMySlot[iIndex]->pItemBasic->dwID+m_pMySlot[iIndex]->pItemExt->dwID) != iID ) )	// ì—‰ëš±í•œ ì•„ì´í…œì´ ìˆëŠ”ê²½ìš°..
 			{
-				// ¾ÆÀÌÅÛ »èÁ¦.. ÇöÀç ÀÎº¥Åä¸® À©µµ¿ì¸¸.. 
+				// ì•„ì´í…œ ì‚­ì œ.. í˜„ì¬ ì¸ë²¤í† ë¦¬ ìœˆë„ìš°ë§Œ.. 
 				spItem = m_pMySlot[iIndex];
 
-				// ÀÎº¥Åä¸®¿¡¼­µµ Áö¿î´Ù..
+				// ì¸ë²¤í† ë¦¬ì—ì„œë„ ì§€ìš´ë‹¤..
 				m_pMySlot[iIndex] = NULL;
 
-				// iOrder·Î ³» ¸Å´ÏÀúÀÇ ¾ÆÀÌÅÛÀ» ¸®½ºÆ®¿¡¼­ »èÁ¦ÇÑ´Ù..
+				// iOrderë¡œ ë‚´ ë§¤ë‹ˆì €ì˜ ì•„ì´í…œì„ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚­ì œí•œë‹¤..
 				RemoveChild(spItem->pUIIcon);
 
-				// ¾ÆÀÌÄÜ ¸®¼Ò½º »èÁ¦...
+				// ì•„ì´ì½˜ ë¦¬ì†ŒìŠ¤ ì‚­ì œ...
 				spItem->pUIIcon->Release();
 				delete spItem->pUIIcon;
 				spItem->pUIIcon = NULL;
 				delete spItem;
 				spItem = NULL;
 
-				// ¾ÆÀÌÅÛÀ» ¸¸µé¾î ³Ö´Â´Ù..
-				__TABLE_ITEM_BASIC* pItem = NULL;								// ¾ÆÀÌÅÛ Å×ÀÌºí ±¸Á¶Ã¼ Æ÷ÀÎÅÍ..	
-				__TABLE_ITEM_EXT* pItemExt = NULL;								// ¾ÆÀÌÅÛ Å×ÀÌºí ±¸Á¶Ã¼ Æ÷ÀÎÅÍ..	
+				// ì•„ì´í…œì„ ë§Œë“¤ì–´ ë„£ëŠ”ë‹¤..
+				__TABLE_ITEM_BASIC* pItem = NULL;								// ì•„ì´í…œ í…Œì´ë¸” êµ¬ì¡°ì²´ í¬ì¸í„°..	
+				__TABLE_ITEM_EXT* pItemExt = NULL;								// ì•„ì´í…œ í…Œì´ë¸” êµ¬ì¡°ì²´ í¬ì¸í„°..	
 
-				pItem = CGameProcedure::s_pTbl_Items_Basic->Find(iID/1000*1000);	// ¿­ µ¥ÀÌÅÍ ¾ò±â..
+				pItem = CGameProcedure::s_pTbl_Items_Basic->Find(iID/1000*1000);	// ì—´ ë°ì´í„° ì–»ê¸°..
 				if(pItem && pItem->byExtIndex >= 0 && pItem->byExtIndex < MAX_ITEM_EXTENSION)
-					pItemExt = CGameProcedure::s_pTbl_Items_Exts[pItem->byExtIndex]->Find(iID%1000);	// ¿­ µ¥ÀÌÅÍ ¾ò±â..
+					pItemExt = CGameProcedure::s_pTbl_Items_Exts[pItem->byExtIndex]->Find(iID%1000);	// ì—´ ë°ì´í„° ì–»ê¸°..
 				if ( NULL == pItem || NULL == pItemExt )
 				{
 					__ASSERT(0, "NULL Item");
@@ -2418,14 +2418,14 @@ void CUIInventory::ItemCountChange(int iDistrict, int iIndex, int iCount, int iI
 				e_PartPosition ePart;
 				e_PlugPosition ePlug;
 				std::string szIconFN;
-				e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, &szIconFN, ePart, ePlug); // ¾ÆÀÌÅÛ¿¡ µû¸¥ ÆÄÀÏ ÀÌ¸§À» ¸¸µé¾î¼­
+				e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, &szIconFN, ePart, ePlug); // ì•„ì´í…œì— ë”°ë¥¸ íŒŒì¼ ì´ë¦„ì„ ë§Œë“¤ì–´ì„œ
 				if(ITEM_TYPE_UNKNOWN == eType) CLogWriter::Write("MyInfo - slot - Unknown Item");
 				__ASSERT(ITEM_TYPE_UNKNOWN != eType, "Unknown Item");
 				
 				spItem = new __IconItemSkill;
 				spItem->pItemBasic	= pItem;
 				spItem->pItemExt	= pItemExt;
-				spItem->szIconFN = szIconFN; // ¾ÆÀÌÄÜ ÆÄÀÏ ÀÌ¸§ º¹»ç..
+				spItem->szIconFN = szIconFN; // ì•„ì´ì½˜ íŒŒì¼ ì´ë¦„ ë³µì‚¬..
 				spItem->iCount	= iCount;
 				spItem->iDurability = pItem->siMaxDurability + pItemExt->siMaxDurability;
 				m_pMySlot[iIndex] = spItem;
@@ -2436,17 +2436,17 @@ void CUIInventory::ItemCountChange(int iDistrict, int iIndex, int iCount, int iI
 				m_pMySlot[iIndex]->iCount = iCount;
 				if (iCount == 0)
 				{
-					// ¾ÆÀÌÅÛ »èÁ¦.. ÇöÀç ÀÎº¥Åä¸® À©µµ¿ì¸¸.. 
+					// ì•„ì´í…œ ì‚­ì œ.. í˜„ì¬ ì¸ë²¤í† ë¦¬ ìœˆë„ìš°ë§Œ.. 
 					__IconItemSkill* spItem;
 					spItem = m_pMySlot[iIndex];
 
-					// ÀÎº¥Åä¸®¿¡¼­µµ Áö¿î´Ù..
+					// ì¸ë²¤í† ë¦¬ì—ì„œë„ ì§€ìš´ë‹¤..
 					m_pMySlot[iIndex] = NULL;
 
-					// iOrder·Î ³» ¸Å´ÏÀúÀÇ ¾ÆÀÌÅÛÀ» ¸®½ºÆ®¿¡¼­ »èÁ¦ÇÑ´Ù..
+					// iOrderë¡œ ë‚´ ë§¤ë‹ˆì €ì˜ ì•„ì´í…œì„ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚­ì œí•œë‹¤..
 					RemoveChild(spItem->pUIIcon);
 
-					// ¾ÆÀÌÄÜ ¸®¼Ò½º »èÁ¦...
+					// ì•„ì´ì½˜ ë¦¬ì†ŒìŠ¤ ì‚­ì œ...
 					spItem->pUIIcon->Release();
 					delete spItem->pUIIcon;
 					spItem->pUIIcon = NULL;
@@ -2454,15 +2454,15 @@ void CUIInventory::ItemCountChange(int iDistrict, int iIndex, int iCount, int iI
 					spItem = NULL;
 				}
 			}
-			else	// ¾ÆÀÌÅÛÀÌ ¾ø´Â °æ¿ì..
+			else	// ì•„ì´í…œì´ ì—†ëŠ” ê²½ìš°..
 			{
-				// ¾ÆÀÌÅÛÀ» ¸¸µé¾î ³Ö´Â´Ù..
-				__TABLE_ITEM_BASIC* pItem = NULL;								// ¾ÆÀÌÅÛ Å×ÀÌºí ±¸Á¶Ã¼ Æ÷ÀÎÅÍ..	
-				__TABLE_ITEM_EXT* pItemExt = NULL;								// ¾ÆÀÌÅÛ Å×ÀÌºí ±¸Á¶Ã¼ Æ÷ÀÎÅÍ..	
+				// ì•„ì´í…œì„ ë§Œë“¤ì–´ ë„£ëŠ”ë‹¤..
+				__TABLE_ITEM_BASIC* pItem = NULL;								// ì•„ì´í…œ í…Œì´ë¸” êµ¬ì¡°ì²´ í¬ì¸í„°..	
+				__TABLE_ITEM_EXT* pItemExt = NULL;								// ì•„ì´í…œ í…Œì´ë¸” êµ¬ì¡°ì²´ í¬ì¸í„°..	
 
-				pItem = CGameProcedure::s_pTbl_Items_Basic->Find(iID/1000*1000);	// ¿­ µ¥ÀÌÅÍ ¾ò±â..
+				pItem = CGameProcedure::s_pTbl_Items_Basic->Find(iID/1000*1000);	// ì—´ ë°ì´í„° ì–»ê¸°..
 				if(pItem && pItem->byExtIndex >= 0 && pItem->byExtIndex < MAX_ITEM_EXTENSION)
-					pItemExt = CGameProcedure::s_pTbl_Items_Exts[pItem->byExtIndex]->Find(iID%1000);	// ¿­ µ¥ÀÌÅÍ ¾ò±â..
+					pItemExt = CGameProcedure::s_pTbl_Items_Exts[pItem->byExtIndex]->Find(iID%1000);	// ì—´ ë°ì´í„° ì–»ê¸°..
 				if ( NULL == pItem || NULL == pItemExt )
 				{
 					__ASSERT(0, "NULL Item");
@@ -2473,14 +2473,14 @@ void CUIInventory::ItemCountChange(int iDistrict, int iIndex, int iCount, int iI
 				e_PartPosition ePart;
 				e_PlugPosition ePlug;
 				std::string szIconFN;
-				e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, &szIconFN, ePart, ePlug); // ¾ÆÀÌÅÛ¿¡ µû¸¥ ÆÄÀÏ ÀÌ¸§À» ¸¸µé¾î¼­
+				e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, &szIconFN, ePart, ePlug); // ì•„ì´í…œì— ë”°ë¥¸ íŒŒì¼ ì´ë¦„ì„ ë§Œë“¤ì–´ì„œ
 				if(ITEM_TYPE_UNKNOWN == eType) CLogWriter::Write("MyInfo - slot - Unknown Item");
 				__ASSERT(ITEM_TYPE_UNKNOWN != eType, "Unknown Item");
 				
 				spItem = new __IconItemSkill;
 				spItem->pItemBasic	= pItem;
 				spItem->pItemExt	= pItemExt;
-				spItem->szIconFN = szIconFN; // ¾ÆÀÌÄÜ ÆÄÀÏ ÀÌ¸§ º¹»ç..
+				spItem->szIconFN = szIconFN; // ì•„ì´ì½˜ íŒŒì¼ ì´ë¦„ ë³µì‚¬..
 				spItem->iCount	= iCount;
 				spItem->iDurability = pItem->siMaxDurability + pItemExt->siMaxDurability;
 				m_pMySlot[iIndex] = spItem;
@@ -2489,31 +2489,31 @@ void CUIInventory::ItemCountChange(int iDistrict, int iIndex, int iCount, int iI
 			break;
 
 		case 0x01:
-			if (m_pMyInvWnd[iIndex] && ( (m_pMyInvWnd[iIndex]->pItemBasic->dwID+m_pMyInvWnd[iIndex]->pItemExt->dwID) != iID ) )	// ¾û¶×ÇÑ ¾ÆÀÌÅÛÀÌ ÀÖ´Â°æ¿ì..
+			if (m_pMyInvWnd[iIndex] && ( (m_pMyInvWnd[iIndex]->pItemBasic->dwID+m_pMyInvWnd[iIndex]->pItemExt->dwID) != iID ) )	// ì—‰ëš±í•œ ì•„ì´í…œì´ ìˆëŠ”ê²½ìš°..
 			{
-				// ¾ÆÀÌÅÛ »èÁ¦.. ÇöÀç ÀÎº¥Åä¸® À©µµ¿ì¸¸.. 
+				// ì•„ì´í…œ ì‚­ì œ.. í˜„ì¬ ì¸ë²¤í† ë¦¬ ìœˆë„ìš°ë§Œ.. 
 				spItem = m_pMyInvWnd[iIndex];
 
-				// ÀÎº¥Åä¸®¿¡¼­µµ Áö¿î´Ù..
+				// ì¸ë²¤í† ë¦¬ì—ì„œë„ ì§€ìš´ë‹¤..
 				m_pMyInvWnd[iIndex] = NULL;
 
-				// iOrder·Î ³» ¸Å´ÏÀúÀÇ ¾ÆÀÌÅÛÀ» ¸®½ºÆ®¿¡¼­ »èÁ¦ÇÑ´Ù..
+				// iOrderë¡œ ë‚´ ë§¤ë‹ˆì €ì˜ ì•„ì´í…œì„ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚­ì œí•œë‹¤..
 				RemoveChild(spItem->pUIIcon);
 
-				// ¾ÆÀÌÄÜ ¸®¼Ò½º »èÁ¦...
+				// ì•„ì´ì½˜ ë¦¬ì†ŒìŠ¤ ì‚­ì œ...
 				spItem->pUIIcon->Release();
 				delete spItem->pUIIcon;
 				spItem->pUIIcon = NULL;
 				delete spItem;
 				spItem = NULL;
 
-				// ¾ÆÀÌÅÛÀ» ¸¸µé¾î ³Ö´Â´Ù..
-				__TABLE_ITEM_BASIC* pItem = NULL;								// ¾ÆÀÌÅÛ Å×ÀÌºí ±¸Á¶Ã¼ Æ÷ÀÎÅÍ..	
-				__TABLE_ITEM_EXT* pItemExt = NULL;								// ¾ÆÀÌÅÛ Å×ÀÌºí ±¸Á¶Ã¼ Æ÷ÀÎÅÍ..	
+				// ì•„ì´í…œì„ ë§Œë“¤ì–´ ë„£ëŠ”ë‹¤..
+				__TABLE_ITEM_BASIC* pItem = NULL;								// ì•„ì´í…œ í…Œì´ë¸” êµ¬ì¡°ì²´ í¬ì¸í„°..	
+				__TABLE_ITEM_EXT* pItemExt = NULL;								// ì•„ì´í…œ í…Œì´ë¸” êµ¬ì¡°ì²´ í¬ì¸í„°..	
 
-				pItem = CGameProcedure::s_pTbl_Items_Basic->Find(iID/1000*1000);	// ¿­ µ¥ÀÌÅÍ ¾ò±â..
+				pItem = CGameProcedure::s_pTbl_Items_Basic->Find(iID/1000*1000);	// ì—´ ë°ì´í„° ì–»ê¸°..
 				if(pItem && pItem->byExtIndex >= 0 && pItem->byExtIndex < MAX_ITEM_EXTENSION)
-					pItemExt = CGameProcedure::s_pTbl_Items_Exts[pItem->byExtIndex]->Find(iID%1000);	// ¿­ µ¥ÀÌÅÍ ¾ò±â..
+					pItemExt = CGameProcedure::s_pTbl_Items_Exts[pItem->byExtIndex]->Find(iID%1000);	// ì—´ ë°ì´í„° ì–»ê¸°..
 				if ( NULL == pItem || NULL == pItemExt )
 				{
 					__ASSERT(0, "NULL Item");
@@ -2524,14 +2524,14 @@ void CUIInventory::ItemCountChange(int iDistrict, int iIndex, int iCount, int iI
 				e_PartPosition ePart;
 				e_PlugPosition ePlug;
 				std::string szIconFN;
-				e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, &szIconFN, ePart, ePlug); // ¾ÆÀÌÅÛ¿¡ µû¸¥ ÆÄÀÏ ÀÌ¸§À» ¸¸µé¾î¼­
+				e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, &szIconFN, ePart, ePlug); // ì•„ì´í…œì— ë”°ë¥¸ íŒŒì¼ ì´ë¦„ì„ ë§Œë“¤ì–´ì„œ
 				if(ITEM_TYPE_UNKNOWN == eType) CLogWriter::Write("MyInfo - slot - Unknown Item");
 				__ASSERT(ITEM_TYPE_UNKNOWN != eType, "Unknown Item");
 				
 				spItem = new __IconItemSkill;
 				spItem->pItemBasic	= pItem;
 				spItem->pItemExt	= pItemExt;
-				spItem->szIconFN = szIconFN; // ¾ÆÀÌÄÜ ÆÄÀÏ ÀÌ¸§ º¹»ç..
+				spItem->szIconFN = szIconFN; // ì•„ì´ì½˜ íŒŒì¼ ì´ë¦„ ë³µì‚¬..
 				spItem->iCount	= iCount;
 				spItem->iDurability = pItem->siMaxDurability + pItemExt->siMaxDurability;
 				m_pMyInvWnd[iIndex] = spItem;
@@ -2542,17 +2542,17 @@ void CUIInventory::ItemCountChange(int iDistrict, int iIndex, int iCount, int iI
 				m_pMyInvWnd[iIndex]->iCount = iCount;
 				if (iCount == 0)
 				{
-					// ¾ÆÀÌÅÛ »èÁ¦.. ÇöÀç ÀÎº¥Åä¸® À©µµ¿ì¸¸.. 
+					// ì•„ì´í…œ ì‚­ì œ.. í˜„ì¬ ì¸ë²¤í† ë¦¬ ìœˆë„ìš°ë§Œ.. 
 					__IconItemSkill* spItem;
 					spItem = m_pMyInvWnd[iIndex];
 
-					// ÀÎº¥Åä¸®¿¡¼­µµ Áö¿î´Ù..
+					// ì¸ë²¤í† ë¦¬ì—ì„œë„ ì§€ìš´ë‹¤..
 					m_pMyInvWnd[iIndex] = NULL;
 
-					// iOrder·Î ³» ¸Å´ÏÀúÀÇ ¾ÆÀÌÅÛÀ» ¸®½ºÆ®¿¡¼­ »èÁ¦ÇÑ´Ù..
+					// iOrderë¡œ ë‚´ ë§¤ë‹ˆì €ì˜ ì•„ì´í…œì„ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚­ì œí•œë‹¤..
 					RemoveChild(spItem->pUIIcon);
 
-					// ¾ÆÀÌÄÜ ¸®¼Ò½º »èÁ¦...
+					// ì•„ì´ì½˜ ë¦¬ì†ŒìŠ¤ ì‚­ì œ...
 					spItem->pUIIcon->Release();
 					delete spItem->pUIIcon;
 					spItem->pUIIcon = NULL;
@@ -2560,15 +2560,15 @@ void CUIInventory::ItemCountChange(int iDistrict, int iIndex, int iCount, int iI
 					spItem = NULL;
 				}
 			}
-			else	// ¾ÆÀÌÅÛÀÌ ¾ø´Â °æ¿ì..
+			else	// ì•„ì´í…œì´ ì—†ëŠ” ê²½ìš°..
 			{
-				// ¾ÆÀÌÅÛÀ» ¸¸µé¾î ³Ö´Â´Ù..
-				__TABLE_ITEM_BASIC* pItem = NULL;								// ¾ÆÀÌÅÛ Å×ÀÌºí ±¸Á¶Ã¼ Æ÷ÀÎÅÍ..	
-				__TABLE_ITEM_EXT* pItemExt = NULL;								// ¾ÆÀÌÅÛ Å×ÀÌºí ±¸Á¶Ã¼ Æ÷ÀÎÅÍ..	
+				// ì•„ì´í…œì„ ë§Œë“¤ì–´ ë„£ëŠ”ë‹¤..
+				__TABLE_ITEM_BASIC* pItem = NULL;								// ì•„ì´í…œ í…Œì´ë¸” êµ¬ì¡°ì²´ í¬ì¸í„°..	
+				__TABLE_ITEM_EXT* pItemExt = NULL;								// ì•„ì´í…œ í…Œì´ë¸” êµ¬ì¡°ì²´ í¬ì¸í„°..	
 
-				pItem = CGameProcedure::s_pTbl_Items_Basic->Find(iID/1000*1000);	// ¿­ µ¥ÀÌÅÍ ¾ò±â..
+				pItem = CGameProcedure::s_pTbl_Items_Basic->Find(iID/1000*1000);	// ì—´ ë°ì´í„° ì–»ê¸°..
 				if(pItem && pItem->byExtIndex >= 0 && pItem->byExtIndex < MAX_ITEM_EXTENSION)
-					pItemExt = CGameProcedure::s_pTbl_Items_Exts[pItem->byExtIndex]->Find(iID%1000);	// ¿­ µ¥ÀÌÅÍ ¾ò±â..
+					pItemExt = CGameProcedure::s_pTbl_Items_Exts[pItem->byExtIndex]->Find(iID%1000);	// ì—´ ë°ì´í„° ì–»ê¸°..
 				if ( NULL == pItem || NULL == pItemExt )
 				{
 					__ASSERT(0, "NULL Item");
@@ -2579,14 +2579,14 @@ void CUIInventory::ItemCountChange(int iDistrict, int iIndex, int iCount, int iI
 				e_PartPosition ePart;
 				e_PlugPosition ePlug;
 				std::string szIconFN;
-				e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, &szIconFN, ePart, ePlug); // ¾ÆÀÌÅÛ¿¡ µû¸¥ ÆÄÀÏ ÀÌ¸§À» ¸¸µé¾î¼­
+				e_ItemType eType = CGameProcedure::MakeResrcFileNameForUPC(pItem, NULL, &szIconFN, ePart, ePlug); // ì•„ì´í…œì— ë”°ë¥¸ íŒŒì¼ ì´ë¦„ì„ ë§Œë“¤ì–´ì„œ
 				if(ITEM_TYPE_UNKNOWN == eType) CLogWriter::Write("MyInfo - slot - Unknown Item");
 				__ASSERT(ITEM_TYPE_UNKNOWN != eType, "Unknown Item");
 				
 				spItem = new __IconItemSkill;
 				spItem->pItemBasic	= pItem;
 				spItem->pItemExt	= pItemExt;
-				spItem->szIconFN = szIconFN; // ¾ÆÀÌÄÜ ÆÄÀÏ ÀÌ¸§ º¹»ç..
+				spItem->szIconFN = szIconFN; // ì•„ì´ì½˜ íŒŒì¼ ì´ë¦„ ë³µì‚¬..
 				spItem->iCount	= iCount;
 				spItem->iDurability = pItem->siMaxDurability + pItemExt->siMaxDurability;
 				m_pMyInvWnd[iIndex] = spItem;
@@ -2615,23 +2615,23 @@ void CUIInventory::ItemDestroyOK()
 {
 	m_bDestoyDlgAlive = false;
 
-	BYTE byBuff[32];															// ÆĞÅ¶ ¹öÆÛ..
-	int iOffset=0;																// ÆĞÅ¶ ¿ÀÇÁ¼Â..
+	BYTE byBuff[32];															// íŒ¨í‚· ë²„í¼..
+	int iOffset=0;																// íŒ¨í‚· ì˜¤í”„ì…‹..
 
-	CAPISocket::MP_AddByte(byBuff, iOffset, N3_ITEM_DESTROY);					// °ÔÀÓ ½ºÅ¸Æ® ÆĞÅ¶ Ä¿¸àµå..
+	CAPISocket::MP_AddByte(byBuff, iOffset, N3_ITEM_DESTROY);					// ê²Œì„ ìŠ¤íƒ€íŠ¸ íŒ¨í‚· ì»¤ë©˜ë“œ..
 
 	switch ( CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.UIWndDistrict )
 	{
 		case UIWND_DISTRICT_INVENTORY_SLOT:
-			CAPISocket::MP_AddByte(byBuff, iOffset, 0x01);						// ¾ÆÀÌµğ ±æÀÌ ÆĞÅ¶¿¡ ³Ö±â..
+			CAPISocket::MP_AddByte(byBuff, iOffset, 0x01);						// ì•„ì´ë”” ê¸¸ì´ íŒ¨í‚·ì— ë„£ê¸°..
 			break;
 		case UIWND_DISTRICT_INVENTORY_INV:
-			CAPISocket::MP_AddByte(byBuff, iOffset, 0x02);						// ¾ÆÀÌµğ ±æÀÌ ÆĞÅ¶¿¡ ³Ö±â..
+			CAPISocket::MP_AddByte(byBuff, iOffset, 0x02);						// ì•„ì´ë”” ê¸¸ì´ íŒ¨í‚·ì— ë„£ê¸°..
 			break;
 	}
-	CAPISocket::MP_AddByte(byBuff, iOffset, CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.iOrder);	// ¾ÆÀÌµğ ±æÀÌ ÆĞÅ¶¿¡ ³Ö±â..
+	CAPISocket::MP_AddByte(byBuff, iOffset, CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.iOrder);	// ì•„ì´ë”” ê¸¸ì´ íŒ¨í‚·ì— ë„£ê¸°..
 	CAPISocket::MP_AddDword(byBuff, iOffset, CN3UIWndBase::m_sSelectedIconInfo.pItemSelect->pItemBasic->dwID+
-		CN3UIWndBase::m_sSelectedIconInfo.pItemSelect->pItemExt->dwID);	// ¾ÆÀÌµğ ¹®ÀÚ¿­ ÆĞÅ¶¿¡ ³Ö±â..
+		CN3UIWndBase::m_sSelectedIconInfo.pItemSelect->pItemExt->dwID);	// ì•„ì´ë”” ë¬¸ìì—´ íŒ¨í‚·ì— ë„£ê¸°..
 
 	CGameProcedure::s_pSocket->Send(byBuff, iOffset);	
 
@@ -2679,28 +2679,28 @@ void CUIInventory::ReceiveResultItemRemoveFromServer(int iResult)
 
 	switch (iResult)
 	{
-		case 0x01:			// ¼º°ø..
+		case 0x01:			// ì„±ê³µ..
 			switch ( CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.UIWndDistrict )
 			{
 				case UIWND_DISTRICT_INVENTORY_SLOT:
 					spItem = m_pMySlot[CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder];
-					// ³» ¿µ¿ª¿¡¼­µµ Áö¿î´Ù..
+					// ë‚´ ì˜ì—­ì—ì„œë„ ì§€ìš´ë‹¤..
 					m_pMySlot[CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder] = NULL;
 					this->ItemDelete(spItem->pItemBasic, spItem->pItemExt, (e_ItemSlot)CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder);
 					break;
 
 				case UIWND_DISTRICT_INVENTORY_INV:
 					spItem = m_pMyInvWnd[CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder];
-					// ³» ¿µ¿ª¿¡¼­µµ Áö¿î´Ù..
+					// ë‚´ ì˜ì—­ì—ì„œë„ ì§€ìš´ë‹¤..
 					m_pMyInvWnd[CN3UIWndBase::m_sRecoveryJobInfo.UIWndSourceStart.iOrder] = NULL;
 					break;
 			}
 
-			// iOrder·Î ³» ¸Å´ÏÀúÀÇ ¾ÆÀÌÅÛÀ» ¸®½ºÆ®¿¡¼­ »èÁ¦ÇÑ´Ù..
+			// iOrderë¡œ ë‚´ ë§¤ë‹ˆì €ì˜ ì•„ì´í…œì„ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚­ì œí•œë‹¤..
 			if (!spItem) return;
 			RemoveChild(spItem->pUIIcon);
 
-			// ¾ÆÀÌÄÜ ¸®¼Ò½º »èÁ¦...
+			// ì•„ì´ì½˜ ë¦¬ì†ŒìŠ¤ ì‚­ì œ...
 			spItem->pUIIcon->Release();
 			delete spItem->pUIIcon;
 			spItem->pUIIcon = NULL;
@@ -2708,7 +2708,7 @@ void CUIInventory::ReceiveResultItemRemoveFromServer(int iResult)
 			spItem = NULL;
 			break;
 
-		case 0x00:			// ½ÇÆĞ..
+		case 0x00:			// ì‹¤íŒ¨..
 			switch ( CN3UIWndBase::m_sSelectedIconInfo.UIWndSelect.UIWndDistrict )
 			{
 				case UIWND_DISTRICT_INVENTORY_SLOT:

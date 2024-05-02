@@ -16,8 +16,8 @@ protected:
 	BITMAPINFOHEADER m_bmInfoHeader;
 
 public:
-	void* m_pPixels; // ½ÇÁ¦ ÇÈ¼¿ µ¥ÀÌÅÍ
-	int Pitch() { return ((int)((m_bmInfoHeader.biWidth*3 + 3)/4))*4; } // ºñÆ®¸ÊÀÇ ½ÇÁ¦ ³Êºñ(byte ´ÜÀ§)..
+	void* m_pPixels; // ì‹¤ì œ í”½ì…€ ë°ì´í„°
+	int Pitch() { return ((int)((m_bmInfoHeader.biWidth*3 + 3)/4))*4; } // ë¹„íŠ¸ë§µì˜ ì‹¤ì œ ë„ˆë¹„(byte ë‹¨ìœ„)..
 	bool Create(int nWidth, int nHeight, int nBPP = 24);
 	bool SaveRectToFile(const std::string& szFN, RECT rc);
 	void* Pixels(int x = 0, int y = 0);

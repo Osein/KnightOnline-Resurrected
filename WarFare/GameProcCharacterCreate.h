@@ -29,13 +29,13 @@ enum e_ErrorCharacterCreate {	ERROR_CHARACTER_CREATE_SUCCESS = 0,
 
 typedef struct __TABLE_NEW_CHR
 {
-	DWORD		dwID;	// NPC °íÀ¯ ID
-	std::string	szName;	// Á¾Á·ÀÌ¸§..
+	DWORD		dwID;	// NPC ê³ ìœ  ID
+	std::string	szName;	// ì¢…ì¡±ì´ë¦„..
 	int			iStr;
 	int			iSta;
 	int			iDex;
 	int			iInt;
-	int			iMAP; // ¸¶¹ı °ø°İ·Â Magic Attack Point
+	int			iMAP; // ë§ˆë²• ê³µê²©ë ¥ Magic Attack Point
 	int			iBonus;
 } TABLE_NEW_CHR;
 
@@ -46,7 +46,7 @@ class CGameProcCharacterCreate : public CGameProcedure
 public:
 	class CUICharacterCreate*		m_pUICharacterCreate;
 	RECT							m_rcChr;
-	CN3TableBase<__TABLE_NEW_CHR>	m_Tbl_InitValue; // »ç¿îµå ¼Ò½º Á¤º¸ Å×ÀÌºí..
+	CN3TableBase<__TABLE_NEW_CHR>	m_Tbl_InitValue; // ì‚¬ìš´ë“œ ì†ŒìŠ¤ ì •ë³´ í…Œì´ë¸”..
 	
 //	int						m_InitValue[TRIBE_NUM][CVAL_NUM];
 

@@ -56,7 +56,7 @@ void CWarMessage::SetMessage(const std::string& szText, DWORD dwFlags, DWORD dwC
 {
 	if(m_pMessageFont) 
 	{
-		m_pMessageFont->SetText(szText, dwFlags); // ÆùÆ®¿¡ ÅØ½ºÆ® ÁöÁ¤.
+		m_pMessageFont->SetText(szText, dwFlags); // í°íŠ¸ì— í…ìŠ¤íŠ¸ ì§€ì •.
 		m_pMessageFont->SetFontColor(dwColor);
 		m_fTime = WAR_MESSAGE_SHOW_TIME;
 	}
