@@ -20,17 +20,7 @@
 #include "N3SndMgr.h"
 #endif // #ifdef _N3GAME
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 typedef std::vector<__SKY_DAYCHANGE>::iterator it_SDC;
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 
 CN3SkyMng::CN3SkyMng()
 {

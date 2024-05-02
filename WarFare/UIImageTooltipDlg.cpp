@@ -8,16 +8,6 @@
 
 #include "PlayerMySelf.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CUIImageTooltipDlg::CUIImageTooltipDlg() : m_CYellow(D3DCOLOR_RGBA(255, 255, 0, 255)), 
 						m_CBlue(D3DCOLOR_RGBA(128, 128, 255, 255)),
 						m_CGold(D3DCOLOR_RGBA(220, 199, 124, 255)),

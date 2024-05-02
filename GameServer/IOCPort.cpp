@@ -8,12 +8,6 @@
 #include "GameSocket.h"			// sungyong 2002.05.22
 #include "Define.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 CRITICAL_SECTION g_critical;
 
 DWORD WINAPI AcceptThread(LPVOID lp);
@@ -366,10 +360,6 @@ DWORD WINAPI SendThreadMain(LPVOID pVoid)
 }
 // ~sungyong 2002.05.22
 
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 
 CIOCPort::CIOCPort()
 {

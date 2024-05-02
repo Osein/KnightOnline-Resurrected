@@ -12,12 +12,6 @@
 #include "AiPacket.h"
 #include "GameDefine.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 #define MORAL_SELF				1		// 나 자신..
 #define MORAL_FRIEND_WITHME		2		// 나를 포함한 우리편(국가) 중 하나 ..
 #define MORAL_FRIEND_EXCEPTME	3		// 나를 뺀 우리편 중 하나 
@@ -53,10 +47,6 @@ static char THIS_FILE[]=__FILE__;
 #define RESURRECTION			3
 #define	RESURRECTION_SELF		4
 #define REMOVE_BLESS			5
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 
 CMagicProcess::CMagicProcess()
 {

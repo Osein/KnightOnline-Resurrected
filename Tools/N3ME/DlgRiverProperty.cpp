@@ -9,12 +9,6 @@
 #include "RiverMesh.h"
 #include "../N3Base/N3Texture.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 /////////////////////////////////////////////////////////////////////////////
 // CDlgRiverProperty dialog
 CDlgRiverProperty::CDlgRiverProperty(CRiverMng* pRiverMng, CWnd* pParent /*=NULL*/)

@@ -4,16 +4,6 @@
 #include "StdAfxBase.h"
 #include "N3IMesh.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 __VertexT1 CN3IMesh::s_Vertices[MAX_IMESH_BUFFER];
 __VertexT2 CN3IMesh::s_Vertices2[MAX_IMESH_BUFFER];
 

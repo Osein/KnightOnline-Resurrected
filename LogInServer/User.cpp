@@ -10,16 +10,6 @@
 #pragma warning(disable : 4786)		// Visual C++ Only
 #include <set>
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CUser::CUser()
 {
 

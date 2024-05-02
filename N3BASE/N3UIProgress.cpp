@@ -6,16 +6,6 @@
 #include "N3UIImage.h"
 #include "N3UIProgress.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3UIProgress::CN3UIProgress()
 {
 	m_eType = UI_TYPE_PROGRESS;

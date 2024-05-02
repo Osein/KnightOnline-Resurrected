@@ -7,12 +7,6 @@
 #include "N3PMeshInstance.h"
 #include "../N3Base/N3Mesh.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 // Maximum buffer sizes. For greater flexibility, the buffers should reallocate dynamically.
 #define MAX_COLLAPSES 5000
 #define MAX_INDEX_CHANGES 10000
@@ -131,10 +125,6 @@ void CN3PMeshCreate::combine_modified(float &sofar, WORD *tri, int which, int wh
 		if (newval > sofar) sofar = newval;
 	}
 }
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 
 CN3PMeshCreate::CN3PMeshCreate()
 {

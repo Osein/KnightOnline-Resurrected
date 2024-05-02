@@ -40,24 +40,10 @@
 #include "../N3Base/N3TableBase.h"
 #include "..\N3Base\N3FXBundle.h"
 
-#include "../N3Base/BitmapFile.h"
-#include "../N3Base/Jpeg.h"
-#include "../JPEG/JpegFile.h"
-
 #include "MagicSkillMng.h"
 #include "KnightChrMgr.h"
 #include "GameCursor.h"
 
-
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 CKnightChrMgr*		CGameProcedure::s_pKnightChr = NULL;		// 나이트 캐릭터..
 CN3SndObjStream*	CGameProcedure::s_pSnd_BGM = NULL;			// 메인 배경음악 포인터..
 CLocalInput*		CGameProcedure::s_pLocalInput = NULL;		// 마우스와 키보드 입력 객체 .. Direct Input 을 썼다.
@@ -458,6 +444,8 @@ void CGameProcedure::RenderActive()
 
 bool CGameProcedure::CaptureScreenAndSaveToFile(const std::string& szFN)
 {
+	return true;
+	/*
 	if(szFN.empty()) return false;
 	CJpegFile file;
 
@@ -481,6 +469,7 @@ bool CGameProcedure::CaptureScreenAndSaveToFile(const std::string& szFN)
 		GlobalFree(hDIB);
 	}
 	return true;
+	*/
 /*
 	int iW = CN3Base::s_CameraData.vp.Width;
 	int iH = CN3Base::s_CameraData.vp.Height;

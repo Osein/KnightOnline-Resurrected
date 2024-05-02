@@ -8,16 +8,6 @@
 
 #include "../N3Base/Pick.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CTransDummy::CTransDummy()
 {
 	ZeroMemory(m_pSortedCubes, sizeof(m_pSortedCubes));

@@ -9,12 +9,6 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 CN3BaseFileAccess::CN3BaseFileAccess()
 {
 	m_dwType |= OBJ_BASE_FILEACCESS;

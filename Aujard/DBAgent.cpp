@@ -7,16 +7,6 @@
 #include "DBAgent.h"
 #include "AujardDlg.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 extern CRITICAL_SECTION g_LogFileWrite;
 
 CDBAgent::CDBAgent()

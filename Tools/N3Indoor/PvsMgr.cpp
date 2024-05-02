@@ -19,16 +19,6 @@
 #include "../N3Base/N3Base.h"
 #include "../N3Base/N3Shape.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CPvsMgr::CPvsMgr()
 {
 	m_iIncreseIndex = 0;

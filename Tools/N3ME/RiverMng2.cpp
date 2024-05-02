@@ -13,16 +13,6 @@
 #include "MapMng.h"
 #include "EventMgr.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CRiverMng2::CRiverMng2()
 {
 	m_bActive = false;

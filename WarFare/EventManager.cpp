@@ -7,16 +7,6 @@
 #include "GameProcedure.h"
 #include "PlayerMySelf.h"
 #include "N3FXMgr.h"
-
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 #define EVENT_TYPE_POISON	3
 
 CEventCell::CEventCell()
@@ -36,10 +26,6 @@ void CEventCell::Load(HANDLE hFile)
 	ReadFile(hFile, &m_Rect, sizeof(RECT), &dwNum, NULL);
 	ReadFile(hFile, &m_sEventType, sizeof(short), &dwNum, NULL);
 }
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 CEventManager::CEventManager()
 {
 	Release();

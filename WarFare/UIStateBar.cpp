@@ -22,16 +22,6 @@
 
 #include "N3UIDBCLButton.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CUIStateBar::CUIStateBar()
 {
 	m_pText_Position = NULL;

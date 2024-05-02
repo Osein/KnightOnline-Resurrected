@@ -9,16 +9,6 @@
 #include "N3FXDef.h"
 #include "N3FXShape.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 
 CN3FXPartParticles::CN3FXPartParticles()
 {

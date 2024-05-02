@@ -15,12 +15,6 @@
 #include "../N3Base/N3PMeshCreate.h"
 #include "N3DExp.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 HINSTANCE		g_hInst;
 Interface*		g_pIntf;
 ExpInterface*	g_pExpIntf;

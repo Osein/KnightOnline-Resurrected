@@ -11,12 +11,6 @@
 #include "N3FXPartBillBoard.h"
 #include "N3FXPlug.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 const float CHR_LOD_CALCULATION_VALUES[MAX_CHR_LOD_DELTA][MAX_CHR_LOD] =
 {
 //	{ 6.0f, 18.0f, 32.0f, 128.0f },

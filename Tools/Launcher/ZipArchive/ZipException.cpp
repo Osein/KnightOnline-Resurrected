@@ -7,10 +7,6 @@
 
 #include "stdafx.h"
 #include "ZipException.h"
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 IMPLEMENT_DYNAMIC( CZipException, CException)
 
 CZipException::CZipException(int iCause, LPCTSTR lpszZipName):CException(TRUE)

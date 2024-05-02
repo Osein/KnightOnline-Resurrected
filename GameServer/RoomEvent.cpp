@@ -8,16 +8,6 @@
 #include "ServerDlg.h"
 #include "define.h"
 //#include "Npc.h"
-
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 extern CRITICAL_SECTION g_region_critical;
 
 CRoomEvent::CRoomEvent()

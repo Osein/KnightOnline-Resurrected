@@ -6,16 +6,6 @@
 #include "N3Sun.h"
 #include "N3Texture.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3Sun::CN3Sun()
 {
 	memset(m_Parts, 0, sizeof(__SunPart)*NUM_SUNPART);

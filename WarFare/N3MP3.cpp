@@ -7,16 +7,6 @@
 #include <math.h>
 #include <malloc.h>
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3Mp3::CN3Mp3()
 {
 	m_pGraphBuilder = NULL;

@@ -16,16 +16,6 @@
 #include "../N3Base/N3UITooltip.h"
 
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CUICharacterCreate::CUICharacterCreate()
 {
 	memset(m_pBtn_Races, 0, sizeof(m_pBtn_Races));

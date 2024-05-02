@@ -11,16 +11,6 @@
 #include "MapMng.h"
 #include "MainFrm.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CRegenUser::CRegenUser()
 {
 	m_pRefMapMng = NULL;				// 지형 참조 포인터..

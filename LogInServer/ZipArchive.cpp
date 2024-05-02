@@ -18,10 +18,6 @@
 #  define DEF_MEM_LEVEL  MAX_MEM_LEVEL
 #endif
 #endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 char CZipArchive::m_gszCopyright[] = {"Zip archive creation and modification Copyright 2000 Tadeusz Dracz"};
 CZipArchive::CZipArchive()
 {

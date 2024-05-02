@@ -5,16 +5,6 @@
 #include "stdafxBase.h"
 #include "N3Star.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3Star::CN3Star()
 {
 	m_iCurNumStar = 0;

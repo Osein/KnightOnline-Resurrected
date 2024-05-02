@@ -5,16 +5,6 @@
 #include <stdio.h>
 #include "StdAfxBase.h"
 #include "LogWriter.h"
-
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 //HANDLE CLogWriter::s_hFile = NULL;
 std::string CLogWriter::s_szFileName = "";
 

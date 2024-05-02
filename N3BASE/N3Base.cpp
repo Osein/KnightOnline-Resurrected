@@ -11,16 +11,6 @@
 #include "N3Chr.h"
 #include "N3Base.h"
 #include "mmsystem.h"
-
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 LPDIRECT3DDEVICE8 CN3Base::s_lpD3DDev	= NULL;			// 참조 포인터.. 멋대로 해제하면 안된다..
 DWORD CN3Base::s_dwTextureCaps			= 0;			// Texture 호환성..
 float CN3Base::s_fFrmPerSec				= 30.0f;		// Frame Per Second

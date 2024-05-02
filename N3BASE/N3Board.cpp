@@ -5,16 +5,6 @@
 #include "N3Texture.h"
 #include "N3Board.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3Board::CN3Board()
 {
 	m_dwType |= OBJ_BOARD;

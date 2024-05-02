@@ -15,12 +15,6 @@
 #include "JpegFile.h"
 #include "..\\N3BASE\\My_3DStruct.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 /*
  * <setjmp.h> is used for the optional error recovery mechanism shown in
  * the second part of the example.

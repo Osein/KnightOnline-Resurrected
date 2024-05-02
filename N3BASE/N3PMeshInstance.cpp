@@ -3,16 +3,6 @@
 //////////////////////////////////////////////////////////////////////
 #include "StdAfxBase.h"
 #include "N3PMeshInstance.h"
-
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 //
 // an instance of a mesh. Each version of each mesh that is rendered at a 
 // separate level of detail needs one of these.

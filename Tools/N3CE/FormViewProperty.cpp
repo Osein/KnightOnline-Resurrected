@@ -14,12 +14,6 @@
 #include "../N3Base/N3FXPlug.h"
 #include "../N3Base/N3FXBundle.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 IMPLEMENT_DYNCREATE(CFormViewProperty, CFormView)
 
 CFormViewProperty::CFormViewProperty()

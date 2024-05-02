@@ -7,10 +7,6 @@
 #include "PondMesh.h"
 #include "LyTerrain.h"
 #include "../N3Base/N3Texture.h"
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 #define D3DX_PI    ((FLOAT)  3.141592654f)
 #define D3DX_1BYPI ((FLOAT)  0.318309886f)
 

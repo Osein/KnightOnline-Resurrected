@@ -13,16 +13,6 @@
 #include "../N3Base/N3UIArea.h"
 #include "UIManager.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CUIPartyOrForce::CUIPartyOrForce()
 {
 	for(int i = 0; i < MAX_PARTY_OR_FORCE; i++)

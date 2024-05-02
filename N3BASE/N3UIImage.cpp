@@ -6,16 +6,6 @@
 #include "N3UIImage.h"
 #include "N3Texture.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3UIImage::CN3UIImage()
 {
 	m_eType = UI_TYPE_IMAGE;

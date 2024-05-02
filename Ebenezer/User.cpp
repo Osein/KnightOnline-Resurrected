@@ -10,12 +10,6 @@
 #include "Map.h"
 #include "PacketDefine.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 
 extern CRITICAL_SECTION g_region_critical;
 extern CRITICAL_SECTION g_LogFile_critical;
@@ -24,10 +18,6 @@ extern BYTE g_serverdown_flag;
 // Cryption
 extern T_KEY g_private_key;
 ///~
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 
 CUser::CUser()
 {

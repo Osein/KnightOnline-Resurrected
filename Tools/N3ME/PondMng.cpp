@@ -15,16 +15,6 @@
 #include "../N3Base/N3Camera.h"
 #include "../N3Base/N3Texture.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CPondMng::CPondMng(CMainFrame* pMainFrm)
 {
 	m_pMainFrm = pMainFrm;

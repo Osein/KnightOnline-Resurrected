@@ -15,16 +15,6 @@
 
 #include "../N3Base/N3Scene.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CPVSManager::CPVSManager()
 {
 	m_iIncreseIndex = 0;

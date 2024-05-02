@@ -11,16 +11,6 @@
 
 #include "DTexGroup.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CDTexGroup::CDTexGroup()
 {
 	ZeroMemory(m_Name, 40);

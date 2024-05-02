@@ -6,16 +6,6 @@
 #include "N3Cloud.h"
 #include "N3Texture.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3Cloud::CN3Cloud()
 {
 	for(int i = 0; i < NUM_CLOUD; i++) 

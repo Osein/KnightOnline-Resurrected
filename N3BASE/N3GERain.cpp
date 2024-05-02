@@ -5,16 +5,6 @@
 #include "StdAfxBase.h"
 #include "N3GERain.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3GERain::CN3GERain()
 {
 	m_dwEffectType = GETYPE_RAIN;

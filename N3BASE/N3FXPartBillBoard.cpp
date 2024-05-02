@@ -6,16 +6,6 @@
 #include "N3FXPartBillBoard.h"
 #include "N3FXBundle.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3FXPartBillBoard::CN3FXPartBillBoard()
 {
 	m_iVersion = 5;

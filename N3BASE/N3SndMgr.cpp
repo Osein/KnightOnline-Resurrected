@@ -7,16 +7,6 @@
 #include "N3SndObjStream.h"
 #include "N3Base.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3SndMgr::CN3SndMgr()
 {
 	m_bSndEnable = false;	

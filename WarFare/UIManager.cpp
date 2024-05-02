@@ -17,16 +17,6 @@
 #include "UIWareHouseDlg.h"
 
 #include "../N3Base/N3UITooltip.h"
-
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 CUIManager::__RenderStateForUI CUIManager::s_sRSFU; // RenderStateForUI
 
 CUIManager::CUIManager()

@@ -5,16 +5,6 @@
 #include "N3Joint.h"
 #include "N3Mesh.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3Joint::CN3Joint()
 {
 	m_dwType |= OBJ_JOINT;

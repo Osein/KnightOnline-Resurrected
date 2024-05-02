@@ -12,16 +12,6 @@
 #include "LyTerrain.h"
 #include "../N3Base/N3ShapeMgr.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CWallMgr::CWallMgr()
 {
 	m_BaseCube[0].Set(0, 1, 0);	// 앞쪽 LT

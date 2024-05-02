@@ -9,16 +9,6 @@
 #include "GameEng.h"
 #include "GrassMng.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 enum {GRASS_LEFT=0,GRASS_TOP,GRASS_RIGHT,GRASS_BOTTOM};
 
 CGrassMng::CGrassMng()

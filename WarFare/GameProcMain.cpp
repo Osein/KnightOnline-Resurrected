@@ -74,12 +74,6 @@
 #include "../N3Base/N3SndMgr.h"
 #include "../N3Base/N3TableBase.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 enum e_ChatCmd { 	CMD_WHISPER, CMD_TOWN, CMD_TRADE, CMD_EXIT, CMD_PARTY,
 					CMD_LEAVEPARTY, CMD_RECRUITPARTY, CMD_JOINCLAN, CMD_WITHDRAWCLAN, CMD_FIRECLAN, 
 					CMD_APPOINTVICECHIEF, CMD_GREETING, CMD_EXCITE, CMD_VISIBLE, CMD_INVISIBLE, 
@@ -91,10 +85,6 @@ enum e_ChatCmd { 	CMD_WHISPER, CMD_TOWN, CMD_TRADE, CMD_EXIT, CMD_PARTY,
 static std::string s_szCmdMsg[CMD_COUNT]; // 게임상 명령어
 
 
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 
 CGameProcMain::CGameProcMain()				// r기본 생성자.. 각 변수의 역활은 헤더 참조..
 {	

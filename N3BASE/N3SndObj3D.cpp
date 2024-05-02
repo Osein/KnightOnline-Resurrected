@@ -5,16 +5,6 @@
 #include "StdAfxBase.h"
 #include "N3SndObj3D.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3SndObj3D::CN3SndObj3D()
 {
 	m_pDSBuff = NULL;

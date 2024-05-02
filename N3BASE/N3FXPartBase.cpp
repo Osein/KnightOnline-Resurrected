@@ -6,16 +6,6 @@
 #include "N3FXPartBase.h"
 #include "N3FXBundle.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3FXPartBase::CN3FXPartBase()
 {
 	m_iVersion = 0;

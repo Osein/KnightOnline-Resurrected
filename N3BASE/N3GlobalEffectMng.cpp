@@ -6,16 +6,6 @@
 #include "N3GERain.h"
 #include "N3GESnow.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3GlobalEffectMng::CN3GlobalEffectMng()
 {
 	m_pGERain = NULL;

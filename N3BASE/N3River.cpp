@@ -4,16 +4,6 @@
 #include "StdAfxBase.h"
 #include "N3River.h"
 #include "N3Texture.h"
-
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 #define WAVE_TOP		0.02f
 //#define WAVE_STEP		0.0005f
 #define WAVE_STEP		0.001f

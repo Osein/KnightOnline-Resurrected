@@ -6,16 +6,6 @@
 #include "N3Indoor.h"
 #include "SwappedDummy.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CSwappedDummy::CSwappedDummy()
 {
 	m_ceDType = DUMMY_SWAP;

@@ -12,16 +12,6 @@
 #include "..\N3Base\N3ShapeMgr.h"
 #include "../N3Base/N3ShapeExtra.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CPortalVolume::CPortalVolume()	: m_fOffs(0.001f), m_fHeightOffs(0.01f), m_fVolOffs(0.001f), m_fPickIncline(0.6f), m_fCameraOffs(0.4f)
 {
 	m_pvVertex[0].Set(-fBaseVolumnSize, -fBaseVolumnSize,  fBaseVolumnSize);

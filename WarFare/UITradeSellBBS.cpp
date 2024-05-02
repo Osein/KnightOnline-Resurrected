@@ -16,20 +16,10 @@
 #include "UIManager.h"
 #include "LocalInput.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 #define CHILD_UI_SELL_MSG			1
 #define CHILD_UI_TRADE_MSG			2
 #define CHILD_UI_EXPLANATION_EDIT	3
 #define CHILD_UI_EXPLANATION		4
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 #define TRADE_BBS_MAXSTRING	69
 #define TRADE_BBS_MAX_LINE	23
 

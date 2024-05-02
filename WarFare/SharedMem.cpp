@@ -6,12 +6,6 @@
 #include "SharedMem.h"
 #include <process.h>
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 // DEFINE Shared Memory Queue Return VALUE
 
 #define SIZE_RECEIVER	1024
@@ -19,10 +13,6 @@ static char THIS_FILE[]=__FILE__;
 
 #define SMQ_KNIGHTSEND	"Ksend_Nrecv"
 #define SMQ_KNIGHTRECV	"Krecv_Nsend"
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 
 CSharedMemQueue::CSharedMemQueue()
 {

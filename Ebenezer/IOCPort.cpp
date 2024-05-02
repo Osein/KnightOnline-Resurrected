@@ -8,12 +8,6 @@
 #include "Define.h"
 #include <algorithm>
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 CRITICAL_SECTION g_critical;
 
 DWORD WINAPI AcceptThread(LPVOID lp);
@@ -362,10 +356,6 @@ DWORD WINAPI SendWorkerThread(LPVOID lp)
 
 	return 1;
 }
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 
 CIOCPort::CIOCPort()
 {

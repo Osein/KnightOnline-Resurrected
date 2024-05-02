@@ -15,16 +15,6 @@
 #include "../N3Base/N3Shape.h"
 #include "../N3Base/N3Scene.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CPortalVolume::CPortalVolume()
 {
 	m_pvVertex[0].Set(-fBaseVolumnSize, -fBaseVolumnSize,  fBaseVolumnSize, dwColorNone);

@@ -7,16 +7,6 @@
 #include "N3Terrain.h"
 #include "../N3Base/N3Texture.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CGrassBoard::CGrassBoard()
 {
 	m_dwType |= OBJ_BOARD;

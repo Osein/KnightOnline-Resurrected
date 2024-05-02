@@ -10,17 +10,7 @@
 #include "Npc.h"
 #include "Region.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 extern CRITICAL_SECTION g_region_critical;
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 
 CMagicProcess::CMagicProcess()
 {

@@ -4,16 +4,6 @@
 #include "StdAfxBase.h"
 #include "N3Skin.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3Skin::CN3Skin()
 {
 	m_dwType |= OBJ_SKIN;

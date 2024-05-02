@@ -4,16 +4,6 @@
 #include "StdAfxBase.h"
 #include "N3RiverPatch.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3RiverPatch::CN3RiverPatch()
 {
 	m_pRivers = NULL;

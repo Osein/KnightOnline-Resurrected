@@ -33,16 +33,6 @@
 #include "SoundMgr.h"
 #include "LightObjMgr.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 // 생성자
 CMapMng::CMapMng(CMainFrame* pMainFrm)
 :m_RiverMng(pMainFrm),m_PondMng(pMainFrm)

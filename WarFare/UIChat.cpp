@@ -13,16 +13,6 @@
 #include "../N3Base/N3UIScrollBar.h"
 #include "../N3Base/N3UIEdit.h"										//son, chat_in
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CUIChat::CUIChat()													//생성자 와 파괴자에서 Release안 불러 주나??
 {
 	m_pChatOut = NULL;

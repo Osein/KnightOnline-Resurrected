@@ -5,16 +5,6 @@
 #include "stdafxBase.h"
 #include "N3UIManager.h"
 #include "N3UITooltip.h"
-
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 CN3UIManager::__RenderStateForUI CN3UIManager::s_sRSFU; // RenderStateForUI
 
 CN3UIManager::CN3UIManager()

@@ -6,16 +6,6 @@
 #include "n3me.h"
 #include "Wall.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CWall::CWall()
 {
 	ZeroMemory(m_Name, 80);

@@ -18,16 +18,6 @@
 #include "N3ShapeExtra.h"
 #endif // end of #ifndef _3DSERVER
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3ShapeMgr::CN3ShapeMgr()
 {
 	m_fMapWidth = 0.0f;

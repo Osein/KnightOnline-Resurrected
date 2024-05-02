@@ -6,16 +6,6 @@
 
 #include "../N3Base/N3ShapeExtra.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CPlayerOtherMgr::CPlayerOtherMgr()
 {
 	m_iChrCountToRender = 0; // 렌더링되는 캐릭 카운트

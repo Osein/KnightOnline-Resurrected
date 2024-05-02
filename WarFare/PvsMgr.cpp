@@ -14,19 +14,9 @@
 
 #define INDOOR_FOLDER "N3Indoor\\"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 CN3Mng <class CN3Shape>		CPvsMgr::s_MngShape; 
 CN3Mng <class CN3ShapeExtra>	CPvsMgr::s_MngShapeExt; 
 std::list<ShapeInfo* > CPvsMgr::s_plShapeInfoList;
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
  
 CPvsMgr::CPvsMgr()	: m_IndoorFolder("N3Indoor\\"), m_fVolumeOffs(0.6f)	//..
 {

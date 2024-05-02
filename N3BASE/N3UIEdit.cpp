@@ -13,12 +13,6 @@
 #include "N3SndObj.h"
 #include <imm.h>
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
 const float CARET_FLICKERING_TIME = 0.4f;
 
 //HWND CN3UIEdit::s_hWndParent = NULL;

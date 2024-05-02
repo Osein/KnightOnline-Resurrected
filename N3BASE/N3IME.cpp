@@ -6,16 +6,6 @@
 #include "N3IME.h"
 #include "N3UIEdit.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 CN3IME::CN3IME()
 {
 	m_dwProperty = 0;

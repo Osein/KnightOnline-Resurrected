@@ -12,16 +12,6 @@
 #include "../N3Base/N3SndMgr.h"
 #include "../N3Base/N3SndObj.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 float CN3FXBundle::m_fEffectSndDist = 48.0f;
 
 CN3FXBundle::CN3FXBundle()

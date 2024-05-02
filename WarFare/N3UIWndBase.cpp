@@ -14,16 +14,6 @@
 #include "../N3Base/N3UITooltip.h"
 #include "../N3Base/N3SndObj.h"
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
-
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
-
 __InfoSelectedIcon		CN3UIWndBase::m_sSelectedIconInfo;
 __RecoveryJobInfo		CN3UIWndBase::m_sRecoveryJobInfo;
 __SkillSelectInfo		CN3UIWndBase::m_sSkillSelectInfo;
