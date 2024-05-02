@@ -229,7 +229,7 @@ LRESULT CALLBACK WndProcMain(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPar
 					if(false == CGameProcedure::s_bWindowed)
 					{
 						CLogWriter::Write("WA_INACTIVE.");
-						PostQuitMessage(0); // 창모드 아니면 팅긴다??
+						PostQuitMessage(0); // Windowed mode or tinginda??
 					}
 					break;
 				}
@@ -240,7 +240,7 @@ LRESULT CALLBACK WndProcMain(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPar
 		case WM_DESTROY:
 		case WM_QUIT:
 			
-			// 소켓을 최우선적으로 끊는다..
+			// Disconnect the socket first.
 			CGameProcedure::s_pSocket->Disconnect();
 			CGameProcedure::s_pSocketSub->Disconnect();
 
@@ -380,11 +380,11 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 
 
 	//////////////////////////////
-	// 스피드 핵 체킹용...
+	// For speed hack checking...
 //	DWORD dwCSHID;
 //	HANDLE hThreadCheckSpeedHack = ::CreateThread(NULL, 0, CheckSpeedHackProc, NULL, CREATE_SUSPENDED, &dwCSHID);
 //	::SetThreadPriority(hThreadCheckSpeedHack, THREAD_PRIORITY_NORMAL);
-	// 스피드 핵 체킹용...
+	// For speed hack checking...
 	//////////////////////////////
 
 
@@ -394,7 +394,6 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 	GetCurrentDirectory(_MAX_PATH, szPath);
 	CN3Base::PathSet(szPath);
 
-	// 세팅 읽기..
 	char szIniPath[_MAX_PATH] = "";
 	lstrcpy(szIniPath, CN3Base::PathGet().c_str());
 	lstrcat(szIniPath, "Option.Ini");
@@ -436,79 +435,40 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 	if(CN3Base::s_Options.iEffectSndDist > 48) CN3Base::s_Options.iEffectSndDist = 48;
 
 	int iSndEnable = GetPrivateProfileInt("Sound", "Enable", 1, szIniPath);
-	CN3Base::s_Options.bSndEnable = (iSndEnable) ? true : false; // 사운드...
+	CN3Base::s_Options.bSndEnable = (iSndEnable) ? true : false;
 
 	int iSndDuplicate = GetPrivateProfileInt("Sound", "Duplicate", 0, szIniPath);
-	CN3Base::s_Options.bSndDuplicated = (iSndDuplicate) ? true : false; // 사운드...
+	CN3Base::s_Options.bSndDuplicated = (iSndDuplicate) ? true : false;
 
 	int iWindowCursor = GetPrivateProfileInt("Cursor", "WindowCursor", 1, szIniPath);
-	CN3Base::s_Options.bWindowCursor = (iWindowCursor) ? true : false; // cursor...
+	CN3Base::s_Options.bWindowCursor = (iWindowCursor) ? true : false;
 
-	// 두번째 소켓으로 쓸 서브 윈도우 만들기..
+	// Create a subwindow to use as the second socket..
 	HWND hWndSub = CreateSubWindow(hInstance);
-	::ShowWindow(hWndSub, SW_HIDE); // 감추기..
+	::ShowWindow(hWndSub, SW_HIDE);
 	
-	// 메인 윈도우를 만들고..
 	HWND hWndMain = CreateMainWindow(hInstance);
 	if(NULL == hWndMain || NULL == hWndSub)
 	{
 		CLogWriter::Write("Cannot create window.");
 		exit(-1);
 	}
-    ::ShowWindow(hWndMain, nCmdShow); // 보여준다..
+    ::ShowWindow(hWndMain, nCmdShow);
 	::SetActiveWindow(hWndMain);
 
-	// Launcher 업그레이드..
-	FILE* pFile = fopen("Launcher2.exe", "r"); // 업그레이드 할게 있음 해 준다..
+	FILE* pFile = fopen("Launcher2.exe", "r");
 	if(pFile)
 	{
 		fclose(pFile);
-		if(::DeleteFile("Launcher.exe")) // 원래 걸 지우고..
+		if(::DeleteFile("Launcher.exe"))
 		{
-			::rename("Launcher2.exe", "Launcher.exe"); // 이름을 바꾸어 준다..
+			::rename("Launcher2.exe", "Launcher.exe");
 		}
 	}
 
-	// 프로그램 인수 처리..
-	if(lpCmdLine && lstrlen(lpCmdLine) > 0 && lstrlen(lpCmdLine) < 64) // 인수로 뭔가 들어오면..
-	{
-		char szService[64], szAccountTmp[64], szPWTmp[64];
-		sscanf(lpCmdLine, "%s %s %s", szService, szAccountTmp, szPWTmp);
+	CGameProcedure::StaticMemberInit(hInstance, hWndMain, hWndSub);
+	CGameProcedure::ProcActiveSet((CGameProcedure*)CGameProcedure::s_pProcLogIn);
 
-		if(0 == lstrcmpi(szService, "MGame")) // 엠게임 계정 로그인...
-			CGameProcedure::s_eLogInClassification = LIC_MGAME;
-		else if(0 == lstrcmpi(szService, "Daum")) // 다음 계정 로그인...
-			CGameProcedure::s_eLogInClassification = LIC_DAUM;
-		else 
-			CGameProcedure::s_eLogInClassification = LIC_KNIGHTONLINE;
-		CGameProcedure::s_szAccount = szAccountTmp; // 계정
-		CGameProcedure::s_szPassWord = szPWTmp; // 비번.
-
-		if(0 == lstrcmpi(szService, "$#$%&^@!#$%#@^%&#%$&^운영팀전용게임")) // 운영팀 전용 게임...
-			CGameProcedure::s_bWindowed = true;
-		else
-			CGameProcedure::s_bWindowed = false;
-	}
-
-	//////////////////////////////////////////////////////////////////////////////////////////
-	// Static Member 생성...
-	CGameProcedure::StaticMemberInit(hInstance, hWndMain, hWndSub);		// 파괴는 WM_DESTROY 에서 한다..
-	CGameProcedure::ProcActiveSet((CGameProcedure*)CGameProcedure::s_pProcLogIn);	// 로그인 프로시져부터 시작..
-
-	// and its installation, called in InitInstance()
-/*	switch ( CGameProcedure::s_eVersion )
-	{
-		case W95:
-		case W98:
-		case WME:
-//			ghookdata = SetWindowsHookEx(WH_KEYBOARD, OYBLowLevelKeyboardProc, AfxGetInstanceHandle(), 0); 
-			break;
-		case WNT4:
-		case W2K:
-//			ghookdata = SetWindowsHookEx(WH_KEYBOARD_LL, OYBLowLevelKeyboardProc, AfxGetInstanceHandle(), 0); 
-			break;
-	}
-*/
     BOOL bGotMsg = FALSE;
 
 #if _DEBUG
@@ -554,14 +514,14 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 				{
 					fTimePrev = fTime;
 
-					sprintf(szDebugs[0], "지형 : 보통(%d) 타일(%d) || Object : 갯수(%d) 부분수(%d) 폴리곤(%d)",
+					sprintf(szDebugs[0], "Terrain: Normal (%d) Tile (%d) || Object: Number (%d) Number of parts (%d) Polygon (%d)",
 						CN3Base::s_RenderInfo.nTerrain_Polygon,
 						CN3Base::s_RenderInfo.nTerrain_Tile_Polygon,
 						CN3Base::s_RenderInfo.nShape,
 						CN3Base::s_RenderInfo.nShape_Part,
 						CN3Base::s_RenderInfo.nShape_Polygon);
 					
-					sprintf(szDebugs[1], "캐릭터 : 갯수(%d), 파트수(%d), 폴리곤(%d), 무기(%d), 무기폴리곤(%d)", 
+					sprintf(szDebugs[1], "Character: Number (%d), number of parts (%d), polygon (%d), weapon (%d), weapon polygon (%d)", 
 						CN3Base::s_RenderInfo.nChr,
 						CN3Base::s_RenderInfo.nChr_Part,
 						CN3Base::s_RenderInfo.nChr_Polygon,
@@ -577,29 +537,15 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 					{
 						int iYear = 0, iMonth = 0, iDay = 0, iH = 0, iM = 0;
 						CGameBase::ACT_WORLD->GetSkyRef()->GetGameTime(&iYear, &iMonth, &iDay, &iH, &iM);
-						sprintf(szDebugs[3], "%.2f Frm/Sec, %d년%d월%d일 %d시%d분", CN3Base::s_fFrmPerSec, iYear, iMonth, iDay, iH, iM);
+						sprintf(szDebugs[3], "%.2f Frm/Sec, %d hour %d minute %d day %d month %d", CN3Base::s_fFrmPerSec, iYear, iMonth, iDay, iH, iM);
 					}
 					else szDebugs[3][0] = NULL;
 				}
 
 				for(int i = 0; i < 4; i++)
 					if(szDebugs[i])
-						TextOut(hDC, 0, i*18, szDebugs[i], lstrlen(szDebugs[i])); // 화면에 렌더링 정보 표시..
+						TextOut(hDC, 0, i*18, szDebugs[i], lstrlen(szDebugs[i]));
 #endif // #if _DEBUG
-
-
-//#ifndef _DEBUG
-//				static HDC hDC = GetDC(hWndMain);
-//				static char szDebug[256] = "";
-//				static float fTimePrev = CN3Base::TimeGet();
-//				float fTime = CN3Base::TimeGet();
-//				if(fTime > fTimePrev + 0.5f)
-//				{
-//					sprintf(szDebug, "%f", CN3Base::s_fFrmPerSec);
-//					fTimePrev = fTime;
-//				}
-//				TextOut(hDC, 0, 0, szDebug, lstrlen(szDebug)); // 화면에 렌더링 정보 표시..
-//#endif
             }
 		}
     }
@@ -612,17 +558,14 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 
 
 	//////////////////////////////
-	// 스피드 핵 체킹용...
+	// For speed hack checking...
 //	::TerminateThread(hThreadCheckSpeedHack, 0);
 //	hThreadCheckSpeedHack = 0;
 //	dwCSHID = 0;
-	// 스피드 핵 체킹용...
+	// For speed hack checking...
 	//////////////////////////////
 
-
-
-
-	CGameProcedure::StaticMemberRelease(); // 모두 해제......
+	CGameProcedure::StaticMemberRelease();
 
 	return msg.wParam;
 }

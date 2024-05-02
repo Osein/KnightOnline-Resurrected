@@ -15,11 +15,11 @@
 
 struct __WarpInfo
 {
-	int iID; // 이 번호를 서버에게 날린다.. 
+	int iID;
 	std::string szName;
-	std::string szAgreement; // 유저한테 알리고 동의를 구하는 글..
+	std::string szAgreement;
 	int iZone;
-	int iMaxUser; // 최대 제한 인원수..
+	int iMaxUser;
 	int iGold;
 	__Vector3 vPos;
 };
@@ -33,7 +33,7 @@ protected:
 	class CN3UIButton*		m_pBtn_Cancel;
 	
 	class CN3UIList*		m_pList_Infos;
-	class CN3UIString*		m_pText_Agreement; // 동의 사항..
+	class CN3UIString*		m_pText_Agreement;
 
 	std::list<__WarpInfo> m_ListInfos;
 

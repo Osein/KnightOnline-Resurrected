@@ -24,19 +24,16 @@ class CUIWareHouseDlg : public CN3UIWndBase
 	friend class CUIInventory;
 
 public:
-// 직접 접근해야 할 객체 참조 포인터
 	__IconItemSkill*		m_pMyWare[MAX_ITEM_WARE_PAGE][MAX_ITEM_TRADE];
 	__IconItemSkill*		m_pMyWareInv[MAX_ITEM_INVENTORY];
 	CN3UIString*			m_pStrMyGold;
 	CN3UIString*			m_pStrWareGold;
 
-	//this_ui_add_start
 	CN3UIButton*			m_pBtnGold;
 	CN3UIButton*			m_pBtnGoldWareHouse;
 	CN3UIButton*			m_pBtnClose;
 	CN3UIButton*			m_pBtnPageUp;
 	CN3UIButton*			m_pBtnPageDown;
-	//this_ui_add_end
 
 	bool					m_bSendedItemGold;
 	int						m_iGoldOffsetBackup;
@@ -55,12 +52,10 @@ public:
 	virtual ~CUIWareHouseDlg();
 	void				Release();
 
-	//this_ui_add_start
 	void				SetVisibleWithNoSound(bool bVisible, bool bWork = false, bool bReFocus = false);
 	void				SetVisible(bool bVisible);
 	bool				Load(HANDLE hFile);
 	bool				OnKeyPress(int iKey);
-	//this_ui_add_end
 
 	virtual DWORD		MouseProc(DWORD dwFlags, const POINT& ptCur, const POINT& ptOld);
 	virtual bool		ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg);
@@ -93,7 +88,6 @@ public:
 	void				ReceiveResultGoldToWareFail();
 	void				ReceiveResultGoldFromWareFail();
 
-	// Item Count OK..
 	void				ItemCountOK();
 	void				ItemCountCancel();
 

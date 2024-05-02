@@ -30,7 +30,7 @@ CUIWarp::CUIWarp()
 	m_pBtn_Cancel = NULL;
 	
 	m_pList_Infos = NULL;
-	m_pText_Agreement = NULL; // 동의 사항..
+	m_pText_Agreement = NULL;
 }
 
 CUIWarp::~CUIWarp()
@@ -67,7 +67,7 @@ bool CUIWarp::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
 	{
 		if(pSender == m_pList_Infos)
 		{
-			this->UpdateAgreement(); // 동의문 업데이트..
+			this->UpdateAgreement();
 		}
 	}
 
@@ -132,7 +132,7 @@ void CUIWarp::SetVisible(bool bVisible)
 	if(bVisible)
 		CGameProcedure::s_pUIMgr->SetVisibleFocusedUI(this);
 	else
-		CGameProcedure::s_pUIMgr->ReFocusUI();//this_ui
+		CGameProcedure::s_pUIMgr->ReFocusUI();
 }
 
 bool CUIWarp::OnKeyPress(int iKey)
