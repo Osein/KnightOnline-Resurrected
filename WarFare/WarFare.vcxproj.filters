@@ -5,15 +5,6 @@
       <UniqueIdentifier>{e65cc8f4-a7fa-48c6-9de9-939beb07b40f}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
-    <Filter Include="N3Base">
-      <UniqueIdentifier>{aa4bee32-d9f8-4858-8ec4-11e9cc87d32b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="N3Base\N3UI">
-      <UniqueIdentifier>{e27e184b-516f-4e0d-9634-33221220c6a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="N3Base\Core">
-      <UniqueIdentifier>{52e8d5b6-fa22-4cf4-8d77-4460a6cc6837}</UniqueIdentifier>
-    </Filter>
     <Filter Include="SoundMgr">
       <UniqueIdentifier>{c0a666b9-478b-495c-ba68-107d555181ea}</UniqueIdentifier>
     </Filter>
@@ -98,142 +89,19 @@
     <Filter Include="Procedure - Nation Select">
       <UniqueIdentifier>{18be9581-1fd7-4f14-9056-f8fe6ecd7510}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Knight Charactor">
-      <UniqueIdentifier>{a5213627-69cf-41b8-a13b-e2076c301d54}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Procedure - LogIn">
       <UniqueIdentifier>{bffa9acf-d339-4cbe-bff9-02e0dd8259d7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Reference Header">
       <UniqueIdentifier>{8fdc1b54-12c5-44cb-b521-0669b2300a02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Knight Character">
+      <UniqueIdentifier>{a5213627-69cf-41b8-a13b-e2076c301d54}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
       <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3UIBase.h">
-      <Filter>N3Base\N3UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3UIButton.h">
-      <Filter>N3Base\N3UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3UIDef.h">
-      <Filter>N3Base\N3UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3UIEdit.h">
-      <Filter>N3Base\N3UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3UIImage.h">
-      <Filter>N3Base\N3UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3BASE\N3UIList.h">
-      <Filter>N3Base\N3UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3UIProgress.h">
-      <Filter>N3Base\N3UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3UIScrollBar.h">
-      <Filter>N3Base\N3UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3UIStatic.h">
-      <Filter>N3Base\N3UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3UIString.h">
-      <Filter>N3Base\N3UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3UITooltip.h">
-      <Filter>N3Base\N3UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3UITrackBar.h">
-      <Filter>N3Base\N3UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3BASE\DFont.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3BASE\LogWriter.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\My_3DStruct.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3AlphaPrimitiveManager.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3BASE\N3AnimatedTexures.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3AnimControl.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3AnimKey.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3Base.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3BaseFileAccess.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3Board.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3Camera.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3BASE\N3Cloak.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3Eng.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3BASE\N3FXPlug.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3IMesh.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3Joint.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3Light.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3Mesh.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3Mng.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3PMesh.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3PMeshInstance.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3Shape.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3ShapeExtra.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3BASE\N3TableBase.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3Texture.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3Transform.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3TransformCollision.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\N3VMesh.h">
-      <Filter>N3Base\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\N3Base\StdAfxBase.h">
-      <Filter>N3Base\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\N3BASE\N3SndDef.h">
       <Filter>SoundMgr</Filter>
@@ -602,10 +470,10 @@
       <Filter>Procedure - Nation Select</Filter>
     </ClInclude>
     <ClInclude Include="KnightChrMgr.h">
-      <Filter>Knight Charactor</Filter>
+      <Filter>Knight Character</Filter>
     </ClInclude>
     <ClInclude Include="SharedMem.h">
-      <Filter>Knight Charactor</Filter>
+      <Filter>Knight Character</Filter>
     </ClInclude>
     <ClInclude Include="GameProcLogIn.h">
       <Filter>Procedure - LogIn</Filter>
@@ -638,114 +506,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\N3Base\N3UIBase.cpp">
-      <Filter>N3Base\N3UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3UIButton.cpp">
-      <Filter>N3Base\N3UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3UIEdit.cpp">
-      <Filter>N3Base\N3UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3UIImage.cpp">
-      <Filter>N3Base\N3UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3BASE\N3UIList.cpp">
-      <Filter>N3Base\N3UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3UIProgress.cpp">
-      <Filter>N3Base\N3UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3UIScrollBar.cpp">
-      <Filter>N3Base\N3UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3UIStatic.cpp">
-      <Filter>N3Base\N3UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3UIString.cpp">
-      <Filter>N3Base\N3UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3UITooltip.cpp">
-      <Filter>N3Base\N3UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3UITrackBar.cpp">
-      <Filter>N3Base\N3UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3BASE\DFont.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3BASE\LogWriter.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3AlphaPrimitiveManager.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3BASE\N3AnimatedTexures.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3AnimControl.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3AnimKey.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3Base.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3BaseFileAccess.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3Board.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3Camera.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3BASE\N3Cloak.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3Eng.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3BASE\N3FXPlug.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3IMesh.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3Joint.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3Light.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3Mesh.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3PMesh.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3PMeshInstance.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3Shape.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3ShapeExtra.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3Texture.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3Transform.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3TransformCollision.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\N3Base\N3VMesh.cpp">
-      <Filter>N3Base\Core</Filter>
-    </ClCompile>
     <ClCompile Include="..\N3BASE\N3SndMgr.cpp">
       <Filter>SoundMgr</Filter>
     </ClCompile>
@@ -1092,10 +852,10 @@
       <Filter>Procedure - Nation Select</Filter>
     </ClCompile>
     <ClCompile Include="KnightChrMgr.cpp">
-      <Filter>Knight Charactor</Filter>
+      <Filter>Knight Character</Filter>
     </ClCompile>
     <ClCompile Include="SharedMem.cpp">
-      <Filter>Knight Charactor</Filter>
+      <Filter>Knight Character</Filter>
     </ClCompile>
     <ClCompile Include="GameProcLogIn.cpp">
       <Filter>Procedure - LogIn</Filter>

@@ -1,7 +1,7 @@
 // N3Joint.cpp: implementation of the CN3Joint class.
 //
 //////////////////////////////////////////////////////////////////////
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3Joint.h"
 #include "N3Mesh.h"
 

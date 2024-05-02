@@ -15,9 +15,6 @@
 #include "UITradeBBSSelector.h"
 #include "UIManager.h"
 
-#include "../N3Base/StdAfxBase.h"
-
-
 CUIInn::CUIInn()
 {
 }

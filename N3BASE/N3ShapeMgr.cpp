@@ -9,7 +9,7 @@
 #include "../WarFare/UILoading.h"
 #endif	// _REPENT
 #else
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #endif // end of #ifndef _N3GAME
 
 #include "N3ShapeMgr.h"

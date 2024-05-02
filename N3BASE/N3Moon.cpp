@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "stdafxbase.h"
+#include "stdafx.h"
 #include "N3Moon.h"
 #include "My_3DStruct.h"
 #include "N3Texture.h"

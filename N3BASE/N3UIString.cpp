@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3UIString.h"
 
 #ifndef _REPENT

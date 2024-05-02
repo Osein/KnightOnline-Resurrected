@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3UIImage.h"
 #include "N3UIProgress.h"
 

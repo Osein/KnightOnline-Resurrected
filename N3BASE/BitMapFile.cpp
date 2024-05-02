@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "BitMapFile.h"
 
 CBitMapFile::CBitMapFile()

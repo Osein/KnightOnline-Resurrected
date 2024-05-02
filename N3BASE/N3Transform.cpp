@@ -1,7 +1,7 @@
 // N3Obj.cpp: implementation of the CN3 class.
 //
 //////////////////////////////////////////////////////////////////////
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3Transform.h"
 
 CN3Transform::CN3Transform()

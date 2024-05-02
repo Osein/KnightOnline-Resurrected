@@ -1,7 +1,7 @@
 // N3GlobalEffectMng.cpp: implementation of the CN3GlobalEffectMng class.
 //
 //////////////////////////////////////////////////////////////////////
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3GlobalEffectMng.h"
 #include "N3GERain.h"
 #include "N3GESnow.h"

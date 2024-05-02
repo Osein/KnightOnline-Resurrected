@@ -7,7 +7,7 @@
 #include "../WarFare/GameProcedure.h"
 #include "../WarFare/UILoading.h"
 #else
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #endif // end of #ifndef _N3GAME
 
 #include "N3ShapeMgr.h"

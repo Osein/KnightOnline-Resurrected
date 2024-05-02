@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3GlobalEffect.h"
 
 CN3GlobalEffect::CN3GlobalEffect()

@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3SndMgr.h"
 #include "N3SndObj.h"
 #include "../N3Base/N3Base.h"

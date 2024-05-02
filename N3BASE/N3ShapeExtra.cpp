@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3ShapeExtra.h"
 
 CN3ShapeExtra::CN3ShapeExtra()

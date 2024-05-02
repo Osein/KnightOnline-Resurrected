@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "stdafxbase.h"
+#include "stdafx.h"
 #include "Jpeg.h"
 
 #include <math.h>

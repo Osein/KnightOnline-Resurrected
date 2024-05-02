@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "stdafxBase.h"
+#include "stdafx.h"
 #include "N3ColorChange.h"
 
 CN3ColorChange::CN3ColorChange()

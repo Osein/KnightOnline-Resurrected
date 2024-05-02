@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3UIEdit.h"
 #include "N3UIString.h"
 #include "N3UIImage.h"
@@ -678,7 +678,7 @@ bool CN3UIEdit::Load(HANDLE hFile)
 	if (iSndFNLen>0)
 	{
 		std::vector<char> buffer(iSndFNLen+1, NULL);
-		ReadFile(hFile, buffer.begin(), iSndFNLen, &dwNum, NULL);
+		ReadFile(hFile, buffer.data(), iSndFNLen, &dwNum, NULL);
 
 		__ASSERT(NULL == m_pSnd_Typing, "memory leak");
 		m_pSnd_Typing = s_SndMgr.CreateObj(buffer.begin(), SNDTYPE_2D);

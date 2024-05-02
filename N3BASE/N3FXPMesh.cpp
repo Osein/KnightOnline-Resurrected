@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "stdafxBase.h"
+#include "stdafx.h"
 #include "N3FXPMesh.h"
 #include "N3PMesh.h"
 

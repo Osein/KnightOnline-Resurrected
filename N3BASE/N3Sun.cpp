@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "stdafxbase.h"
+#include "stdafx.h"
 #include "N3Sun.h"
 #include "N3Texture.h"
 

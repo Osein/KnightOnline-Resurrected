@@ -21,11 +21,6 @@ public:
 // Attributes
 protected:
 	enum DATA_TYPE {DT_NONE, DT_CHAR, DT_BYTE, DT_SHORT, DT_WORD, DT_INT, DT_DWORD, DT_STRING, DT_FLOAT, DT_DOUBLE};
-	typedef std::vector<DATA_TYPE>::iterator it_DataType;
-	
-	typedef std::map<unsigned int, Type>::iterator		it_Table;
-	typedef std::map<unsigned int, Type>::value_type	val_Table;
-	typedef std::pair<it_Table, bool> pair_Table;
 
 	std::vector<DATA_TYPE> m_DataTypes;	// 실제 사용되는 정보의 데이타 타입
 	std::map<unsigned int, Type> m_Datas; // 실제 사용되는 정보
@@ -427,7 +422,7 @@ BOOL CN3TableBase<Type>::Load(HANDLE hFile)
 		}
 
 		unsigned int dwKey = *((unsigned int*)(&Data));
-		pair_Table pt = m_Datas.insert(val_Table(dwKey, Data));
+		auto pt = m_Datas.insert(val_Table(dwKey, Data));
 
 		__ASSERT(pt.second, "CN3TableBase<Type> : Key 중복 경고.");
 	}

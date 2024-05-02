@@ -1,7 +1,7 @@
 // N3Texture.cpp: implementation of the CN3Texture class.
 //
 //////////////////////////////////////////////////////////////////////
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3Texture.h"
 
 #ifdef _N3TOOL

@@ -1,7 +1,7 @@
 // N3MeshIndexed: implementation of the CN3IMesh class.
 //
 //////////////////////////////////////////////////////////////////////
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3IMesh.h"
 
 __VertexT1 CN3IMesh::s_Vertices[MAX_IMESH_BUFFER];

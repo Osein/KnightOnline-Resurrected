@@ -1,7 +1,7 @@
 // N3Camera.cpp: implementation of the CN3Camera class.
 //
 //////////////////////////////////////////////////////////////////////
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3Camera.h"
 CN3Camera::CN3Camera()
 {

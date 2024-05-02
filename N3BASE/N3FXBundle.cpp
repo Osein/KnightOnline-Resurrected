@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3FXBundle.h"
 #include "N3FXPartParticles.h"
 #include "N3FXPartBillBoard.h"

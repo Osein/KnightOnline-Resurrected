@@ -6,11 +6,6 @@
 #include "GameProcedure.h"
 #include "N3WorldManager.h"
 #include "N3FXPartBillBoardGame.h"
-#include "../N3Base/StdAfxBase.h"
-
-//
-//
-//
 
 float CN3FXPartBillBoardGame::GetGroundHeight(float x, float z)
 {

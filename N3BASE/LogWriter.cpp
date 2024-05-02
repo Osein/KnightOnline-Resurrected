@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "LogWriter.h"
 //HANDLE CLogWriter::s_hFile = NULL;
 std::string CLogWriter::s_szFileName = "";

@@ -1,7 +1,7 @@
 // N3Mesh.cpp: implementation of the C3DObject class.
 //
 //////////////////////////////////////////////////////////////////////
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3Mesh.h"
 #include "N3IMesh.h"
 #include "N3PMesh.h"

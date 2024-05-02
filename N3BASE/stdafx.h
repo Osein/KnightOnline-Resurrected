@@ -1,11 +1,8 @@
-// stl 쓸려고...
-#pragma warning(disable : 4786)
+#pragma once
 
-#if !defined(AFX_STDAFX_H__N3BASE__INCLUDED_)
-#define AFX_STDAFX_H__N3BASE__INCLUDED_
-
-// TODO: reference additional headers your program requires here
 #include "AfxVer_.h"
+
+#include "windows.h"
 
 #include "My_3DStruct.h"
 #include <string>
@@ -19,7 +16,7 @@
 
 // Low level sanity checks for memory blocks
 BOOL AFXAPI AfxIsValidAddress(const void* lp,
-			UINT nBytes, BOOL bReadWrite = TRUE);
+	UINT nBytes, BOOL bReadWrite = TRUE);
 BOOL AFXAPI AfxIsValidString(LPCWSTR lpsz, int nLength = -1);
 BOOL AFXAPI AfxIsValidString(LPCSTR lpsz, int nLength = -1);
 
@@ -27,7 +24,6 @@ BOOL AFXAPI AfxIsValidString(LPCSTR lpsz, int nLength = -1);
 
 // Memory tracking allocation
 void* AFX_CDECL operator new(size_t nSize, LPCSTR lpszFileName, int nLine);
-#define DEBUG_NEW new(THIS_FILE, __LINE__)
 #if _MSC_VER >= 1200
 void AFX_CDECL operator delete(void* p, LPCSTR lpszFileName, int nLine);
 #endif
@@ -50,9 +46,9 @@ BOOL AFXAPI AfxCheckMemory();
 
 enum AfxMemDF // memory debug/diagnostic flags
 {
-	allocMemDF          = 0x01,         // turn on debugging allocator
-	delayFreeMemDF      = 0x02,         // delay freeing memory
-	checkAlwaysMemDF    = 0x04          // AfxCheckMemory on every alloc/free
+	allocMemDF = 0x01,         // turn on debugging allocator
+	delayFreeMemDF = 0x02,         // delay freeing memory
+	checkAlwaysMemDF = 0x04          // AfxCheckMemory on every alloc/free
 };
 
 #ifdef _UNICODE
@@ -73,7 +69,7 @@ BOOL AFXAPI AfxEnableMemoryTracking(BOOL bTrack);
 BOOL AFXAPI AfxDiagnosticInit(void);
 
 // A failure hook returns whether to permit allocation
-typedef BOOL (AFXAPI* AFX_ALLOC_HOOK)(size_t nSize, BOOL bObject, LONG lRequestNumber);
+typedef BOOL(AFXAPI* AFX_ALLOC_HOOK)(size_t nSize, BOOL bObject, LONG lRequestNumber);
 
 // Set new hook, return old (never NULL)
 AFX_ALLOC_HOOK AFXAPI AfxSetAllocHook(AFX_ALLOC_HOOK pfnAllocHook);
@@ -84,7 +80,7 @@ void AFXAPI AfxSetAllocStop(LONG lRequestNumber);
 // Memory state for snapshots/leak detection
 struct CMemoryState
 {
-// Attributes
+	// Attributes
 	enum blockUsage
 	{
 		freeBlock,    // memory not used
@@ -103,10 +99,10 @@ struct CMemoryState
 
 	CMemoryState();
 
-// Operations
+	// Operations
 	void Checkpoint();  // fill with current state
 	BOOL Difference(const CMemoryState& oldState,
-					const CMemoryState& newState);  // fill with difference
+		const CMemoryState& newState);  // fill with difference
 	void UpdateData();
 
 	// Output to afxDump
@@ -123,7 +119,6 @@ struct CMemoryState
 #else
 
 // non-_DEBUG_ALLOC version that assume everything is OK
-#define DEBUG_NEW new
 #define AfxCheckMemory() TRUE
 #define AfxIsMemoryBlock(p, nBytes) TRUE
 #define AfxEnableMemoryTracking(bTrack) FALSE
@@ -149,5 +144,3 @@ void AFX_CDECL AfxTrace(const char* lpszFormat, ...);
 #else
 #define TRACE  1 ? (void)0 : printf
 #endif
-
-#endif // !defined(AFX_STDAFX_H__N3BASE__INCLUDED_)

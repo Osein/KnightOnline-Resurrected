@@ -7,8 +7,6 @@
 #include "N3WorldManager.h"
 #include "N3FXPartBottomBoardGame.h"
 
-#include "../N3Base/StdAfxBase.h"
-
 CN3FXPartBottomBoardGame::CN3FXPartBottomBoardGame()
 {
 }

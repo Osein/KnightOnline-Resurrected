@@ -4,7 +4,6 @@
 /////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-//#include "../N3Base/StdAfxBase.h"
 #include "N3FXMgr.h"
 #include "GameBase.h"
 #include "GameProcmain.h"
@@ -18,9 +17,6 @@
 #include "APISocket.h"
 #include "PacketDef.h"
 #include "../N3Base/N3ShapeExtra.h"
-
-#include "../N3Base/StdAfxBase.h"
-
 
 CN3FXMgr::CN3FXMgr()
 {

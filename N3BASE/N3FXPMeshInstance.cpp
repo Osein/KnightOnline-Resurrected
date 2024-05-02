@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3FXPMeshInstance.h"
 
 CN3FXPMeshInstance::CN3FXPMeshInstance()

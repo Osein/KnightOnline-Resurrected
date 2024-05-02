@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "stdafxBase.h"
+#include "stdafx.h"
 #include "N3UIManager.h"
 #include "N3UITooltip.h"
 CN3UIManager::__RenderStateForUI CN3UIManager::s_sRSFU; // RenderStateForUI

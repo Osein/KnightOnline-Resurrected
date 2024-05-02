@@ -1,7 +1,7 @@
 // N3PMeshInstance.cpp: implementation of the CN3PMeshInstance class.
 //
 //////////////////////////////////////////////////////////////////////
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3PMeshInstance.h"
 //
 // an instance of a mesh. Each version of each mesh that is rendered at a 

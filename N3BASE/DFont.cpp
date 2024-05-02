@@ -2,6 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 #include <D3DX8.h>
+#include "stdafx.h"
 #include "DFont.h"
 
 const int MAX_NUM_VERTICES = 50*6;

@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "stdafxBase.h"
+#include "stdafx.h"
 #include "N3Star.h"
 
 CN3Star::CN3Star()

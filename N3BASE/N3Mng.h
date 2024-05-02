@@ -17,13 +17,6 @@
 template <class T> class CN3Mng
 {
 protected:
-	
-	typedef std::map<std::string, T*>::iterator		it_Data;
-	typedef std::map<std::string, T*>::value_type	val_Data;
-
-	typedef std::map<T*, int>::iterator				it_Ref;
-	typedef std::map<T*, int>::value_type			val_Ref;
-
 	std::map<std::string, T*>	m_Datas;
 	std::map<T*, int>			m_Refs;
 
@@ -161,11 +154,11 @@ public:
 #endif
 		if(NULL == ppData || NULL == *ppData) return;
 
-		it_Data it = m_Datas.find((*ppData)->FileName());
+		auto it = m_Datas.find((*ppData)->FileName());
 		if(it == m_Datas.end()) return; // 못 찾았다..
 		else //  찾았다..!!
 		{
-			it_Ref it2 = m_Refs.find(*ppData);
+			auto it2 = m_Refs.find(*ppData);
 			if(bReleaseOrg && it2 != m_Refs.end()) // 참조 카운트 찾기..
 			{
 				((*it2).second)--;

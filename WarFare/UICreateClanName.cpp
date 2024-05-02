@@ -11,9 +11,6 @@
 #include "PacketDef.h"
 #include "APISocket.h"
 
-#include "../N3Base/StdAfxBase.h"
-
-
 CUICreateClanName::CUICreateClanName()
 {
 }

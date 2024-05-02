@@ -1,7 +1,7 @@
 // N3SndEng.cpp: implementation of the CN3SndEng class.
 //
 //////////////////////////////////////////////////////////////////////
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3SndEng.h"
 #include "N3SndObj.h"
 #include "N3Snd3dObj.h"

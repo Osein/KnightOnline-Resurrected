@@ -1,7 +1,7 @@
 // N3Eng.cpp: implementation of the CN3Eng class.
 //
 //////////////////////////////////////////////////////////////////////
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3Eng.h"
 #include "N3Light.h"
 #include "LogWriter.h"

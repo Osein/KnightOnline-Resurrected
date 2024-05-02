@@ -22,8 +22,6 @@
 #include "../N3Base/N3SndObjStream.h"
 #include "../N3Base/N3ShapeExtra.h"
 
-#include "../N3Base/StdAfxBase.h"
-
 CMagicSkillMng::CMagicSkillMng()
 {
 	m_pGameProcMain = NULL;

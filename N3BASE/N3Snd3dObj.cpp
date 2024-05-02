@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3Snd3dObj.h"
 
 CN3Snd3dObj::CN3Snd3dObj()

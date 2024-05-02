@@ -1,7 +1,7 @@
 // N3Base.cpp: implementation of the CN3Base class.
 //
 //////////////////////////////////////////////////////////////////////
-#include "StdAfxBase.h"
+#include "stdafx.h"
 
 #include "N3Mesh.h"
 #include "N3VMesh.h"

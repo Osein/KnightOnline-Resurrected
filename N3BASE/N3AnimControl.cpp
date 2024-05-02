@@ -1,7 +1,7 @@
 // N3AnimControl.cpp: implementation of the CN3AnimControl class.
 //
 //////////////////////////////////////////////////////////////////////
-#include "StdAfxBase.h"
+#include "stdafx.h"
 #include "N3AnimControl.h"
 
 CN3AnimControl::CN3AnimControl()
