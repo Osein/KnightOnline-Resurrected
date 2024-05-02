@@ -100,7 +100,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_wndToolBar.SetBarStyle(m_wndToolBar.GetBarStyle() |
 		CBRS_TOOLTIPS | CBRS_FLYBY);
 
-	// Engine »ı¼º
+	// Engine ìƒì„±
 	//m_Eng.InitEnv();
 	if(!m_Eng.Init(TRUE, GetRightPane()->m_hWnd, 64, 64, 0, TRUE)) return -1;
 	m_Eng.s_SndMgr.Init(m_hWnd);
@@ -289,7 +289,7 @@ void CMainFrame::OnDestroy()
 
 void CMainFrame::EnableAccelerator(BOOL bEnable)
 {
-	// Ã³À½ È£ÃâµÇ¸é ¿ø·¡ Accel table ÀúÀåÇØ³õ±â
+	// ì²˜ìŒ í˜¸ì¶œë˜ë©´ ì›ë˜ Accel table ì €ì¥í•´ë†“ê¸°
 	if (NULL == m_hDefaultAccelTable) m_hDefaultAccelTable = m_hAccelTable;
 	ASSERT(m_hDefaultAccelTable);
 

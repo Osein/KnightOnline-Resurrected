@@ -29,7 +29,7 @@ LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
 IDD_PROGRESS DIALOG DISCARDABLE  0, 0, 491, 175
 STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Progress status ..."
-FONT 9, "µ¸¿ò"
+FONT 9, "ë‹ì›€"
 BEGIN
     CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,3,
                     3,420,15
@@ -41,7 +41,7 @@ END
 IDD_EXPORT_OPTION DIALOG DISCARDABLE  0, 0, 211, 227
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Export Option"
-FONT 9, "µ¸¿ò"
+FONT 9, "ë‹ì›€"
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,6,183,96,21
     PUSHBUTTON      "Cancel",IDCANCEL,105,183,99,21
@@ -67,10 +67,10 @@ BEGIN
     EDITTEXT        IDC_E_SAMPLING_RATE,117,63,27,12,ES_AUTOHSCROLL
     RTEXT           "Frame / Sec",IDC_STATIC,147,66,42,8
     GROUPBOX        "Export Option",IDC_STATIC,6,90,198,78
-    CONTROL         "Normal ´Ù½Ã°è»ê - Ç¥¸é ºÎµå·´°Ô Ã³¸®",
+    CONTROL         "Normal ë‹¤ì‹œê³„ì‚° - í‘œë©´ ë¶€ë“œëŸ½ê²Œ ì²˜ë¦¬",
                     IDC_C_GENERATE_SMOOTH_NORMAL,"Button",BS_AUTOCHECKBOX | 
                     WS_TABSTOP,15,120,180,8
-    CONTROL         "Progressive Mesh »ý¼º",IDC_C_GENERATE_PROGRESSIVE_MESH,
+    CONTROL         "Progressive Mesh ìƒì„±",IDC_C_GENERATE_PROGRESSIVE_MESH,
                     "Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,
                     15,156,180,8
     CONTROL         "Half Size Texture",IDC_C_GENERATE_HALF_SIZE_TEXTURE,
@@ -80,7 +80,7 @@ BEGIN
     CONTROL         "Texture Compression (required for game data)",
                     IDC_C_GENERATE_COMPRESSED_TEXTURE,"Button",
                     BS_AUTOCHECKBOX | WS_TABSTOP,15,144,180,8
-    CONTROL         "ÆÄÀÏ ÀÌ¸§ ¼öÁ¤ -> 0_00_0000_0 Format",
+    CONTROL         "íŒŒì¼ ì´ë¦„ ìˆ˜ì • -> 0_00_0000_0 Format",
                     IDC_C_GENERATE_FILE_NAME,"Button",BS_AUTOCHECKBOX | 
                     WS_TABSTOP,15,108,180,8
 END
@@ -167,7 +167,7 @@ BEGIN
             VALUE "FileDescription", "Maya GameData Export PlugIn DLL\0"
             VALUE "FileVersion", "2, 4, 2, 1440\0"
             VALUE "InternalName", "N3Export2\0"
-            VALUE "LegalCopyright", "Copyright ¨Ï 2001\0"
+            VALUE "LegalCopyright", "Copyright â“’ 2001\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "N3Export2.mll\0"
             VALUE "PrivateBuild", "\0"

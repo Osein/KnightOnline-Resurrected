@@ -23,7 +23,7 @@ public:
 
 protected:
 	void UpdateTreeItem(HTREEITEM hParent, CN3Base* pBase);
-	DWORD	m_dwFlag;	// ¸ñ·Ï¿¡ Ç¥½ÃÇÒ °ÍµéÀ» ³ªÅ¸³½ ÇÃ·¡±×
+	DWORD	m_dwFlag;	// ëª©ë¡ì— í‘œì‹œí•  ê²ƒë“¤ì„ ë‚˜íƒ€ë‚¸ í”Œë˜ê·¸
 
 // Construction
 public:

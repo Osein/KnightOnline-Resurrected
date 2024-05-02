@@ -108,6 +108,6 @@ void CDlgFormat::OnOK()
 	}
 	else
 	{
-		MessageBox("�߸��� �����̰ų� �ؽ�ó�� ũ�Ⱑ 2�� �¼��� �ƴմϴ�.");
+		MessageBox("잘못된 포맷이거나 텍스처의 크기가 2의 승수가 아닙니다.");
 	}
 }

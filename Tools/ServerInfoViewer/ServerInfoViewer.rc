@@ -111,38 +111,38 @@ LANGUAGE 18, 1
 
 IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
 BEGIN
-	POPUP "ÆÄÀÏ(&F)"
+	POPUP "íŒŒì¼(&F)"
 	BEGIN
-		MENUITEM "»õ ÆÄÀÏ(&N)\tCtrl+N",                ID_FILE_NEW
-		MENUITEM "¿­±â(&O)...\tCtrl+O",            ID_FILE_OPEN
-		MENUITEM "ÀúÀå(&S)\tCtrl+S",               ID_FILE_SAVE
-		MENUITEM "´Ù¸¥ ÀÌ¸§À¸·Î ÀúÀå(&A)...",                 ID_FILE_SAVE_AS
+		MENUITEM "ìƒˆ íŒŒì¼(&N)\tCtrl+N",                ID_FILE_NEW
+		MENUITEM "ì—´ê¸°(&O)...\tCtrl+O",            ID_FILE_OPEN
+		MENUITEM "ì €ìž¥(&S)\tCtrl+S",               ID_FILE_SAVE
+		MENUITEM "ë‹¤ë¥¸ ì´ë¦„ìœ¼ë¡œ ì €ìž¥(&A)...",                 ID_FILE_SAVE_AS
 		MENUITEM SEPARATOR
-		MENUITEM "ÀÎ¼â(&P)...\tCtrl+P",           ID_FILE_PRINT
-		MENUITEM "ÀÎ¼â ¹Ì¸® º¸±â(&V)",              ID_FILE_PRINT_PREVIEW
-		MENUITEM "ÀÎ¼â ¼³Á¤(&R)...",             ID_FILE_PRINT_SETUP
+		MENUITEM "ì¸ì‡„(&P)...\tCtrl+P",           ID_FILE_PRINT
+		MENUITEM "ì¸ì‡„ ë¯¸ë¦¬ ë³´ê¸°(&V)",              ID_FILE_PRINT_PREVIEW
+		MENUITEM "ì¸ì‡„ ì„¤ì •(&R)...",             ID_FILE_PRINT_SETUP
 		MENUITEM SEPARATOR
-		MENUITEM "ÃÖ±Ù ÆÄÀÏ",                 ID_FILE_MRU_FILE1,GRAYED
+		MENUITEM "ìµœê·¼ íŒŒì¼",                 ID_FILE_MRU_FILE1,GRAYED
 		MENUITEM SEPARATOR
-		MENUITEM "Á¾·á(&X)",                       ID_APP_EXIT
+		MENUITEM "ì¢…ë£Œ(&X)",                       ID_APP_EXIT
 	END
-	POPUP "ÆíÁý(&E)"
+	POPUP "íŽ¸ì§‘(&E)"
 	BEGIN
-		MENUITEM "Ãë¼Ò(&U)\tCtrl+Z",               ID_EDIT_UNDO
+		MENUITEM "ì·¨ì†Œ(&U)\tCtrl+Z",               ID_EDIT_UNDO
 		MENUITEM SEPARATOR
-		MENUITEM "Àß¶ó³»±â(&T)\tCtrl+X",                ID_EDIT_CUT
-		MENUITEM "º¹»ç(&C)\tCtrl+C",               ID_EDIT_COPY
-		MENUITEM "ºÙ¿©³Ö±â(&P)\tCtrl+V",              ID_EDIT_PASTE
+		MENUITEM "ìž˜ë¼ë‚´ê¸°(&T)\tCtrl+X",                ID_EDIT_CUT
+		MENUITEM "ë³µì‚¬(&C)\tCtrl+C",               ID_EDIT_COPY
+		MENUITEM "ë¶™ì—¬ë„£ê¸°(&P)\tCtrl+V",              ID_EDIT_PASTE
 	END
-	POPUP "º¸±â(&V)"
+	POPUP "ë³´ê¸°(&V)"
 	BEGIN
-		MENUITEM "µµ±¸ ¸ðÀ½(&T)",                    ID_VIEW_TOOLBAR
-		MENUITEM "»óÅÂ Ç¥½ÃÁÙ(&S)",                 ID_VIEW_STATUS_BAR
-		MENUITEM "³ª´©±â(&P)",                      ID_WINDOW_SPLIT
+		MENUITEM "ë„êµ¬ ëª¨ìŒ(&T)",                    ID_VIEW_TOOLBAR
+		MENUITEM "ìƒíƒœ í‘œì‹œì¤„(&S)",                 ID_VIEW_STATUS_BAR
+		MENUITEM "ë‚˜ëˆ„ê¸°(&P)",                      ID_WINDOW_SPLIT
 	END
-	POPUP "µµ¿ò¸»(&H)"
+	POPUP "ë„ì›€ë§(&H)"
 	BEGIN
-		MENUITEM "ServerInfoViewer Á¤º¸(&A)...",          ID_APP_ABOUT
+		MENUITEM "ServerInfoViewer ì •ë³´(&A)...",          ID_APP_ABOUT
 	END
 END
 
@@ -180,15 +180,15 @@ END
 //
 
 IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
-CAPTION "ServerInfoViewer Á¤º¸"
+CAPTION "ServerInfoViewer ì •ë³´"
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-FONT 9, "±¼¸²"
+FONT 9, "êµ´ë¦¼"
 BEGIN
 	ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
-	LTEXT           "ServerInfoViewer ¹öÀü 1.0",IDC_STATIC,40,10,119,8,
+	LTEXT           "ServerInfoViewer ë²„ì „ 1.0",IDC_STATIC,40,10,119,8,
                     SS_NOPREFIX
 	LTEXT           "Copyright (C) 2001",IDC_STATIC,40,25,119,8
-	DEFPUSHBUTTON   "È®ÀÎ",IDOK,178,7,50,14,WS_GROUP
+	DEFPUSHBUTTON   "í™•ì¸",IDOK,178,7,50,14,WS_GROUP
 END
 
 
@@ -216,13 +216,13 @@ BEGIN
         BLOCK "041204B0"
 		BEGIN 
 			VALUE "CompanyName",     "\0"
-			VALUE "FileDescription", "ServerInfoViewer MFC ÀÀ¿ë ÇÁ·Î±×·¥\0"
+			VALUE "FileDescription", "ServerInfoViewer MFC ì‘ìš© í”„ë¡œê·¸ëž¨\0"
 			VALUE "FileVersion",     "1, 0, 0, 1\0"
 			VALUE "InternalName",    "ServerInfoViewer\0"
 			VALUE "LegalCopyright",  "Copyright (C) 2001\0"
 			VALUE "LegalTrademarks", "\0"
 			VALUE "OriginalFilename","ServerInfoViewer.EXE\0"
-			VALUE "ProductName",     "ServerInfoViewer ÀÀ¿ë ÇÁ·Î±×·¥\0"
+			VALUE "ProductName",     "ServerInfoViewer ì‘ìš© í”„ë¡œê·¸ëž¨\0"
 			VALUE "ProductVersion",  "1, 0, 0, 1\0"
 		END
 	END
@@ -257,7 +257,7 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-	IDP_SOCKETS_INIT_FAILED	"Windows ¼ÒÄÏ ÃÊ±âÈ­¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
+	IDP_SOCKETS_INIT_FAILED	"Windows ì†Œì¼“ ì´ˆê¸°í™”ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤."
 END
 STRINGTABLE PRELOAD DISCARDABLE 
 BEGIN
@@ -267,7 +267,7 @@ END
 STRINGTABLE PRELOAD DISCARDABLE 
 BEGIN
 	AFX_IDS_APP_TITLE       "ServerInfoViewer"
-	AFX_IDS_IDLEMESSAGE     "ÁØºñ"
+	AFX_IDS_IDLEMESSAGE     "ì¤€ë¹„"
 END
 STRINGTABLE DISCARDABLE 
 BEGIN
@@ -280,63 +280,63 @@ BEGIN
 END
 STRINGTABLE DISCARDABLE 
 BEGIN
-	ID_FILE_NEW             "»õ ¹®¼­¸¦ ÀÛ¼ºÇÕ´Ï´Ù\n»õ ÆÄÀÏ"
-	ID_FILE_OPEN            "±âÁ¸ ¹®¼­¸¦ ¿±´Ï´Ù\n¿­±â"
-	ID_FILE_CLOSE           "ÇöÀç ¿­¸° ¹®¼­¸¦ ´Ý½À´Ï´Ù\n´Ý±â"
-	ID_FILE_SAVE            "ÇöÀç ¿­¸° ¹®¼­¸¦ ÀúÀåÇÕ´Ï´Ù\nÀúÀå"
-	ID_FILE_SAVE_AS         "ÇöÀç ¿­¸° ¹®¼­¸¦ ´Ù¸¥ ÀÌ¸§À¸·Î ÀúÀåÇÕ´Ï´Ù\n´Ù¸¥ ÀÌ¸§À¸·Î ÀúÀå"
-	ID_FILE_PAGE_SETUP      "ÀÎ¼â ¿É¼ÇÀ» º¯°æÇÕ´Ï´Ù\nÂÊ ¼³Á¤"
-	ID_FILE_PRINT_SETUP     "ÇÁ¸°ÅÍ¿Í ÀÎ¼â ¿É¼ÇÀ» º¯°æÇÕ´Ï´Ù\nÀÎ¼â ¼³Á¤"
-	ID_FILE_PRINT           "ÇöÀç ¿­¸° ¹®¼­¸¦ ÀÎ¼âÇÕ´Ï´Ù\nÀÎ¼â"
-	ID_FILE_PRINT_PREVIEW   "ÂÊ ÀüÃ¼¸¦ Ç¥½ÃÇÕ´Ï´Ù\nÀÎ¼â ¹Ì¸® º¸±â"
-	ID_APP_ABOUT            "ÇÁ·Î±×·¥ Á¤º¸¿Í ¹öÀü Á¤º¸, ÀúÀÛ±Ç Á¤º¸¸¦ Ç¥½ÃÇÕ´Ï´Ù\nÁ¤º¸"
-	ID_APP_EXIT             "ÀÀ¿ë ÇÁ·Î±×·¥À» Á¾·áÇÏ±â À§ÇØ ¹®¼­¸¦ ÀúÀåÇÒ °ÍÀÎÁö ¹¯½À´Ï´Ù\nÁ¾·á"
-	ID_FILE_MRU_FILE1       "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE2       "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE3       "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE4       "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE5       "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE6       "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE7       "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE8       "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE9       "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE10      "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE11      "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE12      "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE13      "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE14      "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE15      "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_FILE_MRU_FILE16      "ÀÌ ¹®¼­¸¦ ¿±´Ï´Ù"
-	ID_NEXT_PANE            "´ÙÀ½ Ã¢À¸·Î ÀüÈ¯ÇÕ´Ï´Ù\n´ÙÀ½ Ã¢"
-	ID_PREV_PANE            "ÀÌÀü Ã¢À¸·Î ÀüÈ¯ÇÕ´Ï´Ù\nÀÌÀü Ã¢"
-	ID_WINDOW_SPLIT         "ÇöÀç ¿­¸° Ã¢À» ³ª´¯´Ï´Ù\n³ª´©±â"
-	ID_EDIT_CLEAR           "¼±ÅÃ ºÎºÐÀ» Áö¿ó´Ï´Ù\nÁö¿ì±â"
-	ID_EDIT_CLEAR_ALL       "¸ðµç °ÍÀ» Áö¿ó´Ï´Ù\n¸ðµÎ Áö¿ì±â"
-	ID_EDIT_COPY            "¼±ÅÃ ºÎºÐÀ» º¹»çÇÏ¿© Å¬¸³º¸µå¿¡ ³Ö½À´Ï´Ù\nº¹»ç"
-	ID_EDIT_CUT             "¼±ÅÃ ºÎºÐÀ» Àß¶ó³»¾î Å¬¸³º¸µå¿¡ ³Ö½À´Ï´Ù\nÀß¶ó³»±â"
-	ID_EDIT_FIND            "ÁöÁ¤ÇÑ ¹®ÀÚ¿­À» Ã£½À´Ï´Ù\nÃ£±â"
-	ID_EDIT_PASTE           "Å¬¸³º¸µåÀÇ ³»¿ëÀ» ºÙ¿© ³Ö½À´Ï´Ù\nºÙ¿©³Ö±â"
-	ID_EDIT_REPEAT          "¸¶Áö¸·À¸·Î ½ÇÇàÇÑ µ¿ÀÛÀ» ¹Ýº¹ÇÕ´Ï´Ù\n¹Ýº¹"
-	ID_EDIT_REPLACE         "ÁöÁ¤ÇÑ ¹®ÀÚ¿­À» ´Ù¸¥ ¹®ÀÚ¿­·Î ¹Ù²ß´Ï´Ù\n¹Ù²Ù±â"
-	ID_EDIT_SELECT_ALL      "¹®¼­ ÀüÃ¼¸¦ ¼±ÅÃÇÕ´Ï´Ù\nÀüÃ¼ ¼±ÅÃ"
-	ID_EDIT_UNDO            "¸¶Áö¸·À¸·Î ÇÑ µ¿ÀÛÀ» Ãë¼ÒÇÕ´Ï´Ù\n½ÇÇà Ãë¼Ò"
-	ID_EDIT_REDO            "ÀÌÀü¿¡ Ãë¼ÒÇÑ µ¿ÀÛÀ» ´Ù½Ã ¼öÇàÇÕ´Ï´Ù\n´Ù½Ã ½ÇÇà"
-	ID_VIEW_TOOLBAR         "µµ±¸ ¸ðÀ½À» º¸ÀÌ°Å³ª °¨Ãä´Ï´Ù\nµµ±¸ ¸ðÀ½ ÀüÈ¯"
-	ID_VIEW_STATUS_BAR      "»óÅÂ Ç¥½ÃÁÙÀ» Ç¥½ÃÇÏ°Å³ª °¨Ãä´Ï´Ù\n»óÅÂ Ç¥½ÃÁÙ ÀüÈ¯"
+	ID_FILE_NEW             "ìƒˆ ë¬¸ì„œë¥¼ ìž‘ì„±í•©ë‹ˆë‹¤\nìƒˆ íŒŒì¼"
+	ID_FILE_OPEN            "ê¸°ì¡´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤\nì—´ê¸°"
+	ID_FILE_CLOSE           "í˜„ìž¬ ì—´ë¦° ë¬¸ì„œë¥¼ ë‹«ìŠµë‹ˆë‹¤\në‹«ê¸°"
+	ID_FILE_SAVE            "í˜„ìž¬ ì—´ë¦° ë¬¸ì„œë¥¼ ì €ìž¥í•©ë‹ˆë‹¤\nì €ìž¥"
+	ID_FILE_SAVE_AS         "í˜„ìž¬ ì—´ë¦° ë¬¸ì„œë¥¼ ë‹¤ë¥¸ ì´ë¦„ìœ¼ë¡œ ì €ìž¥í•©ë‹ˆë‹¤\në‹¤ë¥¸ ì´ë¦„ìœ¼ë¡œ ì €ìž¥"
+	ID_FILE_PAGE_SETUP      "ì¸ì‡„ ì˜µì…˜ì„ ë³€ê²½í•©ë‹ˆë‹¤\nìª½ ì„¤ì •"
+	ID_FILE_PRINT_SETUP     "í”„ë¦°í„°ì™€ ì¸ì‡„ ì˜µì…˜ì„ ë³€ê²½í•©ë‹ˆë‹¤\nì¸ì‡„ ì„¤ì •"
+	ID_FILE_PRINT           "í˜„ìž¬ ì—´ë¦° ë¬¸ì„œë¥¼ ì¸ì‡„í•©ë‹ˆë‹¤\nì¸ì‡„"
+	ID_FILE_PRINT_PREVIEW   "ìª½ ì „ì²´ë¥¼ í‘œì‹œí•©ë‹ˆë‹¤\nì¸ì‡„ ë¯¸ë¦¬ ë³´ê¸°"
+	ID_APP_ABOUT            "í”„ë¡œê·¸ëž¨ ì •ë³´ì™€ ë²„ì „ ì •ë³´, ì €ìž‘ê¶Œ ì •ë³´ë¥¼ í‘œì‹œí•©ë‹ˆë‹¤\nì •ë³´"
+	ID_APP_EXIT             "ì‘ìš© í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•˜ê¸° ìœ„í•´ ë¬¸ì„œë¥¼ ì €ìž¥í•  ê²ƒì¸ì§€ ë¬»ìŠµë‹ˆë‹¤\nì¢…ë£Œ"
+	ID_FILE_MRU_FILE1       "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE2       "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE3       "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE4       "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE5       "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE6       "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE7       "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE8       "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE9       "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE10      "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE11      "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE12      "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE13      "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE14      "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE15      "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_FILE_MRU_FILE16      "ì´ ë¬¸ì„œë¥¼ ì—½ë‹ˆë‹¤"
+	ID_NEXT_PANE            "ë‹¤ìŒ ì°½ìœ¼ë¡œ ì „í™˜í•©ë‹ˆë‹¤\në‹¤ìŒ ì°½"
+	ID_PREV_PANE            "ì´ì „ ì°½ìœ¼ë¡œ ì „í™˜í•©ë‹ˆë‹¤\nì´ì „ ì°½"
+	ID_WINDOW_SPLIT         "í˜„ìž¬ ì—´ë¦° ì°½ì„ ë‚˜ëˆ•ë‹ˆë‹¤\në‚˜ëˆ„ê¸°"
+	ID_EDIT_CLEAR           "ì„ íƒ ë¶€ë¶„ì„ ì§€ì›ë‹ˆë‹¤\nì§€ìš°ê¸°"
+	ID_EDIT_CLEAR_ALL       "ëª¨ë“  ê²ƒì„ ì§€ì›ë‹ˆë‹¤\nëª¨ë‘ ì§€ìš°ê¸°"
+	ID_EDIT_COPY            "ì„ íƒ ë¶€ë¶„ì„ ë³µì‚¬í•˜ì—¬ í´ë¦½ë³´ë“œì— ë„£ìŠµë‹ˆë‹¤\në³µì‚¬"
+	ID_EDIT_CUT             "ì„ íƒ ë¶€ë¶„ì„ ìž˜ë¼ë‚´ì–´ í´ë¦½ë³´ë“œì— ë„£ìŠµë‹ˆë‹¤\nìž˜ë¼ë‚´ê¸°"
+	ID_EDIT_FIND            "ì§€ì •í•œ ë¬¸ìžì—´ì„ ì°¾ìŠµë‹ˆë‹¤\nì°¾ê¸°"
+	ID_EDIT_PASTE           "í´ë¦½ë³´ë“œì˜ ë‚´ìš©ì„ ë¶™ì—¬ ë„£ìŠµë‹ˆë‹¤\në¶™ì—¬ë„£ê¸°"
+	ID_EDIT_REPEAT          "ë§ˆì§€ë§‰ìœ¼ë¡œ ì‹¤í–‰í•œ ë™ìž‘ì„ ë°˜ë³µí•©ë‹ˆë‹¤\në°˜ë³µ"
+	ID_EDIT_REPLACE         "ì§€ì •í•œ ë¬¸ìžì—´ì„ ë‹¤ë¥¸ ë¬¸ìžì—´ë¡œ ë°”ê¿‰ë‹ˆë‹¤\në°”ê¾¸ê¸°"
+	ID_EDIT_SELECT_ALL      "ë¬¸ì„œ ì „ì²´ë¥¼ ì„ íƒí•©ë‹ˆë‹¤\nì „ì²´ ì„ íƒ"
+	ID_EDIT_UNDO            "ë§ˆì§€ë§‰ìœ¼ë¡œ í•œ ë™ìž‘ì„ ì·¨ì†Œí•©ë‹ˆë‹¤\nì‹¤í–‰ ì·¨ì†Œ"
+	ID_EDIT_REDO            "ì´ì „ì— ì·¨ì†Œí•œ ë™ìž‘ì„ ë‹¤ì‹œ ìˆ˜í–‰í•©ë‹ˆë‹¤\në‹¤ì‹œ ì‹¤í–‰"
+	ID_VIEW_TOOLBAR         "ë„êµ¬ ëª¨ìŒì„ ë³´ì´ê±°ë‚˜ ê°ì¶¥ë‹ˆë‹¤\në„êµ¬ ëª¨ìŒ ì „í™˜"
+	ID_VIEW_STATUS_BAR      "ìƒíƒœ í‘œì‹œì¤„ì„ í‘œì‹œí•˜ê±°ë‚˜ ê°ì¶¥ë‹ˆë‹¤\nìƒíƒœ í‘œì‹œì¤„ ì „í™˜"
 END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-	AFX_IDS_SCSIZE          "Ã¢ÀÇ Å©±â¸¦ º¯°æÇÕ´Ï´Ù"
-	AFX_IDS_SCMOVE          "Ã¢ÀÇ À§Ä¡¸¦ º¯°æÇÕ´Ï´Ù"
-	AFX_IDS_SCMINIMIZE      "Ã¢À» ¾ÆÀÌÄÜÀ¸·Î ÁÙ¿©¼­ Ç¥½ÃÇÕ´Ï´Ù"
-	AFX_IDS_SCMAXIMIZE      "Ã¢À» ÃÖ´ë Å©±â·Î È®ÀåÇÕ´Ï´Ù"
-	AFX_IDS_SCNEXTWINDOW    "´ÙÀ½ ¹®¼­ Ã¢À¸·Î ÀüÈ¯ÇÕ´Ï´Ù"
-	AFX_IDS_SCPREVWINDOW    "ÀÌÀü ¹®¼­ Ã¢À¸·Î ÀüÈ¯ÇÕ´Ï´Ù"
-	AFX_IDS_SCCLOSE         "ÇöÀç ¿­¸° Ã¢À» ´Ý°í ¹®¼­¸¦ ÀúÀåÇÒ °ÍÀÎÁö¸¦ ¹¯½À´Ï´Ù"
-	AFX_IDS_SCRESTORE       "Ã¢À» ¿ø·¡ Å©±â·Î º¹¿øÇÕ´Ï´Ù"
-	AFX_IDS_SCTASKLIST      "ÀÛ¾÷ ¸ñ·ÏÀ» È°¼ºÈ­ÇÕ´Ï´Ù"
-	AFX_IDS_PREVIEW_CLOSE   "ÀÎ¼â ¹Ì¸® º¸±â ¸ðµå¸¦ ´Ý½À´Ï´Ù\n¹Ì¸® º¸±â Ãë¼Ò"
+	AFX_IDS_SCSIZE          "ì°½ì˜ í¬ê¸°ë¥¼ ë³€ê²½í•©ë‹ˆë‹¤"
+	AFX_IDS_SCMOVE          "ì°½ì˜ ìœ„ì¹˜ë¥¼ ë³€ê²½í•©ë‹ˆë‹¤"
+	AFX_IDS_SCMINIMIZE      "ì°½ì„ ì•„ì´ì½˜ìœ¼ë¡œ ì¤„ì—¬ì„œ í‘œì‹œí•©ë‹ˆë‹¤"
+	AFX_IDS_SCMAXIMIZE      "ì°½ì„ ìµœëŒ€ í¬ê¸°ë¡œ í™•ìž¥í•©ë‹ˆë‹¤"
+	AFX_IDS_SCNEXTWINDOW    "ë‹¤ìŒ ë¬¸ì„œ ì°½ìœ¼ë¡œ ì „í™˜í•©ë‹ˆë‹¤"
+	AFX_IDS_SCPREVWINDOW    "ì´ì „ ë¬¸ì„œ ì°½ìœ¼ë¡œ ì „í™˜í•©ë‹ˆë‹¤"
+	AFX_IDS_SCCLOSE         "í˜„ìž¬ ì—´ë¦° ì°½ì„ ë‹«ê³  ë¬¸ì„œë¥¼ ì €ìž¥í•  ê²ƒì¸ì§€ë¥¼ ë¬»ìŠµë‹ˆë‹¤"
+	AFX_IDS_SCRESTORE       "ì°½ì„ ì›ëž˜ í¬ê¸°ë¡œ ë³µì›í•©ë‹ˆë‹¤"
+	AFX_IDS_SCTASKLIST      "ìž‘ì—… ëª©ë¡ì„ í™œì„±í™”í•©ë‹ˆë‹¤"
+	AFX_IDS_PREVIEW_CLOSE   "ì¸ì‡„ ë¯¸ë¦¬ ë³´ê¸° ëª¨ë“œë¥¼ ë‹«ìŠµë‹ˆë‹¤\në¯¸ë¦¬ ë³´ê¸° ì·¨ì†Œ"
 END
 
 

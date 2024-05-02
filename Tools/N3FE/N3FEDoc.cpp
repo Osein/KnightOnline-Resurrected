@@ -48,7 +48,7 @@ BOOL CN3FEDoc::OnNewDocument()
 
 //	char szPath[256] = "";
 //	::GetCurrentDirectory(256, szPath);
-//	m_EffectMgr.PathSet(szPath); // Path ÃÊ±âÈ­..
+//	m_EffectMgr.PathSet(szPath); // Path ì´ˆê¸°í™”..
 	
 	this->UpdateAllViews(NULL);
 
@@ -95,14 +95,14 @@ BOOL CN3FEDoc::OnOpenDocument(LPCTSTR lpszPathName)
 	if (!CDocument::OnOpenDocument(lpszPathName))
 		return FALSE;
 
-	char szDrive[_MAX_DRIVE], szDir[_MAX_DIR], szFName[_MAX_FNAME], szExt[_MAX_EXT]; // ÆÄÀÏ ÀÌ¸§À» ºĞ¸®ÇÏ°í..
+	char szDrive[_MAX_DRIVE], szDir[_MAX_DIR], szFName[_MAX_FNAME], szExt[_MAX_EXT]; // íŒŒì¼ ì´ë¦„ì„ ë¶„ë¦¬í•˜ê³ ..
 	_splitpath(lpszPathName, szDrive, szDir, szFName, szExt);
 
 	char szTmp[256];
-	GetPrivateProfileString("Effect Manager", "Name", "NoName", szFName, _MAX_PATH, lpszPathName); // Ini ÆÄÀÏ¿¡ ÀÌ¸§ ¾²±â..
-	GetPrivateProfileString("Effect Manager", "BundelCount", "0", szTmp, 256, lpszPathName); // Ini ÆÄÀÏ¿¡ ¹¶Ä¡ ¼ıÀÚ ¾²±â..
+	GetPrivateProfileString("Effect Manager", "Name", "NoName", szFName, _MAX_PATH, lpszPathName); // Ini íŒŒì¼ì— ì´ë¦„ ì“°ê¸°..
+	GetPrivateProfileString("Effect Manager", "BundelCount", "0", szTmp, 256, lpszPathName); // Ini íŒŒì¼ì— ë­‰ì¹˜ ìˆ«ì ì“°ê¸°..
 	int nBC = atoi(szTmp);
-	GetPrivateProfileString("Effect Manager", "PartCount", "0", szTmp, 256, lpszPathName); // Ini ÆÄÀÏ¿¡ ÆÄÆ® ¼ıÀÚ ¾²±â..
+	GetPrivateProfileString("Effect Manager", "PartCount", "0", szTmp, 256, lpszPathName); // Ini íŒŒì¼ì— íŒŒíŠ¸ ìˆ«ì ì“°ê¸°..
 	int nPC = atoi(szTmp);
 
 	for(int i = 0; i < nBC; i++)
@@ -172,15 +172,15 @@ BOOL CN3FEDoc::OnSaveDocument(LPCTSTR lpszPathName)
 	if(!CDocument::OnSaveDocument(lpszPathName))
 		return FALSE;
 
-	char szDrive[_MAX_DRIVE], szDir[_MAX_DIR], szFName[_MAX_FNAME], szExt[_MAX_EXT]; // ÆÄÀÏ ÀÌ¸§À» ºĞ¸®ÇÏ°í..
+	char szDrive[_MAX_DRIVE], szDir[_MAX_DIR], szFName[_MAX_FNAME], szExt[_MAX_EXT]; // íŒŒì¼ ì´ë¦„ì„ ë¶„ë¦¬í•˜ê³ ..
 	_splitpath(lpszPathName, szDrive, szDir, szFName, szExt);
 
 	///////////////////////////////////////////////////
-	// Binary ÀúÀå..
+	// Binary ì €ì¥..
 	char szGameFN[512];
 	_makepath(szGameFN, szDrive, szDir, szFName, ".N3FX");
-	m_EffectMgr.SaveToFile(szGameFN); // Binary ÀúÀå..
-	// Binary ÀúÀå..
+	m_EffectMgr.SaveToFile(szGameFN); // Binary ì €ì¥..
+	// Binary ì €ì¥..
 	///////////////////////////////////////////////////
 
 	CFile file;
@@ -191,14 +191,14 @@ BOOL CN3FEDoc::OnSaveDocument(LPCTSTR lpszPathName)
 	file.Close();
 
 	CString szTmp;
-	WritePrivateProfileString("Effect Manager", "Name", szFName, lpszPathName); // Ini ÆÄÀÏ¿¡ ÀÌ¸§ ¾²±â..
+	WritePrivateProfileString("Effect Manager", "Name", szFName, lpszPathName); // Ini íŒŒì¼ì— ì´ë¦„ ì“°ê¸°..
 	szTmp.Format("%d", m_EffectMgr.BundleCount());
-	WritePrivateProfileString("Effect Manager", "BundelCount", szTmp, lpszPathName); // Ini ÆÄÀÏ¿¡ ¹¶Ä¡ ¼ıÀÚ ¾²±â..
+	WritePrivateProfileString("Effect Manager", "BundelCount", szTmp, lpszPathName); // Ini íŒŒì¼ì— ë­‰ì¹˜ ìˆ«ì ì“°ê¸°..
 	szTmp.Format("%d", m_EffectMgr.PartCount());
-	WritePrivateProfileString("Effect Manager", "PartCount", szTmp, lpszPathName); // Ini ÆÄÀÏ¿¡ ÆÄÆ® ¼ıÀÚ ¾²±â..
+	WritePrivateProfileString("Effect Manager", "PartCount", szTmp, lpszPathName); // Ini íŒŒì¼ì— íŒŒíŠ¸ ìˆ«ì ì“°ê¸°..
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Text ÀúÀå..
+	// Text ì €ì¥..
 	CString szBundleFN, szBS;
 	for(int i = 0; i < m_szBundleScripts.GetSize(); i++)
 	{
@@ -232,7 +232,7 @@ BOOL CN3FEDoc::OnSaveDocument(LPCTSTR lpszPathName)
 		}
 		file.Close();
 	}
-	// Text ÀúÀå..
+	// Text ì €ì¥..
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	return TRUE;

@@ -19,8 +19,8 @@ class CParty
 {
 public:
 	//int		m_iSid;				// Party Number
-	//short	m_sCurUser;			// ÆÄÆ¼ ÀÎ¿ø ¼ö 
-	//short	m_sCurLevel;		// ÆÄÆ¼¿øÀÇ ÃÑ ·¹º§ ÇÕ
+	//short	m_sCurUser;			// íŒŒí‹° ì¸ì› ìˆ˜ 
+	//short	m_sCurLevel;		// íŒŒí‹°ì›ì˜ ì´ ë ˆë²¨ í•©
 	CServerDlg* m_pMain;
 	//PartyUserArray	m_arPartyUser;
 

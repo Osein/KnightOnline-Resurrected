@@ -78,12 +78,12 @@ STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION |
     WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "Ebenezer"
-FONT 9, "±¼¸²", 0, 0, 0x1
+FONT 9, "êµ´ë¦¼", 0, 0, 0x1
 BEGIN
     LISTBOX         IDC_LIST1,8,4,166,136,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
                     WS_TABSTOP
     EDITTEXT        IDC_GONGJI_EDIT,12,156,158,14,ES_AUTOHSCROLL
-    GROUPBOX        "°øÁö",IDC_STATIC,8,145,167,32
+    GROUPBOX        "ê³µì§€",IDC_STATIC,8,145,167,32
 END
 
 
@@ -111,13 +111,13 @@ BEGIN
         BLOCK "041204B0"
         BEGIN
             VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "Ebenezer MFC ÀÀ¿ë ÇÁ·Î±×·¥\0"
+            VALUE "FileDescription", "Ebenezer MFC ì‘ìš© í”„ë¡œê·¸ëž¨\0"
             VALUE "FileVersion", "1, 0, 0, 1\0"
             VALUE "InternalName", "Ebenezer\0"
             VALUE "LegalCopyright", "Copyright (C) 2001\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "Ebenezer.EXE\0"
-            VALUE "ProductName", "Ebenezer ÀÀ¿ë ÇÁ·Î±×·¥\0"
+            VALUE "ProductName", "Ebenezer ì‘ìš© í”„ë¡œê·¸ëž¨\0"
             VALUE "ProductVersion", "1, 0, 0, 1\0"
         END
     END
@@ -137,58 +137,58 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_ABOUTBOX            "Ebenezer Á¤º¸(&A)..."
-    IDP_SOCKETS_INIT_FAILED "Windows ¼ÒÄÏ ÃÊ±âÈ­¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
-    IDP_BATTLEZONE_OPEN     "·ç³ª°ÔÀÌÆ®ÀÇ ¹®ÀÌ ¿­·È½À´Ï´Ù. ÀüÀïÀÌ ½ÃÀÛ µÇ¾ú½À´Ï´Ù."
-    IDP_KARUS_VICTORY       "Ä«·ç½º°¡ ½Â¸®Çß½À´Ï´Ù. Á×ÀÎ Àû±ºÀÇ ¼ö : %d¸í, Á×Àº ¾Æ±ºÀÇ ¼ö : %d¸í"
-    IDP_ELMORAD_VICTORY     "¿¤¸ð¶óµå°¡ ½Â¸®Çß½À´Ï´Ù. Á×ÀÎ Àû±ºÀÇ ¼ö : %d¸í, Á×Àº ¾Æ±ºÀÇ ¼ö : %d¸í"
-    IDP_KARUS_BANISH        "ÀüÀïÁ¸¿¡ ÀÖ´Â ¿¤¸ð ¿ë»çµéÀº Ãß¹æ´çÇÏ¿´½À´Ï´Ù!"
-    IDP_ELMORAD_BANISH      "ÀüÀïÁ¸¿¡ ÀÖ´Â Ä«·ç½º ¿ë»çµéÀº Ãß¹æ´çÇÏ¿´½À´Ï´Ù!"
-    IDP_KNIGHT_NAME_REPEAT  "±â»ç´ÜÀÌ¸§ÀÌ Áßº¹µÇ¾ú½À´Ï´Ù."
-    IDP_KNIGHT_ALREADY_REGISTERED "ÀÌ¹Ì ±â»ç´Ü¿¡ °¡ÀÔµÇ¾î ÀÖ½À´Ï´Ù."
+    IDS_ABOUTBOX            "Ebenezer ì •ë³´(&A)..."
+    IDP_SOCKETS_INIT_FAILED "Windows ì†Œì¼“ ì´ˆê¸°í™”ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤."
+    IDP_BATTLEZONE_OPEN     "ë£¨ë‚˜ê²Œì´íŠ¸ì˜ ë¬¸ì´ ì—´ë ¸ìŠµë‹ˆë‹¤. ì „ìŸì´ ì‹œìž‘ ë˜ì—ˆìŠµë‹ˆë‹¤."
+    IDP_KARUS_VICTORY       "ì¹´ë£¨ìŠ¤ê°€ ìŠ¹ë¦¬í–ˆìŠµë‹ˆë‹¤. ì£½ì¸ ì êµ°ì˜ ìˆ˜ : %dëª…, ì£½ì€ ì•„êµ°ì˜ ìˆ˜ : %dëª…"
+    IDP_ELMORAD_VICTORY     "ì—˜ëª¨ë¼ë“œê°€ ìŠ¹ë¦¬í–ˆìŠµë‹ˆë‹¤. ì£½ì¸ ì êµ°ì˜ ìˆ˜ : %dëª…, ì£½ì€ ì•„êµ°ì˜ ìˆ˜ : %dëª…"
+    IDP_KARUS_BANISH        "ì „ìŸì¡´ì— ìžˆëŠ” ì—˜ëª¨ ìš©ì‚¬ë“¤ì€ ì¶”ë°©ë‹¹í•˜ì˜€ìŠµë‹ˆë‹¤!"
+    IDP_ELMORAD_BANISH      "ì „ìŸì¡´ì— ìžˆëŠ” ì¹´ë£¨ìŠ¤ ìš©ì‚¬ë“¤ì€ ì¶”ë°©ë‹¹í•˜ì˜€ìŠµë‹ˆë‹¤!"
+    IDP_KNIGHT_NAME_REPEAT  "ê¸°ì‚¬ë‹¨ì´ë¦„ì´ ì¤‘ë³µë˜ì—ˆìŠµë‹ˆë‹¤."
+    IDP_KNIGHT_ALREADY_REGISTERED "ì´ë¯¸ ê¸°ì‚¬ë‹¨ì— ê°€ìž…ë˜ì–´ ìžˆìŠµë‹ˆë‹¤."
 END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
     IDP_KNIGHT_INSUFFICIENT_LEVEL 
-                            "±â»ç´ÜÀ» Ã¢¼³ ÇÏ·Á¸é 20 Level ÀÌ»óÀÌ ÇÊ¿äÇÕ´Ï´Ù."
+                            "ê¸°ì‚¬ë‹¨ì„ ì°½ì„¤ í•˜ë ¤ë©´ 20 Level ì´ìƒì´ í•„ìš”í•©ë‹ˆë‹¤."
     IDP_KNIGHT_INSUFFICIENT_LOYALTY 
-                            "±â»ç´ÜÀ» Ã¢¼³ ÇÏ·Á¸é ±¹°¡±â¿©µµ 800 ÀÌ»óÀÌ ÇÊ¿äÇÕ´Ï´Ù."
+                            "ê¸°ì‚¬ë‹¨ì„ ì°½ì„¤ í•˜ë ¤ë©´ êµ­ê°€ê¸°ì—¬ë„ 800 ì´ìƒì´ í•„ìš”í•©ë‹ˆë‹¤."
     IDP_KNIGHT_INSUFFICIENT_SKILL 
-                            "±â»ç´ÜÀ» Ã¢¼³ ÇÏ·Á¸é ÁöÈÖ½ºÅ³ 10, ¿¹Àý½ºÅ³ 5 ÀÌ»óÀÌ ÇÊ¿äÇÕ´Ï´Ù."
+                            "ê¸°ì‚¬ë‹¨ì„ ì°½ì„¤ í•˜ë ¤ë©´ ì§€íœ˜ìŠ¤í‚¬ 10, ì˜ˆì ˆìŠ¤í‚¬ 5 ì´ìƒì´ í•„ìš”í•©ë‹ˆë‹¤."
     IDP_KNIGHT_INSUFFICIENT_CHARISMA 
-                            "±â»ç´ÜÀ» Ã¢¼³ ÇÏ·Á¸é ¸Å·Â 120 ÀÌ»óÀÌ ÇÊ¿äÇÕ´Ï´Ù."
+                            "ê¸°ì‚¬ë‹¨ì„ ì°½ì„¤ í•˜ë ¤ë©´ ë§¤ë ¥ 120 ì´ìƒì´ í•„ìš”í•©ë‹ˆë‹¤."
     IDP_KNIGHT_INSUFFICIENT_GOLD 
-                            "±â»ç´ÜÀ» Ã¢¼³ ÇÏ·Á¸é 1000000³ë¾Æ ÀÌ»óÀÌ ÇÊ¿äÇÕ´Ï´Ù."
-    IDP_KNIGHT_CREATE_FAIL  "±â»ç´Ü Ã¢¼³¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
-    IDP_KNIGHT_NOT_AVAILABLE "Á¸ÀçÇÏÁö ¾Ê´Â ±â»ç´ÜÀÔ´Ï´Ù."
-    IDP_KNIGHT_LEADER_ONLY  "±â»ç´ÜÀå ¸¸ÀÌ ÇÒ ¼ö ÀÖ½À´Ï´Ù."
-    IDP_KNIGHT_MINIMUM_SUBLEADER "ºÎ±â»ç´ÜÀå ÀÌ»óÀÌ ÇÒ ¼ö ÀÖ½À´Ï´Ù."
-    IDP_KNIGHT_NOT_REGISTERED "±â»ç´Ü¿¡ °¡ÀÔµÇ¾î ÀÖÁö ¾Ê½À´Ï´Ù."
-    IDP_KNIGHT_DB_FAIL      "±â»ç´Ü DBÃ³¸®¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
-    IDP_WRONG_ID            "Àß¸øµÈ ¾ÆÀÌµð ÀÔ´Ï´Ù."
-    IDP_SOURCE_UNABLE       "ÀÚ½ÅÀº ÇÒ ¼ö ¾ø½À´Ï´Ù."
-    IDP_MINIMUM_OFFICER     "Àå±³ ÀÌ»óÀÌ ÇÒ ¼ö ÀÖ½À´Ï´Ù."
-    IDP_ANNOUNCEMENT        "#### °øÁö : %s ####"
+                            "ê¸°ì‚¬ë‹¨ì„ ì°½ì„¤ í•˜ë ¤ë©´ 1000000ë…¸ì•„ ì´ìƒì´ í•„ìš”í•©ë‹ˆë‹¤."
+    IDP_KNIGHT_CREATE_FAIL  "ê¸°ì‚¬ë‹¨ ì°½ì„¤ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤."
+    IDP_KNIGHT_NOT_AVAILABLE "ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” ê¸°ì‚¬ë‹¨ìž…ë‹ˆë‹¤."
+    IDP_KNIGHT_LEADER_ONLY  "ê¸°ì‚¬ë‹¨ìž¥ ë§Œì´ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤."
+    IDP_KNIGHT_MINIMUM_SUBLEADER "ë¶€ê¸°ì‚¬ë‹¨ìž¥ ì´ìƒì´ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤."
+    IDP_KNIGHT_NOT_REGISTERED "ê¸°ì‚¬ë‹¨ì— ê°€ìž…ë˜ì–´ ìžˆì§€ ì•ŠìŠµë‹ˆë‹¤."
+    IDP_KNIGHT_DB_FAIL      "ê¸°ì‚¬ë‹¨ DBì²˜ë¦¬ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤."
+    IDP_WRONG_ID            "ìž˜ëª»ëœ ì•„ì´ë”” ìž…ë‹ˆë‹¤."
+    IDP_SOURCE_UNABLE       "ìžì‹ ì€ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤."
+    IDP_MINIMUM_OFFICER     "ìž¥êµ ì´ìƒì´ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤."
+    IDP_ANNOUNCEMENT        "#### ê³µì§€ : %s ####"
 END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_ELMORAD_LOSER       "¿¤¸ð¶óµå°¡ ÆÐ¹èÇÏ¿´½À´Ï´Ù. Á×ÀÎ Àû±ºÀÇ ¼ö : %d¸í, Á×Àº ¾Æ±ºÀÇ ¼ö : %d¸í"
-    IDS_KARUS_LOSER         "Ä«·ç½º°¡ ÆÐ¹èÇÏ¿´½À´Ï´Ù. Á×ÀÎ Àû±ºÀÇ ¼ö : %d¸í, Á×Àº ¾Æ±ºÀÇ ¼ö : %d¸í"
-    IDS_BANISH_USER         "·ç³ª¹ë¸®¿¡ ÀÖ´Â À¯Àú¿Í Àû±¹¿¡ ÀÖ´Â À¯Àú´Â º»±¹À¸·Î °­Á¦¼ÒÈ¯ÇÕ´Ï´Ù"
-    IDS_BATTLE_CLOSE        "·ç³ª°ÔÀÌÆ®°¡ ´ÝÈü´Ï´Ù"
-    IDS_KILL_GATEKEEPER     "Àû±¹ÀÇ ¼ö¹®ÀåÀ» Á×ÀÎ À¯ÀúÀÌ¸§Àº [%s][%s] ´ÔÀÔ´Ï´Ù. ÃàÇÏÇÕ´Ï´Ù."
-    IDS_KILL_CAPTAIN        "Àû±¹ÀÇ ´ëÀåÀ» Á×ÀÎ À¯ÀúÀÌ¸§Àº [%s][%s] ´ÔÀÔ´Ï´Ù, ÃàÇÏÇÕ´Ï´Ù."
-    IDS_KILL_KARUS_GUARD1   "Ä«·ç½º Á¦ 1¿ä»õÀÇ ¼ö¹®´ëÀåÀÌ Àü»çÇß½À´Ï´Ù. ¼ö¹®´ëÀåÀ» Á×ÀÎ Àû±ºÀ¯Àú´Â [%s][%s] ÀÔ´Ï´Ù"
-    IDS_KILL_KARUS_GUARD2   "Ä«·ç½º Á¦ 2¿ä»õÀÇ ¼ö¹®´ëÀåÀÌ Àü»çÇß½À´Ï´Ù. ¼ö¹®´ëÀåÀ» Á×ÀÎ Àû±ºÀ¯Àú´Â [%s][%s] ÀÔ´Ï´Ù"
-    IDS_KILL_ELMO_GUARD1    "¿¤¸ð¶óµå Á¦ 1¿ä»õÀÇ ¼ö¹®´ëÀåÀÌ Àü»çÇß½À´Ï´Ù. ¼ö¹®´ëÀåÀ» Á×ÀÎ Àû±ºÀ¯Àú´Â [%s][%s] ÀÔ´Ï´Ù"
-    IDS_KILL_ELMO_GUARD2    "¿¤¸ð¶óµå Á¦ 2¿ä»õÀÇ ¼ö¹®´ëÀåÀÌ Àü»çÇß½À´Ï´Ù. ¼ö¹®´ëÀåÀ» Á×ÀÎ Àû±ºÀ¯Àú´Â [%s][%s] ÀÔ´Ï´Ù"
-    IDS_KARUS_CAPTAIN       "Ä«·ç½ºÀÇ ÁöÈÖ°üÀº %s, %s, %s, %s, %s ÀÔ´Ï´Ù"
-    IDS_ELMO_CAPTAIN        "¿¤¸ð¶óµåÀÇ ÃÑÁöÈÖ°üÀº  %s, %s, %s, %s, %s ÀÔ´Ï´Ù"
-    IDS_KARUS_CAPTAIN_DEPRIVE "Ä«·ç½ºÀÇ ÁöÈÖ°ü [%s][%s] ´ÔÀÌ Àü»çÇÏ¿´½À´Ï´Ù. "
+    IDS_ELMORAD_LOSER       "ì—˜ëª¨ë¼ë“œê°€ íŒ¨ë°°í•˜ì˜€ìŠµë‹ˆë‹¤. ì£½ì¸ ì êµ°ì˜ ìˆ˜ : %dëª…, ì£½ì€ ì•„êµ°ì˜ ìˆ˜ : %dëª…"
+    IDS_KARUS_LOSER         "ì¹´ë£¨ìŠ¤ê°€ íŒ¨ë°°í•˜ì˜€ìŠµë‹ˆë‹¤. ì£½ì¸ ì êµ°ì˜ ìˆ˜ : %dëª…, ì£½ì€ ì•„êµ°ì˜ ìˆ˜ : %dëª…"
+    IDS_BANISH_USER         "ë£¨ë‚˜ë°¸ë¦¬ì— ìžˆëŠ” ìœ ì €ì™€ ì êµ­ì— ìžˆëŠ” ìœ ì €ëŠ” ë³¸êµ­ìœ¼ë¡œ ê°•ì œì†Œí™˜í•©ë‹ˆë‹¤"
+    IDS_BATTLE_CLOSE        "ë£¨ë‚˜ê²Œì´íŠ¸ê°€ ë‹«íž™ë‹ˆë‹¤"
+    IDS_KILL_GATEKEEPER     "ì êµ­ì˜ ìˆ˜ë¬¸ìž¥ì„ ì£½ì¸ ìœ ì €ì´ë¦„ì€ [%s][%s] ë‹˜ìž…ë‹ˆë‹¤. ì¶•í•˜í•©ë‹ˆë‹¤."
+    IDS_KILL_CAPTAIN        "ì êµ­ì˜ ëŒ€ìž¥ì„ ì£½ì¸ ìœ ì €ì´ë¦„ì€ [%s][%s] ë‹˜ìž…ë‹ˆë‹¤, ì¶•í•˜í•©ë‹ˆë‹¤."
+    IDS_KILL_KARUS_GUARD1   "ì¹´ë£¨ìŠ¤ ì œ 1ìš”ìƒˆì˜ ìˆ˜ë¬¸ëŒ€ìž¥ì´ ì „ì‚¬í–ˆìŠµë‹ˆë‹¤. ìˆ˜ë¬¸ëŒ€ìž¥ì„ ì£½ì¸ ì êµ°ìœ ì €ëŠ” [%s][%s] ìž…ë‹ˆë‹¤"
+    IDS_KILL_KARUS_GUARD2   "ì¹´ë£¨ìŠ¤ ì œ 2ìš”ìƒˆì˜ ìˆ˜ë¬¸ëŒ€ìž¥ì´ ì „ì‚¬í–ˆìŠµë‹ˆë‹¤. ìˆ˜ë¬¸ëŒ€ìž¥ì„ ì£½ì¸ ì êµ°ìœ ì €ëŠ” [%s][%s] ìž…ë‹ˆë‹¤"
+    IDS_KILL_ELMO_GUARD1    "ì—˜ëª¨ë¼ë“œ ì œ 1ìš”ìƒˆì˜ ìˆ˜ë¬¸ëŒ€ìž¥ì´ ì „ì‚¬í–ˆìŠµë‹ˆë‹¤. ìˆ˜ë¬¸ëŒ€ìž¥ì„ ì£½ì¸ ì êµ°ìœ ì €ëŠ” [%s][%s] ìž…ë‹ˆë‹¤"
+    IDS_KILL_ELMO_GUARD2    "ì—˜ëª¨ë¼ë“œ ì œ 2ìš”ìƒˆì˜ ìˆ˜ë¬¸ëŒ€ìž¥ì´ ì „ì‚¬í–ˆìŠµë‹ˆë‹¤. ìˆ˜ë¬¸ëŒ€ìž¥ì„ ì£½ì¸ ì êµ°ìœ ì €ëŠ” [%s][%s] ìž…ë‹ˆë‹¤"
+    IDS_KARUS_CAPTAIN       "ì¹´ë£¨ìŠ¤ì˜ ì§€íœ˜ê´€ì€ %s, %s, %s, %s, %s ìž…ë‹ˆë‹¤"
+    IDS_ELMO_CAPTAIN        "ì—˜ëª¨ë¼ë“œì˜ ì´ì§€íœ˜ê´€ì€  %s, %s, %s, %s, %s ìž…ë‹ˆë‹¤"
+    IDS_KARUS_CAPTAIN_DEPRIVE "ì¹´ë£¨ìŠ¤ì˜ ì§€íœ˜ê´€ [%s][%s] ë‹˜ì´ ì „ì‚¬í•˜ì˜€ìŠµë‹ˆë‹¤. "
     IDS_ELMO_CAPTAIN_DEPRIVE 
-                            "¿¤¸ð¶óµåÀÇ ÁöÈÖ°ü  [%s][%s]´ÔÀÌ Àü»çÇÏ¿´½À´Ï´Ù.  "
+                            "ì—˜ëª¨ë¼ë“œì˜ ì§€íœ˜ê´€  [%s][%s]ë‹˜ì´ ì „ì‚¬í•˜ì˜€ìŠµë‹ˆë‹¤.  "
 END
 
 STRINGTABLE DISCARDABLE 
@@ -219,11 +219,11 @@ STRINGTABLE DISCARDABLE
 BEGIN
     IDS_ABOUTBOX            "Ebenezer ??(&A)..."
     IDP_SOCKETS_INIT_FAILED "Windows ?? ???? ???????."
-    IDP_BATTLEZONE_OPEN     "³q©¹³·¾Ô³õªº¹D¸ô¤w¥i³q?¡A³·²y¤j¾Ô?¦¡©Ô?§Ç¹õ."
-    IDP_KARUS_VICTORY       "¥d?´µÀò³Ó¡AÀ»±Ñ¼Ä¤H¼Æ : %d¦W]¡A³QÀ»±Ñªº§Ú­x¼Æ : %d¦W"
-    IDP_ELMORAD_VICTORY     "¦ã²öº¸Àò³Ó¡AÀ»±Ñ¼Ä¤H¼Æ : %d¦W]¡A³QÀ»±Ñªº§Ú­x¼Æ : %d¦W"
-    IDP_KARUS_BANISH        "¾Ô³õ¤¤ªº·R¾¥º¸«i¤h³QÅX³v!"
-    IDP_ELMORAD_BANISH      "¾Ô³õ¤¤ªº¥d?´µ«i¤h³QÅX³v!"
+    IDP_BATTLEZONE_OPEN     "?ãˆˆë‚®ì•ë†“ãš?ëª°?????ë‚®??ì•?â”€â’£?ãŽ¸ë±."
+    IDP_KARUS_VICTORY       "??ë‰˜ìŸŒë„›?ì„ê·ì…?ì…• : %d?]??ì„ê·ãšã€ï£§xì…• : %d?"
+    IDP_ELMORAD_VICTORY     "â•‰ëˆë³´ìŸŒë„›?ì„ê·ì…?ì…• : %d?]??ì„ê·ãšã€ï£§xì…• : %d?"
+    IDP_KARUS_BANISH        "ì•ë†“ã„´ãš?ì‘¤ë³´?????!"
+    IDP_ELMORAD_BANISH      "ì•ë†“ã„´ãš??ë‰˜?????!"
     IDP_KNIGHT_NAME_REPEAT  "?????? ???????."
     IDP_KNIGHT_ALREADY_REGISTERED "?? ???? ???? ????."
 END
@@ -244,25 +244,25 @@ BEGIN
     IDP_WRONG_ID            "??? ??? ???."
     IDP_SOURCE_UNABLE       "??? ? ? ????."
     IDP_MINIMUM_OFFICER     "?? ??? ? ? ????."
-    IDP_ANNOUNCEMENT        "#### GM¤½§i : %s ####"
+    IDP_ANNOUNCEMENT        "#### GMã…? : %s ####"
 END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_ELMORAD_LOSER       "¦ã²öº¸±Ñ?¡AÀ»±Ñ¼Ä¤H¼Æ : %d¦W, ³QÀ»±Ñ§Ú­xªº¼Æ : %d¦W"
-    IDS_KARUS_LOSER         "¥d?´µ±Ñ?¡AÀ»±Ñ¼Ä¤H¼Æ : %d¦W, ³QÀ»±Ñ§Ú­xªº¼Æ : %d¦W"
-    IDS_BANISH_USER         "³·¾Ô³õ¤ºªºª±®a»P¦b¼Ä°êªºª±®a±j¨î¶Ç°e¦Ü¥X³·¾Ô³õ"
-    IDS_BATTLE_CLOSE        "³·¾Ô³õ¤wÃö³¬"
-    IDS_KILL_GATEKEEPER     "¼Ä¤è¦u³Æ­x¤w³Q [%s] [%s] À»±Ñ¡I¡I"
-    IDS_KILL_CAPTAIN        "¼Ä¤è¶¤?¤w³Q [%s] [%s] À»±Ñ¡I¡I"
-    IDS_KILL_KARUS_GUARD1   "¥d?´µ²Ä?°ò¦aªº¦u³Æ­x¤w³QÀ»±Ñ¡A«Ø?ªÌ¬° [%s] [%s]. "
-    IDS_KILL_KARUS_GUARD2   "¥d?´µ²Ä¤G°ò¦aªº¦u³Æ­x¤w³QÀ»±Ñ¡A«Ø?ªÌ¬° [%s] [%s]. "
-    IDS_KILL_ELMO_GUARD1    "¦ã²öº¸²Ä?°ò¦aªº¦u³Æ­x¤w³QÀ»±Ñ¡A«Ø?ªÌ¬° [%s] [%s]. "
-    IDS_KILL_ELMO_GUARD2    "¦ã²öº¸²Ä¤G°ò¦aªº¦u³Æ­x¤w³QÀ»±Ñ¡A«Ø?ªÌ¬° [%s] [%s]. "
-    IDS_KARUS_CAPTAIN       "¥d?´µ?¦bªº?´§©x¬O %s¡B%s¡B%s¡B%s¡B%s"
-    IDS_ELMO_CAPTAIN        "¦ã²öº¸?¦bªº?´§©x¬O %s¡B%s¡B%s¡B%s¡B%s"
-    IDS_KARUS_CAPTAIN_DEPRIVE "¥d?´µªº?´§©x [%s][%s] ¾Ô¦º. "
-    IDS_ELMO_CAPTAIN_DEPRIVE "¦ã²öº¸ªº?´§©x [%s][%s] ¾Ô¦º.  "
+    IDS_ELMORAD_LOSER       "â•‰ëˆë³´ê·??ì„ê·ì…?ì…• : %d?, ?ì„ê·ã€ï£§xãšì…• : %d?"
+    IDS_KARUS_LOSER         "??ë‰˜ê·??ì„ê·ì…?ì…• : %d?, ?ì„ê·ã€ï£§xãšì…• : %d?"
+    IDS_BANISH_USER         "ë‚®ì•ë†“ã…Šãšã‘ï£¨a??ì…ê³Œãšã‘ï£¨a?â‘§ë˜?â•?ë‚®ì•ë†“"
+    IDS_BATTLE_CLOSE        "ë‚®ì•ë†“?ì¸™ë‚š"
+    IDS_KILL_GATEKEEPER     "ì…ã…¸?ëƒ”ï£§x?? [%s] [%s] ì„ê·??"
+    IDS_KILL_CAPTAIN        "ì…ã…¸ë•„??? [%s] [%s] ì„ê·??"
+    IDS_KILL_KARUS_GUARD1   "??ë‰˜ê¼¼?ê³ª?ãš?ëƒ”ï£§x??ì„ê·?ãƒ˜?ã¬Ðž [%s] [%s]. "
+    IDS_KILL_KARUS_GUARD2   "??ë‰˜ê¼¼?ê³ª?ãš?ëƒ”ï£§x??ì„ê·?ãƒ˜?ã¬Ðž [%s] [%s]. "
+    IDS_KILL_ELMO_GUARD1    "â•‰ëˆë³´ê¼¼?ê³ª?ãš?ëƒ”ï£§x??ì„ê·?ãƒ˜?ã¬Ðž [%s] [%s]. "
+    IDS_KILL_ELMO_GUARD2    "â•‰ëˆë³´ê¼¼?ê³ª?ãš?ëƒ”ï£§x??ì„ê·?ãƒ˜?ã¬Ðž [%s] [%s]. "
+    IDS_KARUS_CAPTAIN       "??ë‰˜??ãš?ë‡»?? %s?%s?%s?%s?%s"
+    IDS_ELMO_CAPTAIN        "â•‰ëˆë³´??ãš?ë‡»?? %s?%s?%s?%s?%s"
+    IDS_KARUS_CAPTAIN_DEPRIVE "??ë‰˜ãš?ë‡»? [%s][%s] ì•â”·. "
+    IDS_ELMO_CAPTAIN_DEPRIVE "â•‰ëˆë³´ãš?ë‡»? [%s][%s] ì•â”·.  "
 END
 
 STRINGTABLE DISCARDABLE 

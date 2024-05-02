@@ -25,7 +25,7 @@ int CIni::GetProfileInt(char* lpAppName,
 {
 	if (m_szFileName[0] == '\0') {
 		m_nError = 0X01;
-		strcpy(m_strError, "FileÀÌ SetµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+		strcpy(m_strError, "Fileì´ Setë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 		return -1;
 	}
 
@@ -47,7 +47,7 @@ char* CIni::GetProfileString(char* lpAppName,
 	static char retString[200]="";
 	if (m_szFileName[0] == '\0') {
 		m_nError = 0X01;
-		strcpy(m_strError, "FileÀÌ SetµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+		strcpy(m_strError, "Fileì´ Setë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 		strcpy(retString , "");
 		return retString;
 	}
@@ -87,7 +87,7 @@ int CIni::SetProfileInt(char* lpAppName,
 	int nRet  = -1;
 	if (m_szFileName[0] == '\0') {
 		m_nError = 0X01;
-		strcpy(m_strError, "FileÀÌ SetµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+		strcpy(m_strError, "Fileì´ Setë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 		return nRet;
 	}
 
@@ -106,7 +106,7 @@ int CIni::SetProfileString(char* lpAppName,
 	int nRet  = -1;
 	if (m_szFileName[0] == '\0') {
 		m_nError = 0X01;
-		strcpy(m_strError, "FileÀÌ SetµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+		strcpy(m_strError, "Fileì´ Setë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 		return nRet;
 	}
 

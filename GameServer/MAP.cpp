@@ -111,7 +111,7 @@ BOOL MAP::IsMovable(int dest_x, int dest_y)
 }
 
 ///////////////////////////////////////////////////////////////////////
-//	°¢ ¼­¹ö°¡ ´ã´çÇÏ°í ÀÖ´Â zoneÀÇ MapÀ» ·ÎµåÇÑ´Ù.
+//	ê° ì„œë²„ê°€ ë‹´ë‹¹í•˜ê³  ìˆëŠ” zoneì˜ Mapì„ ë¡œë“œí•œë‹¤.
 //
 BOOL MAP::LoadMap(HANDLE hFile)
 {
@@ -151,7 +151,7 @@ BOOL MAP::LoadMap(HANDLE hFile)
 void MAP::LoadTerrain(HANDLE hFile)
 {
 	DWORD dwRWC;
-	ReadFile(hFile, &m_nMapSize, sizeof(int), &dwRWC, NULL);	// °¡·Î¼¼·Î Á¤º¸°¡ ¸î°³¾¿ÀÎ°¡?
+	ReadFile(hFile, &m_nMapSize, sizeof(int), &dwRWC, NULL);	// ê°€ë¡œì„¸ë¡œ ì •ë³´ê°€ ëª‡ê°œì”©ì¸ê°€?
 	ReadFile(hFile, &m_fUnitDist, sizeof(float), &dwRWC, NULL);
 
 	m_fHeight = new float*[m_nMapSize];
@@ -164,7 +164,7 @@ void MAP::LoadTerrain(HANDLE hFile)
 	{
 		for(x=0;x<m_nMapSize;x++)
 		{
-			ReadFile(hFile, &(m_fHeight[x][z]), sizeof(float), &dwRWC, NULL);	// ³ôÀÌ°ª ÀĞ¾î¿À±â
+			ReadFile(hFile, &(m_fHeight[x][z]), sizeof(float), &dwRWC, NULL);	// ë†’ì´ê°’ ì½ì–´ì˜¤ê¸°
 		}
 	}
 }
@@ -174,7 +174,7 @@ float MAP::GetHeight(float x, float z)
 	int iX, iZ;
 	iX = (int)(x/m_fUnitDist);
 	iZ = (int)(z/m_fUnitDist);
-	//_ASSERT( iX, iZ°¡ ¹üÀ§³»¿¡ ÀÖ´Â °ªÀÎÁö Ã¼Å©ÇÏ±â);
+	//_ASSERT( iX, iZê°€ ë²”ìœ„ë‚´ì— ìˆëŠ” ê°’ì¸ì§€ ì²´í¬í•˜ê¸°);
 
 	float y;
 	float h1, h2, h3;
@@ -196,9 +196,9 @@ float MAP::GetHeight(float x, float z)
 
 			//if (dX == 1.0f) return h2;
 
-			float h12 = h1+(h2-h1)*dX;	// h1°ú h2»çÀÌÀÇ ³ôÀÌ°ª
-			float h32 = h3+(h2-h3)*dX;	// h3°ú h2»çÀÌÀÇ ³ôÀÌ°ª
-			y = h32 + (h12-h32)*((dZ)/(1.0f-dX));	// Ã£°íÀÚ ÇÏ´Â ³ôÀÌ°ª
+			float h12 = h1+(h2-h1)*dX;	// h1ê³¼ h2ì‚¬ì´ì˜ ë†’ì´ê°’
+			float h32 = h3+(h2-h3)*dX;	// h3ê³¼ h2ì‚¬ì´ì˜ ë†’ì´ê°’
+			y = h32 + (h12-h32)*((dZ)/(1.0f-dX));	// ì°¾ê³ ì í•˜ëŠ” ë†’ì´ê°’
 		}
 		else
 		{
@@ -208,9 +208,9 @@ float MAP::GetHeight(float x, float z)
 
 			if (dX == 0.0f) return h1;
 
-			float h12 = h1+(h2-h1)*dX;	// h1°ú h2»çÀÌÀÇ ³ôÀÌ°ª
-			float h13 = h1+(h3-h1)*dX;	// h1°ú h3»çÀÌÀÇ ³ôÀÌ°ª
-			y = h13 + (h12-h13)*((1.0f-dZ)/(dX));	// Ã£°íÀÚ ÇÏ´Â ³ôÀÌ°ª
+			float h12 = h1+(h2-h1)*dX;	// h1ê³¼ h2ì‚¬ì´ì˜ ë†’ì´ê°’
+			float h13 = h1+(h3-h1)*dX;	// h1ê³¼ h3ì‚¬ì´ì˜ ë†’ì´ê°’
+			y = h13 + (h12-h13)*((1.0f-dZ)/(dX));	// ì°¾ê³ ì í•˜ëŠ” ë†’ì´ê°’
 		}
 	}
 	else
@@ -223,9 +223,9 @@ float MAP::GetHeight(float x, float z)
 
 			//if (dX == 1.0f) return h2;
 
-			float h12 = h1+(h2-h1)*dX;	// h1°ú h2»çÀÌÀÇ ³ôÀÌ°ª
-			float h32 = h3+(h2-h3)*dX;	// h3°ú h2»çÀÌÀÇ ³ôÀÌ°ª
-			y = h12 + (h32-h12)*((1.0f-dZ)/(1.0f-dX));	// Ã£°íÀÚ ÇÏ´Â ³ôÀÌ°ª
+			float h12 = h1+(h2-h1)*dX;	// h1ê³¼ h2ì‚¬ì´ì˜ ë†’ì´ê°’
+			float h32 = h3+(h2-h3)*dX;	// h3ê³¼ h2ì‚¬ì´ì˜ ë†’ì´ê°’
+			y = h12 + (h32-h12)*((1.0f-dZ)/(1.0f-dX));	// ì°¾ê³ ì í•˜ëŠ” ë†’ì´ê°’
 		}
 		else
 		{
@@ -235,9 +235,9 @@ float MAP::GetHeight(float x, float z)
 
 			if (dX == 0.0f) return h1;
 
-			float h12 = h1+(h2-h1)*dX;	// h1°ú h2»çÀÌÀÇ ³ôÀÌ°ª
-			float h13 = h1+(h3-h1)*dX;	// h1°ú h3»çÀÌÀÇ ³ôÀÌ°ª
-			y = h12 + (h13-h12)*((dZ)/(dX));	// Ã£°íÀÚ ÇÏ´Â ³ôÀÌ°ª
+			float h12 = h1+(h2-h1)*dX;	// h1ê³¼ h2ì‚¬ì´ì˜ ë†’ì´ê°’
+			float h13 = h1+(h3-h1)*dX;	// h1ê³¼ h3ì‚¬ì´ì˜ ë†’ì´ê°’
+			y = h12 + (h13-h12)*((dZ)/(dX));	// ì°¾ê³ ì í•˜ëŠ” ë†’ì´ê°’
 		}
 	}
 	return y;
@@ -328,10 +328,10 @@ Iterator MAP::RegionNpcRemove(int rx, int rz, int nid)
 
 void MAP::LoadMapTile(HANDLE hFile)
 {
-	//MapTile¼Ó¼º ÀĞ±â..
-	//	¼Ó¼ºÀÌ 0ÀÌ¸é ¸ø °¡´Â °÷.
-	//	1ÀÌ¸é ±×³É °¡´Â °÷...
-	//	±×¿Ü´Â ÀÌº¥Æ® ID.
+	//MapTileì†ì„± ì½ê¸°..
+	//	ì†ì„±ì´ 0ì´ë©´ ëª» ê°€ëŠ” ê³³.
+	//	1ì´ë©´ ê·¸ëƒ¥ ê°€ëŠ” ê³³...
+	//	ê·¸ì™¸ëŠ” ì´ë²¤íŠ¸ ID.
 	//
 	int x1 = m_sizeMap.cx;
 	int z1 = m_sizeMap.cy;
@@ -340,7 +340,7 @@ void MAP::LoadMapTile(HANDLE hFile)
 	pEvent = new short*[m_sizeMap.cx];
 	for(int a=0;a<m_sizeMap.cx;a++)
 		pEvent[a] = new short[m_sizeMap.cx];
-	// Àá½Ã ¸·¾Æ³õ°í..
+	// ì ì‹œ ë§‰ì•„ë†“ê³ ..
 	for(int x=0;x<m_sizeMap.cx;x++)
 		ReadFile(hFile, pEvent[x], sizeof(short)*m_sizeMap.cy, &dwNum, NULL);
 	
@@ -431,7 +431,7 @@ void MAP::LoadObjectEvent(HANDLE hFile)
 	for( int i=0; i<iEventObjectCount; i++)
 	{
 		pEvent = new _OBJECT_EVENT;
-		ReadFile(hFile, &(pEvent->sBelong), 4, &dwNum, NULL);					// ¼Ò¼Ó 
+		ReadFile(hFile, &(pEvent->sBelong), 4, &dwNum, NULL);					// ì†Œì† 
 		ReadFile(hFile, &(pEvent->sIndex), 2, &dwNum, NULL);				// Event Index
 		ReadFile(hFile, &(pEvent->sType), 2, &dwNum, NULL);
 		ReadFile(hFile, &(pEvent->sControlNpcID), 2, &dwNum, NULL);
@@ -442,7 +442,7 @@ void MAP::LoadObjectEvent(HANDLE hFile)
 
 		//TRACE("Object - belong=%d, index=%d, type=%d, con=%d, sta=%d\n", pEvent->sBelong, pEvent->sIndex, pEvent->sType, pEvent->sControlNpcID, pEvent->sStatus);
 
-		// ÀÛ¾÷ÇÒ°Í : ¸Êµ¥ÀÌÅÍ°¡ ¹Ù²î¸é Param1ÀÌ 2ÀÌ¸é ¼º¹®ÀÎ°ÍÀ» ÆÇ´Ü..  3ÀÌ¸é ·¹¹ö..
+		// ì‘ì—…í• ê²ƒ : ë§µë°ì´í„°ê°€ ë°”ë€Œë©´ Param1ì´ 2ì´ë©´ ì„±ë¬¸ì¸ê²ƒì„ íŒë‹¨..  3ì´ë©´ ë ˆë²„..
 		if( pEvent->sType == 1 || pEvent->sType == 2 || pEvent->sType == 3) {
 			// sungyong test
 			m_pMain->AddObjectEventNpc(pEvent, m_nZoneNumber);
@@ -489,7 +489,7 @@ BOOL MAP::LoadRoomEvent( int zone_number )
 			buf[index] = (BYTE) 0;
 			t_index = 0;
 
-			if( buf[t_index] == ';' || buf[t_index] == '/' )	{		// ÁÖ¼®¿¡ ´ëÇÑ Ã³¸®
+			if( buf[t_index] == ';' || buf[t_index] == '/' )	{		// ì£¼ì„ì— ëŒ€í•œ ì²˜ë¦¬
 				index = 0;
 				continue;
 			}
@@ -592,7 +592,7 @@ BOOL MAP::LoadRoomEvent( int zone_number )
 
 cancel_event_load:
 	CString str;
-	str.Format( "ÀÌº¥Æ® Á¤º¸ ÀĞ±â ½ÇÆĞ(%d)(%d)", zone_number, event_num );
+	str.Format( "ì´ë²¤íŠ¸ ì •ë³´ ì½ê¸° ì‹¤íŒ¨(%d)(%d)", zone_number, event_num );
 	AfxMessageBox( str );
 	in.Close();
 	pFile.Close();
@@ -604,7 +604,7 @@ cancel_event_load:
 int MAP::IsRoomCheck(float fx, float fz)
 {
 	// dungeion work
-	// ÇöÀçÀÇ Á¸ÀÌ ´øÁ¯ÀÎÁö¸¦ ÆÇ´Ü, ¾Æ´Ï¸é ¸®ÅÏÃ³¸®
+	// í˜„ì¬ì˜ ì¡´ì´ ë˜ì ¼ì¸ì§€ë¥¼ íŒë‹¨, ì•„ë‹ˆë©´ ë¦¬í„´ì²˜ë¦¬
 	
 	CRoomEvent* pRoom = NULL;
 	char notify[100]; memset(notify, 0x00, 100);
@@ -620,16 +620,16 @@ int MAP::IsRoomCheck(float fx, float fz)
 	for( int i = 1; i < nSize+1; i++)		{
 		pRoom = m_arRoomEventArray.GetData( i );
 		if( !pRoom ) continue;
-		if( pRoom->m_byStatus == 3 )	continue;	// ¹æÀÌ ½ÇÇàÁßÀÌ°Å³ª ±ü(clear) »óÅÂ¶ó¸é °Ë»öÇÏÁö ¾ÊÀ½
+		if( pRoom->m_byStatus == 3 )	continue;	// ë°©ì´ ì‹¤í–‰ì¤‘ì´ê±°ë‚˜ ê¹¬(clear) ìƒíƒœë¼ë©´ ê²€ìƒ‰í•˜ì§€ ì•ŠìŒ
 
 		bFlag_1 = FALSE; bFlag_2 = FALSE;
 
-		if( pRoom->m_byStatus == 1 )	{			// ¹æÀÌ ÃÊ±âÈ­ »óÅÂ
+		if( pRoom->m_byStatus == 1 )	{			// ë°©ì´ ì´ˆê¸°í™” ìƒíƒœ
 			minX = pRoom->m_iInitMinX;		minZ = pRoom->m_iInitMinZ;
 			maxX = pRoom->m_iInitMaxX;		maxZ = pRoom->m_iInitMaxZ;
 		}
-		else if( pRoom->m_byStatus == 2 )	{		// ÁøÇàÁßÀÎ »óÅÂ
-			if( pRoom->m_Logic[0].sNumber != 4)	continue;	// ¸ñÇ¥ÁöÁ¡±îÁö ÀÌµ¿ÇÏ´Â°Ô ¾Æ´Ï¶ó¸é,,
+		else if( pRoom->m_byStatus == 2 )	{		// ì§„í–‰ì¤‘ì¸ ìƒíƒœ
+			if( pRoom->m_Logic[0].sNumber != 4)	continue;	// ëª©í‘œì§€ì ê¹Œì§€ ì´ë™í•˜ëŠ”ê²Œ ì•„ë‹ˆë¼ë©´,,
 			minX = pRoom->m_iEndMinX;		minZ = pRoom->m_iEndMinZ;
 			maxX = pRoom->m_iEndMaxX;		maxZ = pRoom->m_iEndMaxZ;
 		}
@@ -649,17 +649,17 @@ int MAP::IsRoomCheck(float fx, float fz)
 		}
 
 		if( bFlag_1 == TRUE && bFlag_2 == TRUE )	{
-			if( pRoom->m_byStatus == 1 )	{			// ¹æÀÌ ÃÊ±âÈ­ »óÅÂ
-				pRoom->m_byStatus = 2;	// ÁøÇàÁß »óÅÂ·Î ¹æ»óÅÂ º¯È¯
+			if( pRoom->m_byStatus == 1 )	{			// ë°©ì´ ì´ˆê¸°í™” ìƒíƒœ
+				pRoom->m_byStatus = 2;	// ì§„í–‰ì¤‘ ìƒíƒœë¡œ ë°©ìƒíƒœ ë³€í™˜
 				pRoom->m_fDelayTime = TimeGet();
 				room_number = i;
 				TRACE(" Room Check - number = %d, x=%d, z=%d\n", i, nX, nZ);
-				//wsprintf(notify, "** ¾Ë¸² : [%d Zone][%d] ¹æ¿¡ µé¾î¿À½Å°ÍÀ» È¯¿µÇÕ´Ï´Ù **", m_nZoneNumber, pRoom->m_sRoomNumber);
+				//wsprintf(notify, "** ì•Œë¦¼ : [%d Zone][%d] ë°©ì— ë“¤ì–´ì˜¤ì‹ ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤ **", m_nZoneNumber, pRoom->m_sRoomNumber);
 				//m_pMain->SendSystemMsg( notify, m_nZoneNumber, PUBLIC_CHAT, SEND_ALL);
 			}
-			else if( pRoom->m_byStatus == 2 )	{		// ÁøÇàÁßÀÎ »óÅÂ
-				pRoom->m_byStatus = 3;					// Å¬¸®¾î »óÅÂ·Î
-				//wsprintf(notify, "** ¾Ë¸² : [%d Zone][%d] ¸ñÇ¥ÁöÁ¡±îÁö µµÂøÇØ¼­ Å¬¸®¾î µË´Ï´Ù¤· **", m_nZoneNumber, pRoom->m_sRoomNumber);
+			else if( pRoom->m_byStatus == 2 )	{		// ì§„í–‰ì¤‘ì¸ ìƒíƒœ
+				pRoom->m_byStatus = 3;					// í´ë¦¬ì–´ ìƒíƒœë¡œ
+				//wsprintf(notify, "** ì•Œë¦¼ : [%d Zone][%d] ëª©í‘œì§€ì ê¹Œì§€ ë„ì°©í•´ì„œ í´ë¦¬ì–´ ë©ë‹ˆë‹¤ã…‡ **", m_nZoneNumber, pRoom->m_sRoomNumber);
 				//m_pMain->SendSystemMsg( notify, m_nZoneNumber, PUBLIC_CHAT, SEND_ALL);
 			}
 
@@ -697,7 +697,7 @@ BOOL MAP::IsRoomStatusCheck()
 	int nTotalRoom = m_arRoomEventArray.GetSize()+1;
 	int nClearRoom = 1;
 
-	if( m_byRoomStatus == 2 )	{	// ¹æÀ» ÃÊ±âÈ­Áß
+	if( m_byRoomStatus == 2 )	{	// ë°©ì„ ì´ˆê¸°í™”ì¤‘
 		m_byInitRoomCount++;
 	}
 
@@ -709,31 +709,31 @@ BOOL MAP::IsRoomStatusCheck()
 			//return NULL;
 		}
 
-		if( m_byRoomStatus == 1)	{	// ¹æ ÁøÇàÁß
+		if( m_byRoomStatus == 1)	{	// ë°© ì§„í–‰ì¤‘
 			if( pRoom->m_byStatus == 3 )	nClearRoom += 1;
 			if( m_byRoomType == 0 )	{
-				if( nTotalRoom == nClearRoom )	{		// ¹æÀÌ ´Ù Å¬¸®¾î µÇ¾ú¾î¿©.. ÃÊ±âÈ­ ÇØÁà¿©,,
+				if( nTotalRoom == nClearRoom )	{		// ë°©ì´ ë‹¤ í´ë¦¬ì–´ ë˜ì—ˆì–´ì—¬.. ì´ˆê¸°í™” í•´ì¤˜ì—¬,,
 					m_byRoomStatus = 2;
-					TRACE("¹æÀÌ ´Ù Å¬¸®¾î µÇ¾ú¾î¿©.. ÃÊ±âÈ­ ÇØÁà¿©,, zone=%d, type=%d, status=%d\n", m_nZoneNumber, m_byRoomType, m_byRoomStatus);
+					TRACE("ë°©ì´ ë‹¤ í´ë¦¬ì–´ ë˜ì—ˆì–´ì—¬.. ì´ˆê¸°í™” í•´ì¤˜ì—¬,, zone=%d, type=%d, status=%d\n", m_nZoneNumber, m_byRoomType, m_byRoomStatus);
 					return TRUE;
 				}
 			}
 		}
-		else if( m_byRoomStatus == 2)	{	// ¹æÀ» ÃÊ±âÈ­Áß
+		else if( m_byRoomStatus == 2)	{	// ë°©ì„ ì´ˆê¸°í™”ì¤‘
 			if( m_byInitRoomCount >= 10 ) {
-				pRoom->InitializeRoom();		// ½ÇÁ¦ ¹æÀ» ÃÊ±âÈ­
+				pRoom->InitializeRoom();		// ì‹¤ì œ ë°©ì„ ì´ˆê¸°í™”
 				nClearRoom += 1;
-				if( nTotalRoom == nClearRoom )	{		// ¹æÀÌ ÃÊ±âÈ­ µÇ¾ú¾î¿©.. 
+				if( nTotalRoom == nClearRoom )	{		// ë°©ì´ ì´ˆê¸°í™” ë˜ì—ˆì–´ì—¬.. 
 					m_byRoomStatus = 3;
-					TRACE("¹æÀÌ ÃÊ±âÈ­ µÇ¾ú¾î¿©..  status=%d\n", m_byRoomStatus);
+					TRACE("ë°©ì´ ì´ˆê¸°í™” ë˜ì—ˆì–´ì—¬..  status=%d\n", m_byRoomStatus);
 					return TRUE;
 				}
 			}
 		}
-		else if( m_byRoomStatus == 3)	{	// ¹æ ÃÊ±âÈ­ ¿Ï·á
+		else if( m_byRoomStatus == 3)	{	// ë°© ì´ˆê¸°í™” ì™„ë£Œ
 			m_byRoomStatus = 1;
 			m_byInitRoomCount = 0;
-			TRACE("¹æÀÌ ´Ù½Ã ½ÃÀÛµÇ¾ú±º¿©..  status=%d\n", m_byRoomStatus);
+			TRACE("ë°©ì´ ë‹¤ì‹œ ì‹œì‘ë˜ì—ˆêµ°ì—¬..  status=%d\n", m_byRoomStatus);
 			return TRUE;
 		}
 	}
@@ -752,7 +752,7 @@ void MAP::InitializeRoom()
 			continue;
 		}
 
-		pRoom->InitializeRoom();		// ½ÇÁ¦ ¹æÀ» ÃÊ±âÈ­
+		pRoom->InitializeRoom();		// ì‹¤ì œ ë°©ì„ ì´ˆê¸°í™”
 		m_byRoomStatus = 1;
 		m_byInitRoomCount = 0;
 	}

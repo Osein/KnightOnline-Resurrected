@@ -75,13 +75,13 @@ IDR_MAINFRAME           ICON    DISCARDABLE     "res\\RscTables.ico"
 
 IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "RscTables ¡§∫∏"
-FONT 9, "±º∏≤"
+CAPTION "RscTables Ï†ïÎ≥¥"
+FONT 9, "Íµ¥Î¶º"
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
-    LTEXT           "RscTables πˆ¿¸ 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "RscTables Î≤ÑÏ†Ñ 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
     LTEXT           "Copyright (C) 2001",IDC_STATIC,40,25,119,8
-    DEFPUSHBUTTON   "»Æ¿Œ",IDOK,178,7,50,14,WS_GROUP
+    DEFPUSHBUTTON   "ÌôïÏù∏",IDOK,178,7,50,14,WS_GROUP
 END
 
 IDD_RSCTABLES_DIALOG DIALOGEX 0, 0, 354, 439
@@ -90,7 +90,7 @@ STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION |
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "RscTables"
 MENU IDR_MENU
-FONT 9, "±º∏≤"
+FONT 9, "Íµ¥Î¶º"
 BEGIN
     LISTBOX         IDC_LIST_DATATYPE,3,3,150,429,LBS_OWNERDRAWVARIABLE | 
                     LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
@@ -123,7 +123,7 @@ END
 IDD_DIALOG_DATACOUNT DIALOG DISCARDABLE  0, 0, 122, 55
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Data Count"
-FONT 9, "±º∏≤"
+FONT 9, "Íµ¥Î¶º"
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,7,34,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,65,34,50,14
@@ -157,14 +157,14 @@ BEGIN
         BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "Resource Table ∫Ø»Ø «¡∑Œ±◊∑•\0"
+            VALUE "FileDescription", "Resource Table Î≥ÄÌôò ÌîÑÎ°úÍ∑∏Îû®\0"
             VALUE "FileVersion", "2, 1, 10, 1632\0"
             VALUE "InternalName", "RscTables\0"
             VALUE "LegalCopyright", "Copyright (C) 2001\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "RscTables.EXE\0"
             VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "RscTables ¿¿øÎ «¡∑Œ±◊∑•\0"
+            VALUE "ProductName", "RscTables ÏùëÏö© ÌîÑÎ°úÍ∑∏Îû®\0"
             VALUE "ProductVersion", "2, 1, 10, 1632\0"
             VALUE "SpecialBuild", "\0"
         END
@@ -253,7 +253,7 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_ABOUTBOX            "RscTables ¡§∫∏(&A)..."
+    IDS_ABOUTBOX            "RscTables Ï†ïÎ≥¥(&A)..."
     IDS_FMT_TABLE_EXT0      "0 : Dagger - "
     IDS_FMT_TABLE_EXT1      "1 : Sword - "
     IDS_FMT_TABLE_EXT2      "2 : TwoHanded Sword - "

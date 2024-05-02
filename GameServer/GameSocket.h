@@ -35,7 +35,7 @@ public:
 	void RecvServerConnect(char* pBuf);
 
 	BOOL SetUid(float x, float z, int id, int speed);
-	// GameServer¿¡¼­ UserÁ¤º¸ ¹Ş´Â ºÎºĞ
+	// GameServerì—ì„œ Userì •ë³´ ë°›ëŠ” ë¶€ë¶„
 	void RecvUserInfo(char* pBuf);
 	void RecvUserInOut(char* pBuf);
 	void RecvUserMove(char* pBuf);

@@ -78,7 +78,7 @@ IDD_LAUNCHER_DIALOG DIALOGEX 0, 0, 279, 60
 STYLE WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_TOOLWINDOW | WS_EX_APPWINDOW
 CAPTION "Knight Online"
-FONT 9, "±¼¸²", 0, 0, 0x1
+FONT 9, "êµ´ë¦¼", 0, 0, 0x1
 BEGIN
     CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",PBS_SMOOTH,
                     15,39,246,7
@@ -111,14 +111,14 @@ BEGIN
         BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "Launcher MFC ÀÀ¿ë ÇÁ·Î±×·¥\0"
+            VALUE "FileDescription", "Launcher MFC ì‘ìš© í”„ë¡œê·¸ëž¨\0"
             VALUE "FileVersion", "1, 0, 0, 1\0"
             VALUE "InternalName", "Launcher\0"
             VALUE "LegalCopyright", "Copyright (C) 2002\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "Launcher.EXE\0"
             VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "Launcher ÀÀ¿ë ÇÁ·Î±×·¥\0"
+            VALUE "ProductName", "Launcher ì‘ìš© í”„ë¡œê·¸ëž¨\0"
             VALUE "ProductVersion", "1, 0, 0, 1\0"
             VALUE "SpecialBuild", "\0"
         END
@@ -163,38 +163,38 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDP_SOCKETS_INIT_FAILED "Windows ¼ÒÄÏ ÃÊ±âÈ­¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
+    IDP_SOCKETS_INIT_FAILED "Windows ì†Œì¼“ ì´ˆê¸°í™”ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤."
     IDS_IP                  "192.203.143.108"
     IDS_PRODUCT             "KnightOnLine"
     IDS_DNS                 "upgrade.nohystem.co.kr"
     IDS_JOIN_URL            "http://www.knight-online.net/register/join.htm"
-    IDS_INFO_VERSION_CHECK  "¹öÀüÀ» Ã¼Å©ÇÏ°í °ÔÀÓ ½ÇÇàÀ» ÁØºñÇÕ´Ï´Ù."
-    IDS_INFO_EXTRACTING     "¾ÐÃàÀ» Ç®°í ÀÖ½À´Ï´Ù..."
-    IDS_ERR_REGISTRY_OPEN   "·¹Áö½ºÆ®¸® ¿­±â¿¡ ½ÇÆÐ Çß½À´Ï´Ù. ´Ù½Ã ¼³Ä¡ÇØ ÁÖ½Ê½Ã¿À."
+    IDS_INFO_VERSION_CHECK  "ë²„ì „ì„ ì²´í¬í•˜ê³  ê²Œìž„ ì‹¤í–‰ì„ ì¤€ë¹„í•©ë‹ˆë‹¤."
+    IDS_INFO_EXTRACTING     "ì••ì¶•ì„ í’€ê³  ìžˆìŠµë‹ˆë‹¤..."
+    IDS_ERR_REGISTRY_OPEN   "ë ˆì§€ìŠ¤íŠ¸ë¦¬ ì—´ê¸°ì— ì‹¤íŒ¨ í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì„¤ì¹˜í•´ ì£¼ì‹­ì‹œì˜¤."
     IDS_ERR_REGISTRY_READ_VERSION 
-                            "·¹Áö½ºÆ®¸®¿¡¼­ ¹öÀüÁ¤º¸¸¦ Ã£À»¼ö ¾ø½À´Ï´Ù. ´Ù½Ã ¼³Ä¡ÇØ ÁÖ½Ê½Ã¿À"
+                            "ë ˆì§€ìŠ¤íŠ¸ë¦¬ì—ì„œ ë²„ì „ì •ë³´ë¥¼ ì°¾ì„ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì„¤ì¹˜í•´ ì£¼ì‹­ì‹œì˜¤"
 END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
     IDS_ERR_REGISTRY_READ_PATH 
-                            "·¹Áö½ºÆ®¸®¿¡¼­ ÇÁ·Î±×·¥ °æ·Î¸¦ Ã£À»¼ö ¾ø½À´Ï´Ù. ´Ù½Ã ¼³Ä¡ÇØ ÁÖ½Ê½Ã¿À"
+                            "ë ˆì§€ìŠ¤íŠ¸ë¦¬ì—ì„œ í”„ë¡œê·¸ëž¨ ê²½ë¡œë¥¼ ì°¾ì„ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì„¤ì¹˜í•´ ì£¼ì‹­ì‹œì˜¤"
     IDS_ERR_REGISTRY_READ_EXE 
-                            "·¹Áö½ºÆ®¸®¿¡¼­ ½ÇÇàÆÄÀÏ ÀÌ¸§À» Ã£À»¼ö ¾ø½À´Ï´Ù. ´Ù½Ã ¼³Ä¡ÇØ ÁÖ½Ê½Ã¿À."
+                            "ë ˆì§€ìŠ¤íŠ¸ë¦¬ì—ì„œ ì‹¤í–‰íŒŒì¼ ì´ë¦„ì„ ì°¾ì„ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì„¤ì¹˜í•´ ì£¼ì‹­ì‹œì˜¤."
     IDS_ERR_REGISTRY_READ_SERVICE 
-                            "·¹Áö½ºÆ®¸®¿¡¼­ ¼­ºñ½º ÀÌ¸§À» Ã£À»¼ö ¾ø½À´Ï´Ù. ´Ù½Ã ¼³Ä¡ÇØ ÁÖ½Ê½Ã¿À."
+                            "ë ˆì§€ìŠ¤íŠ¸ë¦¬ì—ì„œ ì„œë¹„ìŠ¤ ì´ë¦„ì„ ì°¾ì„ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì„¤ì¹˜í•´ ì£¼ì‹­ì‹œì˜¤."
     IDS_FMT_FAILED_CONNECT_LOGIN_SERVER 
-                            "LogIn Server Á¢¼Ó½ÇÆÐ - %d\n´Ù½Ã Á¢¼ÓÀ» ½ÃµµÇÏ½Ã°Ú½À´Ï±î?"
-    IDS_ERR_INVALID_SERVER_COUNT "Á¢¼Ó °¡´ÉÇÑ ¼­¹ö¸®½ºÆ®°¡ ¾ø½À´Ï´Ù."
-    IDS_ERR_INVALID_VERSION "¹öÀüÀÌ ¸ÂÁö ¾Ê½À´Ï´Ù."
+                            "LogIn Server ì ‘ì†ì‹¤íŒ¨ - %d\në‹¤ì‹œ ì ‘ì†ì„ ì‹œë„í•˜ì‹œê² ìŠµë‹ˆê¹Œ?"
+    IDS_ERR_INVALID_SERVER_COUNT "ì ‘ì† ê°€ëŠ¥í•œ ì„œë²„ë¦¬ìŠ¤íŠ¸ê°€ ì—†ìŠµë‹ˆë‹¤."
+    IDS_ERR_INVALID_VERSION "ë²„ì „ì´ ë§žì§€ ì•ŠìŠµë‹ˆë‹¤."
     IDS_ERR_INVALID_DOWNLOAD_FILE_COUNT 
-                            "ÆÄÀÏ ´Ù¿î·Îµå °¹¼ö°¡ Á¤»óÀÌ ¾Æ´Õ´Ï´Ù."
-    IDS_ERR_INIT_INTERNET   "ÀÎÅÍ³Ý ÃÊ±âÈ­¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù."
-    IDS_ERR_CONNECT_FTP     "FTP ¼­¹ö¿¡ Á¢¼ÓÇÒ ¼ö ¾ø½À´Ï´Ù."
-    IDS_ERR_PATCH           "ÀÚµ¿ ÆÐÄ¡¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù. ÇÁ·Î±×·¥À» ´Ù½Ã ½ÇÇàÇØ ÁÖ½Ê½Ã¿À."
+                            "íŒŒì¼ ë‹¤ìš´ë¡œë“œ ê°¯ìˆ˜ê°€ ì •ìƒì´ ì•„ë‹™ë‹ˆë‹¤."
+    IDS_ERR_INIT_INTERNET   "ì¸í„°ë„· ì´ˆê¸°í™”ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤."
+    IDS_ERR_CONNECT_FTP     "FTP ì„œë²„ì— ì ‘ì†í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤."
+    IDS_ERR_PATCH           "ìžë™ íŒ¨ì¹˜ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤. í”„ë¡œê·¸ëž¨ì„ ë‹¤ì‹œ ì‹¤í–‰í•´ ì£¼ì‹­ì‹œì˜¤."
     IDS_ERR_DOWNLOAD_PATCH_FILE_AND_RETRY 
-                            "ÆÄÀÏÀ» ´Ù¿î·Îµå ¹ÞÁö ¸øÇÏ¿´½À´Ï´Ù. ´Ù½Ã ½ÃµµÇÏ½Ã°Ú½À´Ï±î?"
-    IDS_ERR_DOWNLOAD_PATCH_FILE "ÆÄÀÏÀ» ´Ù¿î·Îµå ¹ÞÁö ¸øÇÏ¿´½À´Ï´Ù."
+                            "íŒŒì¼ì„ ë‹¤ìš´ë¡œë“œ ë°›ì§€ ëª»í•˜ì˜€ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•˜ì‹œê² ìŠµë‹ˆê¹Œ?"
+    IDS_ERR_DOWNLOAD_PATCH_FILE "íŒŒì¼ì„ ë‹¤ìš´ë¡œë“œ ë°›ì§€ ëª»í•˜ì˜€ìŠµë‹ˆë‹¤."
 END
 
 #endif    // Korean resources
@@ -217,38 +217,38 @@ LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-IDP_SOCKETS_INIT_FAILED "Windows SOCKETªì©l¤Æ¥¢±Ñ."
+IDP_SOCKETS_INIT_FAILED "Windows SOCKETã‚Œ?ã…–â…±ê·."
     IDS_IP                  "192.203.143.108"
     IDS_PRODUCT             "KnightOnLine"
     IDS_DNS                 "upgrade.nohystem.co.kr"
     IDS_JOIN_URL            "http://www.knight-online.net/register/join.htm"
-    IDS_INFO_VERSION_CHECK  "½T»{ª©¥»«á·Ç³Æ°õ¦æ¹CÀ¸."
-    IDS_INFO_EXTRACTING     "¥¿¦b¸ÑÀ£ÁY..."
-    IDS_ERR_REGISTRY_OPEN   " REGISTRY¶}±Ò¥¢±Ñ. ½Ð­«·s¦w¸Ë."
+    IDS_INFO_VERSION_CHECK  "??ã‰?ãƒ¡ë ·ëƒ”ê³°??ìœ¼."
+    IDS_INFO_EXTRACTING     "??ë¨ˆì›°?..."
+    IDS_ERR_REGISTRY_OPEN   " REGISTRY?ê·‘â…±ê·. ì‹»ï£§ã‚·s?ë§·."
     IDS_ERR_REGISTRY_READ_VERSION 
-                            "µLªk¦bREGISTRY¸Ì§ä¨ìª©¥»±¡³ø. ½Ð­«·s¦w¸Ë"
+                            "???REGISTRYë§¸ã›â‘¥ã‰?ê´Œë†œ. ì‹»ï£§ã‚·s?ë§·"
 END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
     IDS_ERR_REGISTRY_READ_PATH 
-                            "µLªk¦bREGISTRY§ä¨ìµ{¦¡ªº¸ô®|. ½Ð­«·s¦w¸Ë"
+                            "???REGISTRYã›â‘¥?â”€ãšëª°ï£¨|. ì‹»ï£§ã‚·s?ë§·"
     IDS_ERR_REGISTRY_READ_EXE 
-                            "µLªk¦bREGISTRY¸Ì§ä¨ì°õ¦æÀÉ®×ªº¦WºÙ. ½Ð­«·s¦w¸Ë."
+                            "???REGISTRYë§¸ã›â‘¥ê³°?ì ï£¨ç˜»ë²§Wë¶™. ì‹»ï£§ã‚·s?ë§·."
     IDS_ERR_REGISTRY_READ_SERVICE 
-                            "µLªk¦bREGISTRY¸Ì§ä¨ì¦øªA¾¹¦WºÙ. ½Ð­«·s¦w¸Ë."
+                            "???REGISTRYë§¸ã›â‘¥??ì”?ë¶™. ì‹»ï£§ã‚·s?ë§·."
     IDS_FMT_FAILED_CONNECT_LOGIN_SERVER 
-                            "LogIn Server ³s±µ¥¢±Ñ - %d\n­n­«·s³s±µ¶Ü?"
-    IDS_ERR_INVALID_SERVER_COUNT "¨S¦³¥i³s±µªº¦øªA¾¹¦W³æ."
-    IDS_ERR_INVALID_VERSION "ª©¥»¤£²Å¦X."
+                            "LogIn Server ?êµ˜â…±ê· - %d\nï£§nï£§ã‚·s?êµ˜ëœ€?"
+    IDS_ERR_INVALID_SERVER_COUNT "?â”³??êµ˜ãš??ì”?ë…”."
+    IDS_ERR_INVALID_VERSION "ã‰?ã„³ê¼½?."
     IDS_ERR_INVALID_DOWNLOAD_FILE_COUNT 
-                            "¤U¸üªºÀÉ®×¼Æ¶q¤£¥¿±`."
-    IDS_ERR_INIT_INTERNET   "ºô¸ôªì©l¤Æ¥¢±Ñ."
-    IDS_ERR_CONNECT_FTP     "µLªk³s±µFTP¦øªA¾¹."
-    IDS_ERR_PATCH           "¦Û°Ê§ó·sÀÉ®×¥¢±Ñ. ½Ð­«·s°õ¦æµ{¦¡."
+                            "?ë«˜ãšì ï£¨ç¡«í‹‹qã„³??."
+    IDS_ERR_INIT_INTERNET   "ë¹Œëª°ã‚Œ?ã…–â…±ê·."
+    IDS_ERR_CONNECT_FTP     "???êµ˜FTP??ì”."
+    IDS_ERR_PATCH           "â•€ê±º??ì ï£¨å©âˆ®? ì‹»ï£§ã‚·sê³°??â”€."
     IDS_ERR_DOWNLOAD_PATCH_FILE_AND_RETRY 
-                            "ÀÉ®×¥¼¯à¤U¸ü.­n­«·s¹Á¸Õ¶Ü?"
-    IDS_ERR_DOWNLOAD_PATCH_FILE "¥¼¯à¤U¸üÀÉ®×."
+                            "ì ï£¨å©ì„žè¥¿Uë«˜.ï£§nï£§ã‚·së®ë¨¼ëœ€?"
+    IDS_ERR_DOWNLOAD_PATCH_FILE "?ï£©è¥¿Uë«˜ì ï£¨?"
 END
 
 #endif    // Chinese (Taiwan) resources

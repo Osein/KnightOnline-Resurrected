@@ -69,7 +69,7 @@ void CDlgShapeList::UpdateTree(CN3Scene* pScene)
 {
 	m_ListShape.ResetContent();
 	
-	if (pScene && m_IsSourceObj)	// Source¿ë ¹öÀü..
+	if (pScene && m_IsSourceObj)	// Sourceìš© ë²„ì „..
 	{
 		m_pSceneRef = pScene;
 
@@ -86,7 +86,7 @@ void CDlgShapeList::UpdateTree(CN3Scene* pScene)
 			}
 		}
 	}
-	else if (!pScene && !m_IsSourceObj)				// Output¿ë ¹öÀü..
+	else if (!pScene && !m_IsSourceObj)				// Outputìš© ë²„ì „..
 	{
 		CMainFrame* pFrm =  (CMainFrame* )AfxGetMainWnd();
 		COrganizeView* pView = pFrm->GetOrganizeView();
@@ -124,7 +124,7 @@ void CDlgShapeList::UpdateTree(CN3Scene* pScene)
 	}
 }
 
-int	CDlgShapeList::GetTotalShapeInfoCount()									// Output¿ë..
+int	CDlgShapeList::GetTotalShapeInfoCount()									// Outputìš©..
 {
 	if (m_IsSourceObj)
 	{
@@ -161,7 +161,7 @@ int	CDlgShapeList::GetTotalShapeInfoCount()									// Output¿ë..
 	return i;
 }
 
-CN3Shape* CDlgShapeList::GetShapeByiOrder(int iOrder)				// Output¿ë..
+CN3Shape* CDlgShapeList::GetShapeByiOrder(int iOrder)				// Outputìš©..
 {
 	if (m_IsSourceObj)
 	{
@@ -202,7 +202,7 @@ CN3Shape* CDlgShapeList::GetShapeByiOrder(int iOrder)				// Output¿ë..
 	return NULL;
 }
 
-void CDlgShapeList::SelectObject(void* pItemData)	// Output¿ë ¹öÀü..
+void CDlgShapeList::SelectObject(void* pItemData)	// Outputìš© ë²„ì „..
 {
 	if (m_IsSourceObj)	return;
 
@@ -234,7 +234,7 @@ void CDlgShapeList::OnSelchangeListObj()
 	CMainFrame* pFrm = NULL;
 	pFrm = (CMainFrame*)AfxGetMainWnd();
 
-	// Source¿Í Output °ø¿ë..
+	// Sourceì™€ Output ê³µìš©..
 	int idx = m_ListShape.GetCurSel();
 	if(idx<0) return;
 	
@@ -316,7 +316,7 @@ BOOL CDlgShapeList::PreTranslateMessage(MSG* pMsg)
 void CDlgShapeList::OnBtnSort() 
 {
 	// TODO: Add your control notification handler code here
-	// Source ¹öÀü..
+	// Source ë²„ì „..
 	if (m_IsSourceObj)
 	{
 		ShapeMap Map;
@@ -349,7 +349,7 @@ void CDlgShapeList::OnBtnSort()
 			it++;
 		}	
 	}
-	// Output ¹öÀü..
+	// Output ë²„ì „..
 	else
 	{
 		ShapeInfoMap Map;
@@ -387,7 +387,7 @@ void CDlgShapeList::OnBtnSort()
 void CDlgShapeList::OnOk() 
 {
 	// TODO: Add your control notification handler code here
-	// ´ç¿¬È÷ Source ¹öÀü..
+	// ë‹¹ì—°ížˆ Source ë²„ì „..
 	CMainFrame* pFrm = (CMainFrame*)AfxGetMainWnd();
 	CN3Shape* pShape = NULL;
 	int SelCount = m_ListShape.GetSelCount();

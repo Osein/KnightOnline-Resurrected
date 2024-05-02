@@ -82,13 +82,13 @@ static UINT indicators[] =
 CMainFrame::CMainFrame()
 {
 	// TODO: add member initialization code here
-	m_eState = STATE_EDIT;										// »óÅÂ º¯¼öµé..
+	m_eState = STATE_EDIT;										// ìƒíƒœ ë³€ìˆ˜ë“¤..
 	m_eSelectState = SELECT_STATE_PVOLUMN;
 	m_dwRenderingOption = dw_Render_None;	
 
-	m_pDlgSourceList = NULL;							// Object ¸ñ·ÏÀ» º¸¿©ÁÙ ´ÙÀÌ¾Ë·Î±×
-	m_pDlgOutputList = NULL;							// ¸Ê¿¡ ¹èÄ¡ÇÑ Object¸¦ º¸¿©ÁÙ ´ÙÀÌ¾Ë·Î±×
-	m_pSceneSource = NULL;					// source object ¸ñ·Ï¿¡ º¸¿©ÁÙ °ÍµéÀ» ´ãÀº Scene
+	m_pDlgSourceList = NULL;							// Object ëª©ë¡ì„ ë³´ì—¬ì¤„ ë‹¤ì´ì•Œë¡œê·¸
+	m_pDlgOutputList = NULL;							// ë§µì— ë°°ì¹˜í•œ Objectë¥¼ ë³´ì—¬ì¤„ ë‹¤ì´ì•Œë¡œê·¸
+	m_pSceneSource = NULL;					// source object ëª©ë¡ì— ë³´ì—¬ì¤„ ê²ƒë“¤ì„ ë‹´ì€ Scene
 
 	m_pDummy = NULL;
 
@@ -115,7 +115,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	}
 
 	if(m_Eng.Init(TRUE, m_hWnd, 64, 64, 0, TRUE) == false) return 0;
-	m_Eng.GridCreate(300, 300); // ±×¸®µå ¸¸µé±â..
+	m_Eng.GridCreate(300, 300); // ê·¸ë¦¬ë“œ ë§Œë“¤ê¸°..
 
 	m_Camera.EyePosSet(cvInitEyeOffset);
 
@@ -163,7 +163,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_dwRenderingOption = dw_Render_None;
 	m_eEditState = EDIT_SELECT;
 
-	// °æ·Î ¼³Á¤..
+	// ê²½ë¡œ ì„¤ì •..
 	std::string str;
 	char szPathCur[256] = "";
 	GetCurrentDirectory(256, szPathCur);
@@ -353,7 +353,7 @@ void CMainFrame::OnUpdateViewOutputobject(CCmdUI* pCmdUI)
 CN3Transform* CMainFrame::AddChr(CN3Scene* pDestScene, const std::string& szFN, BOOL bGenerateChainNumber)
 {
 	CN3Chr* pChr = new CN3Chr;
-	if(false == pChr->LoadFromFile(szFN)) // ºÎ¸£±â°¡ ½ÇÆĞÇÏ¸é..
+	if(false == pChr->LoadFromFile(szFN)) // ë¶€ë¥´ê¸°ê°€ ì‹¤íŒ¨í•˜ë©´..
 	{
 		delete pChr;
 		return NULL;
@@ -370,8 +370,8 @@ CN3Transform* CMainFrame::AddChr(CN3Scene* pDestScene, const std::string& szFN, 
 			int nL = lstrlen(szCompare);
 			if(nL < 5) continue;
 
-			szCompare[nL-5] = NULL; // µÚ¿¡ ºÙ´Â ¾ğ´õ¹Ù¿Í ³×ÀÚ¸® ¹øÈ£´Â »«´Ù..
-			if(pChr->m_szName == szCompare) // ÀÌ¸§ÀÌ °°À¸¸é..
+			szCompare[nL-5] = NULL; // ë’¤ì— ë¶™ëŠ” ì–¸ë”ë°”ì™€ ë„¤ìë¦¬ ë²ˆí˜¸ëŠ” ëº€ë‹¤..
+			if(pChr->m_szName == szCompare) // ì´ë¦„ì´ ê°™ìœ¼ë©´..
 			{
 				nChainNumber = atoi(&(szCompare[nL-4])) + 1;
 			}
@@ -379,7 +379,7 @@ CN3Transform* CMainFrame::AddChr(CN3Scene* pDestScene, const std::string& szFN, 
 
 		char szName[_MAX_PATH];
 		wsprintf(szName, "%s_%.4d", pChr->m_szName.c_str(), nChainNumber);
-		pChr->m_szName = szName; // .. ÀÌ¸§À» Áş´Â´Ù..
+		pChr->m_szName = szName; // .. ì´ë¦„ì„ ì§“ëŠ”ë‹¤..
 	}
 
 	pDestScene->ChrAdd(pChr);
@@ -389,13 +389,13 @@ CN3Transform* CMainFrame::AddChr(CN3Scene* pDestScene, const std::string& szFN, 
 CN3Transform* CMainFrame::AddShape(CN3Scene* pDestScene, const std::string& szFN, BOOL bGenerateChainNumber)	
 {
 	CN3Shape* pShape = new CN3Shape;
-	if(false == pShape->LoadFromFile(szFN)) // ºÎ¸£±â°¡ ½ÇÆĞÇÏ¸é..
+	if(false == pShape->LoadFromFile(szFN)) // ë¶€ë¥´ê¸°ê°€ ì‹¤íŒ¨í•˜ë©´..
 	{
 		delete pShape;
 		return NULL;
 	}
 
-	pDestScene->ShapeAdd(pShape); // Ãß°¡ ÇÏ°í
+	pDestScene->ShapeAdd(pShape); // ì¶”ê°€ í•˜ê³ 
 	return pShape;
 }
 
@@ -407,10 +407,10 @@ void CMainFrame::LoadSourceObjects()
 
 	WIN32_FIND_DATA FindFileData;
 
-	// source\Chr Æú´õÀÇ ¸ğµç Ä³¸¯ÅÍ Ãß°¡
+	// source\Chr í´ë”ì˜ ëª¨ë“  ìºë¦­í„° ì¶”ê°€
 	CString szChrPath;
 	szChrPath.Format("%sChr\\", CN3Base::s_szPath.c_str());
-	SetCurrentDirectory(szChrPath); // szFolder\Chr Æú´õ·Î °æ·Î¸¦ ¹Ù²Ù°í..
+	SetCurrentDirectory(szChrPath); // szFolder\Chr í´ë”ë¡œ ê²½ë¡œë¥¼ ë°”ê¾¸ê³ ..
 	HANDLE hFind = FindFirstFile("*.N3Chr", &FindFileData);
 
 	if (hFind != INVALID_HANDLE_VALUE)
@@ -423,11 +423,11 @@ void CMainFrame::LoadSourceObjects()
 		FindClose(hFind);
 	}
 
-	// source\Data Æú´õÀÇ ¸ğµç shape Ãß°¡
+	// source\Data í´ë”ì˜ ëª¨ë“  shape ì¶”ê°€
 	CString szShapePath;
 	szShapePath.Format("%sObject\\", CN3Base::s_szPath.c_str());
-	SetCurrentDirectory(szShapePath); // szFolder\Mesh Æú´õ·Î °æ·Î¸¦ ¹Ù²Ù°í..
-	hFind = FindFirstFile("*.N3Shape", &FindFileData); // ÆÄÀÏ Ã£±â.
+	SetCurrentDirectory(szShapePath); // szFolder\Mesh í´ë”ë¡œ ê²½ë¡œë¥¼ ë°”ê¾¸ê³ ..
+	hFind = FindFirstFile("*.N3Shape", &FindFileData); // íŒŒì¼ ì°¾ê¸°.
 
 	if (hFind != INVALID_HANDLE_VALUE)
 	{
@@ -439,8 +439,8 @@ void CMainFrame::LoadSourceObjects()
 		FindClose(hFind);
 	}	
 
-	m_pSceneSource->Tick();	// Object ÃÊ±âÈ­
-	m_pDlgSourceList->UpdateTree(m_pSceneSource);	// ¸ñ·Ï °»½Å
+	m_pSceneSource->Tick();	// Object ì´ˆê¸°í™”
+	m_pDlgSourceList->UpdateTree(m_pSceneSource);	// ëª©ë¡ ê°±ì‹ 
 }
 
 void CMainFrame::RefreshSourceObjects()
@@ -471,12 +471,12 @@ void CMainFrame::RefreshSourceObjects()
 	}
 }
 
-void CMainFrame::OutputDlgRefresh()	// ¼Ò½º¸ñ·Ï¿¡¼­ ¼±ÅÃÇÑ Object¸¦ ³ÖÀ¸¸é OutputSceneÀ¸·Î º¹»çÇØ¼­ ³Ö¾îÁØ´Ù.
+void CMainFrame::OutputDlgRefresh()	// ì†ŒìŠ¤ëª©ë¡ì—ì„œ ì„ íƒí•œ Objectë¥¼ ë„£ìœ¼ë©´ OutputSceneìœ¼ë¡œ ë³µì‚¬í•´ì„œ ë„£ì–´ì¤€ë‹¤.
 {
 	m_pDlgOutputList->UpdateTree();
 }
 
-void CMainFrame::RenderObjectToWindow(CN3TransformCollision* pObj, HWND hWnd)	// Æ¯Á¤ À©µµ¿ì¿¡ Object¸¦ ±×·ÁÁØ´Ù.
+void CMainFrame::RenderObjectToWindow(CN3TransformCollision* pObj, HWND hWnd)	// íŠ¹ì • ìœˆë„ìš°ì— Objectë¥¼ ê·¸ë ¤ì¤€ë‹¤.
 {
 	if (pObj == NULL || hWnd == NULL) return;
 	DWORD dwType = pObj->Type();
@@ -497,7 +497,7 @@ void CMainFrame::RenderObjectToWindow(CN3TransformCollision* pObj, HWND hWnd)	//
 	// begin
 	pD3DDev->BeginScene();
 
-	// ObjectÀÇ À§Ä¡ ¹× Å©±â ÆÄ¾Ç
+	// Objectì˜ ìœ„ì¹˜ ë° í¬ê¸° íŒŒì•…
 	__Vector3 vDir(-1,-1,3);	vDir.Normalize();
 	__Vector3 vMin = pObj->Min();
 	__Vector3 vMax = pObj->Max();
@@ -514,18 +514,18 @@ void CMainFrame::RenderObjectToWindow(CN3TransformCollision* pObj, HWND hWnd)	//
 	DWORD dwLighting;
 	pD3DDev->GetRenderState(D3DRS_LIGHTING, &dwLighting);
 
-	// camera frustum ¼¼ÆÃ..(ApplyÇÔ¼ö ³»ºÎ¿¡¼­ transformÀ» ¹Ù²Ù±â¶§¹®¿¡ ÀÌ À§Ä¡¿¡ ³Ö¾î¾ß ÇÑ´Ù.)
+	// camera frustum ì„¸íŒ…..(Applyí•¨ìˆ˜ ë‚´ë¶€ì—ì„œ transformì„ ë°”ê¾¸ê¸°ë•Œë¬¸ì— ì´ ìœ„ì¹˜ì— ë„£ì–´ì•¼ í•œë‹¤.)
 	CN3Camera TempCamera;
 	TempCamera.EyePosSet(vEye);
 	TempCamera.AtPosSet(vAt);
 	TempCamera.UpVectorSet(vUp);
 	TempCamera.Tick();
-	TempCamera.Apply();	// ÀÓ½ÃÄ«¸Ş¶ó¿¡ µ¥ÀÌÅÍ¸¦ ³Ö°í frustum Á¤º¸¸¦ °è»ê..
+	TempCamera.Apply();	// ì„ì‹œì¹´ë©”ë¼ì— ë°ì´í„°ë¥¼ ë„£ê³  frustum ì •ë³´ë¥¼ ê³„ì‚°..
 
 	// Set Render State
 	pD3DDev->SetRenderState(D3DRS_LIGHTING, FALSE);
 
-	// ±×¸®±â
+	// ê·¸ë¦¬ê¸°
 	if (dwType & OBJ_CHARACTER)
 	{
 		CN3Chr* pChr = (CN3Chr*)pObj;
@@ -542,7 +542,7 @@ void CMainFrame::RenderObjectToWindow(CN3TransformCollision* pObj, HWND hWnd)	//
 	pD3DDev->EndScene(); // end
 	m_Eng.Present(hWnd); // present
 
-	// restore (ÀÌÀü »óÅÂ·Î µÇµ¹·ÁÁÖÁö ¾ÊÀ¸¸é ÁöÇü¿¡¼­ pickingÀÌ Á¦´ë·Î µÇÁö ¾Ê´Â´Ù)
+	// restore (ì´ì „ ìƒíƒœë¡œ ë˜ëŒë ¤ì£¼ì§€ ì•Šìœ¼ë©´ ì§€í˜•ì—ì„œ pickingì´ ì œëŒ€ë¡œ ë˜ì§€ ì•ŠëŠ”ë‹¤)
 	pD3DDev->SetTransform(D3DTS_VIEW, &mtxOldView);
 	pD3DDev->SetTransform(D3DTS_PROJECTION, &mtxOldProj);
 	CopyMemory(&CN3Base::s_CameraData, &CameraDataBackUp, sizeof(CameraDataBackUp));
@@ -643,7 +643,7 @@ ShapeInfo* CMainFrame::GetShapeForDisplay()
 void CMainFrame::OnTipFocusSelobj() 
 {
 	// TODO: Add your command handler code here
-	// focus¸¦ °¡Áú Object  ¸¦ Ã£´Â´Ù..
+	// focusë¥¼ ê°€ì§ˆ Object  ë¥¼ ì°¾ëŠ”ë‹¤..
 	bool bFound = false;
 	CPortalVolume* pVol = NULL;
 	COrganizeView* pView = GetOrganizeView();
@@ -688,7 +688,7 @@ void CMainFrame::OnTipFocusSelobj()
 			}
 		
 			if (vMin.x != FLT_MAX && vMax.x != -FLT_MAX)
-			{	// ¹°Ã¼ Å©±â¿¡ ¸ÂÃç Ä«¸Ş¶ó °Å¸® Á¶Àı
+			{	// ë¬¼ì²´ í¬ê¸°ì— ë§ì¶° ì¹´ë©”ë¼ ê±°ë¦¬ ì¡°ì ˆ
 				__Vector3 vDir = m_Camera.Dir();
 				__Vector3 vAt = vMin + ((vMax-vMin)/2);
 				m_Camera.AtPosSet(vAt);
@@ -717,7 +717,7 @@ void CMainFrame::OnTipFocusSelobj()
 			}
 		
 			if (vMin.x != FLT_MAX && vMax.x != -FLT_MAX)
-			{	// ¹°Ã¼ Å©±â¿¡ ¸ÂÃç Ä«¸Ş¶ó °Å¸® Á¶Àı
+			{	// ë¬¼ì²´ í¬ê¸°ì— ë§ì¶° ì¹´ë©”ë¼ ê±°ë¦¬ ì¡°ì ˆ
 				__Vector3 vDir = m_Camera.Dir();
 				__Vector3 vAt = vMin + ((vMax-vMin)/2);
 				m_Camera.AtPosSet(vAt);
@@ -757,7 +757,7 @@ void CMainFrame::OnTipFocusSelobj()
 		}
 
 		if (vMin.x != FLT_MAX && vMax.x != -FLT_MAX)
-		{	// ¹°Ã¼ Å©±â¿¡ ¸ÂÃç Ä«¸Ş¶ó °Å¸® Á¶Àı
+		{	// ë¬¼ì²´ í¬ê¸°ì— ë§ì¶° ì¹´ë©”ë¼ ê±°ë¦¬ ì¡°ì ˆ
 			__Vector3 vDir = m_Camera.Dir();
 			__Vector3 vAt = vMin + ((vMax-vMin)/2);
 			m_Camera.AtPosSet(vAt);
@@ -773,7 +773,7 @@ void CMainFrame::OnTipFocusAll()
 	FindMinMaxTotalShape(vMin, vMax);
 
 	if (vMin.x != FLT_MAX && vMax.x != -FLT_MAX)
-	{	// ¹°Ã¼ Å©±â¿¡ ¸ÂÃç Ä«¸Ş¶ó °Å¸® Á¶Àı
+	{	// ë¬¼ì²´ í¬ê¸°ì— ë§ì¶° ì¹´ë©”ë¼ ê±°ë¦¬ ì¡°ì ˆ
 		__Vector3 vDir = m_Camera.Dir();
 		__Vector3 vAt = vMin + ((vMax-vMin)/2);
 		m_Camera.AtPosSet(vAt);
@@ -880,15 +880,15 @@ LOOP1:
 			bFound = false;
 
 			SelectElement se = m_pDummy->m_SelObjArray.GetAt(i);					
-			if (se.eST != TYPE_SHAPE_ONLY)	// VolumeÀÌ´Ù..
+			if (se.eST != TYPE_SHAPE_ONLY)	// Volumeì´ë‹¤..
 			{
-				// Ã£´Â´Ù..
+				// ì°¾ëŠ”ë‹¤..
 				if (pView->m_PVSMgr.IsExistPortalVolumeByPointer((CPortalVolume *)se.pSelectPointer))
 					bFound = true;
 			}
-			else												// Shape´Ù..
+			else												// Shapeë‹¤..
 			{
-				// Ã£´Â´Ù..
+				// ì°¾ëŠ”ë‹¤..
 				if (pView->m_PVSMgr.IsExistTotalShapeByPointer((ShapeInfo *)se.pSelectPointer))
 					bFound = true;
 				
@@ -896,7 +896,7 @@ LOOP1:
 					bFound = true;
 			}
 
-			// ¸øÃ£¾ÒÀ¸¸é..
+			// ëª»ì°¾ì•˜ìœ¼ë©´..
 			if (!bFound)
 			{
 				m_pDummy->m_SelObjArray.RemoveAt(i);
@@ -914,12 +914,12 @@ LOOP2:
 		{
 			bFound = false;
 
-			// Ã£´Â´Ù..
+			// ì°¾ëŠ”ë‹¤..
 			pVol = m_SelVolArray.GetAt(i);
 			if (pView->m_PVSMgr.IsExistPortalVolumeByPointer((CPortalVolume *)pVol))
 				bFound = true;
 
-			// ¸øÃ£¾ÒÀ¸¸é..
+			// ëª»ì°¾ì•˜ìœ¼ë©´..
 			if (!bFound)
 			{
 				m_SelVolArray.RemoveAt(i);
@@ -929,30 +929,30 @@ LOOP2:
 	}
 
 	// 3. m_LastSelectedElement Check..
-	if (m_LastSelectedElement.eST != TYPE_SHAPE_ONLY)	// VolumeÀÌ´Ù..
+	if (m_LastSelectedElement.eST != TYPE_SHAPE_ONLY)	// Volumeì´ë‹¤..
 	{
 		bFound = false;
 
-		// Ã£´Â´Ù..
+		// ì°¾ëŠ”ë‹¤..
 		if (pView->m_PVSMgr.IsExistPortalVolumeByPointer((CPortalVolume *)m_LastSelectedElement.pSelectPointer))
 			bFound = true;
 
-		// ¸øÃ£¾ÒÀ¸¸é..
+		// ëª»ì°¾ì•˜ìœ¼ë©´..
 		if (!bFound)
 			m_LastSelectedElement.pSelectPointer = NULL;
 	}
-	else												// Shape´Ù..
+	else												// Shapeë‹¤..
 	{
 		bFound = false;
 
-		// Ã£´Â´Ù..
+		// ì°¾ëŠ”ë‹¤..
 		if (pView->m_PVSMgr.IsExistTotalShapeByPointer((ShapeInfo *)m_LastSelectedElement.pSelectPointer))
 			bFound = true;
 		
 		if (pView->m_PVSMgr.IsExistLinkedShapeByPointer((ShapeInfo *)m_LastSelectedElement.pSelectPointer))
 			bFound = true;
 
-		// ¸øÃ£¾ÒÀ¸¸é..
+		// ëª»ì°¾ì•˜ìœ¼ë©´..
 		if (!bFound)
 			m_LastSelectedElement.pSelectPointer = NULL;
 	}
@@ -1061,7 +1061,7 @@ void CMainFrame::OnTipDeleteUnusedFiles()
 	std::vector<std::string> unusedFNs;
 	std::string szFN;
 	
-	//  ÀÏ´Ü ¸ù¶¥ ´Ù ¸Ê¿¡ ³Ö´Â´Ù..
+	//  ì¼ë‹¨ ëª½ë•… ë‹¤ ë§µì— ë„£ëŠ”ë‹¤..
 	mapBase mBases;
 	int iSC = m_pDlgOutputList->GetTotalShapeInfoCount();
 	
@@ -1098,7 +1098,7 @@ void CMainFrame::OnTipDeleteUnusedFiles()
 			if(NULL == pPart)
 			{
 				CString szErr;
-				szErr.Format("NULL Part : %s - %d¹øÂ° Part", pShape->FileName().c_str(), j);
+				szErr.Format("NULL Part : %s - %dë²ˆì§¸ Part", pShape->FileName().c_str(), j);
 				invalidFNs.push_back(szErr.operator LPCTSTR());
 				continue;
 			}
@@ -1113,7 +1113,7 @@ void CMainFrame::OnTipDeleteUnusedFiles()
 			else
 			{
 				CString szErr;
-				szErr.Format("NULL PMesh : %s - %d¹øÂ° Part", pShape->FileName().c_str(), j);
+				szErr.Format("NULL PMesh : %s - %dë²ˆì§¸ Part", pShape->FileName().c_str(), j);
 				invalidFNs.push_back(szErr.operator LPCTSTR());
 			}
 
@@ -1130,7 +1130,7 @@ void CMainFrame::OnTipDeleteUnusedFiles()
 				else
 				{
 					CString szErr;
-					szErr.Format("NULL Texture : %s - %d¹øÂ° Part, %d¹øÂ° Texture", pShape->FileName().c_str(), j, k);
+					szErr.Format("NULL Texture : %s - %dë²ˆì§¸ Part, %dë²ˆì§¸ Texture", pShape->FileName().c_str(), j, k);
 					invalidFNs.push_back(szErr.operator LPCTSTR());
 					continue;
 				}
@@ -1138,7 +1138,7 @@ void CMainFrame::OnTipDeleteUnusedFiles()
 		}
 	}
 
-	// ÆÄÀÏÀ» Ã£°í..
+	// íŒŒì¼ì„ ì°¾ê³ ..
 	std::string szPath = CN3Base::PathGet() + "object\\";
 	::SetCurrentDirectory(szPath.c_str());
 	CFileFind ff;
@@ -1158,7 +1158,7 @@ void CMainFrame::OnTipDeleteUnusedFiles()
 		
 		szFN = szFNTmp;
 		it_Base it = mBases.find(szFN);
-		if(it != mBases.end()) continue; // Ã£¾ÒÀ¸¸é ¾´°Å´Ù..
+		if(it != mBases.end()) continue; // ì°¾ì•˜ìœ¼ë©´ ì“´ê±°ë‹¤..
 
 		unusedFNs.push_back(szFN);
 	}
@@ -1176,7 +1176,7 @@ void CMainFrame::OnTipDeleteUnusedFiles()
 			unusedFNs.push_back(szFN);
 	}
 	
-	// ÆÄÀÏ Áö¿ì±â ´ëÈ­»óÀÚ ¶ç¿ì±â..
+	// íŒŒì¼ ì§€ìš°ê¸° ëŒ€í™”ìƒì ë„ìš°ê¸°..
 	CDlgUnusedFiles dlg;
 	int iUFC = unusedFNs.size();
 	for(i = 0; i < iUFC; i++)
@@ -1192,13 +1192,13 @@ void CMainFrame::OnTipDeleteUnusedFiles()
 
 	dlg.DoModal();
 	
-	// ¸ğµÎ ¾÷µ¥ÀÌÆ®..
+	// ëª¨ë‘ ì—…ë°ì´íŠ¸..
 	if(m_pDummy)
 		m_pDummy->ClearObjs();
 	m_SelVolArray.RemoveAll();
 	m_LastSelectedElement.pSelectPointer = NULL;
 
-	this->RefreshSourceObjects(); // Source Object ¸¦ °»½®ÇÏ°í..
+	this->RefreshSourceObjects(); // Source Object ë¥¼ ê°±ì‰°í•˜ê³ ..
 	if (m_pDlgSourceList) m_pDlgSourceList->UpdateTree(m_pSceneSource);
 	OutputDlgRefresh();
 }

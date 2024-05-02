@@ -78,12 +78,12 @@ STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION |
     WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "Aujard"
-FONT 9, "±º∏≤"
+FONT 9, "Íµ¥Î¶º"
 BEGIN
-    DEFPUSHBUTTON   "¡æ∑·",IDOK,7,168,197,18
+    DEFPUSHBUTTON   "Ï¢ÖÎ£å",IDOK,7,168,197,18
     LISTBOX         IDC_OUT_LIST,7,7,197,138,LBS_NOINTEGRALHEIGHT | 
                     WS_VSCROLL | WS_TABSTOP
-    LTEXT           "µ∫Ò√≥∏Æ∫Œ :",IDC_STATIC,9,154,49,15
+    LTEXT           "ÎîîÎπÑÏ≤òÎ¶¨Î∂Ä :",IDC_STATIC,9,154,49,15
     CTEXT           "0000",IDC_DB_PROCESS,67,154,130,13
 END
 
@@ -112,13 +112,13 @@ BEGIN
         BLOCK "041204B0"
         BEGIN
             VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "Aujard MFC ¿¿øÎ «¡∑Œ±◊∑•\0"
+            VALUE "FileDescription", "Aujard MFC ÏùëÏö© ÌîÑÎ°úÍ∑∏Îû®\0"
             VALUE "FileVersion", "1, 0, 0, 1\0"
             VALUE "InternalName", "Aujard\0"
             VALUE "LegalCopyright", "Copyright (C) 2001\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "Aujard.EXE\0"
-            VALUE "ProductName", "Aujard ¿¿øÎ «¡∑Œ±◊∑•\0"
+            VALUE "ProductName", "Aujard ÏùëÏö© ÌîÑÎ°úÍ∑∏Îû®\0"
             VALUE "ProductVersion", "1, 0, 0, 1\0"
         END
     END

@@ -3,7 +3,7 @@
 //      are changed infrequently
 //
 
-// stl ¾µ·Á°í...
+// stl ì“¸ë ¤ê³ ...
 #pragma warning(disable : 4786)
 
 #if !defined(AFX_STDAFX_H__EE019C99_44DD_4876_A2B1_5B1199EB5052__INCLUDED_)

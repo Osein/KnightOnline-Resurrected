@@ -82,7 +82,7 @@ void CN3FEView::OnDraw(CDC* pDC)
 	pFrm->m_Eng.s_lpD3DDev->EndScene();
 	pFrm->m_Eng.Present(m_hWnd);
 
-	// ÇÁ·¹ÀÓ Ç¥½Ã
+	// í”„ë ˆì„ í‘œì‹œ
 	DWORD dwTick = GetTickCount();
 	static DWORD dwTickPrev = dwTick;
 	static CString szFPS;
@@ -195,8 +195,8 @@ void CN3FEView::OnLButtonDown(UINT nFlags, CPoint point)
 	vPlane[3].Set(-fPlane, 0, -fPlane);
 
 	float fT, fU, fV;
-	::_IntersectTriangle(vPos, vDir, vPlane[0], vPlane[1], vPlane[2], fT, fU, fV, &m_vTarget); // ¹Ù´Ú°ú Ãæµ¹À» °ËÃâÇÑ´Ù..
-	::_IntersectTriangle(vPos, vDir, vPlane[0], vPlane[2], vPlane[3], fT, fU, fV, &m_vTarget); // ¹Ù´Ú°ú Ãæµ¹À» °ËÃâÇÑ´Ù..
+	::_IntersectTriangle(vPos, vDir, vPlane[0], vPlane[1], vPlane[2], fT, fU, fV, &m_vTarget); // ë°”ë‹¥ê³¼ ì¶©ëŒì„ ê²€ì¶œí•œë‹¤..
+	::_IntersectTriangle(vPos, vDir, vPlane[0], vPlane[2], vPlane[3], fT, fU, fV, &m_vTarget); // ë°”ë‹¥ê³¼ ì¶©ëŒì„ ê²€ì¶œí•œë‹¤..
 	
 	CView::OnLButtonDown(nFlags, point);
 }

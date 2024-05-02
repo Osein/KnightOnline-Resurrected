@@ -39,53 +39,53 @@ void EXEC::Parse(char *pBuf)
 	{
 		m_Exec = EXEC_SAY;
 
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// Áö¹® ¹øÈ£1
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// Áö¹® ¹øÈ£2
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// Áö¹® ¹øÈ£3
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// Áö¹® ¹øÈ£4
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// Áö¹® ¹øÈ£5
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// Áö¹® ¹øÈ£6
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// Áö¹® ¹øÈ£7
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// Áö¹® ¹øÈ£8
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// Áö¹® ¹øÈ£9
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// Áö¹® ¹øÈ£10
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì§€ë¬¸ ë²ˆí˜¸1
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì§€ë¬¸ ë²ˆí˜¸2
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì§€ë¬¸ ë²ˆí˜¸3
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì§€ë¬¸ ë²ˆí˜¸4
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì§€ë¬¸ ë²ˆí˜¸5
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì§€ë¬¸ ë²ˆí˜¸6
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì§€ë¬¸ ë²ˆí˜¸7
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì§€ë¬¸ ë²ˆí˜¸8
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì§€ë¬¸ ë²ˆí˜¸9
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì§€ë¬¸ ë²ˆí˜¸10
 	}
 	else if( !strcmp( temp, "SELECT_MSG" ) )
 	{
 		m_Exec = EXEC_SELECT_MSG;
 
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// Á÷¾÷
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// Áö¹® ¹øÈ£
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì§ì—…
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì§€ë¬¸ ë²ˆí˜¸
 
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ¼±ÅÃ¹® 1
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ÀÌº¥Æ® 1
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì„ íƒë¬¸ 1
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì´ë²¤íŠ¸ 1
 
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ¼±ÅÃ¹® 2
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ÀÌº¥Æ® 2
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì„ íƒë¬¸ 2
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì´ë²¤íŠ¸ 2
 
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ¼±ÅÃ¹® 3
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ÀÌº¥Æ® 3
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì„ íƒë¬¸ 3
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì´ë²¤íŠ¸ 3
 
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ¼±ÅÃ¹® 4
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ÀÌº¥Æ® 4
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì„ íƒë¬¸ 4
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì´ë²¤íŠ¸ 4
 
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ¼±ÅÃ¹® 5
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ÀÌº¥Æ® 5
-// ºñ·¯¸Ó±Û Äù½ºÆ® >.<
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ¼±ÅÃ¹® 6
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ÀÌº¥Æ® 6
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì„ íƒë¬¸ 5
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì´ë²¤íŠ¸ 5
+// ë¹„ëŸ¬ë¨¸ê¸€ í€˜ìŠ¤íŠ¸ >.<
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì„ íƒë¬¸ 6
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì´ë²¤íŠ¸ 6
 
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ¼±ÅÃ¹® 7
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ÀÌº¥Æ® 7
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì„ íƒë¬¸ 7
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì´ë²¤íŠ¸ 7
 
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ¼±ÅÃ¹® 8
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ÀÌº¥Æ® 8
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì„ íƒë¬¸ 8
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì´ë²¤íŠ¸ 8
 
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ¼±ÅÃ¹® 9
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ÀÌº¥Æ® 9
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì„ íƒë¬¸ 9
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì´ë²¤íŠ¸ 9
 
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ¼±ÅÃ¹® 10
-		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ÀÌº¥Æ® 10		
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì„ íƒë¬¸ 10
+		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );		// ì´ë²¤íŠ¸ 10		
 //
 	}
 	else if( !strcmp( temp, "RUN_EVENT" ) )
@@ -107,7 +107,7 @@ void EXEC::Parse(char *pBuf)
 		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );	// Item no.
 		index += ParseSpace( temp, pBuf+index );	m_ExecInt[i++] = atoi( temp );	// Item count
 	}
-// ºñ·¯¸Ó±Û Äù½ºÆ® >.<
+// ë¹„ëŸ¬ë¨¸ê¸€ í€˜ìŠ¤íŠ¸ >.<
 	else if( !strcmp( temp, "OPEN_EDITBOX") ) 
 	{
 		m_Exec = EXEC_OPEN_EDITBOX;
@@ -135,7 +135,7 @@ void EXEC::Parse(char *pBuf)
 		m_Exec = EXEC_RETURN;
 	}
 
-	// ÇöÀç ¿©±â±îÁö¸¸ ¾²ÀÔ´Ï´Ù. ¾Æ·¡´Â ³ªÁß¿¡ ¸Â°Ô ¼öÁ¤ÇØ¼­ ¾²¼¼¿©.
+	// í˜„ìž¬ ì—¬ê¸°ê¹Œì§€ë§Œ ì“°ìž…ë‹ˆë‹¤. ì•„ëž˜ëŠ” ë‚˜ì¤‘ì— ë§žê²Œ ìˆ˜ì •í•´ì„œ ì“°ì„¸ì—¬.
 
 
 /*

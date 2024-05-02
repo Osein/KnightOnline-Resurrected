@@ -53,7 +53,7 @@ UINT NpcThreadProc(LPVOID pParam /* NPC_THREAD_INFO ptr */)
 			if( !pNpc ) continue;
 			//if((pNpc->m_tNpcType == NPCTYPE_DOOR || pNpc->m_tNpcType == NPCTYPE_ARTIFACT || pNpc->m_tNpcType == NPCTYPE_PHOENIX_GATE || pNpc->m_tNpcType == NPCTYPE_GATE_LEVER) && !pNpc->m_bFirstLive) continue;
 			//if( pNpc->m_bFirstLive ) continue;
-			if( pNpc->m_sNid < 0 ) continue;		// Àß¸øµÈ ¸ó½ºÅÍ (ÀÓ½ÃÄÚµå 2002.03.24)
+			if( pNpc->m_sNid < 0 ) continue;		// ì˜ëª»ëœ ëª¬ìŠ¤í„° (ì„ì‹œì½”ë“œ 2002.03.24)
 
 			fTime3 = fTime2 - pNpc->m_fDelayTime;
 			dwTickTime = fTime3 * 1000;
@@ -65,7 +65,7 @@ UINT NpcThreadProc(LPVOID pParam /* NPC_THREAD_INFO ptr */)
 			{
 				if(pNpc->m_Delay < 0) pNpc->m_Delay = 0;
 
-				//Àû¹ß°ß½Ã... (2002. 04.23¼öÁ¤, ºÎÇÏÁÙÀÌ±â)
+				//ì ë°œê²¬ì‹œ... (2002. 04.23ìˆ˜ì •, ë¶€í•˜ì¤„ì´ê¸°)
 				if(pNpc->m_NpcState == NPC_STANDING && pNpc->CheckFindEnermy() )	{
 					if( pNpc->FindEnemy() )	{
 						pNpc->m_NpcState = NPC_ATTACKING;
@@ -78,20 +78,20 @@ UINT NpcThreadProc(LPVOID pParam /* NPC_THREAD_INFO ptr */)
 			fTime3 = fTime2 - pNpc->m_fHPChangeTime;
 			dwTickTime = fTime3 * 1000;
 
-			if( 10000 < dwTickTime )	{	// 10ÃÊ¸¶´Ù HP¸¦ È¸º¹ ½ÃÄÑÁØ´Ù
+			if( 10000 < dwTickTime )	{	// 10ì´ˆë§ˆë‹¤ HPë¥¼ íšŒë³µ ì‹œì¼œì¤€ë‹¤
 				pNpc->HpChange(pIOCP);
 			}
 
-			pNpc->DurationMagic_4(pIOCP, fTime2);		// ¸¶¹ı Ã³¸®...
-			pNpc->DurationMagic_3(pIOCP, fTime2);		// Áö¼Ó¸¶¹ı..
+			pNpc->DurationMagic_4(pIOCP, fTime2);		// ë§ˆë²• ì²˜ë¦¬...
+			pNpc->DurationMagic_3(pIOCP, fTime2);		// ì§€ì†ë§ˆë²•..
 
 			switch(pNpc->m_NpcState)
 			{
-			case NPC_LIVE:					// ¹æ±İ »ì¾Æ³­ °æ¿ì
+			case NPC_LIVE:					// ë°©ê¸ˆ ì‚´ì•„ë‚œ ê²½ìš°
 				pNpc->NpcLive(pIOCP);
 				break;
 
-			case NPC_STANDING:						// ÇÏ´Â ÀÏ ¾øÀÌ ¼­ÀÖ´Â °æ¿ì
+			case NPC_STANDING:						// í•˜ëŠ” ì¼ ì—†ì´ ì„œìˆëŠ” ê²½ìš°
 				pNpc->NpcStanding();
 				break;
 			
@@ -161,17 +161,17 @@ UINT ZoneEventThreadProc(LPVOID pParam /* = NULL */)
 		for( i=0; i<m_pMain->g_arZone.size(); i++)	{
 			pMap = m_pMain->g_arZone[i];
 			if( !pMap ) continue;
-			if( pMap->m_byRoomEvent == 0 ) continue;		// ÇöÀçÀÇ Á¸ÀÌ ´øÁ¯´ã´çÇÏ´Â Á¸ÀÌ ¾Æ´Ï¸é ¸®ÅÏ..
-			if( pMap->IsRoomStatusCheck() == TRUE )	continue;	// ÀüÃ¼¹æÀÌ Å¬¸®¾î µÇ¾ú´Ù¸é
-			for( j=1; j<pMap->m_arRoomEventArray.GetSize()+1; j++)	{	// ¹æ¹øÈ£´Â 1¹øºÎÅÍ ½ÃÀÛ
+			if( pMap->m_byRoomEvent == 0 ) continue;		// í˜„ì¬ì˜ ì¡´ì´ ë˜ì ¼ë‹´ë‹¹í•˜ëŠ” ì¡´ì´ ì•„ë‹ˆë©´ ë¦¬í„´..
+			if( pMap->IsRoomStatusCheck() == TRUE )	continue;	// ì „ì²´ë°©ì´ í´ë¦¬ì–´ ë˜ì—ˆë‹¤ë©´
+			for( j=1; j<pMap->m_arRoomEventArray.GetSize()+1; j++)	{	// ë°©ë²ˆí˜¸ëŠ” 1ë²ˆë¶€í„° ì‹œì‘
 				pRoom = pMap->m_arRoomEventArray.GetData( j );
 				if( !pRoom ) continue;
 				if( pRoom->m_byStatus == 1 || pRoom->m_byStatus == 3 )   continue; // 1:init, 2:progress, 3:clear
-				// ¿©±â¼­ Ã³¸®ÇÏ´Â ·ÎÁ÷...
+				// ì—¬ê¸°ì„œ ì²˜ë¦¬í•˜ëŠ” ë¡œì§...
 				pRoom->MainRoom( fCurrentTime );
 			}
 		}
-		Sleep(1000);	// 1ÃÊ´ç ÇÑ¹ø
+		Sleep(1000);	// 1ì´ˆë‹¹ í•œë²ˆ
 	}
 
 	return 0;

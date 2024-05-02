@@ -54,7 +54,7 @@ public:
 	std::string	m_szGetFileNames[MAX_DOWNLOAD_FILE];
 	int			m_nVersionNum[MAX_DOWNLOAD_FILE];
 
-	HKEY		m_hRegistryKey; // ·¹Áö½ºÆ®¸® Å° ÇÚµé..
+	HKEY		m_hRegistryKey; // ë ˆì§€ìŠ¤íŠ¸ë¦¬ í‚¤ í•¸ë“¤..
 
 // Construction
 public:

@@ -75,12 +75,12 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	EnableDocking(CBRS_ALIGN_ANY);
 	DockControlBar(&m_wndToolBar);
 
-	// Engine »ı¼º
+	// Engine ìƒì„±
 //	m_Eng.InitEnv();
 	if(m_Eng.Init(TRUE, m_hWnd, 64, 64, 0, TRUE) == false) return -1;
-	m_Eng.GridCreate(200, 200); // ±×¸®µå ¸¸µé±â..
+	m_Eng.GridCreate(200, 200); // ê·¸ë¦¬ë“œ ë§Œë“¤ê¸°..
 
-	// ±âº» Ä«¸Ş¶ó & Light ¸¸µé±â..
+	// ê¸°ë³¸ ì¹´ë©”ë¼ & Light ë§Œë“¤ê¸°..
 	m_Camera.EyePosSet(5, 5, 5);
 	D3DCOLORVALUE crLgt = { 1.0f, 1.0f, 1.0f, 0 };
 	m_Light.m_Data.InitDirection(0, __Vector3(0, 1, 0), crLgt);

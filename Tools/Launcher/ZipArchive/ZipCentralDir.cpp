@@ -184,7 +184,7 @@ void CZipCentralDir::ReadHeaders()
 	for (int i = 0; i < m_uEntriesNumber; i++)
 	{
 		CZipFileHeader* pHeader = new CZipFileHeader;
-		m_headers.Add(pHeader); // bezpoœrednio nastêpuje w razie wyj¹tku
+		m_headers.Add(pHeader); // bezpoÂœrednio nast?uje w razie wyj?ku
 
 		if (!pHeader->Read(m_pStorage))
 			ThrowError(ZIP_BADZIPFILE);

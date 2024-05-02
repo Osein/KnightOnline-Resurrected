@@ -29,7 +29,7 @@ LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
 IDD_EXPORT_OPTION DIALOG DISCARDABLE  0, 0, 211, 216
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Export Option"
-FONT 11, "µ∏øÚ"
+FONT 11, "ÎèãÏõÄ"
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,6,186,96,21
     PUSHBUTTON      "Cancel",IDCANCEL,105,186,99,21
@@ -55,10 +55,10 @@ BEGIN
     EDITTEXT        IDC_E_SAMPLING_RATE,117,63,27,12,ES_AUTOHSCROLL
     RTEXT           "Frame / Sec",IDC_STATIC,147,66,42,8
     GROUPBOX        "Export Option",IDC_STATIC,6,90,198,90
-    CONTROL         "Normal ¥ŸΩ√∞ËªÍ - «•∏È ∫ŒµÂ∑¥∞‘ √≥∏Æ",
+    CONTROL         "Normal Îã§ÏãúÍ≥ÑÏÇ∞ - ÌëúÎ©¥ Î∂ÄÎìúÎüΩÍ≤å Ï≤òÎ¶¨",
                     IDC_C_GENERATE_SMOOTH_NORMAL,"Button",BS_AUTOCHECKBOX | 
                     WS_TABSTOP,15,108,180,8
-    CONTROL         "Progressive Mesh ª˝º∫",IDC_C_GENERATE_PROGRESSIVE_MESH,
+    CONTROL         "Progressive Mesh ÏÉùÏÑ±",IDC_C_GENERATE_PROGRESSIVE_MESH,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,120,180,8
     CONTROL         "Half Size Texture",IDC_C_GENERATE_HALF_SIZE_TEXTURE,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,132,180,8
@@ -209,7 +209,7 @@ BEGIN
     IDS_CLASS_NAME          "N3DExp"
     IDS_PARAMS              "Parameters"
     IDS_SPIN                "Spin"
-    IDS_PROGRESS_MSG        "¡¯«‡ ªÛ»≤"
+    IDS_PROGRESS_MSG        "ÏßÑÌñâ ÏÉÅÌô©"
 END
 
 #endif    // English (U.S.) resources

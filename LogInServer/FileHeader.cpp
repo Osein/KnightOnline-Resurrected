@@ -135,7 +135,7 @@ bool CFileHeader::ReadLocal(CZipStorage *pStorage, WORD& iLocExtrFieldSize, bool
 		|| (memcmp(buf + 26, &m_uFileNameSize, 2) != 0))
 		return false;
 
-// jeszcze mo¿naby porównaæ nazwy plików
+// jeszcze mo?aby por?na?nazwy plik?
 
 	if (!bIsDataDescr/* || !pStorage->IsSpanMode()*/)
 		if (!CheckCrcAndSizes(buf + 14))

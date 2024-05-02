@@ -90,10 +90,10 @@ typedef union{
 
 
 
-#define SLOT_MAX			14		// бЬ©К ╬феш MAX
-#define HAVE_MAX			28		// ╪рю╞ ╬феш MAX (юн╨╔еД╦╝ц╒)	
-#define ITEMCOUNT_MAX		9999	// ╪р╦П ╬фюлеш ╪рю╞ гя╟Х╟╙
-#define WAREHOUSE_MAX		196		// ц╒╟М ╬фюлеш MAX
+#define SLOT_MAX			14		// Л╟╘Л ╘ Л∙└М┘° MAX
+#define HAVE_MAX			28		// Л├▄Л°═ Л∙└М┘° MAX (Л²╦К╡╓М├═К╕╛Л╟╫)	
+#define ITEMCOUNT_MAX		9999	// Л├▄К╙╗ Л∙└Л²╢М┘° Л├▄Л°═ М∙°ЙЁ└Й╟▓
+#define WAREHOUSE_MAX		196		// Л╟╫ЙЁ═ Л∙└Л²╢М┘° MAX
 /////////////////////////////////////////////////////////////////////////////////
 // Structure Define
 /////////////////////////////////////////////////////////////////////////////////

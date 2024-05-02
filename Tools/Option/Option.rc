@@ -75,26 +75,26 @@ IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Option.ico"
 
 IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Option Á¤º¸"
-FONT 9, "±¼¸²"
+CAPTION "Option ì •ë³´"
+FONT 9, "êµ´ë¦¼"
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
-    LTEXT           "Option ¹öÀü 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Option ë²„ì „ 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
     LTEXT           "Copyright (C) 2002",IDC_STATIC,40,25,119,8
-    DEFPUSHBUTTON   "È®ÀÎ",IDOK,178,7,50,14,WS_GROUP
+    DEFPUSHBUTTON   "í™•ì¸",IDOK,178,7,50,14,WS_GROUP
 END
 
 IDD_OPTION_DIALOG DIALOGEX 0, 0, 239, 272
 STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
-CAPTION "³ªÀÌÆ® ¿Â¶óÀÎ °ÔÀÓ ¿É¼Ç ¼³Á¤"
-FONT 9, "±¼¸²", 0, 0, 0x1
+CAPTION "ë‚˜ì´íŠ¸ ì˜¨ë¼ì¸ ê²Œìž„ ì˜µì…˜ ì„¤ì •"
+FONT 9, "êµ´ë¦¼", 0, 0, 0x1
 BEGIN
-    CONTROL         "³ôÀ½",IDC_R_TEX_CHR_HIGH,"Button",BS_AUTORADIOBUTTON | 
+    CONTROL         "ë†’ìŒ",IDC_R_TEX_CHR_HIGH,"Button",BS_AUTORADIOBUTTON | 
                     WS_GROUP | WS_TABSTOP,24,37,27,12
-    CONTROL         "³·À½",IDC_R_TEX_CHR_LOW,"Button",BS_AUTORADIOBUTTON | 
+    CONTROL         "ë‚®ìŒ",IDC_R_TEX_CHR_LOW,"Button",BS_AUTORADIOBUTTON | 
                     WS_TABSTOP,24,49,27,12
-    CONTROL         "±×¸²ÀÚ »ç¿ë",IDC_C_SHADOW,"Button",BS_AUTOCHECKBOX | 
+    CONTROL         "ê·¸ë¦¼ìž ì‚¬ìš©",IDC_C_SHADOW,"Button",BS_AUTOCHECKBOX | 
                     WS_TABSTOP,15,72,48,9
     CONTROL         "Slider1",IDC_SLD_VIEWING_DISTANCE,"msctls_trackbar32",
                     TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,15,108,141,18
@@ -102,44 +102,44 @@ BEGIN
                     WS_VSCROLL | WS_TABSTOP
     COMBOBOX        IDC_CB_COLORDEPTH,126,162,36,156,CBS_DROPDOWNLIST | 
                     WS_VSCROLL | WS_TABSTOP
-    DEFPUSHBUTTON   "È®ÀÎ",IDOK,177,123,50,14
-    PUSHBUTTON      "Ãë¼Ò",IDCANCEL,177,141,50,14
-    PUSHBUTTON      "¼³Á¤ ÀúÀå\nÈÄ ½ÇÇà",IDC_B_APPLY_AND_EXECUTE,177,159,51,
+    DEFPUSHBUTTON   "í™•ì¸",IDOK,177,123,50,14
+    PUSHBUTTON      "ì·¨ì†Œ",IDCANCEL,177,141,50,14
+    PUSHBUTTON      "ì„¤ì • ì €ìž¥\ní›„ ì‹¤í–‰",IDC_B_APPLY_AND_EXECUTE,177,159,51,
                     23,BS_MULTILINE
-    LTEXT           "ÃÖ¼Ò",IDC_STATIC,18,126,18,9,NOT WS_GROUP
-    LTEXT           "ÃÖ´ë",IDC_STATIC,141,126,18,9,NOT WS_GROUP
-    GROUPBOX        "½Ã¾ß (°¡½Ã°Å¸®) ¼³Á¤",IDC_STATIC,6,96,162,45
-    GROUPBOX        "°ÔÀÓ ±×·¡ÇÈ Ç°Áú",IDC_STATIC,6,9,162,75
-    GROUPBOX        "È­¸é ÇØ»óµµ ¹× »ö»ó",IDC_STATIC,6,144,162,39
-    RTEXT           "ÇØ»óµµ",IDC_STATIC,12,162,24,12,SS_CENTERIMAGE
-    RTEXT           "»ö»ó",IDC_STATIC,105,162,15,12,SS_CENTERIMAGE
-    CONTROL         "³ôÀ½",IDC_R_TEX_SHAPE_HIGH,"Button",BS_AUTORADIOBUTTON | 
+    LTEXT           "ìµœì†Œ",IDC_STATIC,18,126,18,9,NOT WS_GROUP
+    LTEXT           "ìµœëŒ€",IDC_STATIC,141,126,18,9,NOT WS_GROUP
+    GROUPBOX        "ì‹œì•¼ (ê°€ì‹œê±°ë¦¬) ì„¤ì •",IDC_STATIC,6,96,162,45
+    GROUPBOX        "ê²Œìž„ ê·¸ëž˜í”½ í’ˆì§ˆ",IDC_STATIC,6,9,162,75
+    GROUPBOX        "í™”ë©´ í•´ìƒë„ ë° ìƒ‰ìƒ",IDC_STATIC,6,144,162,39
+    RTEXT           "í•´ìƒë„",IDC_STATIC,12,162,24,12,SS_CENTERIMAGE
+    RTEXT           "ìƒ‰ìƒ",IDC_STATIC,105,162,15,12,SS_CENTERIMAGE
+    CONTROL         "ë†’ìŒ",IDC_R_TEX_SHAPE_HIGH,"Button",BS_AUTORADIOBUTTON | 
                     WS_GROUP | WS_TABSTOP,75,37,27,12
-    CONTROL         "³·À½",IDC_R_TEX_SHAPE_LOW,"Button",BS_AUTORADIOBUTTON | 
+    CONTROL         "ë‚®ìŒ",IDC_R_TEX_SHAPE_LOW,"Button",BS_AUTORADIOBUTTON | 
                     WS_TABSTOP,75,49,27,12
-    CONTROL         "³ôÀ½",IDC_R_TEX_TERRAIN_HIGH,"Button",
+    CONTROL         "ë†’ìŒ",IDC_R_TEX_TERRAIN_HIGH,"Button",
                     BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,123,37,27,12
-    CONTROL         "³·À½",IDC_R_TEX_TERRAIN_LOW,"Button",BS_AUTORADIOBUTTON | 
+    CONTROL         "ë‚®ìŒ",IDC_R_TEX_TERRAIN_LOW,"Button",BS_AUTORADIOBUTTON | 
                     WS_TABSTOP,123,49,27,12
-    GROUPBOX        "Ä³¸¯ÅÍ",IDC_STATIC,15,25,45,42
-    GROUPBOX        "¿ÀºêÁ§Æ®",IDC_STATIC,66,25,45,42
-    GROUPBOX        "ÁöÇü",IDC_STATIC,117,25,39,42
-    GROUPBOX        "°ÔÀÓ ¹öÀü",IDC_STATIC,174,9,54,75
+    GROUPBOX        "ìºë¦­í„°",IDC_STATIC,15,25,45,42
+    GROUPBOX        "ì˜¤ë¸Œì íŠ¸",IDC_STATIC,66,25,45,42
+    GROUPBOX        "ì§€í˜•",IDC_STATIC,117,25,39,42
+    GROUPBOX        "ê²Œìž„ ë²„ì „",IDC_STATIC,174,9,54,75
     EDITTEXT        IDC_E_VERSION,180,27,42,12,ES_AUTOHSCROLL
-    PUSHBUTTON      "¾÷µ¥ÀÌÆ®¿¡ Àû¿ë",IDC_B_VERSION,180,45,42,30,
+    PUSHBUTTON      "ì—…ë°ì´íŠ¸ì— ì ìš©",IDC_B_VERSION,180,45,42,30,
                     BS_MULTILINE
-    CONTROL         "¼Ò¸® »ç¿ë",IDC_C_SOUND_ENABLE,"Button",BS_AUTOCHECKBOX | 
+    CONTROL         "ì†Œë¦¬ ì‚¬ìš©",IDC_C_SOUND_ENABLE,"Button",BS_AUTOCHECKBOX | 
                     WS_TABSTOP,18,205,48,9
-    GROUPBOX        "¼Ò¸® ¼³Á¤",IDC_STATIC,6,190,162,74
-    CONTROL         "¼Ò¸® Áßº¹",IDC_C_SOUND_DUPLICATE,"Button",
+    GROUPBOX        "ì†Œë¦¬ ì„¤ì •",IDC_STATIC,6,190,162,74
+    CONTROL         "ì†Œë¦¬ ì¤‘ë³µ",IDC_C_SOUND_DUPLICATE,"Button",
                     BS_AUTOCHECKBOX | WS_TABSTOP,69,205,48,9
     CONTROL         "Slider1",IDC_SLD_SOUND_DISTANCE,"msctls_trackbar32",
                     TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,15,231,141,18
-    LTEXT           "ÃÖ¼Ò",IDC_STATIC,18,249,18,9,NOT WS_GROUP
-    LTEXT           "ÃÖ´ë",IDC_STATIC,141,249,18,9,NOT WS_GROUP
-    GROUPBOX        "È¿°ú À½Çâ °Å¸® ¼³Á¤",IDC_STATIC,13,218,149,42
-    GROUPBOX        "Ä¿¼­ ¼³Á¤",IDC_STATIC,174,190,54,74
-    CONTROL         "À©µµ¿ì Ä¿¼­",IDC_C_CURSOR_WINDOW,"Button",
+    LTEXT           "ìµœì†Œ",IDC_STATIC,18,249,18,9,NOT WS_GROUP
+    LTEXT           "ìµœëŒ€",IDC_STATIC,141,249,18,9,NOT WS_GROUP
+    GROUPBOX        "íš¨ê³¼ ìŒí–¥ ê±°ë¦¬ ì„¤ì •",IDC_STATIC,13,218,149,42
+    GROUPBOX        "ì»¤ì„œ ì„¤ì •",IDC_STATIC,174,190,54,74
+    CONTROL         "ìœˆë„ìš° ì»¤ì„œ",IDC_C_CURSOR_WINDOW,"Button",
                     BS_AUTOCHECKBOX | WS_TABSTOP,177,205,48,9
 END
 
@@ -168,13 +168,13 @@ BEGIN
         BLOCK "041204B0"
         BEGIN
             VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "Option MFC ÀÀ¿ë ÇÁ·Î±×·¥\0"
+            VALUE "FileDescription", "Option MFC ì‘ìš© í”„ë¡œê·¸ëž¨\0"
             VALUE "FileVersion", "1, 0, 0, 1\0"
             VALUE "InternalName", "Option\0"
             VALUE "LegalCopyright", "Copyright (C) 2002\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "Option.EXE\0"
-            VALUE "ProductName", "Option ÀÀ¿ë ÇÁ·Î±×·¥\0"
+            VALUE "ProductName", "Option ì‘ìš© í”„ë¡œê·¸ëž¨\0"
             VALUE "ProductVersion", "1, 0, 0, 1\0"
         END
     END
@@ -221,24 +221,24 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_ABOUTBOX            "Option Á¤º¸(&A)..."
+    IDS_ABOUTBOX            "Option ì •ë³´(&A)..."
     IDS_PRODUCT             "KnightOnLine"
-    IDS_ERR_REGISTRY_OPEN   "·¹Áö½ºÆ®¸® ¿­±â¿¡ ½ÇÆÐ Çß½À´Ï´Ù. ´Ù½Ã ¼³Ä¡ÇØ ÁÖ½Ê½Ã¿À."
+    IDS_ERR_REGISTRY_OPEN   "ë ˆì§€ìŠ¤íŠ¸ë¦¬ ì—´ê¸°ì— ì‹¤íŒ¨ í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì„¤ì¹˜í•´ ì£¼ì‹­ì‹œì˜¤."
     IDS_ERR_REGISTRY_READ_VERSION 
-                            "·¹Áö½ºÆ®¸®¿¡¼­ ¹öÀüÁ¤º¸¸¦ Ã£À»¼ö ¾ø½À´Ï´Ù. ´Ù½Ã ¼³Ä¡ÇØ ÁÖ½Ê½Ã¿À"
+                            "ë ˆì§€ìŠ¤íŠ¸ë¦¬ì—ì„œ ë²„ì „ì •ë³´ë¥¼ ì°¾ì„ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì„¤ì¹˜í•´ ì£¼ì‹­ì‹œì˜¤"
 END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
     IDS_ERR_REGISTRY_READ_PATH 
-                            "·¹Áö½ºÆ®¸®¿¡¼­ ÇÁ·Î±×·¥ °æ·Î¸¦ Ã£À»¼ö ¾ø½À´Ï´Ù. ´Ù½Ã ¼³Ä¡ÇØ ÁÖ½Ê½Ã¿À"
+                            "ë ˆì§€ìŠ¤íŠ¸ë¦¬ì—ì„œ í”„ë¡œê·¸ëž¨ ê²½ë¡œë¥¼ ì°¾ì„ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì„¤ì¹˜í•´ ì£¼ì‹­ì‹œì˜¤"
     IDS_ERR_REGISTRY_READ_EXE 
-                            "·¹Áö½ºÆ®¸®¿¡¼­ ½ÇÇàÆÄÀÏ ÀÌ¸§À» Ã£À»¼ö ¾ø½À´Ï´Ù. ´Ù½Ã ¼³Ä¡ÇØ ÁÖ½Ê½Ã¿À."
+                            "ë ˆì§€ìŠ¤íŠ¸ë¦¬ì—ì„œ ì‹¤í–‰íŒŒì¼ ì´ë¦„ì„ ì°¾ì„ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì„¤ì¹˜í•´ ì£¼ì‹­ì‹œì˜¤."
     IDS_ERR_REGISTRY_READ_SERVICE 
-                            "·¹Áö½ºÆ®¸®¿¡¼­ ¼­ºñ½º ÀÌ¸§À» Ã£À»¼ö ¾ø½À´Ï´Ù. ´Ù½Ã ¼³Ä¡ÇØ ÁÖ½Ê½Ã¿À."
+                            "ë ˆì§€ìŠ¤íŠ¸ë¦¬ì—ì„œ ì„œë¹„ìŠ¤ ì´ë¦„ì„ ì°¾ì„ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì„¤ì¹˜í•´ ì£¼ì‹­ì‹œì˜¤."
     IDS_ERR_REGISTRY_WRITE_VERSION 
-                            "·¹Áö½ºÆ®¸®¿¡ ¹öÀüÁ¤º¸¸¦ ¾µ ¼ö ¾ø½À´Ï´Ù. ´Ù½Ã ¼³Ä¡ÇØ ÁÖ½Ê½Ã¿À."
-    IDS_CONFIRM_WRITE_REGISRY "·¹Áö½ºÆ®¸®¿¡ °ªÀ» Àû¿ë½ÃÅ°½Ã°Ú½À´Ï±î?"
+                            "ë ˆì§€ìŠ¤íŠ¸ë¦¬ì— ë²„ì „ì •ë³´ë¥¼ ì“¸ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì„¤ì¹˜í•´ ì£¼ì‹­ì‹œì˜¤."
+    IDS_CONFIRM_WRITE_REGISRY "ë ˆì§€ìŠ¤íŠ¸ë¦¬ì— ê°’ì„ ì ìš©ì‹œí‚¤ì‹œê² ìŠµë‹ˆê¹Œ?"
 END
 
 #endif    // Korean resources
@@ -261,8 +261,8 @@ LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
 
 IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Option ±¡³ø"
-FONT 9, "²Ó©úÅé"
+CAPTION "Option ê´Œë†œ"
+FONT 9, "ê¾„â¿í†±"
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
     LTEXT           "Option Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
@@ -273,14 +273,14 @@ END
 IDD_OPTION_DIALOG DIALOGEX 0, 0, 239, 272
 STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
-CAPTION " knight online game option ³]©w"
-FONT 9, "²Ó©úÅé"
+CAPTION " knight online game option ??"
+FONT 9, "ê¾„â¿í†±"
 BEGIN
-    CONTROL         "°ª",IDC_R_TEX_CHR_HIGH,"Button",BS_AUTORADIOBUTTON | 
+    CONTROL         "ê°’",IDC_R_TEX_CHR_HIGH,"Button",BS_AUTORADIOBUTTON | 
                     WS_GROUP | WS_TABSTOP,24,37,27,12
-    CONTROL         "§C",IDC_R_TEX_CHR_LOW,"Button",BS_AUTORADIOBUTTON | 
+    CONTROL         "?",IDC_R_TEX_CHR_LOW,"Button",BS_AUTORADIOBUTTON | 
                     WS_TABSTOP,24,49,27,12
-    CONTROL         "¨Ï¥Î¼v¤l",IDC_C_SHADOW,"Button",BS_AUTOCHECKBOX | 
+    CONTROL         "â“’Îž??",IDC_C_SHADOW,"Button",BS_AUTOCHECKBOX | 
                     WS_TABSTOP,15,72,48,9
     CONTROL         "Slider1",IDC_SLD_VIEWING_DISTANCE,"msctls_trackbar32",
                     TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,15,108,141,18
@@ -288,42 +288,42 @@ BEGIN
                     WS_VSCROLL | WS_TABSTOP
     COMBOBOX        IDC_CB_COLORDEPTH,126,162,36,156,CBS_DROPDOWNLIST | 
                     WS_VSCROLL | WS_TABSTOP
-    DEFPUSHBUTTON   "½T»{",IDOK,177,123,50,14
-    PUSHBUTTON      "¨ú®ø",IDCANCEL,177,141,50,14
-    PUSHBUTTON      "Àx¦s³]©w\n«á°õ¦æ",IDC_B_APPLY_AND_EXECUTE,177,159,51,23,
+    DEFPUSHBUTTON   "??",IDOK,177,123,50,14
+    PUSHBUTTON      "Â¾ï£¨?,IDCANCEL,177,141,50,14
+    PUSHBUTTON      "????\nãƒ¡ê³°?",IDC_B_APPLY_AND_EXECUTE,177,159,51,23,
                     BS_MULTILINE
-    LTEXT           "³Ì¤p",IDC_STATIC,18,126,18,9,NOT WS_GROUP
-    LTEXT           "³Ì¤j",IDC_STATIC,141,126,18,9,NOT WS_GROUP
-    GROUPBOX        "µø³¥ (¥iµø¶ZÂ÷) ³]©w",IDC_STATIC,6,96,162,45
-    GROUPBOX        "¹CÀ¸µe­±«~½è",IDC_STATIC,6,9,162,75
-    GROUPBOX        "µe­±¸ÑªR«×¤Î¦â¬Û",IDC_STATIC,6,144,162,39
-    RTEXT           "¸ÑªR«×",IDC_STATIC,12,162,24,12,SS_CENTERIMAGE
-    RTEXT           "¦â±m",IDC_STATIC,105,162,15,12,SS_CENTERIMAGE
-    CONTROL         "°ª",IDC_R_TEX_SHAPE_HIGH,"Button",BS_AUTORADIOBUTTON | 
+    LTEXT           "ë„‹?",IDC_STATIC,18,126,18,9,NOT WS_GROUP
+    LTEXT           "ë„‹?",IDC_STATIC,141,126,18,9,NOT WS_GROUP
+    GROUPBOX        "ë”¨ë‚„ (?ë”¨?ì°¨) ??",IDC_STATIC,6,96,162,45
+    GROUPBOX        "?ìœ¼?ï£§ê´´~ì¼",IDC_STATIC,6,9,162,75
+    GROUPBOX        "?ï£§êµ¬æ²‚Rãƒ—ã…žâ•ˆÐ¹",IDC_STATIC,6,144,162,39
+    RTEXT           "ë¨ˆ?ãƒ—",IDC_STATIC,12,162,24,12,SS_CENTERIMAGE
+    RTEXT           "â•ˆ?",IDC_STATIC,105,162,15,12,SS_CENTERIMAGE
+    CONTROL         "ê°’",IDC_R_TEX_SHAPE_HIGH,"Button",BS_AUTORADIOBUTTON | 
                     WS_GROUP | WS_TABSTOP,75,37,27,12
-    CONTROL         "§C",IDC_R_TEX_SHAPE_LOW,"Button",BS_AUTORADIOBUTTON | 
+    CONTROL         "?",IDC_R_TEX_SHAPE_LOW,"Button",BS_AUTORADIOBUTTON | 
                     WS_TABSTOP,75,49,27,12
-    CONTROL         "°ª",IDC_R_TEX_TERRAIN_HIGH,"Button",BS_AUTORADIOBUTTON | 
+    CONTROL         "ê°’",IDC_R_TEX_TERRAIN_HIGH,"Button",BS_AUTORADIOBUTTON | 
                     WS_GROUP | WS_TABSTOP,123,37,27,12
-    CONTROL         "§C",IDC_R_TEX_TERRAIN_LOW,"Button",BS_AUTORADIOBUTTON | 
+    CONTROL         "?",IDC_R_TEX_TERRAIN_LOW,"Button",BS_AUTORADIOBUTTON | 
                     WS_TABSTOP,123,49,27,12
-    GROUPBOX        "¨¤¦â",IDC_STATIC,15,25,45,42
+    GROUPBOX        "Ä¦â•ˆ",IDC_STATIC,15,25,45,42
     GROUPBOX        "object",IDC_STATIC,66,25,45,42
-    GROUPBOX        "¦a§Î",IDC_STATIC,117,25,39,42
-    GROUPBOX        "¹CÀ¸ª©¥»",IDC_STATIC,174,9,54,75
+    GROUPBOX        "?ãŽº",IDC_STATIC,117,25,39,42
+    GROUPBOX        "?ìœ¼ã‰?",IDC_STATIC,174,9,54,75
     EDITTEXT        IDC_E_VERSION,180,27,42,12,ES_AUTOHSCROLL
-    PUSHBUTTON      "¾A¥Îupdata",IDC_B_VERSION,180,45,42,30,BS_MULTILINE
-    CONTROL         "¨Ï¥ÎÁn­µ",IDC_C_SOUND_ENABLE,"Button",BS_AUTOCHECKBOX | 
+    PUSHBUTTON      "?Îžupdata",IDC_B_VERSION,180,45,42,30,BS_MULTILINE
+    CONTROL         "â“’Îž?ï£§?,IDC_C_SOUND_ENABLE,"Button",BS_AUTOCHECKBOX | 
                     WS_TABSTOP,18,205,48,9
-    GROUPBOX        "³]©wÁn­µ",IDC_STATIC,6,190,162,74
-    CONTROL         "­«½ÆÁn­µ",IDC_C_SOUND_DUPLICATE,"Button",
+    GROUPBOX        "???ï£§?,IDC_STATIC,6,190,162,74
+    CONTROL         "ï£§ã‚½íŒnï£§?,IDC_C_SOUND_DUPLICATE,"Button",
                     BS_AUTOCHECKBOX | WS_TABSTOP,69,205,48,9
     CONTROL         "Slider1",IDC_SLD_SOUND_DISTANCE,"msctls_trackbar32",
                     TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,15,231,141,18
-    LTEXT           "³Ì¤p",IDC_STATIC,18,249,18,9,NOT WS_GROUP
-    LTEXT           "³Ì¤j",IDC_STATIC,141,249,18,9,NOT WS_GROUP
-    GROUPBOX        "³]©w®ÄªG­µÅT¶ZÂ÷",IDC_STATIC,13,218,149,42
-    GROUPBOX        "Cursor ³]©w",IDC_STATIC,174,190,54,74
+    LTEXT           "ë„‹?",IDC_STATIC,18,249,18,9,NOT WS_GROUP
+    LTEXT           "ë„‹?",IDC_STATIC,141,249,18,9,NOT WS_GROUP
+    GROUPBOX        "??ï£¨ì¹­Gï£§ë¼T?ì°¨",IDC_STATIC,13,218,149,42
+    GROUPBOX        "Cursor ??",IDC_STATIC,174,190,54,74
     CONTROL         "Windows\nCursor",IDC_C_CURSOR_WINDOW,"Button",
                     BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,177,202,48,
                     18
@@ -364,20 +364,20 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_ABOUTBOX            "Option ±¡³ø(&A)..."
+    IDS_ABOUTBOX            "Option ê´Œë†œ(&A)..."
     IDS_PRODUCT             "KnightOnLine"
-    IDS_ERR_REGISTRY_OPEN   "REGISTRY¶}±Ò¥¢±Ñ. ½Ð­«·s¦w¸Ë."
-    IDS_ERR_REGISTRY_READ_VERSION "µLªk¦bREGISTRY¸Ì§ä¨ìª©¥»±¡³ø. ½Ð­«·s¦w¸Ë"
+    IDS_ERR_REGISTRY_OPEN   "REGISTRY?ê·‘â…±ê·. ì‹»ï£§ã‚·s?ë§·."
+    IDS_ERR_REGISTRY_READ_VERSION "???REGISTRYë§¸ã›â‘¥ã‰?ê´Œë†œ. ì‹»ï£§ã‚·s?ë§·"
 END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_ERR_REGISTRY_READ_PATH "µLªk¦bREGISTRY¸Ì§ä¨ìµ{¦¡ªº¸ô®|. ½Ð­«·s¦w¸Ë"
-    IDS_ERR_REGISTRY_READ_EXE "µLªk¦bREGISTRY§ä¨ì°õ¦æÀÉ®×ªº¦WºÙ. ½Ð­«·s¦w¸Ë."
+    IDS_ERR_REGISTRY_READ_PATH "???REGISTRYë§¸ã›â‘¥?â”€ãšëª°ï£¨|. ì‹»ï£§ã‚·s?ë§·"
+    IDS_ERR_REGISTRY_READ_EXE "???REGISTRYã›â‘¥ê³°?ì ï£¨ç˜»ë²§Wë¶™. ì‹»ï£§ã‚·s?ë§·."
     IDS_ERR_REGISTRY_READ_SERVICE 
-                            "µLªk¦bREGISTRY¸Ì§ä¨ì¦øªA¾¹ªº¦WºÙ. ½Ð­«·s¦w¸Ë."
-    IDS_ERR_REGISTRY_WRITE_VERSION "µLªk¨Ï¥ÎREGISTRY¸Ìªºª©¥»±¡³ø. ½Ð­«·s¦w¸Ë."
-    IDS_CONFIRM_WRITE_REGISRY "REGISTRY §A­n°í©wREGISTRYªº­È¶Ü?"
+                            "???REGISTRYë§¸ã›â‘¥??ì”ãš?ë¶™. ì‹»ï£§ã‚·s?ë§·."
+    IDS_ERR_REGISTRY_WRITE_VERSION "??â“’ÎžREGISTRYë§¸ãšã‰?ê´Œë†œ. ì‹»ï£§ã‚·s?ë§·."
+    IDS_CONFIRM_WRITE_REGISRY "REGISTRY ?ï£§nê³ ?REGISTRYãšï£§íšƒ?"
 END
 
 #endif    // Chinese (Taiwan) resources

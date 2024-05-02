@@ -948,7 +948,7 @@ void CZipArchive::DeleteInternal(WORD uIndex)
 	
 	m_centralDir.RemoveFile(uIndex);
 	
-	// teraz uaktualnij offsety w pozosta³ych pozycjach central dir 
+	// teraz uaktualnij offsety w pozosta?ch pozycjach central dir 
 	// (update offsets in file headers in the central dir)
 	if (uOtherOffsetChanged)
 		for (int i = uIndex; i < GetNoEntries(); i++)

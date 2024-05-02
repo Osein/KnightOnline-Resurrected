@@ -238,8 +238,8 @@ void CFormViewControl::OnTimer(UINT nIDEvent)
 		pFrm->GetPaneRender()->InvalidateRect(NULL, FALSE);
 
 		CN3FEDoc* pDoc = GetDocument();
-		int nEIC = pDoc->m_EffectMgr.InstanceCount(); // Effect Instance °¹¼ö..
-		if(nEIC <= 0) KillTimer(0); // ÇÏ³ªµµ ¾øÀ¸¸é.. Å¸ÀÌ¸Ó Á×ÀÌ±â..
+		int nEIC = pDoc->m_EffectMgr.InstanceCount(); // Effect Instance ê°¯ìˆ˜..
+		if(nEIC <= 0) KillTimer(0); // í•˜ë‚˜ë„ ì—†ìœ¼ë©´.. íƒ€ì´ë¨¸ ì£½ì´ê¸°..
 	}
 	
 	CFormView::OnTimer(nIDEvent);
@@ -259,10 +259,10 @@ void CFormViewControl::OnBTrigger()
 
 	pDoc->m_EffectMgr.Trigger(pEB->szName, __Vector3(0, 0, 0), vTarget);
 
-	int nEIC = pDoc->m_EffectMgr.InstanceCount(); // Effect Instance °¹¼ö..
+	int nEIC = pDoc->m_EffectMgr.InstanceCount(); // Effect Instance ê°¯ìˆ˜..
 	if(nEIC <= 1)
 	{
-		SetTimer(0, 10, NULL); // ÇÏ³ªµµ ¾øÀ¸¸é.. Å¸ÀÌ¸Ó ÀÛµ¿..
+		SetTimer(0, 10, NULL); // í•˜ë‚˜ë„ ì—†ìœ¼ë©´.. íƒ€ì´ë¨¸ ìž‘ë™..
 	}
 }
 

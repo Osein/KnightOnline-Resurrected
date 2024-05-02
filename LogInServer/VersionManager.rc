@@ -78,7 +78,7 @@ STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION |
     WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "VersionManager"
-FONT 9, "±º∏≤"
+FONT 9, "Íµ¥Î¶º"
 BEGIN
     LISTBOX         IDC_LIST1,7,7,197,127,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
                     WS_TABSTOP
@@ -88,7 +88,7 @@ END
 IDD_SETTING DIALOG DISCARDABLE  0, 0, 341, 265
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Version Setting"
-FONT 9, "±º∏≤"
+FONT 9, "Íµ¥Î¶º"
 BEGIN
     EDITTEXT        IDC_VERSION_EDIT,53,202,31,14,ES_RIGHT | ES_AUTOHSCROLL | 
                     ES_NUMBER
@@ -120,7 +120,7 @@ IDD_BROWSE_PATH DIALOGEX 0, 0, 167, 272
 STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "Browse Path"
-FONT 9, "±º∏≤", 0, 0, 0x1
+FONT 9, "Íµ¥Î¶º", 0, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,6,249,72,14
     PUSHBUTTON      "Cancel",IDCANCEL,90,249,68,14
@@ -157,13 +157,13 @@ BEGIN
         BLOCK "041204B0"
         BEGIN
             VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "VersionManager MFC ¿¿øÎ «¡∑Œ±◊∑•\0"
+            VALUE "FileDescription", "VersionManager MFC ÏùëÏö© ÌîÑÎ°úÍ∑∏Îû®\0"
             VALUE "FileVersion", "1, 0, 0, 1\0"
             VALUE "InternalName", "VersionManager\0"
             VALUE "LegalCopyright", "Copyright (C) 2002\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "VersionManager.EXE\0"
-            VALUE "ProductName", "VersionManager ¿¿øÎ «¡∑Œ±◊∑•\0"
+            VALUE "ProductName", "VersionManager ÏùëÏö© ÌîÑÎ°úÍ∑∏Îû®\0"
             VALUE "ProductVersion", "1, 0, 0, 1\0"
         END
     END
@@ -210,7 +210,7 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDP_SOCKETS_INIT_FAILED "Windows º“ƒœ √ ±‚»≠ø° Ω«∆–«œø¥Ω¿¥œ¥Ÿ."
+    IDP_SOCKETS_INIT_FAILED "Windows ÏÜåÏºì Ï¥àÍ∏∞ÌôîÏóê Ïã§Ìå®ÌïòÏòÄÏäµÎãàÎã§."
 END
 
 #endif    // Korean resources

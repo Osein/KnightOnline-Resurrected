@@ -161,7 +161,7 @@ int myrand( int min, int max, BOOL bSame )
 }
 
 ///////////////////////////////////////////////////////////////////////////
-//	XdY Çü½ÄÀÇ ÁÖ»çÀ§ ±¼¸®±â
+//	XdY í˜•ì‹ì˜ ì£¼ì‚¬ìœ„ êµ´ë¦¬ê¸°
 //
 int XdY(int x, int y)
 {
@@ -173,7 +173,7 @@ int XdY(int x, int y)
 }
 
 ///////////////////////////////////////////////////////////////////////////
-//	stringÀÇ ±æÀÌ°¡ size º¸´Ù ÀÛÀ¸¸é size ¸¸Å­ °ø¹éÀ» Ã¤¿ö¼­ º¹»çÇÑ´Ù.
+//	stringì˜ ê¸¸ì´ê°€ size ë³´ë‹¤ ì‘ìœ¼ë©´ size ë§Œí¼ ê³µë°±ì„ ì±„ì›Œì„œ ë³µì‚¬í•œë‹¤.
 //
 void SpaceCopy(LPSTR source, CString dest, int size)
 {
@@ -187,7 +187,7 @@ void SpaceCopy(LPSTR source, CString dest, int size)
 }
 
 ///////////////////////////////////////////////////////////////////////////
-//	stringÀÇ ±æÀÌ°¡ size º¸´Ù ÀÛÀ¸¸é size ¸¸Å­ °ø¹éÀ» Ã¤¿ö¼­ º¹»çÇÑ´Ù.
+//	stringì˜ ê¸¸ì´ê°€ size ë³´ë‹¤ ì‘ìœ¼ë©´ size ë§Œí¼ ê³µë°±ì„ ì±„ì›Œì„œ ë³µì‚¬í•œë‹¤.
 //
 void SpaceCopy(CString& source, CString dest, int size)
 {
@@ -204,7 +204,7 @@ void SpaceCopy(CString& source, CString dest, int size)
 }
 
 ///////////////////////////////////////////////////////////////////////////
-//	DWORD ÀÇ Max °ªÀ» Ã¤Å©ÇÏ¸é¼­ Áõ°¡½ÃÅ²´Ù.
+//	DWORD ì˜ Max ê°’ì„ ì±„í¬í•˜ë©´ì„œ ì¦ê°€ì‹œí‚¨ë‹¤.
 //
 void CheckMaxValue(DWORD& dest, DWORD add)
 {
@@ -215,7 +215,7 @@ void CheckMaxValue(DWORD& dest, DWORD add)
 }
 
 ///////////////////////////////////////////////////////////////////////////
-//	int ÀÇ Max °ªÀ» Ã¤Å©ÇÏ¸é¼­ Áõ°¡½ÃÅ²´Ù.
+//	int ì˜ Max ê°’ì„ ì±„í¬í•˜ë©´ì„œ ì¦ê°€ì‹œí‚¨ë‹¤.
 //
 void CheckMaxValue(int& dest, int add)
 {
@@ -226,7 +226,7 @@ void CheckMaxValue(int& dest, int add)
 }
 
 ///////////////////////////////////////////////////////////////////////////
-//	short ÀÇ Max °ªÀ» Ã¤Å©ÇÏ¸é¼­ Áõ°¡½ÃÅ²´Ù.
+//	short ì˜ Max ê°’ì„ ì±„í¬í•˜ë©´ì„œ ì¦ê°€ì‹œí‚¨ë‹¤.
 //
 void CheckMaxValue(short& dest, short add)
 {

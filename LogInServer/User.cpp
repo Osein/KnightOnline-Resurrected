@@ -56,7 +56,7 @@ void CUser::Parsing(int len, char *pData)
 		Send( buff, send_index );
 		break;
 	case LS_SERVERLIST:
-		m_pMain->m_DBProcess.LoadUserCountList();		// ±â¹üÀÌ°¡ ^^;
+		m_pMain->m_DBProcess.LoadUserCountList();		// ê¸°ë²”ì´ê°€ ^^;
 		SetByte( buff, LS_SERVERLIST, send_index );
 		SetByte( buff, m_pMain->m_nServerCount, send_index );
 		for(i=0; i<m_pMain->m_ServerList.size(); i++) {		
@@ -64,7 +64,7 @@ void CUser::Parsing(int len, char *pData)
 			SetString( buff, m_pMain->m_ServerList[i]->strServerIP, strlen(m_pMain->m_ServerList[i]->strServerIP), send_index );
 			SetShort( buff, strlen(m_pMain->m_ServerList[i]->strServerName), send_index );
 			SetString( buff, m_pMain->m_ServerList[i]->strServerName, strlen( m_pMain->m_ServerList[i]->strServerName ), send_index );			
-			SetShort( buff, m_pMain->m_ServerList[i]->sUserCount, send_index);   // ±â¹üÀÌ°¡ ^^;
+			SetShort( buff, m_pMain->m_ServerList[i]->sUserCount, send_index);   // ê¸°ë²”ì´ê°€ ^^;
 		}
 		Send( buff, send_index );
 		break;
@@ -120,7 +120,7 @@ void CUser::LogInReq(char *pBuf)
 	return;
 fail_return:
 	SetByte( send_buff, LS_LOGIN_REQ, send_index );
-	SetByte( send_buff, 0x02, send_index );				// id, pwd ÀÌ»ó...
+	SetByte( send_buff, 0x02, send_index );				// id, pwd ì´ìƒ...
 	Send( send_buff, send_index );
 }
 

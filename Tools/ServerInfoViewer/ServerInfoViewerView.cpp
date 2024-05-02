@@ -79,7 +79,7 @@ void CServerInfoViewerView::OnDraw(CDC* pDC)
 	mtx.Identity();
 	mtx.Scale(64, 64, 64);
 	mtx.PosSet(2048.0f, 0, 2048.0f);
-	pFrm->m_Eng.RenderGrid(mtx); // 4 ¹ÌÅÍ¿¡ ÇÑ°³¾¿ ¶óÀÎ Ç¥½Ã..
+	pFrm->m_Eng.RenderGrid(mtx); // 4 ë¯¸í„°ì— í•œê°œì”© ë¼ì¸ í‘œì‹œ..
 	pFrm->m_Eng.RenderAxis();
 	
 	__CharacterSymbol* pSymbol = NULL;
@@ -184,7 +184,7 @@ BOOL CServerInfoViewerView::OnEraseBkgnd(CDC* pDC)
 void CServerInfoViewerView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) 
 {
 	// TODO: Add your message handler code here and/or call default
-	if(nChar == 'F') // ¼±ÅÃµÈ ¿ÀºêÁ§Æ®¸¦ Æ÷Ä¿½º..
+	if(nChar == 'F') // ì„ íƒëœ ì˜¤ë¸Œì íŠ¸ë¥¼ í¬ì»¤ìŠ¤..
 	{
 		this->FocusGround();
 	}
@@ -212,7 +212,7 @@ void CServerInfoViewerView::FocusGround()
 	
 	
 	
-	__Vector3 v0(0, 0, 4096), v1(4096,0,4096), v2(4096,0,0), v3(0,0,0); // Å«ÆÇ¿¡ ÂïÈ÷¸é..
+	__Vector3 v0(0, 0, 4096), v1(4096,0,4096), v2(4096,0,0), v3(0,0,0); // í°íŒì— ì°íˆë©´..
 	__Vector3 vCol;
 	float t, u, v;
 	if(	::IntersectTriangle(vPos, vDir, v0, v1, v2, t, u, v, &vCol) ||
@@ -282,7 +282,7 @@ void CServerInfoViewerView::OnLButtonDblClk(UINT nFlags, CPoint point)
 	
 	
 	
-	__Vector3 v0(0, 0, 4096), v1(4096,0,4096), v2(4096,0,0), v3(0,0,0); // Å«ÆÇ¿¡ ÂïÈ÷¸é..
+	__Vector3 v0(0, 0, 4096), v1(4096,0,4096), v2(4096,0,0), v3(0,0,0); // í°íŒì— ì°íˆë©´..
 	__Vector3 vCol;
 	float t, u, v;
 	if(	::IntersectTriangle(vPos, vDir, v0, v1, v2, t, u, v, &vCol) ||
