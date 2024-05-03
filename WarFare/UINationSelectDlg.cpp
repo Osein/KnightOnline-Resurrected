@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "UINationSelectDlg.h"
 #include "GameProcNationSelect.h"
+#include "resource.h"
 
 CUINationSelectDlg::CUINationSelectDlg()
 {
@@ -21,8 +22,12 @@ bool CUINationSelectDlg::Load(HANDLE hFile)
 {
 	bool bSuccess = CN3UIBase::Load(hFile);
 
-	m_pBtnKarus = this->GetChildByID("bt_karus");	__ASSERT(m_pBtnKarus, "NULL UI Component!!");
-	m_pBtnElmorad = this->GetChildByID("bt_elmo");	__ASSERT(m_pBtnElmorad, "NULL UI Component!!");
+	m_pBtnKarus = GetChildByID("nation_karus")->GetChildByID("btn_karus_selection"); __ASSERT(m_pBtnKarus, "NULL UI Component!!");
+	m_pBtnKarusNext = GetChildByID("nation_karus")->GetChildByID("btn_karus_next"); __ASSERT(m_pBtnKarusNext, "NULL UI Component!!");
+	m_pBtnKarusExit = GetChildByID("nation_karus")->GetChildByID("btn_karus_close"); __ASSERT(m_pBtnKarusExit, "NULL UI Component!!");
+	m_pBtnElmorad = GetChildByID("nation_elmo")->GetChildByID("btn_elmo_selection"); __ASSERT(m_pBtnElmorad, "NULL UI Component!!");
+	m_pBtnElmoradNext = GetChildByID("nation_elmo")->GetChildByID("btn_elmo_next"); __ASSERT(m_pBtnElmoradNext, "NULL UI Component!!");
+	m_pBtnElmoradExit = GetChildByID("nation_elmo")->GetChildByID("btn_elmo_close"); __ASSERT(m_pBtnElmoradExit, "NULL UI Component!!");
 	
 	RECT rc = this->GetRegion();
 	int iX = ((int)s_CameraData.vp.Width - (rc.right - rc.left))/2;
@@ -47,7 +52,24 @@ bool CUINationSelectDlg::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
 		{
 			if(m_pProcNationSelectRef) m_pProcNationSelectRef->MsgSendNationSelect(NATION_ELMORAD);
 		}
-	}
+		else if ( pSender == m_pBtnKarusNext)
+		{
+				GetChildByID("nation_karus")->SetVisible(false);
+				GetChildByID("nation_elmo")->SetVisible(true);
+		}
+		else if ( pSender == m_pBtnElmoradNext)
+		{
+				GetChildByID("nation_elmo")->SetVisible(false);
+				GetChildByID("nation_karus")->SetVisible(true);
+		}
+		if ( pSender == m_pBtnKarusExit || pSender == m_pBtnElmoradExit)
+		{
+		std::string szMsg;
+		::_LoadStringFromResource(IDS_CONFIRM_EXIT_GAME, szMsg);
+		e_Behavior eBehavior = ((true) ? BEHAVIOR_EXIT : BEHAVIOR_NOTHING);
+		CGameProcedure::MessageBoxPost(szMsg, "", MB_YESNO, eBehavior);
+		}
+    }
 
 	return true;
 }
