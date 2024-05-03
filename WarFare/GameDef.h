@@ -540,134 +540,153 @@ enum {	RESRC_UI_LOGIN = 0, RESRC_UI_CHARACTERSELECT, RESRC_UI_CHARACTERCREATE, R
 
 typedef struct __TABLE_ZONE
 {
-	DWORD		dwID; // zone ID
-	std::string	szTerrainFN; // Terrain FileName - Terrain, Tile Map, ColorMap....
+	DWORD		dwID;									// zone ID
+	std::string	szTerrainFN;							// Terrain FileName - Terrain, Tile Map, ColorMap....
+	std::string	szMapName;				// needs impl.
 	std::string	szColorMapFN;
 	std::string	szLightMapFN;
-	std::string	szObjectPostDataFN; // Object 위치 정보 - 이안에 충돌 체크 데이터도 들어 있다.
+	std::string	szObjectPostDataFN;						// Object 위치 정보 - 이안에 충돌 체크 데이터도 들어 있다.
+	std::string	szOpdExt;				// needs impl.
 	std::string	szMiniMapFN;
-	std::string szSkySetting; // 하늘과 분위기 조정한 세팅 정보 파일..
-	BOOL		bIndicateEnemyPlayer;	// 적국 플레이어를 표시하나??
-	int			iFixedSundDirection;	// 해의 방향을 고정시키는지..
-	std::string szLightObjFN;		// 지형에 배치되어 있는 라이트정보파일..
+	std::string szSkySetting;							// 하늘과 분위기 조정한 세팅 정보 파일..
+	BOOL		bIndicateEnemyPlayer;					// 적국 플레이어를 표시하나??
+	int			iFixedSundDirection;					// 해의 방향을 고정시키는지..
+	std::string szLightObjFN;							// 지형에 배치되어 있는 라이트정보파일..
+	std::string hGevFile;
+	int			bisDungeon;				// needs impl.
+	std::string hENSFile;				// needs impl.
+	float		fFogMultiplier;			// needs impl.
+	std::string szFlagFile;				// needs impl.
+	DWORD		skip1;					// needs impl.
+	DWORD		skip2;					// needs impl.
+	DWORD		skip3;					// needs impl.
+	DWORD		skip4;					// needs impl.
+	std::string szOpdSub;				// needs impl.
+	int			skip5;					// needs impl.
+	std::string szEventSub;				// needs impl.
 } TABLE_ZONE;
 
 typedef struct __TABLE_UI_RESRC
 {
-	DWORD dwID;							// 플레이어의 소속 국가에 따른 키로 쓴다..
+	DWORD dwID;							// 0 플레이어의 소속 국가에 따른 키로 쓴다..
 
-	std::string szLogIn;				// 0
-	std::string szCmd;					// 1
-	std::string szChat;					// 2
-	std::string szMsgOutput;			// 3
-	std::string szStateBar;				// 4
-	std::string szVarious;				// 5 - 캐릭터 상태, 기사단 관리, 퀘스트, 친구.. 등등 네페이지가 한개에 들어있음.
-	std::string szState;				// 6 - 캐릭터 상태
-	std::string szKnights;				// 7 - 기사단 관리
-	std::string szQuest;				// 8 - 퀘스트
-	std::string szFriends;				// 9 - 친구 관리
+	std::string szLogIn;				// 1
+	std::string szCmd;					// 2
+	std::string szChat;					// 3
+	std::string szMsgOutput;			// 4
+	std::string szStateBar;				// 5
+	std::string szVarious;				// 6 - 캐릭터 상태, 기사단 관리, 퀘스트, 친구.. 등등 네페이지가 한개에 들어있음. 
+	std::string szState;				// 7 - 캐릭터 상태
+	std::string szKnights;				// 8 - 기사단 관리
+	std::string szQuest;				// 9 - 퀘스트
+	std::string szFriends;				// 10 - 친구 관리
 
-	std::string szInventory;			// 10
-	std::string szTransaction;			// 11
-	std::string szDroppedItem;			// 12
+	std::string szInventory;			// 11
+	std::string szTransaction;			// 12
+	std::string szDroppedItem;			// 13
 
-	std::string szTargetBar;			// 13
-	std::string szTargetSymbolShape;	// 14
-	std::string szSkillTree;			// 15
-	std::string szHotKey;				// 16
+	std::string szTargetBar;			// 14
+	std::string szTargetSymbolShape;	// 15
+	std::string szSkillTree;			// 16
+	std::string szHotKey;				// 17
 
-	std::string szMiniMap;				// 17
-	std::string szPartyOrForce;			// 18
-	std::string szPartyBBS;				// 19
+	std::string szMiniMap;				// 18
+	std::string szPartyOrForce;			// 19
+	std::string szPartyBBS;				// 20
 
-	std::string szHelp;					// 20
-	std::string szNotice;				// 21
+	std::string szHelp;					// 21
+	std::string szNotice;				// 22
 
-	std::string szCharacterCreate;		// 22
-	std::string szCharacterSelect;		// 23
+	std::string szCharacterCreate;		// 23
+	std::string szCharacterSelect;		// 24
 
-	std::string szToolTip;				// 24
-	std::string szMessageBox;			// 25
-	std::string szLoading;				// 26
-	std::string szItemInfo;				// 27
-	std::string szPersonalTrade;		// 28
-	std::string szPersonalTradeEdit;	// 29
+	std::string szToolTip;				// 25
+	std::string szMessageBox;			// 26
+	std::string szLoading;				// 27
+	std::string szItemInfo;				// 28
+	std::string szPersonalTrade;		// 29
+	std::string szPersonalTradeEdit;	// 30
 
-	std::string szNpcEvent;				// 30
-	std::string szZoneChangeOrWarp;		// 31
-	std::string szExchangeRepair;		// 32
+	std::string szNpcEvent;				// 31
+	std::string szZoneChangeOrWarp;		// 32
+	std::string szExchangeRepair;		// 33
 
-	std::string szRepairTooltip;		// 33
-	std::string szNpcTalk;				// 34
-	std::string szNpcExchangeList;		// 35
+	std::string szRepairTooltip;		// 34
+	std::string szNpcTalk;				// 35
+	std::string szNpcExchangeList;		// 36
 
-	std::string szKnightsOperation;		// 36
-	std::string szClassChange;			// 37
+	std::string szKnightsOperation;		// 37
+	std::string szClassChange;			// 38
 
-	std::string szEndingDisplay;		// 38
-	std::string szWareHouse;			// 39
+	std::string szEndingDisplay;		// 39
+	std::string szWareHouse;			// 40
 
-	std::string szChangeClassInit;		// 40
-	std::string szChangeInitBill;		// 41
+	std::string szChangeClassInit;		// 41
+	std::string szChangeInitBill;		// 42
 
-	std::string szInn;					// 42
-	std::string szInputClanName;		// 43
-	std::string szTradeBBS;				// 44
-	std::string szTradeBBSSelector;		// 45
-	std::string szTradeExplanation;		// 46
-	std::string szTradeMemolist;		// 47
-	std::string szQuestMenu;			// 48
-	std::string szQuestTalk;			// 49
-	std::string szDead;					// 50
-	std::string szElLoading;			// 51
-	std::string szKaLoading;			// 52
-	std::string szNationSelect;			// 53
+	std::string szInn;					// 43
+	std::string szInputClanName;		// 44
+	std::string szTradeBBS;				// 45
+	std::string szTradeBBSSelector;		// 46
+	std::string szTradeExplanation;		// 47
+	std::string szTradeMemolist;		// 48
+	std::string szQuestMenu;			// 49
+	std::string szQuestTalk;			// 50
+	std::string	szQuestEdit;	// 51			needs implementation
+	std::string szDead;					// 52
+	std::string szElLoading;			// 53
+	std::string szKaLoading;			// 54
+	std::string szNationSelect;			// 55
 
 } TABLE_UI_RESRC;
 
 typedef struct __TABLE_ITEM_BASIC // 장착 아이템에 관한 리소스 레코드...
 {
-	DWORD		dwID;				// 00 코드화된 아이템번호 d - // 00 - Item 종류, 00 - Item 장착 위치(장착위치로 Plug 인지 Part 인지 판단이 가능하다.) - 0000 - ItemIndex
-	BYTE 		byExtIndex;			// 01 확장 인덱스
-	std::string	szName;				// 02 이름	
-	std::string	szRemark;			// 03 아이템 설명	
-	DWORD		dwIDResrc;			// 04 코드화된 아이템 리소스	d
-	DWORD		dwIDIcon;			// 05 코드화된 아이템 아이콘 리소스	d
-	DWORD		dwSoundID0;			// 06 Sound ID - 0 이면 사운드 없다~..
-	DWORD		dwSoundID1;			// 07 Sound ID - 0 이면 사운드 없다~..
+	DWORD		dwID;			// 00 코드화된 아이템번호 d - // 00 - Item 종류, 00 - Item 장착 위치(장착위치로 Plug 인지 Part 인지 판단이 가능하다.) - 0000 - ItemIndex
+	BYTE 		byExtIndex;		// 01 확장 인덱스
+	std::string	szName;			// 02 이름	
+	std::string	szRemark;		// 03 아이템 설명	
+	DWORD       dwTODO1;	// 04 TODO: implement introduced in 1264
+	BYTE        byTODO2;	// 05 TODO: implement introduced in 1264
+	DWORD		dwIDResrc;		// 06 코드화된 아이템 리소스	d
+	DWORD		dwIDIcon;		// 07 코드화된 아이템 아이콘 리소스	d
+	DWORD		dwSoundID0;		// 08 Sound ID - 0 이면 사운드 없다~..
+	DWORD		dwSoundID1;		// 09 Sound ID - 0 이면 사운드 없다~..
 
-	BYTE	byClass;			// 08 아이템 형태	b enum e_ItemClass 참조....
-	BYTE	byIsRobeType;		// 09 위아래가 통째로 된 로브타입의 아이템.....
-	BYTE	byAttachPoint;		// 10 장착 위치	b
-	BYTE	byNeedRace;			// 11 종족	b
-	BYTE	byNeedClass;		// 12 직업	b
+	BYTE	byClass;			// 10 아이템 형태	b enum e_ItemClass 참조....
+	BYTE	byIsRobeType;		// 11 위아래가 통째로 된 로브타입의 아이템.....
+	BYTE	byAttachPoint;		// 12 장착 위치	b
+	BYTE	byNeedRace;			// 13 종족	b
+	BYTE	byNeedClass;		// 14 직업	b
 
-	short	siDamage;			// 13 무기타격	b
-	short	siAttackInterval;	// 14 공격 시간 100 은 1 초
-	short	siAttackRange;		// 15 유효 거리	.1 meter 단위
-	short	siWeight;			// 16 무게 .1 중량단위
-	short	siMaxDurability;	// 17 내구력
-	int		iPrice;				// 18 매수가
-	int		iPriceSale;			// 19 매도가
-	short	siDefense;			// 20 방어력
-	BYTE	byContable;			// 21 숫자가 있는 아이템인가??
+	short	siDamage;			// 15 무기타격	b
+	short	siAttackInterval;	// 16 공격 시간 100 은 1 초
+	short	siAttackRange;		// 17 유효 거리	.1 meter 단위
+	short	siWeight;			// 18 무게 .1 중량단위
+	short	siMaxDurability;	// 19 내구력
+	int		iPrice;				// 20 매수가
+	int		iPriceSale;			// 21 매도가
+	short	siDefense;			// 22 방어력
+	BYTE	byContable;			// 23 숫자가 있는 아이템인가??
 
-	DWORD	dwEffectID1;		// 22 마법 효과 ID1
-	DWORD	dwEffectID2;		// 23 마법 효과 ID1
+	DWORD	dwEffectID1;		// 24 마법 효과 ID1
+	DWORD	dwEffectID2;		// 25 마법 효과 ID1
 
-	char	cNeedLevel;		// 24 요구 레벨		플레이어의 iLeve.. - 음수값이 있을수도 있다..
-	BYTE	byNeedRank;			// 25 요구 작위		플레이어의 iRank..
-	BYTE	byNeedTitle;		// 26 요구 타이틀 	플레이어의 iTitle..
-	BYTE	byNeedStrength;		// 27 요구 힘 		플레이어의 iStrength..
-	BYTE	byNeedStamina;		// 28 요구 정력 	플레이어의 iStamina..
-	BYTE	byNeedDexterity;	// 29 요구 민첩		플레이어의 iDexterity..
-	BYTE	byNeedInteli;		// 30 요구 지능		플레이어의 iIntelligence..
-	BYTE	byNeedMagicAttack;	// 31 요구 마력		플레이어의 iMagicAttak..
+	char	cNeedLevel;			// 26 요구 레벨		플레이어의 iLeve.. - 음수값이 있을수도 있다..
+	BYTE	byTODO3;		// 27	TODO: implement introduced in 1264
+	BYTE	byNeedRank;			// 28 요구 작위		플레이어의 iRank..
+	BYTE	byNeedTitle;		// 29 요구 타이틀 	플레이어의 iTitle..
+	BYTE	byNeedStrength;		// 30 요구 힘 		플레이어의 iStrength..
+	BYTE	byNeedStamina;		// 31 요구 정력 	플레이어의 iStamina..
+	BYTE	byNeedDexterity;	// 32 요구 민첩		플레이어의 iDexterity..
+	BYTE	byNeedInteli;		// 33 요구 지능		플레이어의 iIntelligence..
+	BYTE	byNeedMagicAttack;	// 34 요구 마력		플레이어의 iMagicAttak..
 
-	BYTE	bySellGroup;		// 32 상인이 파는데에 대한 그룹..
+	BYTE	bySellGroup;		// 35 상인이 파는데에 대한 그룹..
+	BYTE	byItemGrade;	// 36 TODO: implement introduced in 1298
 } TABLE_ITEM_BASIC;
 
-const int MAX_ITEM_EXTENSION = 22; // 확장 아이템 테이블 갯수.
+const int MAX_ITEM_EXTENSION = 24; // 확장 아이템 테이블 갯수.
 const int LIMIT_FX_DAMAGE = 64;
 const int ITEM_UNIQUE = 4;
 const int ITEM_LIMITED_EXHAUST = 17;
@@ -676,63 +695,67 @@ typedef struct __TABLE_ITEM_EXT // 장착 아이템에 관한 리소스 레코�
 {
 	DWORD		dwID;				// 00 코드화된 아이템번호 - // 00 - Item 종류, 00 - Item 장착 위치(장착위치로 Plug 인지 Part 인지 판단이 가능하다.) - 0000 - ItemIndex
 	std::string	szHeader;			// 01 접두사
-	std::string	szRemark;			// 02 아이템 설명	
-	BYTE		byMagicOrRare;		// 03 매직 혹은 레어 아이템인지...
+	DWORD       dwTODO1;	// 02 TODO: implement introduced in 1264 BaseID
+	std::string	szRemark;			// 03 아이템 설명	
+	DWORD       dwTODO2;	// 04 TODO: implement introduced in 1097
+	DWORD       dwTODO3;	// 05 TODO: implement introduced in 1264 ResrcID
+	DWORD       dwTODO4;	// 06 TODO: implement introduced in 1264 IconID
+	BYTE		byMagicOrRare;		// 07 매직 혹은 레어 아이템인지...
 
-	short	siDamage;				// 04 무기타격
-	short	siAttackIntervalPercentage;		// 05 공격 시간 비율
-	short	siHitRate;				// 06 타격률	- 퍼센트
-	short	siEvationRate;			// 07 회피율	-   "
+	short	siDamage;				// 08 무기타격
+	short	siAttackIntervalPercentage;		// 09 공격 시간 비율
+	short	siHitRate;				// 10 타격률	- 퍼센트
+	short	siEvationRate;			// 11 회피율	-   "
 
-	short	siMaxDurability;		// 08 내구력
-	short	siPriceMultiply;		// 09 매수가 배율
-	short	siDefense;				// 10 방어력
+	short	siMaxDurability;		// 12 내구력
+	short	siPriceMultiply;		// 13 매수가 배율
+	short	siDefense;				// 14 방어력
 	
-	short	siDefenseRateDagger;	// 11 단검방어	- 퍼센트
-	short	siDefenseRateSword;		// 12 검방어	- 퍼센트
-	short	siDefenseRateBlow;		// 13 타격방어	- 퍼센트
-	short	siDefenseRateAxe;		// 14 도끼방어	- 퍼센트
-	short	siDefenseRateSpear;		// 15 창방어	- 퍼센트
-	short	siDefenseRateArrow;		// 16 화살방어	- 퍼센트
+	short	siDefenseRateDagger;	// 15 단검방어	- 퍼센트
+	short	siDefenseRateSword;		// 16 검방어	- 퍼센트
+	short	siDefenseRateBlow;		// 17 타격방어	- 퍼센트
+	short	siDefenseRateAxe;		// 18 도끼방어	- 퍼센트
+	short	siDefenseRateSpear;		// 19 창방어	- 퍼센트
+	short	siDefenseRateArrow;		// 20 화살방어	- 퍼센트
 	
-	BYTE	byDamageFire;			// 17 추가데미지 - 불
-	BYTE	byDamageIce;			// 18 추가데미지 - 얼음
-	BYTE	byDamageThuner;			// 19 추가데미지 - 전격
-	BYTE	byDamagePoison;			// 20 추가데미지 - 독
+	BYTE	byDamageFire;			// 21 추가데미지 - 불
+	BYTE	byDamageIce;			// 22 추가데미지 - 얼음
+	BYTE	byDamageThuner;			// 23 추가데미지 - 전격
+	BYTE	byDamagePoison;			// 24 추가데미지 - 독
 
-	BYTE	byStillHP;				// 21 HP 흡수
-	BYTE	byDamageMP;				// 22 MP Damage
-	BYTE	byStillMP;				// 23 MP 흡수
-	BYTE	byReturnPhysicalDamage;	// 24 물리타격 반사
+	BYTE	byStillHP;				// 25 HP 흡수
+	BYTE	byDamageMP;				// 26 MP Damage
+	BYTE	byStillMP;				// 27 MP 흡수
+	BYTE	byReturnPhysicalDamage;	// 28 물리타격 반사
 
-	BYTE	bySoulBind;				// 25소울 바인드 - 일대일시 아이템을 떨구는 정도 - 퍼센트 - 현재는 안쓴다.
+	BYTE	bySoulBind;				// 30 소울 바인드 - 일대일시 아이템을 떨구는 정도 - 퍼센트 - 현재는 안쓴다.
 	
-	short	siBonusStr;				// 26 힘 보너스
-	short	siBonusSta;				// 27 체력 보너스
-	short	siBonusDex;				// 28 민첩성 보너스
-	short	siBonusInt;				// 29 지능 보너스
-	short	siBonusMagicAttak;		// 30 마력 보너스
-	short	siBonusHP;				// 31 HP 보너스
-	short	siBonusMSP;				// 32 MSP 보너스
+	short	siBonusStr;				// 31 힘 보너스
+	short	siBonusSta;				// 32 체력 보너스
+	short	siBonusDex;				// 33 민첩성 보너스
+	short	siBonusInt;				// 34 지능 보너스
+	short	siBonusMagicAttak;		// 35 마력 보너스
+	short	siBonusHP;				// 36 HP 보너스
+	short	siBonusMSP;				// 37 MSP 보너스
 
-	short	siRegistFire;			// 33 불 저항
-	short	siRegistIce;			// 34 냉기 저항
-	short	siRegistElec;			// 35 전기 저항
-	short	siRegistMagic;			// 36 마법 저항
-	short	siRegistPoison;			// 37 독 저항
-	short	siRegistCurse;			// 38 저주 저항
+	short	siRegistFire;			// 38 불 저항
+	short	siRegistIce;			// 39 냉기 저항
+	short	siRegistElec;			// 40 전기 저항
+	short	siRegistMagic;			// 41 마법 저항
+	short	siRegistPoison;			// 42 독 저항
+	short	siRegistCurse;			// 43 저주 저항
 	
-	DWORD	dwEffectID1;		// 39 마법 효과 ID1
-	DWORD	dwEffectID2;		// 40 마법 효과 ID2
+	DWORD	dwEffectID1;			// 44 마법 효과 ID1
+	DWORD	dwEffectID2;			// 45 마법 효과 ID2
 
-	short	siNeedLevel;			// 41 요구 레벨		플레이어의 iLeve..
-	short	siNeedRank;				// 42 요구 작위		플레이어의 iRank..
-	short	siNeedTitle;			// 43 요구 타이틀 	플레이어의 iTitle..
-	short	siNeedStrength;			// 44 요구 힘 		플레이어의 iStrength..
-	short	siNeedStamina;			// 45 요구 정력 	플레이어의 iStamina..
-	short	siNeedDexterity;		// 46 요구 민첩		플레이어의 iDexterity..
-	short	siNeedInteli;			// 47 요구 지능		플레이어의 iIntelligence..
-	short	siNeedMagicAttack;		// 48 요구 마력		플레이어의 iMagicAttak..
+	short	siNeedLevel;			// 46 요구 레벨		플레이어의 iLeve..
+	short	siNeedRank;				// 47 요구 작위		플레이어의 iRank..
+	short	siNeedTitle;			// 48 요구 타이틀 	플레이어의 iTitle..
+	short	siNeedStrength;			// 49 요구 힘 		플레이어의 iStrength..
+	short	siNeedStamina;			// 50 요구 정력 	플레이어의 iStamina..
+	short	siNeedDexterity;		// 51 요구 민첩		플레이어의 iDexterity..
+	short	siNeedInteli;			// 52 요구 지능		플레이어의 iIntelligence..
+	short	siNeedMagicAttack;		// 53 요구 마력		플레이어의 iMagicAttak..
 } TABLE_ITEM_EXT;
 
 const int MAX_NPC_SHOP_ITEM = 30;
@@ -761,11 +784,16 @@ enum e_ItemSlot {	ITEM_SLOT_EAR_RIGHT = 0,	ITEM_SLOT_HEAD	= 1,	ITEM_SLOT_EAR_LEF
 
 typedef struct __TABLE_PLAYER_LOOKS // NPC, Mob 모습 관한 리소스 레코드...
 {
-	DWORD		dwID; // NPC 고유 ID
-	std::string	szName; // 캐릭터 이름
-	std::string	szJointFN; // 관절 파일 이름
-	std::string	szAniFN; // 에니메이션 파일 이름
-	std::string	szPartFNs[7]; // 각 Character Part - 상체, 하체, 머리, 팔, 다리, 머리카락, 망토
+	DWORD		dwID;				// NPC 고유 ID
+	std::string	szName;				// 캐릭터 이름
+	std::string	szJointFN;			// 관절 파일 이름
+	std::string	szAniFN;			// 에니메이션 파일 이름
+	std::string	szPartFNs[10];		// 각 Character Part - 상체, 하체, 머리, 팔, 다리, 머리카락, 망토
+
+	std::string skipn3cskin0;	// needs impl.
+	std::string skipn3char0;	// needs impl.
+	std::string skipFXPlug;		// needs impl.
+	int         iunknownplooks0;// needs impl.
 
 	int			iJointRH;			// 오른손 끝 관절번호
 	int			iJointLH;			// 왼손 끝 관절번호
@@ -782,7 +810,12 @@ typedef struct __TABLE_PLAYER_LOOKS // NPC, Mob 모습 관한 리소스 레코�
 	int			iSndID_Breathe0;
 	int			iSndID_Breathe1;
 	int			iSndID_Reserved0;
+	int			iunknownplooks1; // not sure if this one is supposed to be here
 	int			iSndID_Reserved1;
+	int			iunknownplooks2; // not sure if this one is supposed to be here 
+	BYTE		byunknownplooks1;// needs impl.
+	BYTE		byunknownplooks2;// needs impl.
+	BYTE		byunknownplooks3;// needs impl.
 } TABLE_PLAYER;
 
 typedef struct __TABLE_EXCHANGE_QUEST
@@ -841,10 +874,14 @@ typedef struct __TABLE_UPC_SKILL
 	int			iCastTime;			// 캐스팅 시간
 	int			iReCastTime;		// 다시 캐스팅할때까지 걸리는 시간.
 	
+	float		fUnkown1;	// TODO: implement does this have to do with cooldown timers ??
+	float		fUnkown2;	// TODO: implement does this have to do with cooldown timers ??
+
 	int			iPercentSuccess;	// 성공률
 	DWORD		dw1stTableType;		// 첫번째 타입.
 	DWORD		dw2ndTableType;		// 두번째 타입.
 	int			iValidDist;			// 유효거리
+	int			iUnkown1;	// TODO: implement 
 	
 } TABLE_UPC_ATTACK_B;
 
@@ -867,6 +904,7 @@ typedef struct __TABLE_UPC_SKILL_TYPE_2
 	DWORD		dwID;			// SKILL 고유 ID
 	int			iSuccessType;	// 성공타입.
 	int			iPower;			// 공격력
+	int			iAddDamage;	// TODO Is this AddDamage?
 	int			iAddDist;		// 거리증가
 	int			iNumArrow;		// 화살요구수
 } TABLE_UPC_SKILL_TYPE_2;
@@ -874,6 +912,7 @@ typedef struct __TABLE_UPC_SKILL_TYPE_2
 typedef struct __TABLE_UPC_SKILL_TYPE_3
 {
 	DWORD		dwID;			// SKILL 고유 ID
+	int			iRadius;	// TODO: Implement
 	int			iDDType;
 	int			iStartDamage;
 	int			iDuraDamage;
@@ -883,25 +922,32 @@ typedef struct __TABLE_UPC_SKILL_TYPE_3
 
 typedef struct __TABLE_UPC_SKILL_TYPE_4
 {
-	DWORD		dwID;			// 일련번호
-	int			iBuffType;		// 버프타입
-	int			iDuration;
-	int			iAttackSpeed;	// 공격속도
-	int			iMoveSpeed;		// 이동속도
-	int			iAC;			// 방어력
-	int			iAttack;		// 공격력
-	int			iMaxHP;			// MAXHP
-	int			iStr;			// 힘
-	int			iSta;			// 체력
-	int			iDex;			// 민첩
-	int			iInt;			// 지능
-	int			iMAP;			// 마력
-	int			iFireResist;	// 불저항
-	int			iColdResist;	// 냉기저항
-	int			iLightningResist;// 전기저항
-	int			iMagicResist;	// 마법저항
-	int			iDeseaseResist;	// 저주저항
-	int			iPoisonResist;	// 독저항
+    DWORD		dwID;			// 일련번호
+    int			iBuffType;		// 버프타입
+    int			iRadius;     // TODO: implement
+    int			iDuration;
+    int			iAttackSpeed;     // 공격속도
+    int  		iMoveSpeed;       // 이동속도
+    int   		iAC;              // 방어력
+    int  		iACPCT;      // TODO: implement
+    int  		iAttack;          // 공격력
+    int  		iMagicAttack;// TODO: implement
+    int  		iMaxHP;           // MAXHP
+    int  		iMaxHPPct;   // TODO: implement
+    int  		iMaxMP;      // TODO: implement
+    int  		iMaxMPPct;   // TODO: implement
+    int  		iStr;             // 힘
+    int			iSta;             // 체력
+    int			iDex;             // 민첩
+    int			iInt;             // 지능
+    int			iMAP;             // 마력
+    int			iFireResist;      // 불저항
+    int			iColdResist;      // 냉기저항
+    int			iLightningResist; // 전기저항
+    int			iMagicResist;     // 마법저항
+    int			iDeseaseResist;   // 저주저항
+    int			iPoisonResist;    // 독저항
+    int			iScrollMoveSpeed;// TODO: implement
 } TABLE_UPC_SKILL_TYPE_4;
 
 typedef struct __TABLE_UPC_SKILL_TYPE_5
@@ -1099,8 +1145,10 @@ enum e_SkillMagicTaget	{	SKILLMAGIC_TARGET_SELF = 1,				// 나 자신..
 typedef struct __TABLE_FX	// FX 리소스 레코드...
 {
 	DWORD		dwID;		// 고유 ID
+	std::string	szDescFN;	// file description
 	std::string	szFN;		// file name
 	DWORD		dwSoundID;	// 효과에 쓰는 사운드 아디.
+	BYTE		AffectMeOnly; // needs impl. is this earthquake or affect user only?
 } TABLE_FX;
 
 const int	MAX_COMBO = 3;
