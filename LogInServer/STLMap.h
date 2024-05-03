@@ -23,25 +23,21 @@ using namespace std;
 template <class T1, class T2> class CSTLMap  
 {
 public:
-	typedef map < T1, T2* >::iterator		Iterator;
-	typedef map < T1, T2* >::value_type		ValueType;
-
 	map < T1, T2* >		m_UserTypeMap;
-	
 
 	int GetSize() { return m_UserTypeMap.size(); };
 	
 	bool PutData( T1 key_value, T2* pData)
 	{
 		if( !pData ) return false;
-		pair<Iterator, bool> temp_pair = m_UserTypeMap.insert( ValueType( key_value, pData ) );
+		auto temp_pair = m_UserTypeMap.insert( std::pair<T1, T2*>( key_value, pData ) );
 		return temp_pair.second;
 	};
 	
 	T2* GetData( T1 key_value )
 	{
 		T2* pData = NULL;
-		Iterator iter = m_UserTypeMap.find( key_value );
+		auto iter = m_UserTypeMap.find( key_value );
 		if( iter == m_UserTypeMap.end() )
 			return NULL;
 		else
@@ -55,7 +51,7 @@ public:
 		if( m_UserTypeMap.empty() )
 			return false;
 		
-		Iterator iter = m_UserTypeMap.find( key_value );
+		auto iter = m_UserTypeMap.find( key_value );
 		if( iter == m_UserTypeMap.end() )
 			return false;
 		else {
@@ -73,7 +69,7 @@ public:
 
 	void DeleteAllData()
 	{
-		Iterator iter1 = m_UserTypeMap.begin(), iter2 = m_UserTypeMap.end();
+		auto iter1 = m_UserTypeMap.begin(), iter2 = m_UserTypeMap.end();
 		for(; iter1 != iter2; iter1++ )
 			delete (*iter1).second;
 		
@@ -82,7 +78,7 @@ public:
 
 	bool IsExist( T1 key_value )
 	{
-		Iterator iter = m_UserTypeMap.find( key_value );
+		auto iter = m_UserTypeMap.find( key_value );
 		if( iter == m_UserTypeMap.end() )
 			return false;
 		else

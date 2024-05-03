@@ -1,7 +1,6 @@
 #ifndef _DEFINE_H
 #define _DEFINE_H
 
-#pragma warning(disable : 4786)
 #include <string>
 using namespace std;
 

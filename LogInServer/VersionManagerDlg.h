@@ -32,7 +32,6 @@ public:
 
 	char	m_strFtpUrl[256];
 	char	m_strFilePath[256];
-	char	m_strDefaultPath[_MAX_PATH];
 
 	int		m_nLastVersion;
 
