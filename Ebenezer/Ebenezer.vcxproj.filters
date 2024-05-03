@@ -14,7 +14,7 @@
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
     <Filter Include="N3Base">
-      <UniqueIdentifier>{f5ea1e93-f8e6-4c8c-83ef-a549e5dfdc4c}</UniqueIdentifier>
+      <UniqueIdentifier>{001070ba-35c4-4ba2-8ca6-dd7437ee6dc3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -138,7 +138,7 @@
     <ClCompile Include="ZoneInfoSet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="N3Base\N3ShapeMgr.cpp">
+    <ClCompile Include="N3ShapeMgr.cpp">
       <Filter>N3Base</Filter>
     </ClCompile>
   </ItemGroup>
@@ -287,16 +287,10 @@
     <ClInclude Include="Resource.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="N3Base\My_3DStruct.h">
+    <ClInclude Include="My_3DStruct.h">
       <Filter>N3Base</Filter>
     </ClInclude>
-    <ClInclude Include="N3Base\My_Macro.h">
-      <Filter>N3Base</Filter>
-    </ClInclude>
-    <ClInclude Include="N3Base\N3ShapeMgr.h">
-      <Filter>N3Base</Filter>
-    </ClInclude>
-    <ClInclude Include="N3Base\StdAfxBase.h">
+    <ClInclude Include="N3ShapeMgr.h">
       <Filter>N3Base</Filter>
     </ClInclude>
   </ItemGroup>
@@ -309,9 +303,6 @@
     <ResourceCompile Include="Ebenezer.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="JvCryption.lib" />

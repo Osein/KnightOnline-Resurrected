@@ -993,7 +993,7 @@ void CAISocket::RecvNpcGiveItem(char* pBuf)
 		return;
 
 	pItem = new _ZONE_ITEM;
-	for(i=0; i<6; i++) {
+	for(auto i=0; i<6; i++) {
 		pItem->itemid[i] = 0;
 		pItem->count[i] = 0;
 	}
@@ -1002,7 +1002,7 @@ void CAISocket::RecvNpcGiveItem(char* pBuf)
 	pItem->x = fX;
 	pItem->z = fZ;
 	pItem->y = fY;
-	for(i=0; i<byCount; i++) {
+	for(auto i=0; i<byCount; i++) {
 		if( m_pMain->m_ItemtableArray.GetData(nItemNumber[i]) ) {
 			pItem->itemid[i] = nItemNumber[i];
 			pItem->count[i] = sCount[i];

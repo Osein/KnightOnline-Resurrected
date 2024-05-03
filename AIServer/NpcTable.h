@@ -48,13 +48,13 @@ public:
 	int		m_iMagic2;			// 사용마법 2
 	int		m_iMagic3;			// 사용마법 3	
 
-	BYTE	m_byFireR;			// 화염 저항력
-	BYTE	m_byColdR;			// 냉기 저항력
-	BYTE	m_byLightningR;		// 전기 저항력
-	BYTE	m_byMagicR;			// 마법 저항력
-	BYTE	m_byDiseaseR;		// 저주 저항력
-	BYTE	m_byPoisonR;		// 독 저항력
-	BYTE	m_byLightR;			// 빛 저항력
+	int	m_byFireR;			// 화염 저항력
+	int	m_byColdR;			// 냉기 저항력
+	int	m_byLightningR;		// 전기 저항력
+	int	m_byMagicR;			// 마법 저항력
+	int	m_byDiseaseR;		// 저주 저항력
+	int	m_byPoisonR;		// 독 저항력
+	int	m_byLightR;			// 빛 저항력
 	short	m_sBulk;			// 몬스터의 크기 (실제 길이 * 100)
 
 	BYTE	m_bySearchRange;	// 적 탐지 범위

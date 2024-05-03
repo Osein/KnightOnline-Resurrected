@@ -1,15 +1,6 @@
-// MAP.h: interface for the MAP class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_MAP_H__BCC14687_C38F_4597_8522_2170ED077037__INCLUDED_)
-#define AFX_MAP_H__BCC14687_C38F_4597_8522_2170ED077037__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
-#include ".\N3Base\N3ShapeMgr.h"
+#include "N3ShapeMgr.h"
 #include "STLMap.h"
 #include "RoomEvent.h"
 
@@ -70,9 +61,9 @@ public:
 	BOOL ObjectIntersect(float x1, float z1, float y1, float x2, float z2, float y2);
 	float GetHeight( float x, float z );
 
-	Iterator RegionNpcRemove( int rx, int rz, int nid );
+	void RegionNpcRemove( int rx, int rz, int nid );
 	void RegionNpcAdd( int rx, int rz, int nid );
-	Iterator RegionUserRemove( int rx, int rz, int uid );
+	void RegionUserRemove( int rx, int rz, int uid );
 	void RegionUserAdd( int rx, int rz, int uid );
 	BOOL RegionItemRemove( int rx, int rz, int itemid, int count, int index );
 	void RegionItemAdd( int rx, int rz, int itemid, int count, int index );
@@ -94,6 +85,3 @@ protected:
 	void RemoveMapData();
 
 };
-
-#endif // !defined(AFX_MAP_H__BCC14687_C38F_4597_8522_2170ED077037__INCLUDED_)
-

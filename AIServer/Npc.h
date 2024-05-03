@@ -1,16 +1,7 @@
-// Npc.h: interface for the CNpc class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_NPC_H__6077F7AF_6166_463A_AA80_FBF218781BC6__INCLUDED_)
-#define AFX_NPC_H__6077F7AF_6166_463A_AA80_FBF218781BC6__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "iocport.h"
-#include "./N3Base/My_3DStruct.h"
+#include "My_3DStruct.h"
 #include "Map.h"
 #include "PathFind.h"
 #include "user.h"
@@ -233,13 +224,13 @@ public:
 	int		m_iMagic1;			// 사용마법 1 (공격)
 	int		m_iMagic2;			// 사용마법 2 (지역)	
 	int		m_iMagic3;			// 사용마법 3 (능력치, 힐링)	
-	BYTE	m_byFireR;			// 화염 저항력
-	BYTE	m_byColdR;			// 냉기 저항력
-	BYTE	m_byLightningR;		// 전기 저항력
-	BYTE	m_byMagicR;			// 마법 저항력
-	BYTE	m_byDiseaseR;		// 저주 저항력
-	BYTE	m_byPoisonR;		// 독 저항력
-	BYTE	m_byLightR;			// 빛 저항력
+	int	m_byFireR;			// 화염 저항력
+	int	m_byColdR;			// 냉기 저항력
+	int	m_byLightningR;		// 전기 저항력
+	int	m_byMagicR;			// 마법 저항력
+	int	m_byDiseaseR;		// 저주 저항력
+	int	m_byPoisonR;		// 독 저항력
+	int	m_byLightR;			// 빛 저항력
 	float	m_fBulk;			// 몬스터의 크기 (실제 비율)
 	BYTE	m_bySearchRange;	// 적 탐지 범위
 	BYTE	m_byAttackRange;	// 사정거리
@@ -469,5 +460,3 @@ public:
 	void ChangeAbility(int iChangeType);
 	BOOL Teleport(CIOCPort* pIOCP);
 };
-
-#endif // !defined(AFX_NPC_H__6077F7AF_6166_463A_AA80_FBF218781BC6__INCLUDED_)

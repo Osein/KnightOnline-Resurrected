@@ -295,13 +295,13 @@ void CNpc::InitPos()
 
 void CNpc::InitMagicValuable()
 {
-	for(int i=0; i<MAX_MAGIC_TYPE4; i++)	{
+	for(auto i=0; i<MAX_MAGIC_TYPE4; i++)	{
 		m_MagicType4[i].byAmount = 100;
 		m_MagicType4[i].sDurationTime = 0;
 		m_MagicType4[i].fStartTime = 0.0f;
 	}
 
-	for(i=0; i<MAX_MAGIC_TYPE3; i++)	{
+	for(auto i=0; i<MAX_MAGIC_TYPE3; i++)	{
 		m_MagicType3[i].sHPAttackUserID = -1;
 		m_MagicType3[i].sHPAmount = 0;
 		m_MagicType3[i].byHPDuration = 0;

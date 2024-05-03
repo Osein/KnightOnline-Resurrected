@@ -44,12 +44,12 @@ void CKnights::InitializeValue()
 	m_sDomination = 0;
 	m_nPoints = 0;
 	
-	for( int i=0; i<MAX_CLAN; i++ )	{
+	for(auto i=0; i<MAX_CLAN; i++ )	{
 		m_arKnightsUser[i].byUsed = 0;
 		memset( m_arKnightsUser[i].strUserName, 0x00, MAX_ID_SIZE+1);
 	}
 
-	for( i=0; i<MAX_KNIGHTS_BANK; i++ )	{
+	for(auto i=0; i<MAX_KNIGHTS_BANK; i++ )	{
 		m_StashItem[i].nNum = 0;
 		m_StashItem[i].sCount = 0;
 		m_StashItem[i].sDuration = 0;

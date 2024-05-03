@@ -1,15 +1,6 @@
-// Map.h: interface for the CMap class.
-//
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_3DMAP_H__986E02B6_E5A3_43CF_B1D7_A7135551933D__INCLUDED_)
-#define AFX_3DMAP_H__986E02B6_E5A3_43CF_B1D7_A7135551933D__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
-#include ".\N3Base\N3ShapeMgr.h"
+#include "N3ShapeMgr.h"
 #include "Region.h"
 #include "GameEvent.h"
 #include "STLMap.h"
@@ -52,9 +43,9 @@ public:
 	void LoadObjectEvent(HANDLE hFile);
 	BOOL LoadEvent();
 	BOOL CheckEvent( float x, float z, CUser* pUser = NULL );
-	Iterator RegionNpcRemove( int rx, int rz, int nid );
+	void RegionNpcRemove( int rx, int rz, int nid );
 	void RegionNpcAdd( int rx, int rz, int nid );
-	Iterator RegionUserRemove( int rx, int rz, int uid );
+	void RegionUserRemove( int rx, int rz, int uid );
 	void RegionUserAdd( int rx, int rz, int uid );
 	BOOL RegionItemRemove( int rx, int rz, int bundle_index, int itemid, int count );
 	BOOL RegionItemAdd( int rx, int rz, _ZONE_ITEM* pItem );
@@ -87,5 +78,3 @@ public:
 
 	DWORD m_wBundle;	// Zone Item Max Count
 };
-
-#endif // !defined(AFX_3DMAP_H__986E02B6_E5A3_43CF_B1D7_A7135551933D__INCLUDED_)

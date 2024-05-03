@@ -137,58 +137,57 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_ABOUTBOX            "Ebenezer 정보(&A)..."
-    IDP_SOCKETS_INIT_FAILED "Windows 소켓 초기화에 실패하였습니다."
-    IDP_BATTLEZONE_OPEN     "루나게이트의 문이 열렸습니다. 전쟁이 시작 되었습니다."
-    IDP_KARUS_VICTORY       "카루스가 승리했습니다. 죽인 적군의 수 : %d명, 죽은 아군의 수 : %d명"
-    IDP_ELMORAD_VICTORY     "엘모라드가 승리했습니다. 죽인 적군의 수 : %d명, 죽은 아군의 수 : %d명"
-    IDP_KARUS_BANISH        "전쟁존에 있는 엘모 용사들은 추방당하였습니다!"
-    IDP_ELMORAD_BANISH      "전쟁존에 있는 카루스 용사들은 추방당하였습니다!"
-    IDP_KNIGHT_NAME_REPEAT  "기사단이름이 중복되었습니다."
-    IDP_KNIGHT_ALREADY_REGISTERED "이미 기사단에 가입되어 있습니다."
+    IDS_ABOUTBOX            "Ebenezer information(&A)..."
+    IDP_SOCKETS_INIT_FAILED "Windows socket initialization failed."
+    IDP_BATTLEZONE_OPEN     "The Luna Gate door has opened. The war has begun."
+    IDP_KARUS_VICTORY       "Karus won. Number of enemies killed: %d, Number of allies killed: %d"
+    IDP_ELMORAD_VICTORY     "Elmorad won. Number of enemies killed: %d, Number of allies killed: %d"
+    IDP_KARUS_BANISH "The Elmo heroes in the war zone have been kicked out!"
+    IDP_ELMORAD_BANISH "Carus warriors in the war zone have been expelled!"
+    IDP_KNIGHT_NAME_REPEAT "The knight's name is duplicated."
+    IDP_KNIGHT_ALREADY_REGISTERED "You are already a member of the Knights."
 END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDP_KNIGHT_INSUFFICIENT_LEVEL 
-                            "기사단을 창설 하려면 20 Level 이상이 필요합니다."
-    IDP_KNIGHT_INSUFFICIENT_LOYALTY 
-                            "기사단을 창설 하려면 국가기여도 800 이상이 필요합니다."
-    IDP_KNIGHT_INSUFFICIENT_SKILL 
-                            "기사단을 창설 하려면 지휘스킬 10, 예절스킬 5 이상이 필요합니다."
-    IDP_KNIGHT_INSUFFICIENT_CHARISMA 
-                            "기사단을 창설 하려면 매력 120 이상이 필요합니다."
-    IDP_KNIGHT_INSUFFICIENT_GOLD 
-                            "기사단을 창설 하려면 1000000노아 이상이 필요합니다."
-    IDP_KNIGHT_CREATE_FAIL  "기사단 창설에 실패하였습니다."
-    IDP_KNIGHT_NOT_AVAILABLE "존재하지 않는 기사단입니다."
-    IDP_KNIGHT_LEADER_ONLY  "기사단장 만이 할 수 있습니다."
-    IDP_KNIGHT_MINIMUM_SUBLEADER "부기사단장 이상이 할 수 있습니다."
-    IDP_KNIGHT_NOT_REGISTERED "기사단에 가입되어 있지 않습니다."
-    IDP_KNIGHT_DB_FAIL      "기사단 DB처리에 실패하였습니다."
-    IDP_WRONG_ID            "잘못된 아이디 입니다."
-    IDP_SOURCE_UNABLE       "자신은 할 수 없습니다."
-    IDP_MINIMUM_OFFICER     "장교 이상이 할 수 있습니다."
-    IDP_ANNOUNCEMENT        "#### 공지 : %s ####"
+    IDP_KNIGHT_INSUFFICIENT_LEVEL "To create a knighthood, you need to be level 20 or higher."
+    IDP_KNIGHT_INSUFFICIENT_LOYALTY
+        "To create a knighthood, you need a national contribution of 800 or more."
+    IDP_KNIGHT_INSUFFICIENT_SKILL
+    "To create a knighthood, you need a command skill of 10 and an etiquette skill of 5 or higher."
+    IDP_KNIGHT_INSUFFICIENT_CHARISMA
+    "To create a knighthood, you need at least 120 Charisma."
+    IDP_KNIGHT_INSUFFICIENT_GOLD
+    "To create a knighthood, you need more than 1,000,000 Noah."
+    IDP_KNIGHT_CREATE_FAIL "Failed to create a knighthood."
+    IDP_KNIGHT_NOT_AVAILABLE "This is a knighthood that does not exist."
+    IDP_KNIGHT_LEADER_ONLY "Only a knight commander can do this."
+    IDP_KNIGHT_MINIMUM_SUBLEADER "A deputy commander or higher can do this."
+    IDP_KNIGHT_NOT_REGISTERED "You are not a member of the Knights Templar."
+    IDP_KNIGHT_DB_FAIL "Knights DB processing failed."
+    IDP_WRONG_ID "Wrong ID."
+    IDP_SOURCE_UNABLE "You can't do it yourself."
+IDP_MINIMUM_OFFICER "Officers and above can do this."
+    IDP_ANNOUNCEMENT "#### Announcement: %s ####"
 END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_ELMORAD_LOSER       "엘모라드가 패배하였습니다. 죽인 적군의 수 : %d명, 죽은 아군의 수 : %d명"
-    IDS_KARUS_LOSER         "카루스가 패배하였습니다. 죽인 적군의 수 : %d명, 죽은 아군의 수 : %d명"
-    IDS_BANISH_USER         "루나밸리에 있는 유저와 적국에 있는 유저는 본국으로 강제소환합니다"
-    IDS_BATTLE_CLOSE        "루나게이트가 닫힙니다"
-    IDS_KILL_GATEKEEPER     "적국의 수문장을 죽인 유저이름은 [%s][%s] 님입니다. 축하합니다."
-    IDS_KILL_CAPTAIN        "적국의 대장을 죽인 유저이름은 [%s][%s] 님입니다, 축하합니다."
-    IDS_KILL_KARUS_GUARD1   "카루스 제 1요새의 수문대장이 전사했습니다. 수문대장을 죽인 적군유저는 [%s][%s] 입니다"
-    IDS_KILL_KARUS_GUARD2   "카루스 제 2요새의 수문대장이 전사했습니다. 수문대장을 죽인 적군유저는 [%s][%s] 입니다"
-    IDS_KILL_ELMO_GUARD1    "엘모라드 제 1요새의 수문대장이 전사했습니다. 수문대장을 죽인 적군유저는 [%s][%s] 입니다"
-    IDS_KILL_ELMO_GUARD2    "엘모라드 제 2요새의 수문대장이 전사했습니다. 수문대장을 죽인 적군유저는 [%s][%s] 입니다"
-    IDS_KARUS_CAPTAIN       "카루스의 지휘관은 %s, %s, %s, %s, %s 입니다"
-    IDS_ELMO_CAPTAIN        "엘모라드의 총지휘관은  %s, %s, %s, %s, %s 입니다"
-    IDS_KARUS_CAPTAIN_DEPRIVE "카루스의 지휘관 [%s][%s] 님이 전사하였습니다. "
-    IDS_ELMO_CAPTAIN_DEPRIVE 
-                            "엘모라드의 지휘관  [%s][%s]님이 전사하였습니다.  "
+IDS_ELMORAD_LOSER "Elmorad has been defeated. Number of enemies killed: %d, Number of allies killed: %d."
+    IDS_KARUS_LOSER "Karus has been defeated. Number of enemies killed: %d, Number of allies killed: %d."
+    IDS_BANISH_USER "Users in Luna Valley and users in enemy countries will be forcibly summoned to their home country."
+    IDS_BATTLE_CLOSE "The Luna Gate is closing."
+    IDS_KILL_GATEKEEPER "The user name that killed the enemy country's gatekeeper is [%s][%s]. Congratulations."
+    IDS_KILL_CAPTAIN "The user name for killing the enemy's captain is [%s][%s]. Congratulations."
+    IDS_KILL_KARUS_GUARD1 "The gate captain of the 1st Karus Fortress was killed. The enemy user who killed the gate captain was [%s][%s]."
+IDS_KILL_KARUS_GUARD2 "The gate captain of the 2nd Karus Fortress was killed. The enemy user who killed the gate captain was [%s][%s]."
+    IDS_KILL_ELMO_GUARD1 "The gate captain of the first Elmorad fortress was killed. The enemy user who killed the gate captain was [%s][%s]."
+    IDS_KILL_ELMO_GUARD2 "The gate captain of Elmorad's second fortress was killed. The enemy user who killed the gate captain was [%s][%s]."
+    IDS_KARUS_CAPTAIN "Karus's commanders are %s, %s, %s, %s, %s."
+    IDS_ELMO_CAPTAIN "The general commanders of Elmorad are %s, %s, %s, %s, %s."
+    IDS_KARUS_CAPTAIN_DEPRIVE "Karus' commander [%s][%s] has been killed. "
+    IDS_ELMO_CAPTAIN_DEPRIVE
+"Elmorad's commander [%s][%s] has been killed. "
 END
 
 STRINGTABLE DISCARDABLE 
@@ -199,82 +198,6 @@ END
 
 #endif    // Korean resources
 /////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// Chinese (Taiwan) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
-#ifdef _WIN32
-LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
-#pragma code_page(950)
-#endif //_WIN32
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// String Table
-//
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_ABOUTBOX            "Ebenezer ??(&A)..."
-    IDP_SOCKETS_INIT_FAILED "Windows ?? ???? ???????."
-    IDP_BATTLEZONE_OPEN     "?㈈낮앝놓ず?몰?????낮??앝?─⒣?㎸뱝."
-    IDP_KARUS_VICTORY       "??뉘쟌넛?을귐셍?셕 : %d?]??을귐ず㏀x셕 : %d?"
-    IDP_ELMORAD_VICTORY     "╉끈보쟌넛?을귐셍?셕 : %d?]??을귐ず㏀x셕 : %d?"
-    IDP_KARUS_BANISH        "앝놓ㄴず?쑤보?????!"
-    IDP_ELMORAD_BANISH      "앝놓ㄴず??뉘?????!"
-    IDP_KNIGHT_NAME_REPEAT  "?????? ???????."
-    IDP_KNIGHT_ALREADY_REGISTERED "?? ???? ???? ????."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDP_KNIGHT_INSUFFICIENT_LEVEL "???? ?? ??? 20 Level ??? ?????."
-    IDP_KNIGHT_INSUFFICIENT_LOYALTY "???? ?? ??? ????? 800 ??? ?????."
-    IDP_KNIGHT_INSUFFICIENT_SKILL "???? ?? ??? ???? 10, ???? 5 ??? ?????."
-    IDP_KNIGHT_INSUFFICIENT_CHARISMA "???? ?? ??? ?? 120 ??? ?????."
-    IDP_KNIGHT_INSUFFICIENT_GOLD "???? ?? ??? 1000000?? ??? ?????."
-    IDP_KNIGHT_CREATE_FAIL  "??? ??? ???????."
-    IDP_KNIGHT_NOT_AVAILABLE "???? ?? ??????."
-    IDP_KNIGHT_LEADER_ONLY  "???? ?? ? ? ????."
-    IDP_KNIGHT_MINIMUM_SUBLEADER "????? ??? ? ? ????."
-    IDP_KNIGHT_NOT_REGISTERED "???? ???? ?? ????."
-    IDP_KNIGHT_DB_FAIL      "??? DB??? ???????."
-    IDP_WRONG_ID            "??? ??? ???."
-    IDP_SOURCE_UNABLE       "??? ? ? ????."
-    IDP_MINIMUM_OFFICER     "?? ??? ? ? ????."
-    IDP_ANNOUNCEMENT        "#### GMㅍ? : %s ####"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_ELMORAD_LOSER       "╉끈보귐??을귐셍?셕 : %d?, ?을귐㏀xず셕 : %d?"
-    IDS_KARUS_LOSER         "??뉘귐??을귐셍?셕 : %d?, ?을귐㏀xず셕 : %d?"
-    IDS_BANISH_USER         "낮앝놓ㅊずけa??셍곌ずけa?⑧또?╁?낮앝놓"
-    IDS_BATTLE_CLOSE        "낮앝놓?츙낚"
-    IDS_KILL_GATEKEEPER     "셍ㅸ?냔x?? [%s] [%s] 을귐??"
-    IDS_KILL_CAPTAIN        "셍ㅸ땄??? [%s] [%s] 을귐??"
-    IDS_KILL_KARUS_GUARD1   "??뉘꼼?곪?ず?냔x??을귐?ヘ?ぬО [%s] [%s]. "
-    IDS_KILL_KARUS_GUARD2   "??뉘꼼?곪?ず?냔x??을귐?ヘ?ぬО [%s] [%s]. "
-    IDS_KILL_ELMO_GUARD1    "╉끈보꼼?곪?ず?냔x??을귐?ヘ?ぬО [%s] [%s]. "
-    IDS_KILL_ELMO_GUARD2    "╉끈보꼼?곪?ず?냔x??을귐?ヘ?ぬО [%s] [%s]. "
-    IDS_KARUS_CAPTAIN       "??뉘??ず?뇻?? %s?%s?%s?%s?%s"
-    IDS_ELMO_CAPTAIN        "╉끈보??ず?뇻?? %s?%s?%s?%s?%s"
-    IDS_KARUS_CAPTAIN_DEPRIVE "??뉘ず?뇻? [%s][%s] 앝┷. "
-    IDS_ELMO_CAPTAIN_DEPRIVE "╉끈보ず?뇻? [%s][%s] 앝┷.  "
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_COUPON_NOTEPAD_ID   "3572-8471-3720-2495"
-    IDS_COUPON_POSTIT_ID    "7352-6539-3720-2495"
-END
-
-#endif    // Chinese (Taiwan) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
 
 #ifndef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////

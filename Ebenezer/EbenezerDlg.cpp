@@ -2694,7 +2694,7 @@ void CEbenezerDlg::SendAllUserInfo()
 	
 	EnterCriticalSection( &g_region_critical );
 
-	for(i=0; i<m_PartyArray.GetSize(); i++)	{
+	for(auto i=0; i<m_PartyArray.GetSize(); i++)	{
 		pParty = m_PartyArray.GetData( i );
 		if( !pParty ) return;
 		send_index = 0;
@@ -3912,7 +3912,7 @@ BOOL CEbenezerDlg::LoadKnightsRankTable()
 	SetShort( temp_buff, strlen(strElmoCaptainName), temp_index );
 	SetString( temp_buff, strElmoCaptainName, strlen(strElmoCaptainName), temp_index );
 
-	for( i=0; i<MAX_USER; i++) {
+	for(auto i=0; i<MAX_USER; i++) {
 		pUser = (CUser*)m_Iocport.m_SockArray[i];
 		if( !pUser )
 			continue;
