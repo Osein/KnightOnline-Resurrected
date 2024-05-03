@@ -415,9 +415,25 @@ bool CN3Terrain::Load(HANDLE hFile)
 	if(pUILoading) pUILoading->Render("Allocating Terrain...", 0);
 
 	DWORD dwRWC;
-	ReadFile(hFile, &(m_ti_MapSize), sizeof(int), &dwRWC, NULL);
-	m_pat_MapSize = (m_ti_MapSize-1) / PATCH_TILE_SIZE;
 
+	//------------------------------------------------1298-------------------------------------------------------------------------------
+	DWORD version = 0;
+	ReadFile(hFile, &version, 4, &dwRWC, NULL);
+
+	int iLen = 0;
+	ReadFile(hFile, &iLen, sizeof(int), &dwRWC, NULL);
+
+	char* pMapName = new char[iLen + 1];
+	pMapName[iLen] = '\0'; // since we allocating mem, nullterminator.
+
+	char* szFName = new char[iLen + 1];
+	szFName[iLen] = '\0'; // since we allocating mem, nullterminator.
+
+	ReadFile(hFile, pMapName, iLen, &dwRWC, NULL);
+	//------------------------------------------------1298-------------------------------------------------------------------------------
+
+	ReadFile(hFile, &(m_ti_MapSize), sizeof(int), &dwRWC, NULL);
+	m_pat_MapSize = (m_ti_MapSize - 1) / PATCH_TILE_SIZE;
 	int x, z;
 
 	//m_pMapData = (LPMAPDATA)malloc(sizeof(MAPDATA)*m_ti_MapSize*m_ti_MapSize);

@@ -86,6 +86,22 @@ bool CN3ShapeMgr::Load(HANDLE hFile)
 	DWORD dwRWC;
 	int nL = 0;
 
+	//-----------------------------------------1298--------------------------------------------------------------------------------------
+	DWORD version = 0;
+	ReadFile(hFile, &version, 4, &dwRWC, NULL);
+
+	int iLen = 0;
+	ReadFile(hFile, &iLen, sizeof(int), &dwRWC, NULL);
+
+	char* pMapName = new char[iLen + 1];
+	pMapName[iLen] = '\0';
+
+	char* szFName = new char[iLen + 1];
+	szFName[iLen] = '\0';
+
+	ReadFile(hFile, pMapName, iLen, &dwRWC, NULL);
+	//-----------------------------------------1298--------------------------------------------------------------------------------------
+
 	if(false == LoadCollisionData(hFile)) return false;
 
 #ifdef _N3GAME

@@ -109,10 +109,19 @@ bool CN3Pond::Load(HANDLE hFile)
 		memset(ptmpPondMesh->m_pfVelocityArray,0,sizeof(float)*iVC);
 
 		
-		int iIC;
-		ReadFile(hFile, &iIC, sizeof(iIC), &dwNum, NULL);				// IndexBuffer Count.
-		ptmpPondMesh->m_iIC = iIC;		///
-		ptmpPondMesh->m_wpIndex = new WORD [iVC*6];		///
+		int iIC; int iSkip;
+		ReadFile(hFile, &iSkip, sizeof(iSkip), &dwNum, NULL); // IndexBuffer Count.
+		if (iSkip > 10)
+		{
+			ptmpPondMesh->m_iIC = iSkip;
+			ptmpPondMesh->m_wpIndex = new WORD[iVC * 6];
+		}
+		else 
+		{
+			ReadFile(hFile, &iIC, sizeof(iIC), &dwNum, nullptr);				
+			ptmpPondMesh->m_iIC = iIC;
+			ptmpPondMesh->m_wpIndex = new WORD[iVC * 6];
+		}
 
 		int j,k;
 		int iWidth = iWidthVertex,iHeight = iVC/iWidthVertex;
