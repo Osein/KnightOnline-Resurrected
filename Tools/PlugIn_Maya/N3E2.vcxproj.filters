@@ -1,0 +1,1036 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{c61b7aca-9cae-46bc-aaef-0c166f5b3905}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{97b44748-f644-4d42-b880-121fbff1a273}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Mel Scripts">
+      <UniqueIdentifier>{5727b615-9f77-4639-bbea-4c62dfa6eed6}</UniqueIdentifier>
+      <Extensions>mel</Extensions>
+    </Filter>
+    <Filter Include="Reference Header">
+      <UniqueIdentifier>{4c0e07c3-1fa7-4eeb-9699-b6b35dcb0998}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{e604065f-15ee-45c9-9039-25088c408221}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maya Library">
+      <UniqueIdentifier>{21309bff-b2be-43bb-ab5c-5d901e4e9cc3}</UniqueIdentifier>
+      <Extensions>lib;</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\N3BASE\BitMapFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iffreader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\LogWriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3AlphaPrimitiveManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3AnimControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3AnimKey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3BaseFileAccess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Chr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N3E2Translator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N3E2Wrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Eng.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3EngTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\N3FXBundle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\N3FXGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\N3FXPartBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\N3FXPartBillBoard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\N3FXPartBottomBoard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\N3FXParticle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\N3FXPartMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\N3FXPartParticles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\N3FXPlug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\N3FXPMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\N3FXPMeshInstance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\N3FXShape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3IMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Joint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3PMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3PMeshCreate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3PMeshInstance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Shape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Skin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Transform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3TransformCollision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3VMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\N3BASE\BitMapFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iffreader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\LogWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\My_3DStruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3AlphaPrimitiveManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3AnimControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3AnimKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3BaseFileAccess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Chr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="N3E2Translator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="N3E2Wrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Eng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3EngTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXBundle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXPartBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXPartBillBoard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXPartBottomBoard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXParticle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXPartMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXPartParticles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXPlug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXPMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXPMeshInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\N3FXShape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3IMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Joint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Mng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3PMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3PMeshCreate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3PMeshInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Shape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Skin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3TransformCollision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3VMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\StdAfxBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\MSSDK\include\d3d8.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\flib.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\ilib.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\M3dView.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAngle.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimControl.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimCurveChange.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimCurveClipboard.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimCurveClipboardItem.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimCurveClipboardItemArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimMessage.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimUtil.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MApiVersion.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MArgDatabase.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MArgList.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MArgParser.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MArrayDataBuilder.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MArrayDataHandle.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAttributeIndex.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAttributeSpec.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAttributeSpecArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MBoundingBox.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MColor.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MColorArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MCommandResult.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MComputation.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MConditionMessage.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MCursor.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDagModifier.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDagPath.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDagPathArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDataBlock.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDataHandle.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDeviceChannel.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDeviceState.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDGContext.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDGMessage.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDGModifier.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDistance.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDoubleArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDrawData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDrawInfo.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDrawRequest.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDrawRequestQueue.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDynSweptLine.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDynSweptTriangle.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MEulerRotation.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MEvent.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MEventMessage.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFeedbackLine.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFileIO.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFileObject.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFloatArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFloatMatrix.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFloatPoint.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFloatPointArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFloatVector.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFloatVectorArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFn.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnAirField.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnAmbientLight.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnAnimCurve.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnAreaLight.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnArrayAttrsData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnAttribute.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnBase.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnBlendShapeDeformer.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnBlinnShader.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnCamera.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnCharacter.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnCircleSweepManip.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnClip.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnComponent.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnComponentListData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnCompoundAttribute.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnCurveSegmentManip.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDagNode.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDependencyNode.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDirectionalLight.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDirectionManip.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDiscManip.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDistanceManip.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDoubleArrayData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDoubleIndexedComponent.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDragField.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDynSweptGeometryData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnEnumAttribute.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnExpression.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnField.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnFreePointTriadManip.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnGenericAttribute.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnGeometryData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnGeometryFilter.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnGravityField.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnIkEffector.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnIkHandle.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnIkJoint.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnIkSolver.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnIntArrayData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnLambertShader.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnLattice.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnLatticeData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnLatticeDeformer.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnLight.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnLightDataAttribute.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnManip3D.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnMatrixAttribute.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnMatrixData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnMesh.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnMeshData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnMessageAttribute.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnMotionPath.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNewtonField.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNonAmbientLight.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNonExtendedLight.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNumericAttribute.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNumericData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNurbsCurve.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNurbsCurveData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNurbsSurface.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNurbsSurfaceData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPartition.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPhongShader.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPlugin.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPluginData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPointArrayData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPointLight.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPointOnCurveManip.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPointOnSurfaceManip.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnRadialField.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnReflectShader.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSet.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSingleIndexedComponent.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSkinCluster.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSphereData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSpotLight.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnStateManip.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnStringArrayData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnStringData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSubd.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSubdData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSubdNames.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnToggleManip.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnTransform.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnTripleIndexedComponent.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnTurbulenceField.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnTypedAttribute.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnUInt64ArrayData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnUniformField.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnUnitAttribute.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnVectorArrayData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnVolumeAxisField.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnVortexField.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnWeightGeometryFilter.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnWireDeformer.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MGlobal.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MIkHandleGroup.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MIkSystem.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MIntArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItCurveCV.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItDag.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItDependencyGraph.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItDependencyNodes.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItGeometry.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItKeyframe.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItMeshEdge.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItMeshPolygon.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItMeshVertex.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItSelectionList.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItSurfaceCV.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MLibrary.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MManipData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MMaterial.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MMatrix.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MMessage.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MModelMessage.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MNodeMessage.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MObject.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MObjectArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\mocapserial.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\mocapserver.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\mocaptcp.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPlug.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPlugArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPoint.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPointArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxCommand.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxContext.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxContextCommand.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxDeformerNode.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxEmitterNode.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxFieldNode.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxFileTranslator.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxGeometryData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxGeometryIterator.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxGlBuffer.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxHwShaderNode.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxIkSolver.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxIkSolverNode.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxLocatorNode.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxManipContainer.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxMidiInputDevice.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxNode.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxSelectionContext.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxSpringNode.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxSurfaceShape.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxSurfaceShapeUI.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxToolCommand.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MQuaternion.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MRenderCallback.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MRenderData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MRenderShadowData.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MRenderUtil.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MSceneMessage.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MSelectInfo.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MSelectionList.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MSelectionMask.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MSimple.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MStatus.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MString.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MStringArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MSyntax.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MTesselationParams.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MTime.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MTimeArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MToolsInfo.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MTransformationMatrix.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MTypeId.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MTypes.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MUiMessage.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MUint64Array.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MVector.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MVectorArray.h">
+      <Filter>Reference Header</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="E:\Program\Maya\lib\Foundation.lib">
+      <Filter>Maya Library</Filter>
+    </Library>
+    <Library Include="E:\Program\Maya\lib\Image.lib">
+      <Filter>Maya Library</Filter>
+    </Library>
+    <Library Include="E:\Program\Maya\lib\libMDtAPI.lib">
+      <Filter>Maya Library</Filter>
+    </Library>
+    <Library Include="E:\Program\Maya\lib\libMocap.lib">
+      <Filter>Maya Library</Filter>
+    </Library>
+    <Library Include="E:\Program\Maya\lib\OpenMaya.lib">
+      <Filter>Maya Library</Filter>
+    </Library>
+    <Library Include="E:\Program\Maya\lib\OpenMayaAnim.lib">
+      <Filter>Maya Library</Filter>
+    </Library>
+    <Library Include="E:\Program\Maya\lib\OpenMayaFX.lib">
+      <Filter>Maya Library</Filter>
+    </Library>
+    <Library Include="E:\Program\Maya\lib\OpenMayaRender.lib">
+      <Filter>Maya Library</Filter>
+    </Library>
+    <Library Include="E:\Program\Maya\lib\OpenMayaUI.lib">
+      <Filter>Maya Library</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="N3E2MatAttr.mel">
+      <Filter>Mel Scripts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="N3E2tags.mel">
+      <Filter>Mel Scripts</Filter>
+    </CustomBuild>
+    <CustomBuild Include="N3E2TranslatorOpts.mel">
+      <Filter>Mel Scripts</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

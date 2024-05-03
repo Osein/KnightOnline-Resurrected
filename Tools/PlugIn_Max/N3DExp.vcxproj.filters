@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{55e3f843-0614-4b63-941b-b12889b8a2c1}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{2d7b3f9e-9478-4f44-85aa-cc52b8c824d6}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{74e7086d-4d58-4f0a-944f-0866a2b77980}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Direct3D Header Files">
+      <UniqueIdentifier>{18a8c477-bb2a-4ac2-9e41-dd1e0e403485}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="N3Base">
+      <UniqueIdentifier>{ef0df731-c0d1-4d95-9967-d80558439176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Document">
+      <UniqueIdentifier>{c55ac2da-5893-44a4-becd-e28f9b27c079}</UniqueIdentifier>
+      <Extensions>*.txt</Extensions>
+    </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{8a62652f-bbde-435c-941e-0588e358f849}</UniqueIdentifier>
+      <Extensions>*.lib</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DllEntry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="N3DExp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\BitMapFile.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\DFont.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\JPEG.CPP">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3BASE\LogWriter.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3AlphaPrimitiveManager.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3AnimControl.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3AnimKey.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Base.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3BaseFileAccess.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Board.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Camera.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Chr.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Cloak.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Cloud.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3ColorChange.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3CompactSnd3dObj.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3CompactSndEng.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3CompactSndMgr.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3CompactSndObj.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3CompactStreamSndObj.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Eng.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3EngTool.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3FXBundle.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3FXGroup.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3FXPartBase.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3FXPartBillBoard.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3FXPartBottomBoard.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3FXParticle.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3FXPartMesh.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3FXPartParticles.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3FXPlug.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3FXPMesh.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3FXPMeshInstance.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3FXShape.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3GERain.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3GESnow.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3GlobalEffect.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3GlobalEffectMng.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3IMesh.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Joint.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Light.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Mesh.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Moon.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3PMesh.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3PMeshCreate.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3PMeshInstance.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3RiverPatch.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Scene.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Shape.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3ShapeEx.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3ShapeExtra.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3ShapeMgr.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3ShapeMod.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Skin.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Sky.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3SndMgr.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3SndObj.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3SndObjStream.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Star.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Sun.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Texture.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3Transform.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3TransformCollision.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\N3VMesh.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\Pick.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\N3Base\WaveFile.cpp">
+      <Filter>N3Base</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="N3DExp.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="N3DExp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\mssdk\include\d3d8.h">
+      <Filter>Direct3D Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\mssdk\include\d3d8types.h">
+      <Filter>Direct3D Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\MSSDK\include\d3dx8.h">
+      <Filter>Direct3D Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\BitMapFile.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\DFont.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\JPEG.H">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3BASE\LogWriter.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\My_3DStruct.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\My_Macro.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3AlphaPrimitiveManager.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3AnimControl.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3AnimKey.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Base.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3BaseFileAccess.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Board.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Camera.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Chr.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Cloak.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Cloud.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3ColorChange.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3CompactSnd3dObj.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3CompactSndDef.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3CompactSndEng.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3CompactSndMgr.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3CompactSndObj.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3CompactStreamSndObj.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Eng.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3EngTool.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXBundle.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXDef.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXGroup.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXPartBase.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXPartBillBoard.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXPartBottomBoard.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXParticle.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXPartMesh.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXPartParticles.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXPlug.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXPMesh.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXPMeshInstance.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3FXShape.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3GERain.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3GESnow.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3GlobalEffect.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3GlobalEffectMng.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3IMesh.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Joint.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Light.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Mesh.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Mng.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Moon.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3PMesh.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3PMeshCreate.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3PMeshInstance.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3RiverPatch.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Scene.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Shape.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3ShapeEx.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3ShapeExtra.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3ShapeMgr.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3ShapeMod.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Skin.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Sky.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3SndDef.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3SndMgr.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3SndObj.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3SndObjStream.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Star.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Sun.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3TableBase.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Texture.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3Transform.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3TransformCollision.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\N3VMesh.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\Pick.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\StdAfxBase.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\N3Base\WaveFile.h">
+      <Filter>N3Base</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="BipedExport.txt">
+      <Filter>Document</Filter>
+    </Text>
+    <Text Include="PhysiqueExport.txt">
+      <Filter>Document</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="N3DExp.def">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="cursor1.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

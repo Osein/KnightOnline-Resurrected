@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>N3Export2</ProjectName>
+    <SccProjectName>"$/PlugIn_Maya", PPEAAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <ProjectGuid>{E36F2E1A-052B-41DC-8A13-C49D8C0BB055}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>.;..\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;NT_ENV;NT_PLUGIN;_N3TOOL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\N3E2.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;_N3TOOL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug\N3E2.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <RedirectOutputAndErrors>NUL</RedirectOutputAndErrors>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\N3E2.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <OutputFile>g:\N3Export2.mll</OutputFile>
+      <ImportLibrary>.\Debug\N3Export2.lib</ImportLibrary>
+      <AdditionalLibraryDirectories>..\lib;..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d8.lib;d3dx8.lib;dsound.lib;dxerr8.lib;dxguid.lib;winmm.lib;odbc32.lib;odbccp32.lib;nafxcwd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions> /export:initializePlugin  /export:uninitializePlugin </AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>.;..\include;..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;NT_ENV;NT_PLUGIN;_N3TOOL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\N3E2.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;_N3TOOL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\N3E2.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <RedirectOutputAndErrors>NUL</RedirectOutputAndErrors>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\N3E2.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>C:\AW\Maya4.0\bin\plug-ins\N3Export2.mll</OutputFile>
+      <ImportLibrary>.\Release\N3Export2.lib</ImportLibrary>
+      <AdditionalLibraryDirectories>..\lib;..\..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d8.lib;d3dx8.lib;dsound.lib;dxerr8.lib;dxguid.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions> /export:initializePlugin  /export:uninitializePlugin </AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\N3BASE\BitMapFile.cpp" />
+    <ClCompile Include="..\N3BASE\LogWriter.cpp" />
+    <ClCompile Include="..\N3Base\N3AlphaPrimitiveManager.cpp" />
+    <ClCompile Include="..\N3Base\N3AnimControl.cpp" />
+    <ClCompile Include="..\N3Base\N3AnimKey.cpp" />
+    <ClCompile Include="..\N3Base\N3Base.cpp" />
+    <ClCompile Include="..\N3Base\N3BaseFileAccess.cpp" />
+    <ClCompile Include="..\N3Base\N3Camera.cpp" />
+    <ClCompile Include="..\N3Base\N3Chr.cpp" />
+    <ClCompile Include="..\N3Base\N3Eng.cpp" />
+    <ClCompile Include="..\N3Base\N3EngTool.cpp" />
+    <ClCompile Include="..\N3BASE\N3FXBundle.cpp" />
+    <ClCompile Include="..\N3BASE\N3FXGroup.cpp" />
+    <ClCompile Include="..\N3BASE\N3FXPartBase.cpp" />
+    <ClCompile Include="..\N3BASE\N3FXPartBillBoard.cpp" />
+    <ClCompile Include="..\N3BASE\N3FXPartBottomBoard.cpp" />
+    <ClCompile Include="..\N3BASE\N3FXParticle.cpp" />
+    <ClCompile Include="..\N3BASE\N3FXPartMesh.cpp" />
+    <ClCompile Include="..\N3BASE\N3FXPartParticles.cpp" />
+    <ClCompile Include="..\N3BASE\N3FXPlug.cpp" />
+    <ClCompile Include="..\N3BASE\N3FXPMesh.cpp" />
+    <ClCompile Include="..\N3BASE\N3FXPMeshInstance.cpp" />
+    <ClCompile Include="..\N3BASE\N3FXShape.cpp" />
+    <ClCompile Include="..\N3Base\N3IMesh.cpp" />
+    <ClCompile Include="..\N3Base\N3Joint.cpp" />
+    <ClCompile Include="..\N3Base\N3Light.cpp" />
+    <ClCompile Include="..\N3Base\N3Mesh.cpp" />
+    <ClCompile Include="..\N3Base\N3PMesh.cpp" />
+    <ClCompile Include="..\N3Base\N3PMeshCreate.cpp" />
+    <ClCompile Include="..\N3Base\N3PMeshInstance.cpp" />
+    <ClCompile Include="..\N3Base\N3Scene.cpp" />
+    <ClCompile Include="..\N3Base\N3Shape.cpp" />
+    <ClCompile Include="..\N3Base\N3Skin.cpp" />
+    <ClCompile Include="..\N3Base\N3Texture.cpp" />
+    <ClCompile Include="..\N3Base\N3Transform.cpp" />
+    <ClCompile Include="..\N3Base\N3TransformCollision.cpp" />
+    <ClCompile Include="..\N3Base\N3VMesh.cpp" />
+    <ClCompile Include="iffreader.cpp" />
+    <ClCompile Include="N3E2Translator.cpp" />
+    <ClCompile Include="N3E2Wrapper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\flib.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\ilib.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\M3dView.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAngle.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimControl.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimCurveChange.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimCurveClipboard.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimCurveClipboardItem.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimCurveClipboardItemArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimMessage.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAnimUtil.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MApiVersion.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MArgDatabase.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MArgList.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MArgParser.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MArrayDataBuilder.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MArrayDataHandle.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAttributeIndex.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAttributeSpec.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MAttributeSpecArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MBoundingBox.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MColor.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MColorArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MCommandResult.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MComputation.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MConditionMessage.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MCursor.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDagModifier.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDagPath.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDagPathArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDataBlock.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDataHandle.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDeviceChannel.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDeviceState.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDGContext.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDGMessage.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDGModifier.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDistance.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDoubleArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDrawData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDrawInfo.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDrawRequest.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDrawRequestQueue.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDynSweptLine.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MDynSweptTriangle.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MEulerRotation.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MEvent.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MEventMessage.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFeedbackLine.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFileIO.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFileObject.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFloatArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFloatMatrix.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFloatPoint.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFloatPointArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFloatVector.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFloatVectorArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFn.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnAirField.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnAmbientLight.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnAnimCurve.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnAreaLight.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnArrayAttrsData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnAttribute.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnBase.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnBlendShapeDeformer.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnBlinnShader.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnCamera.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnCharacter.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnCircleSweepManip.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnClip.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnComponent.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnComponentListData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnCompoundAttribute.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnCurveSegmentManip.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDagNode.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDependencyNode.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDirectionalLight.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDirectionManip.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDiscManip.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDistanceManip.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDoubleArrayData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDoubleIndexedComponent.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDragField.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnDynSweptGeometryData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnEnumAttribute.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnExpression.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnField.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnFreePointTriadManip.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnGenericAttribute.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnGeometryData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnGeometryFilter.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnGravityField.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnIkEffector.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnIkHandle.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnIkJoint.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnIkSolver.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnIntArrayData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnLambertShader.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnLattice.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnLatticeData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnLatticeDeformer.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnLight.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnLightDataAttribute.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnManip3D.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnMatrixAttribute.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnMatrixData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnMesh.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnMeshData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnMessageAttribute.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnMotionPath.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNewtonField.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNonAmbientLight.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNonExtendedLight.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNumericAttribute.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNumericData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNurbsCurve.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNurbsCurveData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNurbsSurface.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnNurbsSurfaceData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPartition.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPhongShader.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPlugin.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPluginData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPointArrayData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPointLight.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPointOnCurveManip.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnPointOnSurfaceManip.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnRadialField.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnReflectShader.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSet.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSingleIndexedComponent.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSkinCluster.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSphereData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSpotLight.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnStateManip.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnStringArrayData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnStringData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSubd.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSubdData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnSubdNames.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnToggleManip.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnTransform.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnTripleIndexedComponent.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnTurbulenceField.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnTypedAttribute.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnUInt64ArrayData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnUniformField.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnUnitAttribute.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnVectorArrayData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnVolumeAxisField.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnVortexField.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnWeightGeometryFilter.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MFnWireDeformer.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MGlobal.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MIkHandleGroup.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MIkSystem.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MIntArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItCurveCV.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItDag.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItDependencyGraph.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItDependencyNodes.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItGeometry.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItKeyframe.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItMeshEdge.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItMeshPolygon.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItMeshVertex.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItSelectionList.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MItSurfaceCV.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MLibrary.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MManipData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MMaterial.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MMatrix.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MMessage.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MModelMessage.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MNodeMessage.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MObject.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MObjectArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\mocapserial.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\mocapserver.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\mocaptcp.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPlug.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPlugArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPoint.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPointArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxCommand.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxContext.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxContextCommand.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxDeformerNode.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxEmitterNode.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxFieldNode.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxFileTranslator.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxGeometryData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxGeometryIterator.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxGlBuffer.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxHwShaderNode.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxIkSolver.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxIkSolverNode.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxLocatorNode.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxManipContainer.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxMidiInputDevice.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxNode.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxSelectionContext.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxSpringNode.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxSurfaceShape.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxSurfaceShapeUI.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MPxToolCommand.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MQuaternion.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MRenderCallback.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MRenderData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MRenderShadowData.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MRenderUtil.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MSceneMessage.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MSelectInfo.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MSelectionList.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MSelectionMask.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MSimple.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MStatus.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MString.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MStringArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MSyntax.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MTesselationParams.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MTime.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MTimeArray.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MToolsInfo.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MTransformationMatrix.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MTypeId.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MTypes.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MUiMessage.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MUint64Array.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MVector.h" />
+    <ClInclude Include="..\..\..\..\..\..\AW\Maya4.0\include\maya\MVectorArray.h" />
+    <ClInclude Include="..\N3BASE\BitMapFile.h" />
+    <ClInclude Include="..\N3BASE\LogWriter.h" />
+    <ClInclude Include="..\N3Base\My_3DStruct.h" />
+    <ClInclude Include="..\N3Base\N3AlphaPrimitiveManager.h" />
+    <ClInclude Include="..\N3Base\N3AnimControl.h" />
+    <ClInclude Include="..\N3Base\N3AnimKey.h" />
+    <ClInclude Include="..\N3Base\N3Base.h" />
+    <ClInclude Include="..\N3Base\N3BaseFileAccess.h" />
+    <ClInclude Include="..\N3Base\N3Camera.h" />
+    <ClInclude Include="..\N3Base\N3Chr.h" />
+    <ClInclude Include="..\N3Base\N3Eng.h" />
+    <ClInclude Include="..\N3Base\N3EngTool.h" />
+    <ClInclude Include="..\N3BASE\N3FXBundle.h" />
+    <ClInclude Include="..\N3BASE\N3FXDef.h" />
+    <ClInclude Include="..\N3BASE\N3FXGroup.h" />
+    <ClInclude Include="..\N3BASE\N3FXPartBase.h" />
+    <ClInclude Include="..\N3BASE\N3FXPartBillBoard.h" />
+    <ClInclude Include="..\N3BASE\N3FXPartBottomBoard.h" />
+    <ClInclude Include="..\N3BASE\N3FXParticle.h" />
+    <ClInclude Include="..\N3BASE\N3FXPartMesh.h" />
+    <ClInclude Include="..\N3BASE\N3FXPartParticles.h" />
+    <ClInclude Include="..\N3BASE\N3FXPlug.h" />
+    <ClInclude Include="..\N3BASE\N3FXPMesh.h" />
+    <ClInclude Include="..\N3BASE\N3FXPMeshInstance.h" />
+    <ClInclude Include="..\N3BASE\N3FXShape.h" />
+    <ClInclude Include="..\N3Base\N3IMesh.h" />
+    <ClInclude Include="..\N3Base\N3Joint.h" />
+    <ClInclude Include="..\N3Base\N3Light.h" />
+    <ClInclude Include="..\N3Base\N3Mesh.h" />
+    <ClInclude Include="..\N3Base\N3Mng.h" />
+    <ClInclude Include="..\N3Base\N3PMesh.h" />
+    <ClInclude Include="..\N3Base\N3PMeshCreate.h" />
+    <ClInclude Include="..\N3Base\N3PMeshInstance.h" />
+    <ClInclude Include="..\N3Base\N3Scene.h" />
+    <ClInclude Include="..\N3Base\N3Shape.h" />
+    <ClInclude Include="..\N3Base\N3Skin.h" />
+    <ClInclude Include="..\N3Base\N3Texture.h" />
+    <ClInclude Include="..\N3Base\N3Transform.h" />
+    <ClInclude Include="..\N3Base\N3TransformCollision.h" />
+    <ClInclude Include="..\N3Base\N3VMesh.h" />
+    <ClInclude Include="..\N3Base\StdAfxBase.h" />
+    <ClInclude Include="D:\MSSDK\include\d3d8.h" />
+    <ClInclude Include="iffreader.h" />
+    <ClInclude Include="N3E2Translator.h" />
+    <ClInclude Include="N3E2Wrapper.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="N3E2MatAttr.mel" />
+    <CustomBuild Include="N3E2tags.mel" />
+    <CustomBuild Include="N3E2TranslatorOpts.mel" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="E:\Program\Maya\lib\Foundation.lib" />
+    <Library Include="E:\Program\Maya\lib\Image.lib" />
+    <Library Include="E:\Program\Maya\lib\libMDtAPI.lib" />
+    <Library Include="E:\Program\Maya\lib\libMocap.lib" />
+    <Library Include="E:\Program\Maya\lib\OpenMaya.lib" />
+    <Library Include="E:\Program\Maya\lib\OpenMayaAnim.lib" />
+    <Library Include="E:\Program\Maya\lib\OpenMayaFX.lib" />
+    <Library Include="E:\Program\Maya\lib\OpenMayaRender.lib" />
+    <Library Include="E:\Program\Maya\lib\OpenMayaUI.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
