@@ -385,7 +385,7 @@ void CN3FXPartBillBoard::Render()
 				vUnit[i] *= mtxRotZ;
 			}
 
-			for(i=0;i<m_iNum;i++)
+			for(auto i=0;i<m_iNum;i++)
 			{
 				int idx = i*4;
 				
@@ -483,7 +483,7 @@ void CN3FXPartBillBoard::Render()
 				vUnit[i] *= mtxRotZ;
 			}
 
-			for(i=0;i<m_iNum;i++)
+			for(auto i=0;i<m_iNum;i++)
 			{
 				int idx = i*4;
 

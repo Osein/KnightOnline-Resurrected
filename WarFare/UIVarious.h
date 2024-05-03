@@ -175,7 +175,7 @@ public:
 	//void	MsgSend_DutyAppoint(e_KnightsDuty eDuty);
 };
 
-struct __FriendsInfo : public binary_function<__FriendsInfo, __FriendsInfo, bool>// 기사 단원 정보..
+struct __FriendsInfo
 {
 	std::string		szName;
 	int				iID; // ID

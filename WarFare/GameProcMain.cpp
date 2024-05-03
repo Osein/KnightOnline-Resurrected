@@ -1,7 +1,6 @@
 // GameProcMain.cpp: implementation of the CGameProcMain class.
 //
 //////////////////////////////////////////////////////////////////////
-#include <io.h>
 
 #include "stdafx.h"
 #include "Resource.h"
@@ -73,6 +72,8 @@
 #include "../N3Base/N3SndObjStream.h"
 #include "../N3Base/N3SndMgr.h"
 #include "../N3Base/N3TableBase.h"
+
+#include <io.h>
 
 enum e_ChatCmd { 	CMD_WHISPER, CMD_TOWN, CMD_TRADE, CMD_EXIT, CMD_PARTY,
 					CMD_LEAVEPARTY, CMD_RECRUITPARTY, CMD_JOINCLAN, CMD_WITHDRAWCLAN, CMD_FIRECLAN, 
@@ -275,7 +276,7 @@ void CGameProcMain::Init()
 	char szPathOld[_MAX_PATH], szPathFind[_MAX_PATH];
 	::GetCurrentDirectory(_MAX_PATH, szPathOld);
 
-	_finddata_t fi;
+	::_finddata_t fi;
 	long hFind = -1;
 
 	// 리소스 다 읽기..
@@ -283,7 +284,7 @@ void CGameProcMain::Init()
 	lstrcpy(szPathFind, szPathOld);
 	lstrcat(szPathFind, "\\Chr");
 	::SetCurrentDirectory(szPathFind);
-	hFind = _findfirst("*.N3Anim", &fi);
+	hFind = ::_findfirst("*.N3Anim", &fi);
 	if(hFind)
 	{
 		std::string szFN = "Chr\\";
@@ -296,7 +297,7 @@ void CGameProcMain::Init()
 			pObjTmp = s_MngAniCtrl.Get(szFN.c_str());
 		}
 	}
-	_findclose(hFind);
+	::_findclose(hFind);
 
 	if(s_pUILoading) s_pUILoading->Render("Loading Character Data... 10 %", 10);
 
@@ -305,20 +306,20 @@ void CGameProcMain::Init()
 	lstrcpy(szPathFind, szPathOld);
 	lstrcat(szPathFind, "\\Item");
 	::SetCurrentDirectory(szPathFind);
-	hFind = _findfirst("*.dxt", &fi);
+	hFind = ::_findfirst("*.dxt", &fi);
 	if(hFind)
 	{
 		std::string szFN = "Item\\";
 		szFN += fi.name;
 		CN3Texture* pObjTmp = s_MngTex.Get(szFN.c_str());
-		while(_findnext(hFind, &fi) != -1)
+		while(::_findnext(hFind, &fi) != -1)
 		{
 			szFN = "Item\\";
 			szFN += fi.name;
 			pObjTmp = s_MngTex.Get(szFN.c_str());
 		}
 	}
-	_findclose(hFind);
+	::_findclose(hFind);
 
 	if(s_pUILoading) s_pUILoading->Render("Loading Character Data... 25 %", 25);
 	
@@ -327,20 +328,20 @@ void CGameProcMain::Init()
 	lstrcpy(szPathFind, szPathOld);
 	lstrcat(szPathFind, "\\Chr");
 	::SetCurrentDirectory(szPathFind);
-	hFind = _findfirst("*.N3Joint", &fi);
+	hFind = ::_findfirst("*.N3Joint", &fi);
 	if(hFind)
 	{
 		std::string szFN = "Chr\\";
 		szFN += fi.name;
 		CN3Joint* pObjTmp = s_MngJoint.Get(szFN.c_str());
-		while(_findnext(hFind, &fi) != -1)
+		while(::_findnext(hFind, &fi) != -1)
 		{
 			szFN = "Chr\\";
 			szFN += fi.name;
 			pObjTmp = s_MngJoint.Get(szFN.c_str());
 		}
 	}
-	_findclose(hFind);
+	::_findclose(hFind);
 
 	if(s_pUILoading) s_pUILoading->Render("Loading Character Data... 50 %", 50);
 
@@ -349,20 +350,20 @@ void CGameProcMain::Init()
 	lstrcpy(szPathFind, szPathOld);
 	lstrcat(szPathFind, "\\Item");
 	::SetCurrentDirectory(szPathFind);
-	hFind = _findfirst("*.N3CSkins", &fi);
+	hFind = ::_findfirst("*.N3CSkins", &fi);
 	if(hFind)
 	{
 		std::string szFN = "Item\\";
 		szFN += fi.name;
 		CN3CPartSkins* pObjTmp = s_MngSkins.Get(szFN.c_str());
-		while(_findnext(hFind, &fi) != -1)
+		while(::_findnext(hFind, &fi) != -1)
 		{
 			szFN = "Item\\";
 			szFN += fi.name;
 			pObjTmp = s_MngSkins.Get(szFN.c_str());
 		}
 	}
-	_findclose(hFind);
+	::_findclose(hFind);
 
 	if(s_pUILoading) s_pUILoading->Render("Loading Character Data... 75 %", 75);
 	
@@ -371,20 +372,20 @@ void CGameProcMain::Init()
 	lstrcpy(szPathFind, szPathOld);
 	lstrcat(szPathFind, "\\Item");
 	::SetCurrentDirectory(szPathFind);
-	hFind = _findfirst("*.N3PMesh", &fi);
+	hFind = ::_findfirst("*.N3PMesh", &fi);
 	if(hFind)
 	{
 		std::string szFN = "Item\\";
 		szFN += fi.name;
 		CN3PMesh* pObjTmp = s_MngPMesh.Get(szFN.c_str());
-		while(_findnext(hFind, &fi) != -1)
+		while(::_findnext(hFind, &fi) != -1)
 		{
 			szFN = "Item\\";
 			szFN += fi.name;
 			pObjTmp = s_MngPMesh.Get(szFN.c_str());
 		}
 	}
-	_findclose(hFind);
+	::_findclose(hFind);
 
 	if(s_pUILoading) s_pUILoading->Render("Loading Character Data... 100 %", 100);
 
@@ -1662,7 +1663,7 @@ bool CGameProcMain::MsgRecv_MyInfo_All(DataPack* pDataPack, int& iOffset)
 	int iItemDurabilityInSlots[ITEM_SLOT_COUNT]; memset(iItemDurabilityInSlots, -1, sizeof(iItemDurabilityInSlots));
 	int iItemCountInSlots[ITEM_SLOT_COUNT]; memset(iItemCountInSlots, -1, sizeof(iItemCountInSlots));
 
-	for ( i = 0; i < ITEM_SLOT_COUNT; i++ )				// 슬롯 갯수마큼..
+	for (auto i = 0; i < ITEM_SLOT_COUNT; i++ )				// 슬롯 갯수마큼..
 	{
 		iItemIDInSlots[i]			= CAPISocket::Parse_GetDword(pDataPack->m_pData, iOffset);
 		iItemDurabilityInSlots[i]	= CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);
@@ -1695,7 +1696,7 @@ bool CGameProcMain::MsgRecv_MyInfo_All(DataPack* pDataPack, int& iOffset)
 	int iItemCountInInventorys[MAX_ITEM_INVENTORY]; memset(iItemCountInInventorys, -1, sizeof(iItemCountInInventorys));
 	int iItemDurabilityInInventorys[MAX_ITEM_INVENTORY]; memset(iItemDurabilityInInventorys, -1, sizeof(iItemDurabilityInInventorys));
 
-	for ( i = 0; i < MAX_ITEM_INVENTORY; i++ )				// 슬롯 갯수마큼..
+	for (auto i = 0; i < MAX_ITEM_INVENTORY; i++ )				// 슬롯 갯수마큼..
 	{
 		iItemIDInInventorys[i]			= CAPISocket::Parse_GetDword(pDataPack->m_pData, iOffset);
 		iItemDurabilityInInventorys[i]	= CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);
@@ -1705,7 +1706,7 @@ bool CGameProcMain::MsgRecv_MyInfo_All(DataPack* pDataPack, int& iOffset)
 	m_pUIInventory->ReleaseItem();
 
 	std::string szResrcFN, szIconFN;
-	for ( i = 0; i < ITEM_SLOT_COUNT; i++ )				// 슬롯 갯수마큼..
+	for (auto i = 0; i < ITEM_SLOT_COUNT; i++ )				// 슬롯 갯수마큼..
 	{
 		if(0 == iItemIDInSlots[i]) continue;
 
@@ -1790,7 +1791,7 @@ bool CGameProcMain::MsgRecv_MyInfo_All(DataPack* pDataPack, int& iOffset)
 
 	// 인벤토리..
 	int iItemCount = 0;
-	for ( i = 0; i < MAX_ITEM_INVENTORY; i++ )				// 인벤토리 갯수만큼..	
+	for (auto i = 0; i < MAX_ITEM_INVENTORY; i++ )				// 인벤토리 갯수만큼..	
 	{
 		if(!iItemIDInInventorys[i]) continue;
 
@@ -2410,7 +2411,7 @@ bool CGameProcMain::MsgRecv_UserInAndRequest(DataPack* pDataPack, int& iOffset)
 		CAPISocket::MP_AddShort(&(byBuff[0]), iOffset, iNewUPCCount);		// 아이디 갯수..
 		
 		itID = m_SetUPCID.begin(); itIDEnd = m_SetUPCID.end();
-		for(i = 0; itID != itIDEnd; itID++, i++)
+		for(auto i = 0; itID != itIDEnd; itID++, i++)
 		{
 			iID = *itID;
 			CAPISocket::MP_AddShort(&(byBuff[0]), iOffset, iID);			// 자세한 정보가 필요한 아이디들..
@@ -2762,7 +2763,7 @@ bool CGameProcMain::MsgRecv_NPCInAndRequest(DataPack* pDataPack, int& iOffset)
 		CAPISocket::MP_AddShort(&(byBuff[0]), iOffset, iNewNPCCount);		// 아이디 갯수..
 		
 		itID = m_SetNPCID.begin(); itIDEnd = m_SetNPCID.end();
-		for(i = 0; itID != itIDEnd; itID++, i++)
+		for(auto i = 0; itID != itIDEnd; itID++, i++)
 		{
 			iID = *itID;
 			CAPISocket::MP_AddShort(&(byBuff[0]), iOffset, iID);			// 자세한 정보가 필요한 아이디들..
@@ -3909,8 +3910,8 @@ bool CGameProcMain::MsgRecv_ItemTradeStart(DataPack* pDataPack, int& iOffset)			
 
 bool CGameProcMain::MsgRecv_ItemTradeResult(DataPack* pDataPack, int& iOffset)			// 아이템 상거래 결과..
 {
-	byte bfType = 0x00;	int	iMoney = 0;
-	byte bResult = CAPISocket::Parse_GetByte(pDataPack->m_pData, iOffset);		// Trade id
+	BYTE bfType = 0x00;	int	iMoney = 0;
+	BYTE bResult = CAPISocket::Parse_GetByte(pDataPack->m_pData, iOffset);		// Trade id
 
 	switch ( bResult )
 	{
@@ -6574,7 +6575,7 @@ void CGameProcMain::MsgRecv_Knights_GradeChangeAll(DataPack* pDataPack, int& iOf
 		int iIDTmp = pUPC->m_InfoExt.iKnightsID;
 		if(iIDTmp <= 0) continue;
 
-		for(i = 0; i < iCount; i++)
+		for(auto i = 0; i < iCount; i++)
 		{
 			if(iIDs[i] == iIDTmp)
 			{

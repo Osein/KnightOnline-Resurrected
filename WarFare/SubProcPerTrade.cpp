@@ -877,11 +877,13 @@ void CSubProcPerTrade::ReceiveMsgPerTradeOtherAdd(int iItemID, int iCount, int i
 				}
 			}
 
+			auto i = 0;
+
 			// 못찾았으면.. 
 			if ( !bFound )
 			{
 				// 인벤토리 빈슬롯을 찾아 들어간다..
-				for( i = 0; i < MAX_ITEM_PER_TRADE; i++ )
+				for(; i < MAX_ITEM_PER_TRADE; i++ )
 				{
 					if ( !m_pUIPerTradeDlg->m_pPerTradeOther[i] )
 					{
@@ -938,7 +940,9 @@ void CSubProcPerTrade::ReceiveMsgPerTradeOtherAdd(int iItemID, int iCount, int i
 		}
 		else
 		{
-			for( int i = 0; i < MAX_ITEM_PER_TRADE; i++ )
+			int i = 0;
+
+			for(; i < MAX_ITEM_PER_TRADE; i++ )
 			{
 				if (m_pUIPerTradeDlg->m_pPerTradeOther[i] == NULL)	
 				{

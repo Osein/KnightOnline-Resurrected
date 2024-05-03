@@ -97,7 +97,7 @@ CN3Terrain::CN3Terrain()
 
 	m_bAvailableTile = true;
 
-	for(i=0;i<3;i++)
+	for(auto i=0;i<3;i++)
 		for(int j=0;j<3;j++) m_LightMapPatch[i][j].clear();
 }
 
@@ -684,7 +684,7 @@ void CN3Terrain::LoadTileInfo(HANDLE hFile)
 	short SrcIdx, TileIdx;
 	HANDLE hTTGFile;
 	char szLoadingBuff[128];
-	for(i=0;i<m_NumTileTex;i++)
+	for(auto i=0;i<m_NumTileTex;i++)
 	{
 		ReadFile(hFile, &SrcIdx, sizeof(short), &dwRWC, NULL);
 		ReadFile(hFile, &TileIdx, sizeof(short), &dwRWC, NULL);
@@ -708,7 +708,7 @@ void CN3Terrain::LoadTileInfo(HANDLE hFile)
 		CloseHandle(hTTGFile);
 	}
 
-	for(i=0;i<NumTileTexSrc;i++)
+	for(auto i=0;i<NumTileTexSrc;i++)
 	{
 		delete[] SrcName[i];
 		SrcName[i] = NULL;
@@ -1217,7 +1217,7 @@ bool CN3Terrain::CheckBound()
 		vFPs[i] = vFPs[i] * CN3Base::s_CameraData.mtxViewInverse;
 
 	
-	for(i=0;i<4;i++)
+	for(auto i=0;i<4;i++)
 	{
 		POINT FarPoint;
 		FarPoint.x = Real2Patch(vFPs[i].x);
@@ -2104,7 +2104,7 @@ bool CN3Terrain::LoadColorMap(const std::string& szFN)
 	}
 
 	char szBuff[128];
-	for(x=0;x<m_iNumColorMap;x++)
+	for(auto x=0;x<m_iNumColorMap;x++)
 	{
 		for(int z=0;z<m_iNumColorMap;z++)
 		{

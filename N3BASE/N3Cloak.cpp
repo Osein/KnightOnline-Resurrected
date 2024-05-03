@@ -151,7 +151,7 @@ void CN3Cloak::Render(__Matrix44 &mtx)
 			s_lpD3DDev->DrawPrimitiveUP(D3DPT_LINELIST, 1, Vtx, sizeof(__VertexXyzColor));
 		}
 	}
-	for ( i = 0 ; i< m_nGridH-1;i++)
+	for (auto i = 0 ; i< m_nGridH-1;i++)
 	{
 		for (int j=0;j<m_nGridW;j++)
 		{

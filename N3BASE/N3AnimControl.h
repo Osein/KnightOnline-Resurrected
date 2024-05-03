@@ -101,8 +101,8 @@ public:
 		if(nL > 0)
 		{
 			std::vector<char> buffer(nL+1, NULL);
-			ReadFile(hFile, buffer.begin(), nL, &dwRWC, NULL);
-			szName = buffer.begin();
+			ReadFile(hFile, buffer.data(), nL, &dwRWC, NULL);
+			szName = buffer.data();
 		}
 	}
 	void Save(HANDLE hFile)

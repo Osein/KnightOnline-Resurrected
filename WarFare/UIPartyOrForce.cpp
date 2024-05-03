@@ -270,7 +270,9 @@ void CUIPartyOrForce::MemberInfoReInit() // 파티원 구성이 변경될때.. �
 {
 	it_PartyOrForce it = m_Members.begin(), itEnd = m_Members.end();
 	__InfoPartyOrForce* pIP = NULL;
-	for(int i = 0; it != itEnd && i < MAX_PARTY_OR_FORCE; it++, i++)
+	int i = 0;
+
+	for(; it != itEnd && i < MAX_PARTY_OR_FORCE; it++, i++)
 	{
 		pIP = &(*it); // 디버깅 하기 쉬우라고 이렇게 했다..
 		if(pIP->iHPMax <= 0)

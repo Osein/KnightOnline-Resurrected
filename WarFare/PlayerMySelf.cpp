@@ -511,7 +511,7 @@ void CPlayerMySelf::InventoryChrRender(const RECT& Rect)
 
 	// set render state
 	if (TRUE != dwLighting) s_lpD3DDev->SetRenderState( D3DRS_LIGHTING, TRUE );
-	for ( i = 1; i < 8; ++i )	s_lpD3DDev->LightEnable(i, FALSE);
+	for (auto i = 1; i < 8; ++i )	s_lpD3DDev->LightEnable(i, FALSE);
 	s_lpD3DDev->LightEnable(0, TRUE);
 
 	// 0번 light 설정
@@ -535,7 +535,7 @@ void CPlayerMySelf::InventoryChrRender(const RECT& Rect)
 
 	// restore
 	if (TRUE != dwLighting) s_lpD3DDev->SetRenderState( D3DRS_LIGHTING, dwLighting );
-	for (i = 0; i < 8; ++i )	s_lpD3DDev->LightEnable(i, bLight[i]);
+	for (auto i = 0; i < 8; ++i )	s_lpD3DDev->LightEnable(i, bLight[i]);
 	s_lpD3DDev->SetLight(0, &BackupLight0);
 }
 

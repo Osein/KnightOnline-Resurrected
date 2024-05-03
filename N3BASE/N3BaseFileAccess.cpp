@@ -47,8 +47,8 @@ bool CN3BaseFileAccess::Load(HANDLE hFile)
 	if(nL > 0) 
 	{
 		std::vector<char> buffer(nL+1, NULL);
-		ReadFile(hFile, buffer.begin(), nL, &dwRWC, NULL);
-		m_szName = buffer.begin();
+		ReadFile(hFile, buffer.data(), nL, &dwRWC, NULL);
+		m_szName = buffer.data();
 	}
 
 	return true;

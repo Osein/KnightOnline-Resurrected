@@ -1,4 +1,4 @@
-//Microsoft Developer Studio generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -13,13 +13,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Korean resources
+// English (United States) resources
 
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
-#ifdef _WIN32
-LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
-#pragma code_page(949)
-#endif //_WIN32
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -27,844 +25,25 @@ LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE
 BEGIN
-    "resource.h\0"
+"resource.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE
 BEGIN
-    "#include ""afxres.h""\r\n"
-    "\0"
+"#include ""winres.h""\r\n"
+"\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE
 BEGIN
-    "\r\n"
-    "\0"
+"\r\n"
+"\0"
 END
 
 #endif    // APSTUDIO_INVOKED
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// String Table
-//
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_PARTY_INSERT_ERR_LEVEL_DIFFERENCE 
-                            "레벨 차이가 나서 파티에 가입할 수 없습니다."
-    IDS_PARTY_INSERT_ERR_REJECTED "파티초대가 거절 되었습니다."
-    IDS_PARTY_INVITE        "님을 파티에 초대하였습니다. 응답을 기다립니다."
-    IDS_PARTY_INVITE_FAILED "님을 파티에 초대할수 없습니다."
-    IDS_PARTY_ITEM_GET      "%s(이)가 %s(을)를 획득했습니다."
-    IDS_PARTY_LEAVE         "파티에서 탈퇴하였습니다."
-    IDS_PARTY_PERMIT        "님이 파티에 초대하였습니다. 파티에 가입하시겠습니까?"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_REGENERATION        "확인을 누르면 마을, 혹은 부활장소로 돌아갑니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_ERR_INVALID_CLASS   "직업을 선택해 주세요."
-    IDS_ERR_INVALID_NAME    "캐릭터 아이디를 입력해 주세요."
-    IDS_ERR_INVALID_NAME_HAS_SPECIAL_LETTER 
-                            "사용할 수 없는 캐릭터 아이디 입니다."
-    IDS_ERR_INVALID_NATION_RACE "선택한 국가와 종족이 맞지 않습니다."
-    IDS_ERR_INVALID_RACE    "종족을 선택해 주세요."
-    IDS_ERR_KNIGHTS_CREATE_FAILED_NAME_EMPTY 
-                            "기사단을 만들려면 이름이 있어야 합니다."
-    IDS_ERR_NOT_SUPPORTED_RACE "이 종족은 아직 지원되지 않습니다."
-    IDS_ERR_NO_MORE_CHARACTER "더 이상의 캐릭터를 생성할 수 없습니다."
-    IDS_ERR_OVERLAPPED_ID   "이미 이 아이디로 생성된 캐릭터가 있어서 이름이 중복됩니다."
-    IDS_ERR_REMAIN_BONUS_POINT "보너스 포인트가 남아 있습니다."
-    IDS_ERR_REQUEST_OBJECT_EVENT_SO_FAR "오브젝트와의 거리가 너무 멉니다."
-    IDS_ERR_UNKNOWN         "알수 없는 에러입니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_ERR_CHARACTER_CREATE "캐릭터 생성 실패"
-    IDS_ERR_DB_CREATE       "DataBase 생성 실패."
-    IDS_ERR_GOTO_TOWN_OUT_OF_HP "HP 가 절반 이하일때는 마을로 갈수 없습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_PERSONAL_TRADE_FMT_WAIT 
-                            "%s 님이 %s 님에게 거래를 신청하셨습니다. 응답을 기다리고 있습니다."
-    IDS_PERSONAL_TRADE_PERMIT 
-                            "%s 님이 %s 님에게서 거래를 신청받았습니다. 수락하시겠습니까?"
-    IDS_PERSONAL_TRADE_REQUEST " 님에게 거래 신청"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_VERSION_CONFIRM     "이 클라이언트의 버전은 %.3f 이며 이 서버에 접속하려면 %.3f 버전이 필요합니다."
-    IDS_TOOLTIP_BONUSSTA    "체력 보너스   : %d"
-    IDS_VERSION_CONFIRM_TW  "실행파일 버전이 틀립니다. 최신 실행파일을 설치하세요."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_EXIT                "종료하시겠습니까?"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_TRY_SPEED_HACKING   "스피드 해킹이 시도되었습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CONNECTION_CLOSED   "서버와 연결이 종료 되었습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CLASS_EL_RANGER     "레인저"
-    IDS_CLASS_KA_BERSERKER  "버서커"
-    IDS_CLASS_KA_DARKPRIEST "다크프리스트"
-    IDS_CLASS_KA_GUARDIAN   "가디언"
-    IDS_CLASS_KA_HUNTER     "헌터"
-    IDS_CLASS_KA_NECROMANCER "네크로맨서"
-    IDS_CLASS_KA_PENETRATOR "페너트레이터"
-    IDS_CLASS_KA_SHAMAN     "샤먼"
-    IDS_CLASS_KA_SORCERER   "소서러"
-    IDS_CLASS_PRIEST        "사제"
-    IDS_CLASS_ROGUE         "로그"
-    IDS_CLASS_UNKNOWN       "미확인직업"
-    IDS_CLASS_WARRIOR       "전사"
-    IDS_CLASS_WIZARD        "마법사"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_NATION_ELMORAD      "엘모라드"
-    IDS_NATION_KARUS        "카루스"
-    IDS_NATION_UNKNOWN      "미확인국가"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_RACE_ALL            "모든종족"
-    IDS_RACE_EL_BABARIAN    "바바리안"
-    IDS_RACE_EL_MAN         "엘모라디안 남자"
-    IDS_RACE_EL_WOMEN       "엘모라디안 여자"
-    IDS_RACE_KA_ARKTUAREK   "아크투아렉"
-    IDS_RACE_KA_PURITUAREK  "퓨리 투아렉"
-    IDS_RACE_KA_TUAREK      "투아렉"
-    IDS_RACE_KA_WRINKLETUAREK "링클투아렉"
-    IDS_RACE_UNKNOWN        "미확인종족"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CHR_SELECT_FMT_INFO "레벨 : %d \n\n직업 : %s\n\n I D : %s"
-    IDS_CHR_SELECT_HINT     "마우스 왼쪽 버튼을 \n\n누르시면 새 캐릭터를\n\n만드실 수 있습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_PARTY_CONFIRM_DESTROY "파티를 해체하시겠습니까?"
-    IDS_PARTY_CONFIRM_DISCHARGE "님을 파티에서 탈퇴시킬까요?"
-    IDS_PARTY_CONFIRM_LEAVE "파티에서 탈퇴하시겠습니까?"
-    IDS_PARTY_DESTROY       "파티가 해제되었습니다."
-    IDS_PARTY_INSERT        "님이 파티에 들어왔습니다."
-    IDS_PARTY_INSERT_ERR    "파티초대가 거절 되었습니다."
-    IDS_PARTY_INSERT_ERR_INVALID_NATION "파티를 맺을 수 없는 국가입니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_LOGIN_FAILED        "로그인에 실패하였습니다. 고객지원팀에 연락해 주십시오."
-    IDS_LOGIN_ERR_ALREADY_CONNECTED_ACCOUNT 
-                            "계정 로그인 실패. 다시 시도해 주십시오."
-    IDS_NOACCOUNT_RETRY_MGAMEID 
-                            "등록된 ID 가 없습니다. MGame ID 로 접속을 시도합니다."
-    IDS_NO_MGAME_ACCOUNT    "MGame 에도 등록된 ID 가 없습니다."
-    IDS_FMT_CONNECT_ERROR   "%s 서버에 접속할 수 없습니다.(%d)"
-    IDS_FMT_GAME_SERVER_LOGIN_ERROR 
-                            "%s 서버에 접속은 되었으나 게임 로그인에 실패하였습니다.(%d)"
-    IDS_SERVER_CONNECT_FAIL "서버 접속 실패."
-    IDS_CURRENT_SERVER_ERROR "해당 서버에 오류가 있습니다.."
-    IDS_CONNECT_FAIL        "접속 실패"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CONFIRM_DELETE_CHR  "캐릭터를 삭제하려면 주민등록 번호를 입력해 주십시오.\n예) 890123-4567890"
-    IDS_CONFIRM_EXIT_GAME   "게임을 끝내시겠습니까?"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_NEWCHR_KA_TUAREK    "투아렉은 육체적인 능력과 정신적인 능력이 균형을 이루고 있는 종족으로 로그와 사제의 직업을 선택할 수 있습니다."
-    IDS_NEWCHR_KA_WARRIOR   "전사는 중장갑과 모든 종류의 공격 무기를 사용하는 버서커와 높은 방어력을 바탕으로 사제와 마법사의 보호 임무를 맡는 가디언으로 성장할 수 있습니다."
-    IDS_NEWCHR_KA_WRINKLETUAREK 
-                            "링클 투아렉은 강력한 마법을 구사하기 위해 정신적인 능력을 강화시킨 종족입니다. 링클 투아렉은 마법사만을 선택할 수 있습니다."
-    IDS_NEWCHR_POW          "무기를 이용한 캐릭터의 공격과 방어력에 영향을 미치는 능력입니다."
-    IDS_NEWCHR_STA          "캐릭터의 생명력(HP)을 결정하는 능력입니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_NEWCHR_MAP          "캐릭터의 마법 공격력을 결정짓는 능력입니다."
-    IDS_NEWCHR_DEX          "캐릭터가 전투 중 적의 공격을 회피할 수 있는 확률을 높이며 로그의 화살 공격력을 높여 주는 능력입니다."
-    IDS_NEWCHR_EL_BABA      "바바리안은 강인한 육체를 소유한 북방의 전사로 전사이외의 직업은 선택할 수 없습니다."
-    IDS_NEWCHR_EL_FEMALE    "엘모라디안 여자는 높은 지능과 마력을 소유한 캐릭터입니다."
-    IDS_NEWCHR_EL_MAGE      "마법사는 4대 원소의 힘을 이용해 공격 마법을 구사하는 메이지와 정신의 지배자인 엔첸터로 성장시킬 수 있습니다."
-    IDS_NEWCHR_EL_MALE      "엘모라디안 남자는 체력과 지능이 균형을 이루고 있어 모든 직업에 적합합니다."
-    IDS_NEWCHR_EL_PRIEST    "사제는 동료의 치료를 주 임무로 하는 클레릭과 동료의 능력치를 높이거나 적에게 저주를 거는 드루이드로 성장시킬 수 있습니다."
-    IDS_NEWCHR_EL_ROGUE     "로그는 몸을 숨기고 적에게 다가가 치명상을 입히는 어쌔신과 활과 창을 이용해 원거리 공격을 하는 레인져로 성장시킬 수 있습니다."
-    IDS_NEWCHR_EL_WARRIOR   "전사는 중장갑과 모든 종류의 공격 무기를 사용하는 블레이드와 높은 방어력을 바탕으로 아군의 마법사와 사제를 보호하는 프로텍터로 성장시킬 수 있습니다."
-    IDS_NEWCHR_INT          "마법사와 사제의 정신 에너지(MP) 량과 마법의 위력을 결정짓는 능력입니다."
-    IDS_NEWCHR_KA_ARKTUAREK "아크 투아렉은 육체의 능력을 극대화 시킨 종족으로 오직 전사만을 선택할 수 있습니다."
-    IDS_NEWCHR_KA_MAGE      "마법사는 4대 원소의 힘을 이용해 공격 마법을 구사하는 소서러와 죽은 자들의 주인인 네크로맨서로 성장시킬 수 있습니다."
-    IDS_NEWCHR_KA_PRIEST    "사제는 동료의 치료를 주 임무로 하는 샤만과 강력한 저주의 능력을 가진 다크 프리스트로 성장시킬 수 있습니다."
-    IDS_NEWCHR_KA_PURITUAREK 
-                            "퓨리 투아렉은 순수하게 정화된 정신 에너지를 이용해 치료 마법과 저주 마법을 구사하는 카루스의 여성 캐릭터로 사제 직업을 선택할 수 있습니다."
-    IDS_NEWCHR_KA_ROGUE     "로그는 몸을 숨기고 적에게 다가가 치명상을 입히는 어쌔신과 활과 화살을 이용해 원거리 공격을 하는 헌터로 성장시킬 수 있습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_REQUEST_BINDPOINT   "이곳을 부활장소로 지정하겠습니까?"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CLASS_CHANGE_ALREADY 
-                            "요즘은 어떤가? 승리를 위해서는 자네와 같은 사람들의 노력이 필요하네."
-    IDS_CLASS_CHANGE_NOT_YET "자넨 좀더 수련이 필요한 것 같군."
-    IDS_CLASS_CHANGE_SUCCESS 
-                            "자네는 직업을 바꿀 수 있는 자격을 얻었군. 자네는 다음 두 직업 중 하나를 선택할 수 있네. 어느 것을 선택할텐가?"
-    IDS_CLASS_KINDOF_WARRIOR "전사 직업군"
-    IDS_CLASS_KINDOF_ROGUE  "로그 직업군"
-    IDS_CLASS_KINDOF_WIZARD "마법사 직업군"
-    IDS_CLASS_KINDOF_PRIEST "사제 직업군"
-    IDS_CLASS_KINDOF_ATTACK_WARRIOR "공격전사 직업군"
-    IDS_CLASS_KINDOF_DEFEND_WARRIOR "방어전사 직업군"
-    IDS_CLASS_KINDOF_ARCHER "궁수 직업군"
-    IDS_CLASS_KINDOF_ASSASSIN "암살자 직업군"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CLASS_EL_ASSASIN    "어쌔신"
-    IDS_CLASS_EL_BLADE      "블레이드"
-    IDS_CLASS_EL_CLERIC     "클레릭"
-    IDS_CLASS_EL_DRUID      "드루이드"
-    IDS_CLASS_EL_ENCHANTER  "엔첸터"
-    IDS_CLASS_EL_MAGE       "메이지"
-    IDS_CLASS_EL_PROTECTOR  "프로텍터"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_SKILL_FAIL_CASTING  "캐스팅 실패"
-    IDS_SKILL_FAIL_DIFFURENTCLASS "사용할 수 없는 스킬(마법)입니다."
-    IDS_SKILL_FAIL_EFFECTING "%s 무산"
-    IDS_SKILL_FAIL_INVALID_ITEM "스킬 실패 - 아이템이 맞지 않습니다."
-    IDS_SKILL_FAIL_LACK_HP  "스킬 실패 - HP 부족"
-    IDS_SKILL_FAIL_LACK_ITEM "스킬 실패 - 아이템이 부족합니다."
-    IDS_SKILL_FAIL_LACK_SP  "스킬 실패 - SP 부족"
-    IDS_SKILL_FAIL_SOFAR    "스킬 실패 - 거리가 멉니다."
-    IDS_SKILL_FAIL_OBJECT_BLOCK "스킬 실패 - 오브젝트에 막힘"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_SKILL_SUCCESS_HEALING_FROM "%s에게서 %d힐링"
-    IDS_SKILL_SUCCESS_HEALING_TO "%s에게 %d힐링"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_MSG_FMT_EXP_LOST    "%d 경험치 잃음"
-    IDS_MSG_FMT_HP_LOST     "%d HP 대미지"
-    IDS_MSG_FMT_HP_RECOVER  "%d HP 회복"
-    IDS_MSG_FMT_MP_RECOVER  "%d MP 회복"
-    IDS_MSG_FMT_MP_USE      "%d MP 사용"
-    IDS_MSG_FMT_SP_RECOVER  "%d SP 회복"
-    IDS_MSG_FMT_SP_USE      "%d SP 사용"
-    IDS_MSG_FMT_TARGET_ATTACK_FAILED "%s 공격 실패."
-    IDS_MSG_FMT_TARGET_HP_LOST "%s에게 %d 타격"
-    IDS_MSG_FMT_TARGET_HP_RECOVER "%s의 HP %d 회복"
-    IDS_MSG_VALID_CLASSNRACE_INVALID_RACE "종족이 맞지 않아 장착이 불가"
-    IDS_MSG_VALID_CLASSNRACE_LOW_CHA "마력이 낮아 장착이 불가"
-    IDS_MSG_VALID_CLASSNRACE_LOW_DEX "민첩이 낮아 장착이 불가"
-    IDS_MSG_VALID_CLASSNRACE_LOW_INT "지능이 낮아 장착이 불가"
-    IDS_MSG_VALID_CLASSNRACE_LOW_LEVEL "레벨이 낮아 장착이 불가"
-    IDS_MSG_VALID_CLASSNRACE_LOW_POWER "힘이 낮아 장착이 불가"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_MSG_ATTACK_DISABLE  "거리가 멀거나 방향이 틀려 공격할 수 없습니다."
-    IDS_MSG_ATTACK_START    "공격 시작"
-    IDS_MSG_ATTACK_STOP     "공격 멈춤"
-    IDS_MSG_CASTING_FAIL_LACK_MP "스킬 실패 - MP 부족"
-    IDS_MSG_FMT_EXP_GET     "%d 경험치 얻음"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_MSG_VALID_CLASSNRACE_LOW_RANK "작위가 낮아 장착이 불가"
-    IDS_MSG_VALID_CLASSNRACE_LOW_STR "스테미나가 낮아 장착이 불가"
-    IDS_MSG_VALID_CLASSNRACE_LOW_TITLE "타이틀이 낮아 장착이 불가"
-    IDS_MSG_CONCURRENT_USER_OVERFLOW 
-                            "해당 지역의 동시접속자 수를 초과하였습니다."
-    IDS_MSG_VALID_CLASSNRACE_INVALID_CLASS "직업이 맞지않아 장착이 불가"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_BIND_POINT_FAILED   "부활장소 지정 실패"
-    IDS_BIND_POINT_REQUEST_FAIL "부활장소의 거리가 너무 멉니다."
-    IDS_BIND_POINT_SUCCESS  "부활장소 지정 성공"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CHAT_SELECT_TARGET_FAIL "귓속말 설정이 실패했습니다."
-    IDS_CHAT_SELECT_TARGET_SUCCESS "님과 귓속말이 설정되었습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_FMT_CONCURRENT_USER_COUNT "*** 현재 동시 접속자수 %d 명 ***"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_SKILL_UP_INVALID    "자신의 레벨보다 해당 스킬을 올릴수 없습니다."
-    IDS_SKILL_USE           "%s을(를) 사용합니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_REPAIR_LACK_GOLD    "수리 비용이 부족합니다. "
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_DOOR_CLOSED         "성문이 닫혔습니다."
-    IDS_DOOR_OPENED         "성문이 열렸습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_KNIGHTS_APPOINT_CHIEF_SUCCESS "기사단장 임명 성공"
-    IDS_KNIGHTS_APPOINT_OFFICER_FAILED "장교 임명 실패"
-    IDS_KNIGHTS_APPOINT_OFFICER_SUCCESS "장교 임명 성공"
-    IDS_KNIGHTS_APPOINT_VICECHIEF_FAILED "기사단 부단장 임명 실패"
-    IDS_KNIGHTS_APPOINT_VICECHIEF_SUCCESS "기사단 부단장 임명 성공"
-    IDS_KNIGHTS_CREATE_FAILED "기사단 생성 실패"
-    IDS_KNIGHTS_CREATE_SUCCESS "기사단 생성 성공"
-    IDS_KNIGHTS_DESTROY_CONFIRM "기사단을 해체 하시겠습니까?"
-    IDS_KNIGHTS_DESTROY_FAILED "기사단 해체 실패"
-    IDS_KNIGHTS_DESTROY_SUCCESS "기사단 해체 성공"
-    IDS_KNIGHTS_DUTY_CHIEF  "단장"
-    IDS_KNIGHTS_DUTY_KNIGHT "단원"
-    IDS_KNIGHTS_DUTY_OFFICER "참모"
-    IDS_KNIGHTS_DUTY_PUNISH "징계중"
-    IDS_KNIGHTS_DUTY_TRAINEE "견습기사"
-    IDS_KNIGHTS_DUTY_UNKNOWN "없음"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_KNIGHTS_DUTY_VICECHIEF "부단장"
-    IDS_KNIGHTS_JOIN_FAILED "기사단 가입 실패"
-    IDS_KNIGHTS_JOIN_SUCCESS "기사단 가입 성공"
-    IDS_KNIGHTS_PUNISH_FAILED "기사단원 징계 실패"
-    IDS_KNIGHTS_PUNISH_SUCCESS "기사단원 징계 성공"
-    IDS_KNIGHTS_REJECT_FAILED "기사단 가입 거절 실패"
-    IDS_KNIGHTS_REJECT_SUCCESS "기사단 가입 거절 성공"
-    IDS_KNIGHTS_REMOVE_MEMBER_FAILED "기사단 멤버에서 추방 실패"
-    IDS_KNIGHTS_REMOVE_MEMBER_SUCCESS "기사단 멤버에서 추방 성공"
-    IDS_KNIGHTS_WITHDRAW_CONFIRM "기사단에서 탈퇴하시겠습니까?"
-    IDS_KNIGHTS_WITHROW_FAILED "기사단 탈퇴 실패"
-    IDS_KNIGHTS_WITHROW_SUCCESS "기사단 탈퇴 성공"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_KNIGHTS_ADMIT_FAILED "기사단 가입 허락 실패"
-    IDS_KNIGHTS_ADMIT_SUCCESS "기사단 가입 허락 성공"
-    IDS_KNIGHTS_APPOINT_CHIEF_FAILED "기사단장 임명 실패"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_MANY_COUNTABLE_ITEM_BUY_FAIL 
-                            "한번에 9999개 이상의 아이템을 살수 없습니다."
-    IDS_COUNTABLE_ITEM_BUY_NOT_ENOUGH_MONEY "노아가 부족합니다."
-    IDS_MANY_COUNTABLE_ITEM_GET_MANY 
-                            "한번에 9999개 이상의 아이템을 가질수 없습니다."
-    IDS_MANY_COUNTABLE_ITEM_TOO_MAMY "9999개 이상의 아이템을 가질수 없습니다."
-    IDS_SMALL_COUNTABLE_ITEM_BUY_FAIL 
-                            "한번에 500개 이상의 아이템을 살수 없습니다."
-    IDS_SMALL_COUNTABLE_ITEM_GET_MANY 
-                            "한번에 500개 이상의 아이템을 가질수 없습니다."
-    IDS_SMALL_COUNTABLE_ITEM_TOO_MAMY "500개 이상의 아이템을 가질수 없습니다."
-    IDS_ITEM_TOOMANY_OR_HEAVY 
-                            "아이템의 갯수 또는 무게를 초과하여 거래 혹은 습득이 불가합니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_ITEM_WEIGHT_OVERFLOW "무게 제한을 넘어섰습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_ITEM_CLASS_BOW_LONG "강노"
-    IDS_ITEM_CLASS_CHARM    "룬아이템"
-    IDS_ITEM_CLASS_DAGGER   "단검"
-    IDS_ITEM_CLASS_EARRING  "귀걸이"
-    IDS_ITEM_CLASS_ETC      "기타"
-    IDS_ITEM_CLASS_JAVELIN  "투창"
-    IDS_ITEM_CLASS_JEWEL    "보석종류"
-    IDS_ITEM_CLASS_MACE     "둔기"
-    IDS_ITEM_CLASS_MACE_2H  "양손둔기"
-    IDS_ITEM_CLASS_POLEARM  "장창"
-    IDS_ITEM_CLASS_POTION   "물약"
-    IDS_ITEM_CLASS_RING     "반지"
-    IDS_ITEM_CLASS_SCROLL   "스크롤"
-    IDS_ITEM_CLASS_SHIELD   "방패"
-    IDS_ITEM_CLASS_SPEAR    "창"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_ITEM_CLASS_STAFF    "지팡이"
-    IDS_ITEM_CLASS_SWORD    "한손검"
-    IDS_ITEM_CLASS_SWORD_2H "양손검"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_ITEM_CLASS_AMULET   "목걸이"
-    IDS_ITEM_CLASS_ARMOR_MAGE "마법사용방어구"
-    IDS_ITEM_CLASS_ARMOR_PRIEST "사제용방어구"
-    IDS_ITEM_CLASS_ARMOR_ROGUE "로그용방어구"
-    IDS_ITEM_CLASS_ARMOR_WARRIOR "전사용방어구"
-    IDS_ITEM_CLASS_ARROW    "화살"
-    IDS_ITEM_CLASS_AXE      "도끼"
-    IDS_ITEM_CLASS_AXE_2H   "양손도끼"
-    IDS_ITEM_CLASS_BELT     "허리띠"
-    IDS_ITEM_CLASS_BOW      "활"
-    IDS_ITEM_CLASS_BOW_CROSS "석궁"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_ITEM_ATTRIB_CRAFT   "크래프트 아이템"
-    IDS_ITEM_ATTRIB_GENERAL "일반 아이템"
-    IDS_ITEM_ATTRIB_LAIR    "레어 아이템"
-    IDS_ITEM_ATTRIB_MAGIC   "매직 아이템"
-    IDS_ITEM_ATTRIB_UNIQUE  "유니크 아이템"
-    IDS_ITEM_ATTRIB_UPGRADE "업그레이드 아이템"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_TOOLTIP_DEFENSE_RATE_AXE "도끼 방어력   : %d"
-    IDS_TOOLTIP_DEFENSE_RATE_BLOW "타격 방어력   : %d"
-    IDS_TOOLTIP_DEFENSE_RATE_DAGGER "단검 방어력   : %d"
-    IDS_TOOLTIP_DEFENSE_RATE_SPEAR "창 방어력     : %d"
-    IDS_TOOLTIP_DEFENSE_RATE_SWORD "검 방어력     : %d"
-    IDS_TOOLTIP_GOLD        "노아"
-    IDS_TOOLTIP_HITRATE_OVER "공격률 %d%% 증가"
-    IDS_TOOLTIP_HITRATE_UNDER "공격율 %d%% 감소"
-    IDS_TOOLTIP_MAX_DURABILITY "최대 내구력   : %d"
-    IDS_TOOLTIP_NEEDMAGICATTACK "요구 마력     : %d"
-    IDS_TOOLTIP_NEEDDEXTERITY "요구 민첩     : %d"
-    IDS_TOOLTIP_NEEDINTELLI "요구 지능     : %d"
-    IDS_TOOLTIP_NEEDLEVEL   "필요 레벨     : %d"
-    IDS_TOOLTIP_NEEDRANK    "요구 작위     : %d"
-    IDS_TOOLTIP_NEEDSTAMINA "요구 스테미너 : %d"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_TOOLTIP_ATTRMAGIC5  "HP 흡수       : %d"
-    IDS_TOOLTIP_ATTRMAGIC6  "MP 타격       : %d"
-    IDS_TOOLTIP_ATTRMAGIC7  "MP 흡수"
-    IDS_TOOLTIP_AVOIDRATE_OVER "회피율 %d%% 증가"
-    IDS_TOOLTIP_AVOIDRATE_UNDER "회피율 %d%% 감소"
-    IDS_TOOLTIP_BONUSMAGICATTACK "마력 보너스   : %d"
-    IDS_TOOLTIP_BONUSDEX    "민첩성 보너스 : %d"
-    IDS_TOOLTIP_BONUSHP     "HP 보너스     : %d"
-    IDS_TOOLTIP_BONUSINT    "지능 보너스   : %d"
-    IDS_TOOLTIP_BONUSSTR    "힘 보너스     : %d"
-    IDS_TOOLTIP_BONUSWIZ    "마나 보너스   : %d"
-    IDS_TOOLTIP_BUY_PRICE   "사는 가격     : %d"
-    IDS_TOOLTIP_CUR_DURABILITY "현재 내구력   : %d"
-    IDS_TOOLTIP_DAMAGE      "공격력        : %d"
-    IDS_TOOLTIP_DEFENSE     "방어력        : %d"
-    IDS_TOOLTIP_DEFENSE_RATE_ARROW "화살 방어력   : %d"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_TOOLTIP_ATTACKINT_FAST "공격속도      : 빠름"
-    IDS_TOOLTIP_ATTACKINT_NORMAL "공격속도      : 보통"
-    IDS_TOOLTIP_ATTACKINT_SLOW "공격속도      : 느림"
-    IDS_TOOLTIP_ATTACKINT_VERYFAST "공격속도      : 매우빠름"
-    IDS_TOOLTIP_ATTACKINT_VERYSLOW "공격속도      : 매우느림"
-    IDS_TOOLTIP_ATTACKRANGE "유효거리      : %.2f"
-    IDS_TOOLTIP_ATTRMAGIC1  "화염 데미지   : %d"
-    IDS_TOOLTIP_ATTRMAGIC2  "냉기 데미지   : %d"
-    IDS_TOOLTIP_ATTRMAGIC3  "전격 데미지   : %d"
-    IDS_TOOLTIP_ATTRMAGIC4  "독 데미지     : %d"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_TOOLTIP_NEEDSTRENGTH "요구 근력     : %d"
-    IDS_TOOLTIP_NEEDTITLE   "요구 타이틀   : %d"
-    IDS_TOOLTIP_REGISTCURSE "저주 저항     : %d"
-    IDS_TOOLTIP_REGISTELEC  "전격 저항     : %d"
-    IDS_TOOLTIP_REGISTFIRE  "불 저항       : %d"
-    IDS_TOOLTIP_REGISTICE   "냉기 저항     : %d"
-    IDS_TOOLTIP_REGISTMAGIC "마법 저항     : %d"
-    IDS_TOOLTIP_REGISTPOISON "독 저항       : %d"
-    IDS_TOOLTIP_SELL_PRICE  "파는 가격     : %d"
-    IDS_TOOLTIP_WEIGHT      "무게          : %.2f"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_NPCEVENT_TITLE_REPAIR 
-                            "나 처럼 대단한 대장장이도 드물지 필요한게 있으면 말하게나..."
-    IDS_NPC_EVENT_TITLE_TRADE 
-                            "내가 가지고 있는 물건은 정말 많지 자네도 한번 보겠나?"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_SKILL_POINT_BEFORE_CLASS_CHANGE 
-                            "아직 전직하기 전이므로 전문 스킬을 올릴수 없습니다."
-    IDS_SKILL_POINT_EXTRA_NOT_EXIST "남아있는 스킬 포인트가 없습니다."
-    IDS_SKILL_POINT_NOT_YET "아직 구현되지 않은 스킬입니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_LEVER_ACTIVATE      "레버가 작동되었습니다."
-    IDS_LEVER_DEACTIVATE    "레버가 작동되었습니다..."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_SKILL_TOOLTIP_NO_MANA "소모 마나 없음"
-    IDS_SKILL_TOOLTIP_USE_ITEM_EXIST "소모 아이템 : %s"
-    IDS_SKILL_TOOLTIP_USE_ITEM_NO "소모 아이템 없음"
-    IDS_SKILL_TOOLTIP_USE_MANA "소모 마나 : %d"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_SKILL_TOOLTIP_DOUBLE "요구 아이템 : 더블 핸드"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_DUAL "요구 아이템 : 듀얼 핸드"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID1 "요구 아이템 : 모든무기"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID10 "요구 아이템 : 런처"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID11 "요구 아이템 : 마법사 지팡이(staff)"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID12 "요구 아이템 : 화살"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID13 "요구 아이템 : 투창"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID14 "요구 아이템 : 전사 방어구"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID15 "요구 아이템 : 로그 방어구"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID16 "요구 아이템 : 마법사 방어구"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID17 "요구 아이템 : 사제 방어구"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID2 "요구 아이템 : 단검"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID3 "요구 아이템 : 검"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID4 "요구 아이템 : 도끼"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID5 "요구 아이템 : 타격무기"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID6 "요구 아이템 : 창"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID7 "요구 아이템 : 방패"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID8 "요구 아이템 : 활"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID9 "요구 아이템 : 롱보우"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_INV_ITEM_FULL       "인벤토리에 아이템이 꽉차서 아이템을 습득할수 없습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_PER_TRADEING_OTHER  "유저와 거래중에 다른 유저에게서 거래 신청이 왔습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_URL_JOIN            "http://www.knight-online.net"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_HELP_TIP1           "앉아서 빠른 회복 - 'C'"
-    IDS_HELP_TIP2           "쿼터뷰에서는 마우스로 이동가능."
-    IDS_HELP_TIP3           "자동 걷기/뛰기 전환 - 'E'"
-    IDS_HELP_TIP4           "마을로 이동 하고 싶을때  '/마을'"
-    IDS_HELP_TIP5           "가장 근거리의 적 타겟으로 잡음 - 'Z'"
-    IDS_HELP_TIP6           "스킬사용 : 단축키 창으로 스킬아이콘을 드래그."
-    IDS_HELP_TIP7           "부활장소 지정 : 부활비석을 오른쪽 클릭."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_HELP_TIP8           "아이템 내구력은 대장장이에게."
-    IDS_HELP_TIP9           "아이템 창고 : 여관주인에게 오른쪽 클릭."
-    IDS_HELP_TIP10          "전직 : 10레벨이 넘으면 전직을 할 수 있습니다."
-    IDS_HELP_TIP11          "아이템 획득 : 몬스터 시체에 클릭."
-    IDS_HELP_TIP12          "걷고/뛰기 : 'T'"
-    IDS_HELP_TIP13          "공격 시작/멈춤 : 'R' 혹은 더블클릭."
-    IDS_HELP_TIP14          "시점 변환 : 단축키 'F9' "
-    IDS_HELP_TIP15          "키보드 이동은 'W,A,S,D' 키와 방향 키"
-    IDS_HELP_TIP16          "스킬 사용 : 단축키창의 스킬아이콘을 더블클릭 또는 '1-8'."
-    IDS_HELP_TIP17          "파티를 맺으면 레벨업 속도가 빨라 집니다."
-    IDS_HELP_TIP18          "파티구함 메시지 표시 : '/파티구함'"
-    IDS_HELP_TIP19          "파티 신청 : '/파티'"
-    IDS_HELP_TIP20          "아이템 거래 : 타겟으로 잡은상대 에게 '/거래'"
-    IDS_HELP_TIP21          "파티채팅 : 채팅창에서 'Party' 버튼 클릭."
-    IDS_HELP_TIP22          "일반채팅 : 채팅창에서 'Say'버튼 클릭."
-    IDS_HELP_TIP23          "능력치 습득 : 레벨업할 때마다 3포인트 습득."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_HELP_TIP24          "스킬습득 : 10레벨 이상에서 레벨업할 때마다 2포인트 습득."
-    IDS_HELP_TIP25          "아이템 없애기 : 인벤토리에서 빨강색 마크가 있는 부분에 아이템 드래그 & 드롭."
-    IDS_HELP_TIP26          "스킬 설명 보기 : 스킬창에 있는 아이콘에 커서를 놓습니다."
-    IDS_HELP_TIP27          "귓속말하기 : '/귓속말' 상대방아이디."
-    IDS_HELP_TIP28          "미니맵 보기 : 'M' 적색,주황색은 적입니다."
-    IDS_HELP_TIP29          "단축키창 페이지 변화 단축키 :  'PageUp/PageDown'"
-    IDS_HELP_TIP30          "쿼터뷰에서 'Home / End' 키로 카메라 이동"
-    IDS_HELP_TIP_ALL        "[나온 팁 한가지!]"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_EDIT_BOX_GOLD       "원하시는 금액을 입력하십시오."
-    IDS_EDIT_BOX_COUNT      "원하시는 갯수를 입력하십시오."
-    IDS_SKILL_INFO_BASE     "전직 이전에 가지는 기본적인 스킬."
-    IDS_SKILL_INFO_BLADE0   "왼손의 무기사용능력을 향상시킵니다[쌍칼]."
-    IDS_SKILL_INFO_BLADE1   "양손무기를 사용하는 능력을 향상시킵니다"
-    IDS_SKILL_INFO_BLADE2   "여러가지 방어기술들을 습득합니다."
-    IDS_SKILL_INFO_BLADE3   "전사의 정신력을 증폭시킵니다."
-    IDS_SKILL_INFO_RANGER0  "다양한 활기술들을 습득합니다."
-    IDS_SKILL_INFO_RANGER1  "다양한 창던지기 기술들을 습득합니다."
-    IDS_SKILL_INFO_RANGER2  "탐색에 유용한 다양한 기술들을 습득합니다."
-    IDS_SKILL_INFO_RANGER3  "각종 동물들을 길들이는 기술들을 습득합니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_SKILL_INFO_MAGE0    "불을 이용한 다양한 마법을 습득합니다."
-    IDS_SKILL_INFO_MAGE1    "얼음을 이용한 다양한 마법을 습득합니다."
-    IDS_SKILL_INFO_MAGE2    "전격(전기)를 이용한 다양한 마법을 습득합니다."
-    IDS_SKILL_INFO_MAGE3    "소환과 이동기술을 습득합니다."
-    IDS_SKILL_INFO_CLERIC0  "다양한 치료마법들을 습득합니다."
-    IDS_SKILL_INFO_CLERIC1  "능력치를 상승시키는 마법을 습득합니다."
-    IDS_SKILL_INFO_CLERIC2  "간단한 공격마법을 습득합니다."
-    IDS_SKILL_INFO_CLERIC3  "죽은 상대를 다시 부활 시키는 마법을 습득합니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_ERR_CHARACTER_SELECT "캐릭터를 선택할 수 없습니다."
-    IDS_DROPPED_NOAH_GET    "%d 노아 획득"
-    IDS_DURABILITY_EXOAST   "%s 의 내구력이 모두 사라졌습니다."
-    IDS_ITEM_GET_BY_RULE    "%s의 아이템을 획득했습니다."
-    IDS_OTHER_PER_TRADE_NO  "%s 님이 거래를 거절하셨습니다. "
-    IDS_PER_TRADE_FAIL      "거래가 실패되었습니다.."
-    IDS_OTHER_PER_TRADE_CANCEL "%s 님이 거래를 취소하셨습니다. "
-    IDS_ITEM_KIND_BRONS     "브론즈"
-    IDS_ITEM_KIND_SILVER    "실버"
-    IDS_ITEM_KIND_GOLDEN    "골든"
-    IDS_ITEM_KIND_PLATINUM  "플레티넘"
-    IDS_ITEM_KIND_CRIMSON   "크림슨"
-    IDS_ITEM_KIND_LUNA      "루나"
-    IDS_ITEM_KIND_SOLAR     "솔라"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_ITEM_KIND_ANCIENT   "에이션트"
-    IDS_ITEM_KIND_MISTIQ    "미스틱"
-    IDS_TOOLTIP_NOAH        "노아: %d"
-    IDS_TOOLTIP_REPAIR_PRICE "수리가격"
-    IDS_TOOLTIP_CANNOT      "수리불가아이템"
-    IDS_POINTINIT_NOT_ENOUGH_NOAH "%d 노아가 필요합니다."
-    IDS_POINTINIT_ALREADY   "초기화할 포인트가 없습니다."
-    IDS_NOAH_CHANGE_GET     "%d 노아를 획득하였습니다."
-    IDS_NOAH_CHANGE_LOST    "%d 노아를 잃었습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CLAN_DENY_LOWLEVEL  "미안하군. 자네같은 햇병아리는 우두머리의 자격이 없어!!"
-    IDS_CLAN_DENY_LOWGOLD   "미안하군. CLAN창설을 위해선 %d노아가 필요하네."
-    IDS_CLAN_DENY_INVALIDDAY "오늘은 클랜을 만들 수 없는 날이라네..."
-    IDS_CLAN_DENY_ALREADYJOINED 
-                            "자넨 이미 클랜에 가입이 되어있군. 그럼 클랜을 만들 수 없지."
-    IDS_CLAN_DENY_UNKNOWN   "흠..지금은 클랜을 만들 수 없으니 다음에 다시 찾아오게나."
-    IDS_CLAN_MAKE_SUCCESS   "자~~ 이제 자네는 정식 클랜 우두머리네. 축하하네!! "
-    IDS_CLAN_WARNING_COST   "클랜창설에는 %d노아가 명부등록비로 소비됩니다."
-    IDS_CLAN_INPUT_NAME     "오호호.. 어서 오시게 용감한 친구. 그래..만들고 싶은 클랜의 이름을 말해보게?"
-    IDS_CLAN_REINPUT_NAME   "오~~ 이런 미안하네. 누군가 벌써 그 이름을 쓰는 군. 다른 이름으로 하는게 어때?"
-    IDS_CLAN_WITHDRAW_SUCCESS "클랜 탈퇴 성공"
-    IDS_CLAN_WITHDRAW_FAIL  "클랜 탈퇴 실패"
-    IDS_CLAN_JOIN_SUCCESS   "클랜 가입 성공"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_NOAH_CHANGE_SPEND   "%d 노아를 소비하였습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CLAN_JOIN_FAIL_CLAN_FULL "제한 인원를 초과하여 실패"
-    IDS_CLAN_JOIN_FAIL_NONE_CLAN "클랜이 유효하지 않습니다."
-    IDS_CLAN_JOIN_FAIL_INVALIDRIGHT "권한이 없습니다."
-    IDS_CLAN_JOIN_FAIL_OTHER_CLAN_USER "이미클랜에 가입되어 있는 유저입니다."
-    IDS_CLAN_JOIN_FAIL_ENEMY_USER "국가가 달라 실패"
-    IDS_CLAN_JOIN_FAIL_DEAD_USER "죽은 유저입니다."
-    IDS_CLAN_JOIN_FAIL_NONE_USER "없는 유저 입니다."
-    IDS_CLAN_COMMON_FAIL_ME "자신은 선택할 수 없습니다."
-    IDS_CLAN_COMMON_FAIL_NOTJOINED "유저가 가입되어 있지 않습니다."
-    IDS_CLAN_JOIN_REQ       "%s클랜에 가입하시겠습니까?"
-    IDS_CLAN_JOIN_REJECT    "상대편에서 거절하였습니다."
-    IDS_CLAN_COMMON_FAIL_BATTLEZONE "개척지대에선 불가합니다. "
-    IDS_CONFIRM_EXECUTE_OPTION 
-                            "게임을 종료하고 옵션을 조정합니다. 계속 하시겠습니까?"
-    IDS_REQUEST_GAME_SAVE   "캐릭터 정보를 저장하였습니다."
-    IDS_DELAY_GAME_SAVE     "%d분마다 한번씩 저장할수 있습니다."
-    IDS_CLAN_DENY_INVALID_SERVER 
-                            "새로운 서버 시스템으로 인해 클랜 창설은 추후 적용됩니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_DEAD_RETURN_TOWN    "마을로 돌아간다."
-    IDS_DEAD_REVIVAL        "부활한다."
-    IDS_DEAD_LACK_LIFE_STONE "생명의 돌이 부족합니다."
-    IDS_DEAD_REVIVAL_MESSAGE 
-                            "부활을 위해서는 %d개의 생명의 돌을 신전에 바쳐야 합니다."
-    IDS_DEAD_LOW_LEVEL      "레벨이 낮아 부활할수 없습니다."
-    IDS_INVEN_WEIGHT        "무게 :"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_MSG_HASITEMINSLOT   "아이템을 착용하고 있으면 능력치를 변경시킬 수 없습니다."
-    IDS_ERR_REQUEST_NPC_EVENT_SO_FAR "NPC와의 거리가 너무 멉니다."
-    IDS_WRONG_PASSWORD      "PassWord 가 다릅니다."
-    IDS_WANT_PARTY_MEMBER   "파티구함 : 레벨 %d ~ %d"
-    IDS_SETTING_KARUS_SCREEN "\n\n카루스 캐릭터 설정화면입니다."
-    IDS_SETTING_ELMORAD_SCREEN "\n\n엘모라드 캐릭터 설정화면입니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CMD_WHISPER         "귓속말"
-    IDS_CMD_TOWN            "마을"
-    IDS_CMD_TRADE           "거래"
-    IDS_CMD_EXIT            "종료"
-    IDS_CMD_PARTY           "파티"
-    IDS_CMD_LEAVEPARTY      "파티탈퇴"
-    IDS_CMD_RECRUITPARTY    "파티구함"
-    IDS_CMD_JOINCLAN        "클랜가입"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CMD_WITHDRAWCLAN    "클랜탈퇴"
-    IDS_CMD_FIRECLAN        "클랜추방"
-    IDS_CMD_APPOINTVICECHIEF "부단장임명"
-    IDS_CMD_GREETING        "인사"
-    IDS_CMD_EXCITE          "도발"
-    IDS_CMD_VISIBLE         "보이지"
-    IDS_CMD_INVISIBLE       "안보이지"
-    IDS_CMD_CLEAN           "맑음"
-    IDS_CMD_RAINING         "비"
-    IDS_CMD_SNOWING         "눈"
-    IDS_CMD_TIME            "시간"
-    IDS_CMD_CU_COUNT        "동접"
-    IDS_CMD_NOTICE          "공지"
-    IDS_CMD_ARREST          "추적"
-    IDS_CMD_FORBIDCONNECT   "접속금지"
-    IDS_CMD_FORBIDCHAT      "채팅금지"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CMD_PERMITCHAT      "채팅허가"
-    IDS_CMD_GAME_SAVE       "저장"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_PARTY_BBS_REGISTER  "파티 구함 게시판에 등록합니다."
-    IDS_PARTY_BBS_REGISTER_CANCEL "파티 구함 게시판에서 등록을 해제합니다."
-    IDS_TRADE_BBS_SELL_REGISTER "파는 물건 등록에는 %d 노아가 소비됩니다."
-    IDS_TRADE_BBS_PER_TRADE "멀리 떨어진 사람과 거래를 하기 위해선 여관주인에게 %d 노아를 지불해야 합니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_TRADE_BBS_BUY_REGISTER 
-                            "사는 물건 등록에는 시간 당 %d 노아가 소비됩니다."
-    IDS_TRADE_BBS_FAIL1     "등록을 실패하였습니다."
-    IDS_TRADE_BBS_FAIL2     "노아가 부족합니다."
-    IDS_TRADE_BBS_FAIL3     "등록 해제를 실패하였습니다."
-    IDS_TRADE_BBS_FAIL4     "실패하였습니다. 새로고침을 하십시요."
-    IDS_TRADE_BBS_FAIL5     "거래 신청이 실패하였습니다."
-    IDS_TRADE_BBS_FAIL6     "상거래 게시판을 열수가 없습니다."
-    IDS_OTHER_PER_TRADE_ID_NO "상대방이 거래를 거절하였습니다."
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_FONT_BALLOON        "굴림체"
-    IDS_FONT_ID             "굴림체"
-    IDS_FONT_INFO           "굴림체"
-END
-
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_CLASS_KINDOF_ATTACK_WIZARD "공격 마법사 직업군"
-    IDS_CLASS_KINDOF_PET_WIZARD "펫 마법사 직업군"
-    IDS_CLASS_KINDOF_HEAL_PRIEST "힐 사제 직업군"
-    IDS_CLASS_KINDOF_CURSE_PRIEST "저주 사제 직업군"
-END
-
-#endif    // Korean resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// Neutral resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
-#ifdef _WIN32
-LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
-#pragma code_page(950)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -873,63 +52,7 @@ LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_MAIN                ICON    DISCARDABLE     "WarFare.ico"
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Accelerator
-//
-
-IDR_MAIN_ACCELATOR ACCELERATORS DISCARDABLE 
-BEGIN
-    "1",            ID_DEBUG0,              VIRTKEY, CONTROL, ALT, NOINVERT
-END
-
-
-#ifndef _MAC
-/////////////////////////////////////////////////////////////////////////////
-//
-// Version
-//
-
-VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,3,11,1718
- PRODUCTVERSION 2,3,11,1718
- FILEFLAGSMASK 0x3fL
-#ifdef _DEBUG
- FILEFLAGS 0x1L
-#else
- FILEFLAGS 0x0L
-#endif
- FILEOS 0x40004L
- FILETYPE 0x1L
- FILESUBTYPE 0x0L
-BEGIN
-    BLOCK "StringFileInfo"
-    BEGIN
-        BLOCK "000004b0"
-        BEGIN
-            VALUE "Comments", "\0"
-            VALUE "CompanyName", "NoahSystem\0"
-            VALUE "FileDescription", "Knight Online Client\0"
-            VALUE "FileVersion", "2, 3, 11, 1718\0"
-            VALUE "InternalName", "Warfare\0"
-            VALUE "LegalCopyright", "Copyright ? 2001. NoahSystem.co.ltd\0"
-            VALUE "LegalTrademarks", "\0"
-            VALUE "OriginalFilename", "KnightOnline.exe\0"
-            VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "Knights OnLine Client\0"
-            VALUE "ProductVersion", "2, 3, 11, 1718\0"
-            VALUE "SpecialBuild", "\0"
-        END
-    END
-    BLOCK "VarFileInfo"
-    BEGIN
-        VALUE "Translation", 0x0, 1200
-    END
-END
-
-#endif    // !_MAC
+IDI_ICON                ICON                    "res\\WarFare.ico"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -937,814 +60,847 @@ END
 // Cursor
 //
 
-IDC_CURSOR_ATTACK       CURSOR  DISCARDABLE     "Cursor_Attack.cur"
-IDC_CURSOR_CLICK        CURSOR  DISCARDABLE     "Cursor_Click.cur"
-IDC_CURSOR_NORMAL       CURSOR  DISCARDABLE     "Cursor_Normal.cur"
-IDC_CURSOR_NOW_REPAIR   CURSOR  DISCARDABLE     "repair1.cur"
-IDC_CURSOR_PRE_REPAIR   CURSOR  DISCARDABLE     "repair0.cur"
-IDC_CURSOR_CLICK1       CURSOR  DISCARDABLE     "cursor_click1.cur"
-IDC_CURSOR_NORMAL1      CURSOR  DISCARDABLE     "cursor_normal1.cur"
-#endif    // Neutral resources
-/////////////////////////////////////////////////////////////////////////////
+IDC_CURSOR_ATTACK       CURSOR                  "res\\Cursor_Attack.cur"
 
+IDC_CURSOR_CLICK        CURSOR                  "res\\Cursor_Click.cur"
 
-/////////////////////////////////////////////////////////////////////////////
-// Chinese (Taiwan) resources
+IDC_CURSOR_CLICK_BLUE   CURSOR                  "res\\cursor_click1.cur"
 
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
-#ifdef _WIN32
-LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
-#pragma code_page(950)
-#endif //_WIN32
+IDC_CURSOR              CURSOR                  "res\\Cursor_Normal.cur"
+
+IDC_CURSOR_BLUE         CURSOR                  "res\\cursor_normal1.cur"
+
+IDC_CURSOR_REPAIR       CURSOR                  "res\\repair0.cur"
+
+IDC_CURSOR_REPAIR_CLICK CURSOR                  "res\\repair1.cur"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_BIND_POINT_FAILED   "?А????ⅱ귐"
-    IDS_BIND_POINT_REQUEST_FAIL "?차ㅣ뻔"
-    IDS_BIND_POINT_SUCCESS  "?А????┬?"
+IDS_PARTY_INSERT_ERR_LEVEL_DIFFERENCE
+"You cannot form a party because of the Level difference."
+IDS_PARTY_INSERT_ERR_REJECTED
+"The invitation to the party has been declined. "
+IDS_PARTY_INVITE        "Player was invited into the party. Waiting for a response."
+IDS_PARTY_INVITE_FAILED " could not be invited into the party. "
+IDS_PARTY_ITEM_GET      "%s got %s"
+IDS_PARTY_LEAVE         "You've quit the party. "
+IDS_PARTY_PERMIT        " has invited you to join the party. Will you join? "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CHAT_SELECT_TARGET_FAIL "Ŧ㉧屛]?ⅱ귐."
-    IDS_CHAT_SELECT_TARGET_SUCCESS "?(뱄ㅸ)ずŦ㉧屛]?㏏┬."
+IDS_REGENERATION        "Press OK to teleport back to the resurrection spot. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CHR_SELECT_FMT_INFO "데?: %d \n\n쩐? : %s\n\nI D : %s"
-    IDS_CHR_SELECT_HINT     "\n\nヶ?렵무ずⅹ쥑? ??n\n??넓??獺sĦ╈."
+IDS_ERR_INVALID_CLASS   "Please select a specialty."
+IDS_ERR_INVALID_NAME    "Please enter your character ID. "
+IDS_ERR_INVALID_NAME_HAS_SPECIAL_LETTER
+"You cannot use this character ID. "
+IDS_ERR_INVALID_NATION_RACE
+"The selected nation and the race does not match. "
+IDS_ERR_INVALID_RACE    "Please select a race. "
+IDS_ERR_KNIGHTS_CREATE_FAILED_NAME_EMPTY
+"You need to have a name in order to create a Knights"
+IDS_ERR_NOT_SUPPORTED_RACE "This race is not available yet. "
+IDS_ERR_NO_MORE_CHARACTER "You cannot create anymore characters. "
+IDS_ERR_OVERLAPPED_ID   "This ID is already used on another character."
+IDS_ERR_REMAIN_BONUS_POINT "There are stat points still remaining. "
+IDS_ERR_REQUEST_OBJECT_EVENT_SO_FAR
+"You are too far away from the object. "
+IDS_ERR_UNKNOWN         "Unknown error. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CLASS_CHANGE_ALREADY "넋ゑ??겠?О?넛?,쁨n???셧ず?擊벨V?겠."
-    IDS_CLASS_CHANGE_NOT_YET "?줄쁨n??謬m겠."
-    IDS_CLASS_CHANGE_SUCCESS 
-                            "???┳멸娟石ヂ쓿~?. ??┳ⓥ澹쓿~??쭌, ?n울앳?旦O?"
-    IDS_CLASS_KINDOF_WARRIOR "앝??쩐?"
-    IDS_CLASS_KINDOF_ROGUE  "??ㅲ?쩐?"
-    IDS_CLASS_KINDOF_WIZARD "?v?쩐?"
-    IDS_CLASS_KINDOF_PRIEST "꼍??쩐?"
-    IDS_CLASS_KINDOF_ATTACK_WARRIOR "?을ガ앝?쩐?"
-    IDS_CLASS_KINDOF_DEFEND_WARRIOR "㉭?ガ앝?쩐?"
-    IDS_CLASS_KINDOF_ARCHER "ぎ을?쩐?"
-    IDS_CLASS_KINDOF_ASSASSIN "깸ㅲ?쩐?"
+IDS_ERR_CHARACTER_CREATE "Failed creating character"
+IDS_ERR_DB_CREATE       "Failed creating Database"
+IDS_ERR_GOTO_TOWN_OUT_OF_HP
+"You cannot teleport back to town when you have half the HP or less"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CLASS_KINDOF_ATTACK_WIZARD "?을ガ?v쩐?"
-    IDS_CLASS_KINDOF_PET_WIZARD "뺘?ガ?v쩐?"
-    IDS_CLASS_KINDOF_HEAL_PRIEST "?징ガ꼍?쩐?"
-    IDS_CLASS_KINDOF_CURSE_PRIEST "??ガ꼍?쩐?"
+IDS_PERSONAL_TRADE_FMT_WAIT
+"%s has sent a request for a trade to %s. Please wait for a reply."
+IDS_PERSONAL_TRADE_PERMIT
+"%s has received a request for a trade from %s. Will you accept? "
+IDS_PERSONAL_TRADE_REQUEST " is requesting to trade."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CLASS_EL_ASSASIN    "깸ㅲ"
-    IDS_CLASS_EL_BLADE      "??"
-    IDS_CLASS_EL_CLERIC     "おv"
-    IDS_CLASS_EL_DRUID      "╀?꼍ⓒ"
-    IDS_CLASS_EL_ENCHANTER  "ㅫ?v"
-    IDS_CLASS_EL_MAGE       "??"
-    IDS_CLASS_EL_PROTECTOR  "?시"
+IDS_VERSION_CONFIRM     "This client is version %.3f. You'll need to have version %.3f in order to log in to the server. "
+IDS_TOOLTIP_BONUSSTA    "Health Bonus : %d"
+IDS_VERSION_CONFIRM_TW  "This is an outdated version. Please install the newest client. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CLASS_EL_RANGER     "??"
-    IDS_CLASS_KA_BERSERKER  "?앝?"
-    IDS_CLASS_KA_DARKPRIEST "뗏?꼍?"
-    IDS_CLASS_KA_GUARDIAN   "??ぬ"
-    IDS_CLASS_KA_HUNTER     "??"
-    IDS_CLASS_KA_NECROMANCER "┷??v"
-    IDS_CLASS_KA_PENETRATOR "⑤ト"
-    IDS_CLASS_KA_SHAMAN     "㎶쭤"
-    IDS_CLASS_KA_SORCERER   "㎶v"
-    IDS_CLASS_PRIEST        "꼍?"
-    IDS_CLASS_ROGUE         "??ㅲ"
-    IDS_CLASS_UNKNOWN       "???ㄷ쩐?"
-    IDS_CLASS_WARRIOR       "앝?"
-    IDS_CLASS_WIZARD        "??v"
+IDS_EXIT                "Are you sure you want to exit? "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CONFIRM_DELETE_CHR  "nΓ뻔?간┨Ħ╈뜀?"
-    IDS_CONFIRM_EXIT_GAME   "n차??으뜀?"
+IDS_TRY_SPEED_HACKING   "Speed Hacking has been tried. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CONNECTION_CLOSED   "???씁??ㄴ?"
+IDS_CONNECTION_CLOSED   "Disconnected from server"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_MANY_COUNTABLE_ITEM_BUY_FAIL "??좽???9999檀カ~"
-    IDS_COUNTABLE_ITEM_BUY_NOT_ENOUGH_MONEY "?뱐ㄳº."
-    IDS_MANY_COUNTABLE_ITEM_GET_MANY "??콰???9999檀カ~"
-    IDS_MANY_COUNTABLE_ITEM_TOO_MAMY "??콰???9999檀カ~"
-    IDS_SMALL_COUNTABLE_ITEM_BUY_FAIL "??좽??? 500 湍魃Pずか?."
-    IDS_SMALL_COUNTABLE_ITEM_GET_MANY "Þ???애┳?? 500 湍魃Pずか?."
-    IDS_SMALL_COUNTABLE_ITEM_TOO_MAMY "Þ???애┳?? 500 檀カ~."
-    IDS_ITEM_TOOMANY_OR_HEAVY "Þ?ずか???ザq⒝셕?⑧."
+IDS_CLASS_EL_RANGER     "Ranger"
+IDS_CLASS_KA_BERSERKER  "Berserker"
+IDS_CLASS_KA_DARKPRIEST "Shadow Knight"
+IDS_CLASS_KA_GUARDIAN   "Berserker Hero"
+IDS_CLASS_KA_HUNTER     "Hunter"
+IDS_CLASS_KA_NECROMANCER "Elemental Lord"
+IDS_CLASS_KA_PENETRATOR "Shadow Vain"
+IDS_CLASS_KA_SHAMAN     "Shaman"
+IDS_CLASS_KA_SORCERER   "Sorcerer"
+IDS_CLASS_PRIEST        "Priest"
+IDS_CLASS_ROGUE         "Rogue"
+IDS_CLASS_UNKNOWN       "Unconfirmed Speciality"
+IDS_CLASS_WARRIOR       "Warrior"
+IDS_CLASS_WIZARD        "Magician"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_DOOR_CLOSED         "グ??츙낚"
-    IDS_DOOR_OPENED         "グ?Ⅴ??"
+IDS_NATION_ELMORAD      "El Morad"
+IDS_NATION_KARUS        "Karus"
+IDS_NATION_UNKNOWN      "Unconfirmed nation"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_LOGIN_FAILED        "??ⅱ귐"
-    IDS_LOGIN_ERR_ALREADY_CONNECTED_ACCOUNT "??ⅱ귐. 싻シs뮐먼."
-    IDS_NOACCOUNT_RETRY_MGAMEID "┨?많??딩?,싻Ξⓧ??많먼먼л"
-    IDS_NO_MGAME_ACCOUNT    "?┳?斷ㄶ數W붙."
-    IDS_FMT_CONNECT_ERROR   "%s ??씁??빛?ㄴ.(%d)"
-    IDS_FMT_GAME_SERVER_LOGIN_ERROR "%s ?으??씁??ⅱ귐.(%d)"
-    IDS_SERVER_CONNECT_FAIL "??씁??ⅱ귐"
-    IDS_CURRENT_SERVER_ERROR "?Ν월?"
-    IDS_CONNECT_FAIL        "??ⅱ귐"
+IDS_RACE_ALL            "All race"
+IDS_RACE_EL_BABARIAN    "Barbarian"
+IDS_RACE_EL_MAN         "Male El Moradian"
+IDS_RACE_EL_WOMEN       "Female El Moradian"
+IDS_RACE_KA_ARKTUAREK   "Arch Tuarek "
+IDS_RACE_KA_PURITUAREK  "Puri Tuarek "
+IDS_RACE_KA_TUAREK      "Tuarek "
+IDS_RACE_KA_WRINKLETUAREK "Wrinkle Tuarek "
+IDS_RACE_UNKNOWN        "Unconfirmed race"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_ERR_CHARACTER_SELECT "Ħ╈넓?ⅱ귐"
-    IDS_DROPPED_NOAH_GET    "¾? %d ?뱐"
-    IDS_DURABILITY_EXOAST   "?을???%s"
-    IDS_ITEM_GET_BY_RULE    "?¾? %s."
-    IDS_OTHER_PER_TRADE_NO  "%s ⒩뎬?ζ¹."
-    IDS_PER_TRADE_FAIL      "ζ¹ⅱ귐."
-    IDS_OTHER_PER_TRADE_CANCEL "%s ¾捌Fζ¹."
-    IDS_ITEM_KIND_BRONS     "?뽄"
-    IDS_ITEM_KIND_SILVER    "뽁"
-    IDS_ITEM_KIND_GOLDEN    "?"
-    IDS_ITEM_KIND_PLATINUM  "Φ?"
-    IDS_ITEM_KIND_CRIMSON   "?Φ?"
-    IDS_ITEM_KIND_LUNA      "Φ뽁"
-    IDS_ITEM_KIND_SOLAR     "븍?"
+IDS_CHR_SELECT_FMT_INFO "Level : %d \n\nSpecialty : %s \n\nID : %s"
+IDS_CHR_SELECT_HINT     "Left click and\nyou can create a\nnew character. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_EDIT_BOX_GOLD       "싻욥???"
-    IDS_EDIT_BOX_COUNT      "싻욥?셕?"
-    IDS_SKILL_INFO_BASE     "쭌쩐ㄷ??⒡악?ず곪?㎌鼠槨k?."
-    IDS_SKILL_INFO_BLADE0   "뇩?ⓒΞⅹㅲ?씁ず西O(찬?)"
-    IDS_SKILL_INFO_BLADE1   "뇩?ⓒΞ찬ㅲカИZ씁ず西O."
-    IDS_SKILL_INFO_BLADE2   "뇩ㅙ?붕㉭?㈙㎌ⅸず西O."
-    IDS_SKILL_INFO_BLADE3   "뇩ㅙ?붕S刺駕沃벨弔빼呵彬?"
-    IDS_SKILL_INFO_RANGER0  "뇩ㅙ?붕??ず윰Ξ㎌ⅸ??을㈙㎌?"
-    IDS_SKILL_INFO_RANGER1  "뇩ㅙ?붕셸?ず윰Ξ㎌ⅸ??을㈙㎌?
-    IDS_SKILL_INFO_RANGER2  "뇩ㅙ?붕?Νㅸ괭벨裨æA㉲?악??㉶?징㈙썼ず西O"
-    IDS_SKILL_INFO_RANGER3  "뇩ㅙ묑?걺かず㎌ⅸ."
+IDS_PARTY_CONFIRM_DESTROY "Are you sure you want to disband the party? "
+IDS_PARTY_CONFIRM_DISCHARGE "Would you like to ban %s form the party? "
+IDS_PARTY_CONFIRM_LEAVE "Would you like to quit the party? "
+IDS_PARTY_DESTROY       "The party has been disbanded. "
+IDS_PARTY_INSERT        " has joined the party. "
+IDS_PARTY_INSERT_ERR    "The invitation to the party has been declined. "
+IDS_PARTY_INSERT_ERR_INVALID_NATION
+"You cannot form a party with a user from the other nation. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_ERR_CHARACTER_CREATE "Ħ╈Ν┬ⅱ귐"
-    IDS_ERR_DB_CREATE       "멸트w?Ν월?"
-    IDS_ERR_GOTO_TOWN_OUT_OF_HP "Ν???┳????,???⑥?끌."
+IDS_LOGIN_FAILED        "Log in failed.  Please contact customer service. "
+IDS_LOGIN_ERR_ALREADY_CONNECTED_ACCOUNT
+"Log in failed.  Please try again.  "
+IDS_NOACCOUNT_RETRY_MGAMEID "Invalid ID."
+IDS_NO_MGAME_ACCOUNT    "The ID doesn't exist on MGame either.  "
+IDS_FMT_CONNECT_ERROR   "Failed logging into the %s server. (%d)"
+IDS_FMT_GAME_SERVER_LOGIN_ERROR
+"Successfully connected to %s server but failed logging into the game. (%d)"
+IDS_SERVER_CONNECT_FAIL "You account is currently blocked.  Please contact customer service. "
+IDS_CURRENT_SERVER_ERROR "There is an error in the selected server. "
+IDS_CONNECT_FAIL        "Connection failed. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_ERR_INVALID_CLASS   "싻울앳쩐?"
-    IDS_ERR_INVALID_NAME    "싻욥?Ħ╈ID"
-    IDS_ERR_INVALID_NAME_HAS_SPECIAL_LETTER 
-                            "┨Ħ╈?붙??ⓒΞ,싻ⓒΞⓧ??붙."
-    IDS_ERR_INVALID_NATION_RACE "⒡울ず곌a?붕귿ㄳ?."
-    IDS_ERR_INVALID_RACE    "싻울앳붕귿"
-    IDS_ERR_KNIGHTS_CREATE_FAILED_NAME_EMPTY "넓???민,Ⅲ떱n┳?붙."
-    IDS_ERR_NOT_SUPPORTED_RACE "┨붕귿Ω?줄??⑾"
-    IDS_ERR_NO_MORE_CHARACTER "???넓?Ħ╈"
-    IDS_ERR_OVERLAPPED_ID   "?붙ソ???┳ⓒΞ┨IDⓖΝ┬ずĦ╈."
-    IDS_ERR_REMAIN_BONUS_POINT "?셕??ㅐ?㏏┬."
-    IDS_ERR_REQUEST_OBJECT_EVENT_SO_FAR "차Ω셸?차ㅣ뻔"
-    IDS_ERR_UNKNOWN         "???ぞず월?."
+IDS_CONFIRM_DELETE_CHR  "You'll need to enter your ID number in order to erase your character.\nex.) 890123-515123"
+IDS_CONFIRM_EXIT_GAME   "Are you sure you want to exit? "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_EXIT                "n차??으뜀?"
+IDS_NEWCHR_KA_TUAREK    "Tuareks have balanced Strength and Intelligence which makes them fit for any kind of job."
+IDS_NEWCHR_KA_WARRIOR   "The Warriors can become a Berserker that uses variety of weapons to inflict critical damage, or they can become a Guardian with high defense ability to protect allyˇŻs magicians and priests.  "
+IDS_NEWCHR_KA_WRINKLETUAREK
+"Wrinkle Tuareks have strong mental powers. Wrinkle Tuareks can only become a Magician.   "
+IDS_NEWCHR_POW          "This stat affects the attack/defense power of a character that uses a weapon."
+IDS_NEWCHR_STA          "This stat affects the amount of character's Health Point (HP). "
 END
 
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_FMT_CONCURRENT_USER_COUNT "*** Ω??????셕 %d ? ***"
-END
-
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_FONT_BALLOON        "MingLiU"
-    IDS_FONT_ID             "MingLiU"
-    IDS_FONT_INFO           "MingLiU"
+IDS_NEWCHR_MAP          "This is the stat that affects the character's power for magic attacks.  "
+IDS_NEWCHR_DEX          "This stat increases character's dodging ability and affects the power of arrow attacks for rogues."
+IDS_NEWCHR_EL_BABA      "The barbarians are warriors with strong physiques from the north.  They can only become a warrior."
+IDS_NEWCHR_EL_FEMALE    "El Moradian female characters possess strong Magic Power and high Intelligence.  "
+IDS_NEWCHR_EL_MAGE      "The Magicians can become a Mage which uses 4 basic elements to perform attack magic or they can become an Enchanter, the master of mind control."
+IDS_NEWCHR_EL_MALE      "El Moradian males have balanced Strength and Intelligence which makes them fit for any kind of job.  "
+IDS_NEWCHR_EL_PRIEST    "The Priests can become a Cleric to heal friends or become a Druid to cast a curse on the enemy or increase allyˇŻs stats. "
+IDS_NEWCHR_EL_ROGUE     "The Rogues can become an Assassin to sneak up to the enemy and inflict a critical damage, or they can become a Ranger that can attack enemies from far away with bows and spears.  "
+IDS_NEWCHR_EL_WARRIOR   "The Warriors can become a Blade that uses variety of weapons to inflict critical damage, or they can become a Protector with high defense ability to protect allyˇŻs magicians and priests.  "
+IDS_NEWCHR_INT          "This stat affects the amount of Mental Power (MP) for Magicians and Priests. "
+IDS_NEWCHR_KA_ARKTUAREK "Arch Tearek is a physically strong race who are fit to become a warrior. "
+IDS_NEWCHR_KA_MAGE      "The Magicians can become a Sorcerer which uses 4 basic elements to perform attack magic or they can become a Necromancer, the master of the dead. "
+IDS_NEWCHR_KA_PRIEST    "The Priests can become a Shaman that heals its ally or become a Dark Priest that can use cursing skills. "
+IDS_NEWCHR_KA_PURITUAREK
+"Puri Tuarek is a female Karus character that can become a Priest to use purified mental energies to perform healing magic and curse magic."
+IDS_NEWCHR_KA_ROGUE     "The Rogues can become an Assassin to sneak up to the enemy and inflict a critical damage, or they can become a Hunter that can attack enemies from far away with bows and spears.  "
+END
+
+STRINGTABLE
+BEGIN
+IDS_REQUEST_BINDPOINT   "Would you like to designate this place as your resurrection spot? "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_HELP_TIP8           "榴_か?ず@?プ싻㏛??."
-    IDS_HELP_TIP9           "か?鱉w : ?횬]??Þ?ヶ?쥑."
-    IDS_HELP_TIP10          "쭌쩐 : 데?0??メ,???쭌쩐."
-    IDS_HELP_TIP11          "쟌?か? : ?㈖かネ톱?ヶ?쥑."
-    IDS_HELP_TIP12          "Œ몰/?? : 'Ctrl+T'"
-    IDS_HELP_TIP13          "?을 ??/갚ㅾ : 'Ctrl+R' ⒝ぬ찬을렵무"
-    IDS_HELP_TIP14          "딨?ㅑ눈 : 수쥑'F9'"
-    IDS_HELP_TIP15          "?か꼐걺:ⓒΞ쥑?ㄷㅸ?쥑"
-    IDS_HELP_TIP16          "ⓒΞ㎌鼠壙]? : 찬을수쥑덧믿?⒝ヶ 'Ctrl + 1-8'."
-    IDS_HELP_TIP17          "꾐땄メ?쟌??톨홧N?뇩값"
-    IDS_HELP_TIP18          "??땄ξ : '/recruitparty"
-    IDS_HELP_TIP19          "Τ싻꾐땄 : '/party'"
-    IDS_HELP_TIP20          "か?ζ¹ : ?울Ω셸メ욥? '/trade'"
-    IDS_HELP_TIP21          "땄ξ꿍ㅡ : ?꿍ㅡ딨덧??울'땄ξ'쥑"
-    IDS_HELP_TIP22          "?踰誠?: ?꿍ㅡ딨덧??울'뺨?'쥑."
-    IDS_HELP_TIP23          "콜㈙?셕 : ?뇩ㅙ?撻?큄A?쟌?3?콜㈙?셕."
+IDS_CLASS_CHANGE_ALREADY
+"How are you? We need people like you to try hard for our victory!"
+IDS_CLASS_CHANGE_NOT_YET "I think you will need some more training"
+IDS_CLASS_CHANGE_SUCCESS
+"You can now obtain greater strength. From now, you shall be called.."
+IDS_CLASS_KINDOF_WARRIOR "Warrior"
+IDS_CLASS_KINDOF_ROGUE  "Rogue"
+IDS_CLASS_KINDOF_WIZARD "Magician"
+IDS_CLASS_KINDOF_PRIEST "Priest"
+IDS_CLASS_KINDOF_ATTACK_WARRIOR "Offensive Warrior"
+IDS_CLASS_KINDOF_DEFEND_WARRIOR "Defensive Warrior"
+IDS_CLASS_KINDOF_ARCHER "Archer"
+IDS_CLASS_KINDOF_ASSASSIN "Assasin"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_HELP_TIP24          "㎌渲I셕 : 데?0??? ?ㅙ?┯데큐[2?㎌渲I셕."
-    IDS_HELP_TIP25          "α깖か? : ??ⓦ⑹┣⑥맷냔쾀?╈셸?茹벧痢m."
-    IDS_HELP_TIP26          "?л빨ⁿ : ㎮렵무꼐걺⑥n?лずか?⒝㎌夕복嘔霹W"
-    IDS_HELP_TIP27          "?? : '/whisper' 뱄ㅸID."
-    IDS_HELP_TIP28          "?л??믿 : 'Ctrl+M'  ┱?믿?ず??⒝억?톈?О셍??쩨???ㅝㅸ?뗌╈?땄ξ┬?
-    IDS_HELP_TIP29          "수쥑딨덧눈?: PageUp / PageDown"
-    IDS_HELP_TIP30          "?꼼??붙딨Ħ소─???ⓒΞ 'Home / End' ⓖ쌌얇올뱝톈?ずĦプ"
-    IDS_HELP_TIP_ALL        "[?꽝??]"
+IDS_CLASS_EL_ASSASIN    "Kasar Hood"
+IDS_CLASS_EL_BLADE      "Blade"
+IDS_CLASS_EL_CLERIC     "Cleric"
+IDS_CLASS_EL_DRUID      "Paladin"
+IDS_CLASS_EL_ENCHANTER  "Arch Mage"
+IDS_CLASS_EL_MAGE       "Mage"
+IDS_CLASS_EL_PROTECTOR  "Blade Master"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_HELP_TIP1           "ℓ?㎒?レ? - 'Ctrl+C'"
-    IDS_HELP_TIP2           "?꼼??붙딨Ħず소─???ⓒΞ렵무꼐걺ⓖ굇⑧Ħ╈"
-    IDS_HELP_TIP3           "ㅑ눈 Œ몰/?? - ?울올뱝?ㅸ Œ몰/?? 믿?"
-    IDS_HELP_TIP4           "そ굘꼐걺??끌?쥑? '/town'"
-    IDS_HELP_TIP5           "??넋ゑ?차ず㈖か?ОΩ셸 - 'Ctrl+Z'"
-    IDS_HELP_TIP6           "??수쥑 : ?㎌碩便「擊복嘔辨利꺼耳痴莪便·벨Y?"
-    IDS_HELP_TIP7           "???А?? :  ??А???ヶ?쥑."
+IDS_SKILL_FAIL_CASTING  "Casting failed"
+IDS_SKILL_FAIL_DIFFURENTCLASS "You cannot user this Skill/Magic. "
+IDS_SKILL_FAIL_EFFECTING "%s failed"
+IDS_SKILL_FAIL_INVALID_ITEM "Skill Failed - Improper item"
+IDS_SKILL_FAIL_LACK_HP  "Skill Failed - Not enough HP"
+IDS_SKILL_FAIL_LACK_ITEM "Skill Failed - Not enough item"
+IDS_SKILL_FAIL_LACK_SP  "Skill Failed - Not enough SP"
+IDS_SKILL_FAIL_SOFAR    "Skill Failed - Too far"
+IDS_SKILL_FAIL_OBJECT_BLOCK "Skill Failed - Blocked by an object"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_INV_ITEM_FULL       "Þ?ずか??벙???¾???か??."
+IDS_SKILL_SUCCESS_HEALING_FROM "%s heals you %d HP "
+IDS_SKILL_SUCCESS_HEALING_TO "%s received %d HP "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_ITEM_ATTRIB_CRAFT   "앝ぇか?"
-    IDS_ITEM_ATTRIB_GENERAL "?紐カ~"
-    IDS_ITEM_ATTRIB_LAIR    "?ㅖか?"
-    IDS_ITEM_ATTRIB_MAGIC   "??か?"
-    IDS_ITEM_ATTRIB_UNIQUE  "S咨カ~"
-    IDS_ITEM_ATTRIB_UPGRADE "?┳か?"
+IDS_MSG_FMT_EXP_LOST    "Lost %d Experience Points"
+IDS_MSG_FMT_HP_LOST     "%d HP Damage"
+IDS_MSG_FMT_HP_RECOVER  "%d HP Recovered"
+IDS_MSG_FMT_MP_RECOVER  "%d MP Recovered"
+IDS_MSG_FMT_MP_USE      "%d MP Used"
+IDS_MSG_FMT_SP_RECOVER  "%d SP Recovered"
+IDS_MSG_FMT_SP_USE      "%d SP Used"
+IDS_MSG_FMT_TARGET_ATTACK_FAILED "Failed attacking %s"
+IDS_MSG_FMT_TARGET_HP_LOST "%s received %d damage"
+IDS_MSG_FMT_TARGET_HP_RECOVER "%s received %d HP  "
+IDS_MSG_VALID_CLASSNRACE_INVALID_RACE
+"You cannot equip this item.  This item is designed for a different race. "
+IDS_MSG_VALID_CLASSNRACE_LOW_CHA
+"You cannot equip this item because you don't have enough Magic Power stat point"
+IDS_MSG_VALID_CLASSNRACE_LOW_DEX
+"You cannot equip this item because you don't have enough Dexterity stat point"
+IDS_MSG_VALID_CLASSNRACE_LOW_INT
+"You cannot equip this item because you don't have enough Intelligence stat point"
+IDS_MSG_VALID_CLASSNRACE_LOW_LEVEL
+"You cannot equip this item because your level is too low"
+IDS_MSG_VALID_CLASSNRACE_LOW_POWER
+"You cannot equip this item because you don't have enough Strength stat points. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_ITEM_CLASS_AMULET   "떫쥔"
-    IDS_ITEM_CLASS_ARMOR_MAGE "?v?Ξ"
-    IDS_ITEM_CLASS_ARMOR_PRIEST "꼍??Ξ"
-    IDS_ITEM_CLASS_ARMOR_ROGUE "??ㅲ?Ξ"
-    IDS_ITEM_CLASS_ARMOR_WARRIOR "앝??Ξ"
-    IDS_ITEM_CLASS_ARROW    "?"
-    IDS_ITEM_CLASS_AXE      "⑿?"
-    IDS_ITEM_CLASS_AXE_2H   "찬ㅲ⑿?"
-    IDS_ITEM_CLASS_BELT     "??"
-    IDS_ITEM_CLASS_BOW      "?"
-    IDS_ITEM_CLASS_BOW_CROSS "???"
+IDS_MSG_ATTACK_DISABLE  "Could not attack because you're facing the wrong direction or the target is too far. "
+IDS_MSG_ATTACK_START    "Beginning attack on %s"
+IDS_MSG_ATTACK_STOP     "Stop Attack"
+IDS_MSG_CASTING_FAIL_LACK_MP "Skill Failed - Not enough MP"
+IDS_MSG_FMT_EXP_GET     "Earned %d Experience Points"
 END
 
-STRINGTABLE DISCARDABLE 
-BEGIN
-    IDS_ITEM_CLASS_BOW_LONG "??"
-    IDS_ITEM_CLASS_CHARM    "복?
-    IDS_ITEM_CLASS_DAGGER   "??"
-    IDS_ITEM_CLASS_EARRING  "┵쟐"
-    IDS_ITEM_CLASS_ETC      "ⓧ?"
-    IDS_ITEM_CLASS_JAVELIN  "셸?"
-    IDS_ITEM_CLASS_JEWEL    "??"
-    IDS_ITEM_CLASS_MACE     "???"
-    IDS_ITEM_CLASS_MACE_2H  "찬ㅲ???"
-    IDS_ITEM_CLASS_POLEARM  "??"
-    IDS_ITEM_CLASS_POTION   "쳐ㆄ"
-    IDS_ITEM_CLASS_RING     "Ω?"
-    IDS_ITEM_CLASS_SCROLL   "⅓?"
-    IDS_ITEM_CLASS_SHIELD   "м"
-    IDS_ITEM_CLASS_SPEAR    "?"
+STRINGTABLE
+BEGIN
+IDS_MSG_VALID_CLASSNRACE_LOW_RANK
+"You cannot equip this item because of your class. "
+IDS_MSG_VALID_CLASSNRACE_LOW_STR
+"You cannot equip this item because you donˇŻt have enough Health stat points. "
+IDS_MSG_VALID_CLASSNRACE_LOW_TITLE
+"You cannot equip this item because your title is too low. "
+IDS_MSG_CONCURRENT_USER_OVERFLOW
+"The number of users has surpassed its maximum limit allowed for a specific zone "
+IDS_MSG_VALID_CLASSNRACE_INVALID_CLASS
+"You cannot equip this item.  This item is not designed for your character's specialty."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_ITEM_CLASS_STAFF    "??"
-    IDS_ITEM_CLASS_SWORD    "녔ㅲ?"
-    IDS_ITEM_CLASS_SWORD_2H "찬ㅲ?"
+IDS_BIND_POINT_FAILED   "Failed designating a resurrection spot. "
+IDS_BIND_POINT_REQUEST_FAIL "The resurrection spot is too far away. "
+IDS_BIND_POINT_SUCCESS  "Successfully designated a resurrection spot. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_ITEM_KIND_ANCIENT   "???콜"
-    IDS_ITEM_KIND_MISTIQ    "?뽁"
-    IDS_TOOLTIP_NOAH        "?뱐 %d"
-    IDS_TOOLTIP_REPAIR_PRICE "榴_?Ξ"
-    IDS_TOOLTIP_CANNOT      "┨か???榴_."
-    IDS_POINTINIT_NOT_ENOUGH_NOAH "?뱐ㄳº."
-    IDS_POINTINIT_ALREADY   "깡τㄳº."
-    IDS_NOAH_CHANGE_GET     "쟌? %d ?뱐."
-    IDS_NOAH_CHANGE_LOST    "?ⅱ %d ?뱐."
+IDS_CHAT_SELECT_TARGET_FAIL "Filed to connect for a private chat "
+IDS_CHAT_SELECT_TARGET_SUCCESS
+"Successfully connected for a private chat "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CLAN_DENY_LOWLEVEL  "⑷???ず멸濾２?
-    IDS_CLAN_DENY_LOWGOLD   "??ㄳº?ㅲ쿱?? %d ?뱐"
-    IDS_CLAN_DENY_INVALIDDAY "셜???Τ싻넓?x민"
-    IDS_CLAN_DENY_ALREADYJOINED "???ⓧ?x민????넓?x민"
-    IDS_CLAN_DENY_UNKNOWN   "셜???넓?x민"
-    IDS_CLAN_MAKE_SUCCESS   "Ⅳ産A???─┬Оx민민?"
-    IDS_CLAN_WARNING_COST   "?─┬?x민?ㅲ쿱? %d ?뱐?첬?"
-    IDS_CLAN_INPUT_NAME     "?눙ず?ㅝ??わ??싻느?ずx민¾?膽T?ず??"
-    IDS_CLAN_REINPUT_NAME   "⑷???壇W??┳?ⓒΞ??싻¾ⓧ???"
-    IDS_CLAN_WITHDRAW_SUCCESS "??x민┬?"
-    IDS_CLAN_WITHDRAW_FAIL  "??x민ⅱ귐"
-    IDS_CLAN_JOIN_SUCCESS   "??x민┬?"
+IDS_FMT_CONCURRENT_USER_COUNT "*** Current concurrent user : %d ***"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_ITEM_WEIGHT_OVERFLOW "??ザq⒝셕?⑧."
+IDS_SKILL_UP_INVALID    "The value of a Skill Point cannot be greater than your level. "
+IDS_SKILL_USE           "Using %s"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_KNIGHTS_ADMIT_FAILED "ㅙ큔º걘M?민ⅱ귐"
-    IDS_KNIGHTS_ADMIT_SUCCESS "Ⅳ産Aずx민??─ㅙ클걘M?민"
-    IDS_KNIGHTS_APPOINT_CHIEF_FAILED "??민?υ?ⅱ귐"
+IDS_REPAIR_LACK_GOLD    "You don't have enough money for the repair. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_KNIGHTS_APPOINT_CHIEF_SUCCESS "??민?υ?┬?"
-    IDS_KNIGHTS_APPOINT_OFFICER_FAILED "x?υ?ⅱ귐"
-    IDS_KNIGHTS_APPOINT_OFFICER_SUCCESS "x?υ?┬?"
-    IDS_KNIGHTS_APPOINT_VICECHIEF_FAILED "??민걱민?υ?ⅱ귐"
-    IDS_KNIGHTS_APPOINT_VICECHIEF_SUCCESS "??민걱민?υ?┬?"
-    IDS_KNIGHTS_CREATE_FAILED "넓???민ⅱ귐"
-    IDS_KNIGHTS_CREATE_SUCCESS "넓???민┬?"
-    IDS_KNIGHTS_DESTROY_CONFIRM "n먈눠??민뜀?"
-    IDS_KNIGHTS_DESTROY_FAILED "??민먈눠ⅱ귐"
-    IDS_KNIGHTS_DESTROY_SUCCESS "??민먈눠┬?"
-    IDS_KNIGHTS_DUTY_CHIEF  "??민?"
-    IDS_KNIGHTS_DUTY_KNIGHT "??"
-    IDS_KNIGHTS_DUTY_OFFICER "겉왐"
-    IDS_KNIGHTS_DUTY_PUNISH "?Ωㄴ"
-    IDS_KNIGHTS_DUTY_TRAINEE "ª꿉??"
-    IDS_KNIGHTS_DUTY_UNKNOWN "?┳"
+IDS_DOOR_CLOSED         "The Castle Gate has been closed"
+IDS_DOOR_OPENED         "The Castle Gate has opened"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_KNIGHTS_DUTY_VICECHIEF "걱민?"
-    IDS_KNIGHTS_JOIN_FAILED "????민ⅱ귐"
-    IDS_KNIGHTS_JOIN_SUCCESS "????민┬?"
-    IDS_KNIGHTS_PUNISH_FAILED "?Ω??민灐∮?
-    IDS_KNIGHTS_PUNISH_SUCCESS "?Ω??민炯?\"
-    IDS_KNIGHTS_REJECT_FAILED "??민⒩뎬?ず??Τ싻"
-    IDS_KNIGHTS_REJECT_SUCCESS "??민???ず??Τ싻"
-    IDS_KNIGHTS_REMOVE_MEMBER_FAILED "??민꾐馨＆Wⅱ귐"
-    IDS_KNIGHTS_REMOVE_MEMBER_SUCCESS "??민꾐馨＆W┬?"
-    IDS_KNIGHTS_WITHDRAW_CONFIRM "n꿩차??민뜀?"
-    IDS_KNIGHTS_WITHROW_FAILED "??민꿩차ⅱ귐"
-    IDS_KNIGHTS_WITHROW_SUCCESS "┬?ず꿩차???민"
+IDS_KNIGHTS_APPOINT_CHIEF_SUCCESS
+"Successfully appointed as a Knights Leader"
+IDS_KNIGHTS_APPOINT_OFFICER_FAILED "Failed to appoint as an officer"
+IDS_KNIGHTS_APPOINT_OFFICER_SUCCESS "Successfully appointed as an officer"
+IDS_KNIGHTS_APPOINT_VICECHIEF_FAILED "Failed to appoint as a Vice Leader"
+IDS_KNIGHTS_APPOINT_VICECHIEF_SUCCESS
+"Successfully appointed as a Vice Leader"
+IDS_KNIGHTS_CREATE_FAILED "Failed to create a Knights"
+IDS_KNIGHTS_CREATE_SUCCESS "Successfully created a Knights"
+IDS_KNIGHTS_DESTROY_CONFIRM "Would you like to disband the Knights? "
+IDS_KNIGHTS_DESTROY_FAILED "Failed to disband Knights"
+IDS_KNIGHTS_DESTROY_SUCCESS "Successfully disbanded Knights"
+IDS_KNIGHTS_DUTY_CHIEF  "Leader"
+IDS_KNIGHTS_DUTY_KNIGHT "Member"
+IDS_KNIGHTS_DUTY_OFFICER "Officer"
+IDS_KNIGHTS_DUTY_PUNISH "Being Punished"
+IDS_KNIGHTS_DUTY_TRAINEE "Apprentice"
+IDS_KNIGHTS_DUTY_UNKNOWN "Unknown"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_LEVER_ACTIVATE      "???귑걺"
-    IDS_LEVER_DEACTIVATE    "???츙낚"
+IDS_KNIGHTS_DUTY_VICECHIEF "Assistant Leader"
+IDS_KNIGHTS_JOIN_FAILED "Failed to join the Knights"
+IDS_KNIGHTS_JOIN_SUCCESS "Successfully joined the Knights"
+IDS_KNIGHTS_PUNISH_FAILED "Failed punishing a member"
+IDS_KNIGHTS_PUNISH_SUCCESS "Successfully punished a member"
+IDS_KNIGHTS_REJECT_FAILED "Failed to reject invitation to Knights"
+IDS_KNIGHTS_REJECT_SUCCESS "Successfully rejected invitation to Knights"
+IDS_KNIGHTS_REMOVE_MEMBER_FAILED "Failed banning a member"
+IDS_KNIGHTS_REMOVE_MEMBER_SUCCESS "Successfully banned a member"
+IDS_KNIGHTS_WITHDRAW_CONFIRM "Do you no longer want to be in a Knight?"
+IDS_KNIGHTS_WITHROW_FAILED "Failed quitting Knights"
+IDS_KNIGHTS_WITHROW_SUCCESS "Successfully quitted knights"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_MSG_ATTACK_DISABLE  "?차ㅣ뻔⒝ㅸ?월?,?????을"
-    IDS_MSG_ATTACK_START    "???을"
-    IDS_MSG_ATTACK_STOP     "갚ㅾ?을"
-    IDS_MSG_CASTING_FAIL_LACK_MP "??ㄳº"
-    IDS_MSG_FMT_EXP_GET     "?⑥ %d ?톨?
+IDS_KNIGHTS_ADMIT_FAILED "Request for Joining Knights has been declined."
+IDS_KNIGHTS_ADMIT_SUCCESS "Successfully admitted into the Knights"
+IDS_KNIGHTS_APPOINT_CHIEF_FAILED "Failed to appoint as a Knights Leader "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_MSG_FMT_EXP_LOST    "ⅱ? %d ?톨?
-    IDS_MSG_FMT_HP_LOST     "ⅱ? %d Ν??"
-    IDS_MSG_FMT_HP_RECOVER  "レ? %d Ν??"
-    IDS_MSG_FMT_MP_RECOVER  "レ? %d ??"
-    IDS_MSG_FMT_MP_USE      "ⓒΞ %d ??"
-    IDS_MSG_FMT_SP_RECOVER  "レ? %d SP"
-    IDS_MSG_FMT_SP_USE      "ⓒΞ %d SP"
-    IDS_MSG_FMT_TARGET_ATTACK_FAILED "%s ?을ⅱ귐."
-    IDS_MSG_FMT_TARGET_HP_LOST "뱄 %s ?┬? %d 똥`"
-    IDS_MSG_FMT_TARGET_HP_RECOVER "%s ずΝ??レ?? %d "
-    IDS_MSG_VALID_CLASSNRACE_INVALID_RACE "붕귿ㄳ꼽,⒡???맷냔."
-    IDS_MSG_VALID_CLASSNRACE_LOW_CHA "??ㅣ??⒡???맷냔."
-    IDS_MSG_VALID_CLASSNRACE_LOW_DEX "귓굡ㅣ?,⒡???맷냔."
-    IDS_MSG_VALID_CLASSNRACE_LOW_INT "뉼?ㅣ??⒡???맷냔"
-    IDS_MSG_VALID_CLASSNRACE_LOW_LEVEL "데큉彖C?⒡???맷냔"
-    IDS_MSG_VALID_CLASSNRACE_LOW_POWER "??ㅣ??⒡???맷냔."
+IDS_MANY_COUNTABLE_ITEM_BUY_FAIL
+"You cannot buy more than 9,999 items at once."
+IDS_COUNTABLE_ITEM_BUY_NOT_ENOUGH_MONEY "You donˇŻt have enough Coins. "
+IDS_MANY_COUNTABLE_ITEM_GET_MANY
+"You cannot carry more than 9,999 items at once. "
+IDS_MANY_COUNTABLE_ITEM_TOO_MAMY "You cannot have more than 9,999 items. "
+IDS_SMALL_COUNTABLE_ITEM_BUY_FAIL
+"You cannot buy more than 500 items at once. "
+IDS_SMALL_COUNTABLE_ITEM_GET_MANY
+"You cannot carry more than 500 items at once. "
+IDS_SMALL_COUNTABLE_ITEM_TOO_MAMY "You cannot have more than 500 items. "
+IDS_ITEM_TOOMANY_OR_HEAVY
+"You cannot trade or pick up items because you have either exceeded the possible quantity or the weight. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_MSG_VALID_CLASSNRACE_LOW_RANK "쩐?ㅣ?, ⒡???맷냔."
-    IDS_MSG_VALID_CLASSNRACE_LOW_STR "븍?ㅣ?,⒡???맷냔."
-    IDS_MSG_VALID_CLASSNRACE_LOW_TITLE "?뾔ㅣ?,⒡???맷냔"
-    IDS_MSG_CONCURRENT_USER_OVERFLOW "머겅곗?셕?묀?"
-    IDS_MSG_VALID_CLASSNRACE_INVALID_CLASS "쩐?ㄳ꼽???맷냔"
+IDS_ITEM_WEIGHT_OVERFLOW "You've exceeded your possible carrying weight. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_NATION_ELMORAD      "?쑤보"
-    IDS_NATION_KARUS        "??뉘"
-    IDS_NATION_UNKNOWN      "???ㄷ곌a"
+IDS_ITEM_CLASS_BOW_LONG "Long Bow"
+IDS_ITEM_CLASS_CHARM    "Lune Item"
+IDS_ITEM_CLASS_DAGGER   "Dagger"
+IDS_ITEM_CLASS_EARRING  "Earring "
+IDS_ITEM_CLASS_ETC      "Others"
+IDS_ITEM_CLASS_JAVELIN  "Javelin"
+IDS_ITEM_CLASS_JEWEL    "Jewelry"
+IDS_ITEM_CLASS_MACE     "Club"
+IDS_ITEM_CLASS_MACE_2H  "Two-handed Club"
+IDS_ITEM_CLASS_POLEARM  "Long Spear"
+IDS_ITEM_CLASS_POTION   "Potion"
+IDS_ITEM_CLASS_RING     "Ring"
+IDS_ITEM_CLASS_SCROLL   "Scroll"
+IDS_ITEM_CLASS_SHIELD   "Shield"
+IDS_ITEM_CLASS_SPEAR    "Spear"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_NEWCHR_MAP          "┨西O???Ħ╈??ヂ??┬??ず西O."
-    IDS_NEWCHR_DEX          "┨西O?Ħ╈??셍?앝갓?????ㄴ???죽?ず셕혤A ㉲????g㈙?씁ずヂ?."
-    IDS_NEWCHR_EL_BABA      "낄???애┳?떪┹톱ず?ㅸ앝?,??울앳앝???ず쩐?."
-    IDS_NEWCHR_EL_FEMALE    "╉끈보?㈙?애┳값プ뉼????ずĦ╈."
-    IDS_NEWCHR_EL_MAGE      "??v??곱?┬?Ξ??ㅈ윌벡O?ⓖ?ⓒ?을??ず???ㅴ?븍オ벡枋Nv"
-    IDS_NEWCHR_EL_MALE      "╉끈보?㈙?톱??뉼?㎕ㅓずĦ╈???⒡┳ず쩐?."
-    IDS_NEWCHR_EL_PRIEST    "꼍??곱?┬?쟨??О?ずおv⒝뇩값??西O⒝?녠?╀?⑬?ず╀?꼍ⓒ."
-    IDS_NEWCHR_EL_ROGUE     "??ㅲ?곱?┬?Ξ뻔?차?씁ぎ을셍?ず??⒝?즛쩠祭㏊L??㎎t깸굴P?셍?ず깸ㅲ."
-    IDS_NEWCHR_EL_WARRIOR   "앝???곱?┬?붕?씁?aず??⒝?㉭?㈙㎌ⅸ????????v?꼍?Оⓒ?ず?시"
-    IDS_NEWCHR_INT          "??v?꼍?ず븍ク西O?셸????⑥??ず넋??."
-    IDS_NEWCHR_KA_ARKTUAREK "㉷?믿??㎮┹톱ず西O램╁?ㅖず붕귿??逝º갼渡h."
-    IDS_NEWCHR_KA_MAGE      "??v??곱?┬?Ξ??ㅈ윌벡O??ⓒ?을??ず㎶v⒝ⅲ㎼┷ぬず??┷??v"
-    IDS_NEWCHR_KA_PRIEST    "꼍??곱?┬?쟨??О?ず㎶쭤⒝??西O?ず뗏?꼍?"
-    IDS_NEWCHR_KA_PURITUAREK 
-                            "ю???㈙ⓦ┳값プず?ㅖ븍イO???울앳┬О꼍?."
-    IDS_NEWCHR_KA_ROGUE     "??ㅲ?곱?┬?Ξ뻔?차?씁ぎ을셍?ず??⒝?즛쩠祭㏊L??㎎t깸굴P?셍?ず⑤ト."
+IDS_ITEM_CLASS_STAFF    "Staff"
+IDS_ITEM_CLASS_SWORD    "One-handed Sword"
+IDS_ITEM_CLASS_SWORD_2H "Two-handed Sword"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_NEWCHR_KA_TUAREK    "ю????┹톱?븍ク西O끽ボ㎕ㅓず붕귿? ㉲?울앳??ㅲ⒝꼍?ず쩐?"
-    IDS_NEWCHR_KA_WARRIOR   "앝???곱?┬??ⓒΞ⒡┳?을㈙?씁ず?앝??㉭?㎌ⅸ값?㉲?????v?꼍?Оⓒ?ず??ぬ"
-    IDS_NEWCHR_KA_WRINKLETUAREK 
-                            "ю??뉼ぬ?О??ⓒ??ず???┱?ㅖ뉼?ず붕귿?\\ю??뉼ぬ?逝º거]?v"
-    IDS_NEWCHR_POW          "┨西O???Ħ╈ず곪?か??을??t?"
-    IDS_NEWCHR_STA          "????Ħ╈Ν??ず西O"
+IDS_ITEM_CLASS_AMULET   "Necklace"
+IDS_ITEM_CLASS_ARMOR_MAGE "Magician Armor"
+IDS_ITEM_CLASS_ARMOR_PRIEST "Priest Armor"
+IDS_ITEM_CLASS_ARMOR_ROGUE "Rogue Armor"
+IDS_ITEM_CLASS_ARMOR_WARRIOR "Warrior Armor"
+IDS_ITEM_CLASS_ARROW    "Arrow"
+IDS_ITEM_CLASS_AXE      "Ax"
+IDS_ITEM_CLASS_AXE_2H   "Two-handed Ax"
+IDS_ITEM_CLASS_BELT     "Belt"
+IDS_ITEM_CLASS_BOW      "Bow"
+IDS_ITEM_CLASS_BOW_CROSS "Crossbow"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_NPCEVENT_TITLE_REPAIR 
-                            "n???⒝瘻F??쑬붸????㏀??グㅊ벱}??ず???"
-    IDS_NPC_EVENT_TITLE_TRADE "㏀?맸┳ボ??か?싻??лл"
+IDS_ITEM_ATTRIB_CRAFT   "Craft item. "
+IDS_ITEM_ATTRIB_GENERAL "Regular item. "
+IDS_ITEM_ATTRIB_LAIR    "Rare item. "
+IDS_ITEM_ATTRIB_MAGIC   "Magic item. "
+IDS_ITEM_ATTRIB_UNIQUE  "Unique item. "
+IDS_ITEM_ATTRIB_UPGRADE "Upgrade item. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_PARTY_CONFIRM_DESTROY "n먈눠땄ξ뜀?"
-    IDS_PARTY_CONFIRM_DISCHARGE "?(뱄ㅸ)怜％X땄ξ."
-    IDS_PARTY_CONFIRM_LEAVE "n꿩차땄ξ뜀?"
-    IDS_PARTY_DESTROY       "땄ξ??먈눠?"
-    IDS_PARTY_INSERT        "(뱄ㅸ)줌싻???땄ξ.n??뜀"
-    IDS_PARTY_INSERT_ERR    "뱄ㅸ⒩뎬??땄ξ"
-    IDS_PARTY_INSERT_ERR_INVALID_NATION "???ㄳ?곌aずけa꾐땄"
+IDS_TOOLTIP_DEFENSE_RATE_AXE "Defense Ability (Ax) : %d"
+IDS_TOOLTIP_DEFENSE_RATE_BLOW "Defense Ability (Club) : %d"
+IDS_TOOLTIP_DEFENSE_RATE_DAGGER "Defense Ability (Dagger) : %d"
+IDS_TOOLTIP_DEFENSE_RATE_SPEAR "Defense Ability (Spear) : %d"
+IDS_TOOLTIP_DEFENSE_RATE_SWORD "Defense Ability (Sword) : %d"
+IDS_TOOLTIP_GOLD        "Coin"
+IDS_TOOLTIP_HITRATE_OVER "Increase Attack Power by %d%"
+IDS_TOOLTIP_HITRATE_UNDER "Decrease Attack Power by %d%"
+IDS_TOOLTIP_MAX_DURABILITY "Max Durability : %d"
+IDS_TOOLTIP_NEEDMAGICATTACK "Required Magic Power : %d"
+IDS_TOOLTIP_NEEDDEXTERITY "Required Dexterity : %d"
+IDS_TOOLTIP_NEEDINTELLI "Required Intelligence : %d"
+IDS_TOOLTIP_NEEDLEVEL   "Required Level : %d"
+IDS_TOOLTIP_NEEDRANK    "Required Class : %d"
+IDS_TOOLTIP_NEEDSTAMINA "Required Health : %d"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_PARTY_INSERT_ERR_LEVEL_DIFFERENCE "데큽t꺌??????꾐땄."
-    IDS_PARTY_INSERT_ERR_REJECTED "뱄ㅸ⒩뎬??땄ξ"
-    IDS_PARTY_INVITE        "줌싻 %s ??땄ξ.??데ポ?윰ㄴ."
-    IDS_PARTY_INVITE_FAILED "??퉈(뱄ㅸ)??땄ξ."
-    IDS_PARTY_ITEM_GET      "%s 쟌?? %s."
-    IDS_PARTY_LEAVE         "???꿩차?땄ξ"
-    IDS_PARTY_PERMIT        "%d줌싻???땄ξ?n??땄ξ뜀?"
+IDS_TOOLTIP_ATTRMAGIC5  "HP Absorbed : %d"
+IDS_TOOLTIP_ATTRMAGIC6  "MP Damage : %d"
+IDS_TOOLTIP_ATTRMAGIC7  "MP Absorbed : %d"
+IDS_TOOLTIP_AVOIDRATE_OVER "Increase Dodging Rate by %d%%"
+IDS_TOOLTIP_AVOIDRATE_UNDER "Decrease Dodging Rate by %d%%"
+IDS_TOOLTIP_BONUSMAGICATTACK "Magic Power Bonus : %d"
+IDS_TOOLTIP_BONUSDEX    "Dexterity Bonus : %d"
+IDS_TOOLTIP_BONUSHP     "HP Bonus : %d"
+IDS_TOOLTIP_BONUSINT    "Intelligence Bonus : %d"
+IDS_TOOLTIP_BONUSSTR    "Strength Bonus : %d"
+IDS_TOOLTIP_BONUSWIZ    "MP Bonus : %d"
+IDS_TOOLTIP_BUY_PRICE   "Purchasing Price : %d"
+IDS_TOOLTIP_CUR_DURABILITY "Current Durability : %d"
+IDS_TOOLTIP_DAMAGE      "Attack Power : %d"
+IDS_TOOLTIP_DEFENSE     "Defense Ability : %d"
+IDS_TOOLTIP_DEFENSE_RATE_ARROW "Defense Ability (Arrow) : %d"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_PER_TRADEING_OTHER  "?けa??ζ¹?ㄴ,?┳ⓧ?けa뇩?ζ¹Τ싻?"
+IDS_TOOLTIP_ATTACKINT_FAST "Attack Speed : Fast"
+IDS_TOOLTIP_ATTACKINT_NORMAL "Attack Speed : Normal"
+IDS_TOOLTIP_ATTACKINT_SLOW "Attack Speed : Slow"
+IDS_TOOLTIP_ATTACKINT_VERYFAST "Attack Speed : Very Fast"
+IDS_TOOLTIP_ATTACKINT_VERYSLOW "Attack Speed : Very Slow"
+IDS_TOOLTIP_ATTACKRANGE "Effective Range : %.2f"
+IDS_TOOLTIP_ATTRMAGIC1  "Flame Damage : %d"
+IDS_TOOLTIP_ATTRMAGIC2  "Glacier Damage : %d"
+IDS_TOOLTIP_ATTRMAGIC3  "Lightning Damage : %d"
+IDS_TOOLTIP_ATTRMAGIC4  "Poison Damage : %d"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_PERSONAL_TRADE_FMT_WAIT "%s ? %s 뇩?ζ¹. Ω???데?윰ㄴ."
-    IDS_PERSONAL_TRADE_PERMIT "%s ━⑥? %s 뇩?ずζ¹. n굘⅜뜀?"
-    IDS_PERSONAL_TRADE_REQUEST "?(뱄ㅸ)뇩??ζ¹ず싻?"
+IDS_TOOLTIP_NEEDSTRENGTH "Required Strength : %d"
+IDS_TOOLTIP_NEEDTITLE   "Required Title : %d"
+IDS_TOOLTIP_REGISTCURSE "Resistance to Curse : %d"
+IDS_TOOLTIP_REGISTELEC  "Resistance to Lightning : %d"
+IDS_TOOLTIP_REGISTFIRE  "Resistance to Flame : %d"
+IDS_TOOLTIP_REGISTICE   "Resistance to Glacier : %d"
+IDS_TOOLTIP_REGISTMAGIC "Resistance to Magic : %d"
+IDS_TOOLTIP_REGISTPOISON "Resistance to Poison : %d"
+IDS_TOOLTIP_SELL_PRICE  "Selling Price : %d"
+IDS_TOOLTIP_WEIGHT      "Weight : %.2f"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_RACE_ALL            "⒡┳붕귿"
-    IDS_RACE_EL_BABARIAN    "낄??"
-    IDS_RACE_EL_MAN         "╉끈보?㈙"
-    IDS_RACE_EL_WOMEN       "╉끈보?㈙"
-    IDS_RACE_KA_ARKTUAREK   "㉷?믿?"
-    IDS_RACE_KA_PURITUAREK  "ю???㈙"
-    IDS_RACE_KA_TUAREK      "ю???"
-    IDS_RACE_KA_WRINKLETUAREK "ю?ト뉼ぬ"
-    IDS_RACE_UNKNOWN        "???ㄷ붕귿"
+IDS_NPCEVENT_TITLE_REPAIR
+"A great blacksmith like me is hard to find.  Tell me if you need anythingˇ¦ "
+IDS_NPC_EVENT_TITLE_TRADE
+"I have many items.  Would you like to take a look at them? "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_REGENERATION        "n?А뜀??Аメ??⑥?끌⒝?А??"
+IDS_SKILL_POINT_BEFORE_CLASS_CHANGE
+"You cannot distribute your skill points because you haven't picked your specialty yet."
+IDS_SKILL_POINT_EXTRA_NOT_EXIST "There's no remaining skill point. "
+IDS_SKILL_POINT_NOT_YET "This skill is not available. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_REPAIR_LACK_GOLD    "旒z?Ξㄳº"
+IDS_LEVER_ACTIVATE      "The lever has been activated. "
+IDS_LEVER_DEACTIVATE    "The lever has been deactivated. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_REQUEST_BINDPOINT   "n???맸О?А??뜀?"
+IDS_SKILL_TOOLTIP_NO_MANA "Doesn't use MP"
+IDS_SKILL_TOOLTIP_USE_ITEM_EXIST "Item Consumed : %s"
+IDS_SKILL_TOOLTIP_USE_ITEM_NO "No item consumed"
+IDS_SKILL_TOOLTIP_USE_MANA "MP consumed : %d"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_SKILL_FAIL_CASTING  "ⓒΞ㎌誓∮?
-    IDS_SKILL_FAIL_DIFFURENTCLASS "┨㎌鼠壙]???ⓒΞ."
-    IDS_SKILL_FAIL_EFFECTING "%s ⅱ?
-    IDS_SKILL_FAIL_INVALID_ITEM "か?ㄳ?"
-    IDS_SKILL_FAIL_LACK_HP  "Ν??ㄳº"
-    IDS_SKILL_FAIL_LACK_ITEM "か?ㄳº"
-    IDS_SKILL_FAIL_LACK_SP  " SPㄳº"
-    IDS_SKILL_FAIL_SOFAR    "?차ㅣ뻔"
-    IDS_SKILL_FAIL_OBJECT_BLOCK "ⓒΞ㎌誓∮??Ω셸ㄷ땀┳쁑챗か?액"
+IDS_SKILL_TOOLTIP_DOUBLE "Required Item : Double Hand"
+IDS_SKILL_TOOLTIP_NEED_ITEM_DUAL "Required Item : Dual Hand"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID1 "Required Item : All Weapons"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_SKILL_INFO_MAGE0    "뇩ㅙ?ⓒㆅ?ㅈ윌뵀]?."
-    IDS_SKILL_INFO_MAGE1    "뇩ㅙ?ⓒ??ㅈ윌뵀]?."
-    IDS_SKILL_INFO_MAGE2    "뇩ㅙ?ⓒ??ㅈ윌뵀]?."
-    IDS_SKILL_INFO_MAGE3    "뇩ㅙ?층ガ뺘???녠ガ?ず??"
-    IDS_SKILL_INFO_CLERIC0  "뇩ㅙ?붕?징㈙썼ずコN."
-    IDS_SKILL_INFO_CLERIC1  "뇩ㅙ?붕뇩값?붕西O홋변コN."
-    IDS_SKILL_INFO_CLERIC2  "뇩ㅙ?붕?을㈙썼ずコN?㉲?악??㉶S咨볏쒼柯コN."
-    IDS_SKILL_INFO_CLERIC3  "ク뎁보T??악꿉ㅸ?ㄳⁿ."
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID10 "Required Item : Launcher"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID11 "Required Item : Staff"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID12 "Required Item : Arrow"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID13 "Required Item : Javelin"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID14 "Required Item : Warrior Armor"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID15 "Required Item : Rogue Armor"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID16 "Required Item : Magician Armor"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID17 "Required Item : Priest Armor"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID2 "Required Item : Dagger"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID3 "Required Item : Sword"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID4 "Required Item : Ax"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID5 "Required Item : Striking Weapon"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID6 "Required Item : Spear"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID7 "Required Item : Shield"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID8 "Required Item : Bow"
+IDS_SKILL_TOOLTIP_NEED_ITEM_ID9 "Required Item : Longbow"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_SKILL_POINT_BEFORE_CLASS_CHANGE 
-                            "Ω?줄?쭌쩐? ⒡???뇩?쭌쩐メず㎌鼠槨k?."
-    IDS_SKILL_POINT_EXTRA_NOT_EXIST "?┳⒡넘ず㎌渲I셕?."
-    IDS_SKILL_POINT_NOT_YET "??줄??⑾ず㎌鼠槨k?."
+IDS_INV_ITEM_FULL       "You cannot pick up the item because your item inventory is full. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_SKILL_SUCCESS_HEALING_FROM "%s ?쟨? %d"
-    IDS_SKILL_SUCCESS_HEALING_TO "? %s ?쟨? %d"
+IDS_PER_TRADEING_OTHER  "A request for a trade has been received from another user while you were trading.  "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_SKILL_TOOLTIP_DOUBLE "n?맷냔 : 찬ㅲカИZ씁"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_DUAL "n?맷냔: ???"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID1 "n?맷냔 : ⒡┳?씁"
+IDS_URL_JOIN            "http://www.knight-online.net"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID10 "n?맷냔: 돤Σ"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID11 "n?맷냔 : ??"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID12 "n?맷냔 : ?"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID13 "n?맷냔 : 셸?"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID14 "n?맷냔 : 앝?㉭ⓦ"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID15 "n?맷냔 : ??ㅲ㉭ⓦ"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID16 "n?맷냔 : ?v㉭ⓦ"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID17 "n?맷냔 : 꼍?㉭ⓦ"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID2 "n?맷냔 : ??"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID3 "n?맷냔 : ?"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID4 "n?맷냔 : ⑿?"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID5 "n?맷냔 : ダ빽Z씁"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID6 "n?맷냔 : ?"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID7 "n?맷냔 : м"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID8 "n?맷냔 : ?"
-    IDS_SKILL_TOOLTIP_NEED_ITEM_ID9 "n?맷냔 : ??"
+IDS_HELP_TIP1           "Recover rapidly by sitting down - 'C'"
+IDS_HELP_TIP2           "You can move using your mouse in the 'quarter-view' mode. "
+IDS_HELP_TIP3           "Toggle Auto Walk/Run - 'E'"
+IDS_HELP_TIP4           "When you want to teleport back to town - Type'/town'"
+IDS_HELP_TIP5           "To find the nearest enemy/monster - Press the 'Z' key"
+IDS_HELP_TIP6           "Using Skill : Drag the skill icon to the shortcut key window. "
+IDS_HELP_TIP7           "Designate Resurrection Spot : Right-click on the Resurrection Stone. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_SKILL_TOOLTIP_NO_MANA "??ㄳº"
-    IDS_SKILL_TOOLTIP_USE_ITEM_EXIST "貝檀カ~ : %s"
-    IDS_SKILL_TOOLTIP_USE_ITEM_NO "?┳?貝檀벳カ~"
-    IDS_SKILL_TOOLTIP_USE_MANA "貝檀k? : %d"
+IDS_HELP_TIP8           "Visit the blacksmith to increase the durability of an item. "
+IDS_HELP_TIP9           "Item Storage : Right-click on the Inn-Keeper. "
+IDS_HELP_TIP10          "Selecting Specialty : You can select your specialty when you reach level 10. "
+IDS_HELP_TIP11          "Pick up item : Click on the dead monster."
+IDS_HELP_TIP12          "Walk/Run : Press the 'Y' key"
+IDS_HELP_TIP13          "Toggle Attack : Press the 'R' key or double click on the target. "
+IDS_HELP_TIP14          "Toggle View : shortcut key 'F9'"
+IDS_HELP_TIP15          "You can move your character by pressing 'W,A,S,D's keys or the arrow keys. "
+IDS_HELP_TIP16          "Using Skill : Press the skill icon placed on the shortcut key window or press '1~8'"
+IDS_HELP_TIP17          "You can level up faster if you form a party. "
+IDS_HELP_TIP18          "Display request for party : Type'/Seeking party'"
+IDS_HELP_TIP19          "Invite into a party : Type '/party'"
+IDS_HELP_TIP20          "Trade Item : Select a character and type '/trade'"
+IDS_HELP_TIP21          "Party Chat : Click on the ˇ®Party ChatˇŻ button on the chat window"
+IDS_HELP_TIP22          "General Chat : Click on the ˇ®General ChatˇŻ button on the chat window"
+IDS_HELP_TIP23          "Gaining Stat Points : Gain 3 stat points every time you level up. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_SKILL_UP_INVALID    "㎌鼠槨k?데큉／蓆W??Þず데?
-    IDS_SKILL_USE           "ⓒΞ %s."
+IDS_HELP_TIP24          "Gaining Skill Points : You can gain 2 skill points every time you level up once you've reached level 10. "
+IDS_HELP_TIP25          "Destroy Item : Drag and drop the item you wish to destroy on to the red mark on the inventory window. "
+IDS_HELP_TIP26          "View Description of the Skill : Put your cursor over the skill icon."
+IDS_HELP_TIP27          "Private Message : Type '/pm' ID"
+IDS_HELP_TIP28          "View Mini-map : Press 'm'.  The red and orange dots are enemies. "
+IDS_HELP_TIP29          "Flip through shortcut key window : 'PageUp/PageDown'"
+IDS_HELP_TIP30          "Use the 'Home / End' keys to change views in the quarter-view mode. "
+IDS_HELP_TIP_ALL        "[Knight Online Tip of the Day!]"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_TOOLTIP_ATTACKINT_FAST "?을?プ     : ㎒?"
-    IDS_TOOLTIP_ATTACKINT_NORMAL "?을?プ     : 뉜?"
-    IDS_TOOLTIP_ATTACKINT_SLOW "?을?プ     : ??"
-    IDS_TOOLTIP_ATTACKINT_VERYFAST "?을?プ     : ??㎒?"
-    IDS_TOOLTIP_ATTACKINT_VERYSLOW "?을?プ     : ????"
-    IDS_TOOLTIP_ATTACKRANGE "┳캘Z차     : %.2f"
-    IDS_TOOLTIP_ATTRMAGIC1  "ㆅあ똥`?? : %d"
-    IDS_TOOLTIP_ATTRMAGIC2  "?除彊`?? : %d"
-    IDS_TOOLTIP_ATTRMAGIC3  "?을똥`?? : %d"
-    IDS_TOOLTIP_ATTRMAGIC4  "?융彊`?? : %d"
+IDS_EDIT_BOX_GOLD       "Please enter the amount. "
+IDS_EDIT_BOX_COUNT      "Please enter the quantity. "
+IDS_SKILL_INFO_BASE     "Basic skills that you get before you choose a specialty."
+IDS_SKILL_INFO_BLADE0   "Learn various attack skills. "
+IDS_SKILL_INFO_BLADE1   "Learn various defense skills. "
+IDS_SKILL_INFO_BLADE2   "Increases Warrior's mental power.   "
+IDS_SKILL_INFO_BLADE3   "Learn the Master Skills of various weapons. "
+IDS_SKILL_INFO_RANGER0  "Learn various archery skills."
+IDS_SKILL_INFO_RANGER1  "Learn the various techniques of assassination. "
+IDS_SKILL_INFO_RANGER2  "Learn the various techniques of exploring. "
+IDS_SKILL_INFO_RANGER3  "Learn the Master Skills of Archery and Assassination."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_TOOLTIP_ATTRMAGIC5  "셍ㅸΝ??━ : %d"
-    IDS_TOOLTIP_ATTRMAGIC6  "셍ㅸ??똥` : %d"
-    IDS_TOOLTIP_ATTRMAGIC7  "셍ㅸ???━ : %d"
-    IDS_TOOLTIP_AVOIDRATE_OVER "?죽??? %d%%"
-    IDS_TOOLTIP_AVOIDRATE_UNDER "?죽?댈ㅦ %d%%"
-    IDS_TOOLTIP_BONUSMAGICATTACK "?????? %d ?"
-    IDS_TOOLTIP_BONUSDEX    "귓굡???? %d ?"
-    IDS_TOOLTIP_BONUSHP     "Ν?????? %d ?"
-    IDS_TOOLTIP_BONUSINT    "뉼????? %d ?"
-    IDS_TOOLTIP_BONUSSTR    "?????? %d ?"
-    IDS_TOOLTIP_BONUSWIZ    "?????? %d ?"
-    IDS_TOOLTIP_BUY_PRICE   "좽?ず샘웜   : %d"
-    IDS_TOOLTIP_CUR_DURABILITY "@?プ       : %d"
-    IDS_TOOLTIP_DAMAGE      "?을?       : %d"
-    IDS_TOOLTIP_DEFENSE     "㉭??       : %d"
-    IDS_TOOLTIP_DEFENSE_RATE_ARROW "?㉭??     : %d"
+IDS_SKILL_INFO_MAGE0    "Learn various magic that uses flame. "
+IDS_SKILL_INFO_MAGE1    "Learn various magic that uses Glacier. "
+IDS_SKILL_INFO_MAGE2    "Learn various magic that uses lightning(Lightning). "
+IDS_SKILL_INFO_MAGE3    "Learn the Master Skills of elemental magic."
+IDS_SKILL_INFO_CLERIC0  "Learn various healing magic. "
+IDS_SKILL_INFO_CLERIC1  "Learn magic that increase character's stat points. "
+IDS_SKILL_INFO_CLERIC2  "Learn simple attack magic. "
+IDS_SKILL_INFO_CLERIC3  "Learn the Master Skill of a Priest. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_VERSION_CONFIRM     "┨clientずぉ?О %.3f , n?굘??씁Ⅲ떱n┳ %.3f ぉ?."
-    IDS_TOOLTIP_BONUSSTA    "톱썼???? %d ?"
-    IDS_VERSION_CONFIRM_TW  "ぉ?월??싻??⑥넋?ぉ?."
+IDS_ERR_CHARACTER_SELECT "cannot select the character. "
+IDS_DROPPED_NOAH_GET    "Picked up %d Coins."
+IDS_DURABILITY_EXOAST   "The durability on %s is all gone. "
+IDS_ITEM_GET_BY_RULE    "Picked up %s"
+IDS_OTHER_PER_TRADE_NO  "%s refused the request for a trade. "
+IDS_PER_TRADE_FAIL      "Failed trading. "
+IDS_OTHER_PER_TRADE_CANCEL "Trading with %s has been canceled. "
+IDS_ITEM_KIND_BRONS     "Bronze"
+IDS_ITEM_KIND_SILVER    "Silver"
+IDS_ITEM_KIND_GOLDEN    "Gold"
+IDS_ITEM_KIND_PLATINUM  "Platinum"
+IDS_ITEM_KIND_CRIMSON   "Crimson"
+IDS_ITEM_KIND_LUNA      "Luna"
+IDS_ITEM_KIND_SOLAR     "Sola"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_TOOLTIP_DEFENSE_RATE_AXE "⑿?㉭??    : %d"
-    IDS_TOOLTIP_DEFENSE_RATE_BLOW "ダ빻씩m?   : %d"
-    IDS_TOOLTIP_DEFENSE_RATE_DAGGER "??㉭??   : %d"
-    IDS_TOOLTIP_DEFENSE_RATE_SPEAR "?㉭??     : %d"
-    IDS_TOOLTIP_DEFENSE_RATE_SWORD "?㉭??     : %d"
-    IDS_TOOLTIP_GOLD        "?뱐"
-    IDS_TOOLTIP_HITRATE_OVER "?ㄴ??? %d%%"
-    IDS_TOOLTIP_HITRATE_UNDER "?ㄴ?댈ㅦ %d%%"
-    IDS_TOOLTIP_MAX_DURABILITY "넋?@??   : %d"
-    IDS_TOOLTIP_NEEDMAGICATTACK "??⑧     : %d"
-    IDS_TOOLTIP_NEEDDEXTERITY "귓굡⑧     : %d"
-    IDS_TOOLTIP_NEEDINTELLI "뉼?⑧     : %d "
-    IDS_TOOLTIP_NEEDLEVEL   "데큼⑧     : %d"
-    IDS_TOOLTIP_NEEDRANK    "쩐?⑧     : %d"
-    IDS_TOOLTIP_NEEDSTAMINA "톱썼⑧     : %d"
+IDS_ITEM_KIND_ANCIENT   "Ancient"
+IDS_ITEM_KIND_MISTIQ    "Mystic"
+IDS_TOOLTIP_NOAH        "Coin : %d"
+IDS_TOOLTIP_REPAIR_PRICE "Repair Cost"
+IDS_TOOLTIP_CANNOT      "irreparable item"
+IDS_POINTINIT_NOT_ENOUGH_NOAH "You need %d Coins"
+IDS_POINTINIT_ALREADY   "There are no points to reset. "
+IDS_NOAH_CHANGE_GET     "Earned %d Coins."
+IDS_NOAH_CHANGE_LOST    "Lost %d Coins. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_TOOLTIP_NEEDSTRENGTH "??⑧     : %d"
-    IDS_TOOLTIP_NEEDTITLE   "??⑧     : %d"
-    IDS_TOOLTIP_REGISTCURSE "??⑵㎊     : %d"
-    IDS_TOOLTIP_REGISTELEC  "?을⑵㎊     : %d "
-    IDS_TOOLTIP_REGISTFIRE  "ㆅ?⑵㎊     : %d"
-    IDS_TOOLTIP_REGISTICE   "?弟鰲?    : %d"
-    IDS_TOOLTIP_REGISTMAGIC "??⑵㎊     : %d"
-    IDS_TOOLTIP_REGISTPOISON "?윈鰲?    : %d"
-    IDS_TOOLTIP_SELL_PRICE  "?썸ず샘웜   : %d"
-    IDS_TOOLTIP_WEIGHT      "ザq         : %.2f"
+IDS_CLAN_DENY_LOWLEVEL  "Sorry.  A weakling like you are not fit to become a leader!!"
+IDS_CLAN_DENY_LOWGOLD   "Sorry.  You need %d Coins in order to create a clan. "
+IDS_CLAN_DENY_INVALIDDAY "You cannot create a clan today. "
+IDS_CLAN_DENY_ALREADYJOINED
+"You can't create a clan because you're already in another clan. "
+IDS_CLAN_DENY_UNKNOWN   "Hm.. You can't create a can right now.  Please come back later. "
+IDS_CLAN_MAKE_SUCCESS   "You are now a leader of a clan.  Congratulations!!!"
+IDS_CLAN_WARNING_COST   "You need %d Coins to create a clan. "
+IDS_CLAN_INPUT_NAME     "Oh~ho~.. Welcome my brave friend.. Tell me, what would you like to name your clan? "
+IDS_CLAN_REINPUT_NAME   "Oh~ I'm sorry, but somebody else is already using that name. Try a different name. "
+IDS_CLAN_WITHDRAW_SUCCESS "Successfully quitted the clan. "
+IDS_CLAN_WITHDRAW_FAIL  "Failed quitting the clan. "
+IDS_CLAN_JOIN_SUCCESS   "Successfully joined the clan. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_TRY_SPEED_HACKING   "윰Ξ?─?Ν월?,?꽝??츙낚,Y┳봤격싻Б?ず?꽝붸??
+IDS_NOAH_CHANGE_SPEND   "Used %d Coins."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_MSG_HASITEMINSLOT   "Ω????㏆콜㈙?
-    IDS_ERR_REQUEST_NPC_EVENT_SO_FAR "?차ㅣ뻔."
-    IDS_WRONG_PASSWORD      "??월?"
-    IDS_WANT_PARTY_MEMBER   "??땄ξ?데?%d ~ %d"
-    IDS_SETTING_KARUS_SCREEN "\n\n??뉘Ħ╈????"
-    IDS_SETTING_ELMORAD_SCREEN "\n\n╉끈보Ħ╈????"
+IDS_CLAN_JOIN_FAIL_CLAN_FULL
+"Failed because the clan has reached the maximum number of people allowed."
+IDS_CLAN_JOIN_FAIL_NONE_CLAN "This clan is not valid. "
+IDS_CLAN_JOIN_FAIL_INVALIDRIGHT "You do not have the authority. "
+IDS_CLAN_JOIN_FAIL_OTHER_CLAN_USER "This user is already in a clan. "
+IDS_CLAN_JOIN_FAIL_ENEMY_USER "This user is from a different nation. "
+IDS_CLAN_JOIN_FAIL_DEAD_USER "This user is dead. "
+IDS_CLAN_JOIN_FAIL_NONE_USER "This user does not exist. "
+IDS_CLAN_COMMON_FAIL_ME "You cannot choose yourself. "
+IDS_CLAN_COMMON_FAIL_NOTJOINED "This user is not in the clan. "
+IDS_CLAN_JOIN_REQ       "Will you join the clan %s ? "
+IDS_CLAN_JOIN_REJECT    "The user has declined. "
+IDS_CLAN_COMMON_FAIL_BATTLEZONE "This is not allowed in this zone. "
+IDS_CONFIRM_EXECUTE_OPTION
+"Exiting game and configuring options. Will you continue? "
+IDS_CLAN_DENY_INVALID_SERVER
+"Creating a clan is only allowed in the 1st server group. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CLAN_JOIN_FAIL_CLAN_FULL "???셕?"
-    IDS_CLAN_JOIN_FAIL_NONE_CLAN "?┳?短x민"
-    IDS_CLAN_JOIN_FAIL_INVALIDRIGHT "?ㄳº"
-    IDS_CLAN_JOIN_FAIL_OTHER_CLAN_USER "??けa????ⓧ?ずx민"
-    IDS_CLAN_JOIN_FAIL_ENEMY_USER "곌aㄳ?????"
-    IDS_CLAN_JOIN_FAIL_DEAD_USER "머けa?┷??싻데머けa?Аメシs곰?"
-    IDS_CLAN_JOIN_FAIL_NONE_USER "?┳??けa"
-    IDS_CLAN_COMMON_FAIL_ME "????
-    IDS_CLAN_COMMON_FAIL_NOTJOINED "뱄ㅸ줄??????곰?┨??"
-    IDS_CLAN_JOIN_REQ       "n?? %s x민뜀?"
-    IDS_CLAN_JOIN_REJECT    "뱄ㅸ⒩뎬"
-    IDS_CLAN_COMMON_FAIL_BATTLEZONE "??겅??곰?┨??"
-    IDS_CONFIRM_EXECUTE_OPTION "?으뎡?メ??쌌얇울떫. n?쿱뜀?"
-    IDS_REQUEST_GAME_SAVE   "읠壘w??."
-    IDS_DELAY_GAME_SAVE     "%dㅐ컨?メ?琁~쿱??."
-    IDS_CLAN_DENY_INVALID_SERVER 
-                            "새로운 서버 시스템으로 인해 클랜 창설은 추후 적용됩니다."
+IDS_DEAD_RETURN_TOWN    "Return to town. "
+IDS_DEAD_REVIVAL        "Resurrect. "
+IDS_DEAD_LACK_LIFE_STONE "You don't have enough Stone of Life."
+IDS_DEAD_REVIVAL_MESSAGE
+"You need to offer %d Stone of Life on to the shrine if you want to be revived. "
+IDS_DEAD_LOW_LEVEL      "You cannot be resurrected because your level is too low. "
+IDS_INVEN_WEIGHT        "Weight : "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_DEAD_RETURN_TOWN    "?⑥?끌."
-    IDS_DEAD_REVIVAL        "???А?."
-    IDS_DEAD_LACK_LIFE_STONE "Ν?ず??ㄳº."
-    IDS_DEAD_REVIVAL_MESSAGE "?n?А?Ⅲ떱┳%d團繼Rず??."
-    IDS_DEAD_LOW_LEVEL      "데큉彖C???ⓒΞ?ⓦ?А."
-    IDS_INVEN_WEIGHT        "ザq :"
+IDS_MSG_HASITEMINSLOT   "You cannot change your stat while there are items equipped on you."
+IDS_ERR_REQUEST_NPC_EVENT_SO_FAR "You are too far away from the NPC. "
+IDS_WRONG_PASSWORD      "Invalid password. "
+IDS_WANT_PARTY_MEMBER   "Seeking Party : Level %d ~ %d"
+IDS_SETTING_KARUS_SCREEN "\n\nKarus Character Window."
+IDS_SETTING_ELMORAD_SCREEN "\n\nEl Morad Character Window. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_NOAH_CHANGE_SPEND   "め? %d ?뱐."
+IDS_CMD_WHISPER         "pm"
+IDS_CMD_TOWN            "town"
+IDS_CMD_TRADE           "trade"
+IDS_CMD_EXIT            "exit"
+IDS_CMD_PARTY           "party_invite"
+IDS_CMD_LEAVEPARTY      "party_disband"
+IDS_CMD_RECRUITPARTY    "party_recruit"
+IDS_CMD_JOINCLAN        "join_clan"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CMD_WHISPER         "WHISPER"
-    IDS_CMD_TOWN            "TOWN"
-    IDS_CMD_TRADE           "TRADE"
-    IDS_CMD_EXIT            "EXIT"
-    IDS_CMD_PARTY           "PARTY"
-    IDS_CMD_LEAVEPARTY      "LEAVE"
-    IDS_CMD_RECRUITPARTY    "INVITE"
-    IDS_CMD_JOINCLAN        "JOINCLAN"
+IDS_CMD_WITHDRAWCLAN    "quit_clan"
+IDS_CMD_FIRECLAN        "fire"
+IDS_CMD_APPOINTVICECHIEF "vicechief"
+IDS_CMD_GREETING        "greeting"
+IDS_CMD_EXCITE          "excite"
+IDS_CMD_VISIBLE         "view"
+IDS_CMD_INVISIBLE       "unview"
+IDS_CMD_CLEAN           "clear"
+IDS_CMD_RAINING         "rain"
+IDS_CMD_SNOWING         "snow"
+IDS_CMD_TIME            "time"
+IDS_CMD_CU_COUNT        "online"
+IDS_CMD_NOTICE          "notice"
+IDS_CMD_ARREST          "arrest"
+IDS_CMD_FORBIDCONNECT   "ban"
+IDS_CMD_FORBIDCHAT      "forbid_chat"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CMD_WITHDRAWCLAN    "DISCLAN"
-    IDS_CMD_FIRECLAN        "FIRECLAN"
-    IDS_CMD_APPOINTVICECHIEF "APPOINT_VC"
-    IDS_CMD_GREETING        "HELLO"
-    IDS_CMD_EXCITE          "EXCITE"
-    IDS_CMD_VISIBLE         "VISIBLE"
-    IDS_CMD_INVISIBLE       "INVISIBLE"
-    IDS_CMD_CLEAN           "CLEAN"
-    IDS_CMD_RAINING         "RAINING"
-    IDS_CMD_SNOWING         "SNOWING"
-    IDS_CMD_TIME            "TIME"
-    IDS_CMD_CU_COUNT        "COUNT"
-    IDS_CMD_NOTICE          "NOTICE"
-    IDS_CMD_ARREST          "ARREST"
-    IDS_CMD_FORBIDCONNECT   "FORBIDCONNECT"
-    IDS_CMD_FORBIDCHAT      "FORBIDCHAT"
+IDS_CMD_PERMITCHAT      "allow_chat"
+IDS_CMD_GAME_SAVE       "save"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_CMD_PERMITCHAT      "PERMITCHAT"
-    IDS_CMD_GAME_SAVE       "SAVE"
+IDS_PARTY_BBS_REGISTER  "Posting request for a party on the Party Request Board. "
+IDS_PARTY_BBS_REGISTER_CANCEL
+"Delete the request for a party from the Party Request Board. "
+IDS_TRADE_BBS_SELL_REGISTER
+"You need %d Coins to register the selling item. "
+IDS_TRADE_BBS_PER_TRADE "You'll have to pay the Inn Keeper %d Coins in order to trade with somebody that is far away. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_PARTY_BBS_REGISTER  "??땄ξずㅍ????"
-    IDS_PARTY_BBS_REGISTER_CANCEL "??땄ξずㅍ??먈간"
-    IDS_TRADE_BBS_SELL_REGISTER "썸ずか??㉻롭?웡ず━¾%d ずㅲ쿱?."
-    IDS_TRADE_BBS_PER_TRADE "n?ㄳ?머겅곗ずけaζ¹??Ⅲ떱?ㅴ?횬]??%d ?Ξ."
+IDS_TRADE_BBS_BUY_REGISTER
+"Registering items you want to buy will cost %d coins per hour."
+IDS_TRADE_BBS_FAIL1     "Failed registering. "
+IDS_TRADE_BBS_FAIL2     "You don't have enough Coins. "
+IDS_TRADE_BBS_FAIL3     "Failed canceling the registration."
+IDS_TRADE_BBS_FAIL4     "Failed. Please press the refresh button."
+IDS_TRADE_BBS_FAIL5     "Failed requesting for a trade. "
+IDS_TRADE_BBS_FAIL6     "Could not access the trade board."
+IDS_OTHER_PER_TRADE_ID_NO
+"The user has declined the request for a trade. "
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_TRADE_BBS_BUY_REGISTER "?ずか??㉻롭?웡ず━¾%d ずㅲ쿱?."
-    IDS_TRADE_BBS_FAIL1     "?웡ⅱ귐."
-    IDS_TRADE_BBS_FAIL2     "?뱐ㄳº."
-    IDS_TRADE_BBS_FAIL3     "먈간ⅱ귐."
-    IDS_TRADE_BBS_FAIL4     "ⅱ귐. 싻シs樓?"
-    IDS_TRADE_BBS_FAIL5     "ζ¹Τ싻ⅱ귐."
-    IDS_TRADE_BBS_FAIL6     "???귑ζ¹??쾀."
-    IDS_OTHER_PER_TRADE_ID_NO "뱄ㅸ⒩뎬ζ¹."
+IDS_FONT_BALLOON        "Arial"
+IDS_FONT_ID             "Arial"
+IDS_FONT_INFO           "Arial"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDS_URL_JOIN            "http://www.knight-online.com.tw"
+IDS_CLASS_KINDOF_ATTACK_WIZARD "Offensive Magician"
+IDS_CLASS_KINDOF_PET_WIZARD "Pet Magician"
+IDS_CLASS_KINDOF_HEAL_PRIEST "Healing Priest"
+IDS_CLASS_KINDOF_CURSE_PRIEST "Cursing Priest"
 END
 
-#endif    // Chinese (Taiwan) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -1758,4 +914,3 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
-

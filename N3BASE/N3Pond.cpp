@@ -203,7 +203,7 @@ bool CN3Pond::Load(HANDLE hFile)
 	if(m_iPondMeshNum<=0) return false;
 
 	char szFileName[30];
-	for (i=0;i<MAX_POND_TEX;i++)
+	for (auto i=0;i<MAX_POND_TEX;i++)
 	{
 		sprintf(szFileName, "misc\\river\\caust%02d.dxt", i);
 		m_pTexPond[i] = CN3Base::s_MngTex.Get(szFileName);

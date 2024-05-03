@@ -166,7 +166,7 @@ bool CN3Eng::Init(BOOL bWindowed, HWND hWnd, DWORD dwWidth, DWORD dwHeight, DWOR
 //#endif // end of _N3TOOL
 
 	int nMC = m_DeviceInfo.nModeCount;
-	for(i = 0; i < nMC; i++)
+	for(auto i = 0; i < nMC; i++)
 	{
 //		if(	m_DeviceInfo.pModes[i].Width == dwWidth && 
 //			m_DeviceInfo.pModes[i].Height == dwHeight && 
@@ -229,16 +229,18 @@ bool CN3Eng::Init(BOOL bWindowed, HWND hWnd, DWORD dwWidth, DWORD dwHeight, DWOR
 	if(s_DevCaps.TextureCaps & D3DPTEXTURECAPS_POW2) s_dwTextureCaps |= TEX_CAPS_POW2;
 
 	// 기본 라이트 정보 지정..
-	for(i = 0; i < 8; i++)
+	for(auto i = 0; i < 8; i++)
 	{
 		CN3Light::__Light Lgt;
 		_D3DCOLORVALUE LgtColor = { 1.0f, 1.0f, 1.0f, 1.0f };
-		Lgt.InitPoint(i, __Vector3(0,0,0), LgtColor);
+		auto lightPoint = __Vector3(0, 0, 0);
+		Lgt.InitPoint(i, lightPoint, LgtColor);
 		s_lpD3DDev->SetLight(i, &Lgt);
 	}
 
 	// 기본 뷰와 프로젝션 설정.
-	this->LookAt(__Vector3(5,5,-10), __Vector3(0,0,0), __Vector3(0,1,0));
+	auto vEye = __Vector3(5, 5, -10), vAt = __Vector3(0, 0, 0), vUp = __Vector3(0, 1, 0);
+	this->LookAt(vEye, vAt, vUp);
 	this->SetProjection(0.1f, 256.0f, D3DXToRadian(45.0f), (float)dwHeight/dwWidth);
 	
 	RECT rcView = { 0, 0, dwWidth, dwHeight };

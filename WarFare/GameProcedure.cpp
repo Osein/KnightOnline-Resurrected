@@ -854,7 +854,7 @@ void CGameProcedure::ReportDebugStringAndSendToServer(const std::string& szDebug
 	{
 		int iLen = szDebug.size();
 		std::vector<BYTE> buffer;	// 버퍼.. 
-		buffer.assign(iLen + 4);
+		buffer.resize(iLen + 4);
 		int iOffset=0;												// 옵셋..
 		s_pSocket->MP_AddByte(&(buffer[0]), iOffset, N3_REPORT_DEBUG_STRING);
 		s_pSocket->MP_AddShort(&(buffer[0]), iOffset, iLen);

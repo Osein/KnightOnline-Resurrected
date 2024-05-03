@@ -1324,8 +1324,8 @@ stop:
 
 	// 아이콘 이름 만들기.. ^^
 	std::vector<char> buffer(256, NULL);
-	sprintf(buffer.begin(),	"UI\\skillicon_%.2d_%d.dxt", pUSkill->dwID%100, pUSkill->dwID/100);
-	spSkill->szIconFN = buffer.begin();
+	sprintf(buffer.data(),	"UI\\skillicon_%.2d_%d.dxt", pUSkill->dwID%100, pUSkill->dwID/100);
+	spSkill->szIconFN = buffer.data();
 
 	// 아이콘 로드하기.. ^^
 	spSkill->pUIIcon = new CN3UIIcon;
@@ -1527,7 +1527,7 @@ void CUISkillTreeDlg::AllClearImageByName(const std::string& szFN, bool bTrueOrN
 	pBase = GetChildBaseByName(str);
 	if (pBase) pBase->SetVisible(bTrueOrNot);
 
-	for ( i = 0; i < 4; i++ )
+	for (auto i = 0; i < 4; i++ )
 	{
 		str = "btn_";	str += szFN;	sprintf(cstr, "%d", i);	str+= cstr;
 		pButton = GetChildButtonByName(str);

@@ -213,7 +213,6 @@ void CUILogIn::ServerInfoUpdate()
 	m_pList_Server->ResetContent();
 	if(!m_ListServerInfos.empty())
 	{
-		sort(m_ListServerInfos.begin(), m_ListServerInfos.end(), not2(__GameServerInfo()));
 		int iSize = m_ListServerInfos.size();
 		for(int i = 0; i < iSize; i++)
 		{

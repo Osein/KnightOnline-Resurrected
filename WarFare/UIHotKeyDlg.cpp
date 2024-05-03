@@ -310,14 +310,15 @@ void CUIHotKeyDlg::Render()
 	// 현재 페이지에서 
 	CN3UIArea* pArea;
 	POINT ptCur = CGameProcedure::s_pLocalInput->MouseGetPos();
+	int k = 0;
 
-	for( int k = 0; k < MAX_SKILL_IN_HOTKEY; k++ )
+	for(; k < MAX_SKILL_IN_HOTKEY; k++ )
 	{
 		if (m_pMyHotkey[m_iCurPage][k] != NULL) 
 			DisplayCountStr(m_pMyHotkey[m_iCurPage][k]);
 	}
 
-	for( k = 0; k < MAX_SKILL_IN_HOTKEY; k++ )
+	for(k = 0; k < MAX_SKILL_IN_HOTKEY; k++ )
 	{
 		if (m_pMyHotkey[m_iCurPage][k] != NULL) 
 		{
@@ -399,8 +400,8 @@ void CUIHotKeyDlg::InitIconUpdate()
 
 			// 아이콘 이름 만들기.. ^^
 			std::vector<char> buffer(256, NULL);
-			sprintf(buffer.begin(),	"UI\\skillicon_%.2d_%d.dxt", HD.iID%100, HD.iID/100);
-			spSkill->szIconFN = buffer.begin();
+			sprintf(buffer.data(),	"UI\\skillicon_%.2d_%d.dxt", HD.iID%100, HD.iID/100);
+			spSkill->szIconFN = buffer.data();
 
 			// 아이콘 로드하기.. ^^
 			spSkill->pUIIcon = new CN3UIIcon;
@@ -552,7 +553,9 @@ bool CUIHotKeyDlg::IsSelectedSkillInRealIconArea()
 	bool bFound = false;
 	POINT ptCur = CGameProcedure::s_pLocalInput->MouseGetPos();
 
-	for( int i = 0; i < MAX_SKILL_IN_HOTKEY; i++ )
+	int i = 0;
+
+	for(; i < MAX_SKILL_IN_HOTKEY; i++ )
 	{
 		pArea = CN3UIWndBase::GetChildAreaByiOrder(UI_AREA_TYPE_SKILL_HOTKEY, i);
 		if (pArea && pArea->IsIn(ptCur.x, ptCur.y))
@@ -880,8 +883,8 @@ bool CUIHotKeyDlg::ReceiveIconDrop(__IconItemSkill* spItem, POINT ptCur)
 
 		// 아이콘 이름 만들기.. ^^
 		std::vector<char> buffer(256, NULL);
-		sprintf(buffer.begin(),	"UI\\skillicon_%.2d_%d.dxt", spItem->pItemBasic->dwEffectID1%100, spItem->pItemBasic->dwEffectID1/100);
-		spSkill->szIconFN = buffer.begin();
+		sprintf(buffer.data(),	"UI\\skillicon_%.2d_%d.dxt", spItem->pItemBasic->dwEffectID1%100, spItem->pItemBasic->dwEffectID1/100);
+		spSkill->szIconFN = buffer.data();
 
 		// 아이콘 로드하기.. ^^
 		spSkill->pUIIcon = new CN3UIIcon;

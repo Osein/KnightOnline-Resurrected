@@ -30,7 +30,7 @@
 CUIDroppedItemDlg::CUIDroppedItemDlg()
 {
 	for( int i = 0; i < MAX_ITEM_BUNDLE_DROP_PIECE; i++ )	m_pMyDroppedItem[i] = NULL;
-	for( i = 0; i < MAX_ITEM_BUNDLE_DROP_PIECE; i++ )	m_bSendedIconArray[i] = false;
+	for(auto i = 0; i < MAX_ITEM_BUNDLE_DROP_PIECE; i++ )	m_bSendedIconArray[i] = false;
 
 	m_iItemBundleID = 0;
 	m_pUITooltipDlg = NULL;

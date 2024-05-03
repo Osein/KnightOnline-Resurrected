@@ -63,7 +63,7 @@ static bool g_bItemClassGroup[26][26] = {	// [아이템][플레이어]
 CUIInventory::CUIInventory()
 {
 	for( int i = 0; i < ITEM_SLOT_COUNT; i++ )	m_pMySlot[i] = NULL;
-	for( i = 0; i < MAX_ITEM_INVENTORY; i++ )	m_pMyInvWnd[i] = NULL;
+	for(auto i = 0; i < MAX_ITEM_INVENTORY; i++ )	m_pMyInvWnd[i] = NULL;
 
 	m_pUITooltipDlg = NULL;
 	CN3UIWndBase::m_sRecoveryJobInfo.m_bWaitFromServer = false;
@@ -97,7 +97,7 @@ void CUIInventory::Release()
 		}
 	}
 
-	for( i = 0; i < MAX_ITEM_INVENTORY; i++ )
+	for(auto i = 0; i < MAX_ITEM_INVENTORY; i++ )
 	{
 		if ( m_pMyInvWnd[i] != NULL )
 		{
@@ -141,7 +141,7 @@ void CUIInventory::ReleaseItem()
 		}
 	}
 
-	for( i = 0; i < MAX_ITEM_INVENTORY; i++ )
+	for(auto i = 0; i < MAX_ITEM_INVENTORY; i++ )
 	{
 		if ( m_pMyInvWnd[i] != NULL )
 		{
@@ -424,7 +424,7 @@ void CUIInventory::InitIconUpdate()
 		}
 	}
 
-	for( i = 0; i < MAX_ITEM_INVENTORY; i++ )
+	for(auto i = 0; i < MAX_ITEM_INVENTORY; i++ )
 	{
 		if ( m_pMyInvWnd[i] != NULL )
 		{
@@ -454,7 +454,7 @@ __IconItemSkill* CUIInventory::GetHighlightIconItem(CN3UIIcon* pUIIcon)
 			return m_pMySlot[i];
 	}
 
-	for( i = 0; i < MAX_ITEM_INVENTORY; i++ )
+	for(auto i = 0; i < MAX_ITEM_INVENTORY; i++ )
 	{
 		if ( (m_pMyInvWnd[i] != NULL) && (m_pMyInvWnd[i]->pUIIcon == pUIIcon) )
 			return m_pMyInvWnd[i];
@@ -470,7 +470,7 @@ e_UIWND_DISTRICT CUIInventory::GetWndDistrict(__IconItemSkill* spItem)
 			return UIWND_DISTRICT_INVENTORY_SLOT;
 	}
 
-	for( i = 0; i < MAX_ITEM_INVENTORY; i++ )
+	for(auto i = 0; i < MAX_ITEM_INVENTORY; i++ )
 	{
 		if ( (m_pMyInvWnd[i] != NULL) && (m_pMyInvWnd[i] == spItem) )
 			return UIWND_DISTRICT_INVENTORY_INV;
@@ -575,8 +575,8 @@ void CUIInventory::SendInvMsg(BYTE bDir, int iItemID, int SrcPos, int DestPos)
 	CAPISocket::MP_AddByte(byBuff, iOffset, N3_ITEM_MOVE);				// Item Move
 	CAPISocket::MP_AddByte(byBuff, iOffset, bDir);						
 	CAPISocket::MP_AddDword(byBuff, iOffset, iItemID);					
-	CAPISocket::MP_AddByte(byBuff, iOffset, (byte)SrcPos);				
-	CAPISocket::MP_AddByte(byBuff, iOffset, (byte)DestPos);						
+	CAPISocket::MP_AddByte(byBuff, iOffset, (BYTE)SrcPos);				
+	CAPISocket::MP_AddByte(byBuff, iOffset, (BYTE)DestPos);						
 
 	TRACE("Send Inv Move %d, %d, %d, %d \n", bDir, iItemID, SrcPos, DestPos );
 
@@ -1411,7 +1411,7 @@ int CUIInventory::GetIndexInArea(POINT pt)
 		}
 	}
 
-	for (i = 0; i < MAX_ITEM_INVENTORY; i++)
+	for (auto i = 0; i < MAX_ITEM_INVENTORY; i++)
 	{
 		pArea = NULL;
 		pArea = CN3UIWndBase::GetChildAreaByiOrder(UI_AREA_TYPE_INV, i);
@@ -2848,7 +2848,7 @@ int CUIInventory::GetIndexItemCount(DWORD dwIndex)
 		}
 	}
 
-	for( i = 0; i < MAX_ITEM_INVENTORY; i++ )
+	for(auto i = 0; i < MAX_ITEM_INVENTORY; i++ )
 	{
 		if(m_pMyInvWnd[i] && m_pMyInvWnd[i]->pItemBasic)
 		{

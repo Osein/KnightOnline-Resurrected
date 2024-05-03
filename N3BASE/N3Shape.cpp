@@ -956,7 +956,7 @@ bool CN3Shape::MakeCollisionMeshByParts()  // 충돌 메시를 박스로 만든�
 	CN3VMesh VMTmp;
 
 	iVC = 0; iIC = 0;
-	for(i = 0; i < iPC; i++)
+	for(auto i = 0; i < iPC; i++)
 	{
 		CN3PMesh* pPMesh = m_Parts[i]->Mesh();
 		if(NULL == pPMesh) continue;
@@ -969,8 +969,8 @@ bool CN3Shape::MakeCollisionMeshByParts()  // 충돌 메시를 박스로 만든�
 		m_Parts[i]->Tick(m_Matrix, m_qRot, 1.0f);
 		__Matrix44 mtxPart = m_Parts[i]->m_Matrix;
 		mtxPart *= mtxI;
-		for(int j = 0; j < 8; j++) pVDest[iVC+j] = pVSrc[j] * mtxPart;
-		for(j = 0; j < 36; j++) pwIDest[iIC+j] = pwISrc[j] + iVC;
+		for(auto j = 0; j < 8; j++) pVDest[iVC+j] = pVSrc[j] * mtxPart;
+		for(auto j = 0; j < 36; j++) pwIDest[iIC+j] = pwISrc[j] + iVC;
 
 		iVC += 8;
 		iIC += 36;
@@ -1030,7 +1030,7 @@ bool CN3Shape::MakeCollisionMeshByPartsDetail()  // 현재 모습 그대로... �
 	__Matrix44 mtxI = m_Matrix;
 	D3DXMatrixInverse(&mtxI, NULL, &m_Matrix);
 
-	for(i = 0; i < iPC; i++)
+	for(auto i = 0; i < iPC; i++)
 	{
 		CN3PMesh* pPMesh = m_Parts[i]->Mesh();
 		CN3PMeshInstance* pPMI = m_Parts[i]->MeshInstance();
@@ -1046,8 +1046,8 @@ bool CN3Shape::MakeCollisionMeshByPartsDetail()  // 현재 모습 그대로... �
 		m_Parts[i]->Tick(m_Matrix, m_qRot, 1.0f);
 		__Matrix44 mtxPart = m_Parts[i]->m_Matrix;
 		mtxPart *= mtxI;
-		for(int j = 0; j < iMaxNumVertices; j++) pVDest[iVC+j] = pVSrc[j] * mtxPart;
-		for(j = 0; j < iMaxNumIndices; j++) pwIDest[iIC+j] = pwISrc[j] + iVC;
+		for(auto j = 0; j < iMaxNumVertices; j++) pVDest[iVC+j] = pVSrc[j] * mtxPart;
+		for(auto j = 0; j < iMaxNumIndices; j++) pwIDest[iIC+j] = pwISrc[j] + iVC;
 
 		iVC += iMaxNumVertices;
 		iIC += iMaxNumIndices;

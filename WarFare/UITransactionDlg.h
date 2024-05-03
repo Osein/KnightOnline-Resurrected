@@ -85,9 +85,9 @@ public:
 	void				CancelIconDrop(__IconItemSkill* spItem);
 	void				AcceptIconDrop(__IconItemSkill* spItem);
 
-	void				SendToServerSellMsg(int itemID, byte pos, int iCount);
-	void				SendToServerBuyMsg(int itemID, byte pos, int iCount);
-	void				SendToServerMoveMsg(int itemID, byte startpos, byte destpos);
+	void				SendToServerSellMsg(int itemID, BYTE pos, int iCount);
+	void				SendToServerBuyMsg(int itemID, BYTE pos, int iCount);
+	void				SendToServerMoveMsg(int itemID, BYTE startpos, BYTE destpos);
 
 	// 물건 구입이 서버에게 보내기전 성공..
 	void				ReceiveItemDropByTradeSuccess();
@@ -101,7 +101,7 @@ public:
 	void				ItemMoveFromInvToThis();
 	void				ItemMoveFromThisToInv();
 
-	void				ReceiveResultTradeFromServer(byte bResult, byte bType, int	iMoney);
+	void				ReceiveResultTradeFromServer(BYTE bResult, BYTE bType, int	iMoney);
 	void				ReceiveResultTradeMoveSuccess();
 	void				ReceiveResultTradeMoveFail();
 

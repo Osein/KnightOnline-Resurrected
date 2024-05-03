@@ -218,7 +218,7 @@ bool CN3UIImage::Load(HANDLE hFile)
 		m_pAnimImagesRef = new CN3UIImage*[m_iAnimCount];
 		ZeroMemory(m_pAnimImagesRef, sizeof(CN3UIImage*)*m_iAnimCount);
 		int i=0;
-		for(itor = m_Children.begin(); m_Children.end() != itor; ++itor)
+		for(auto itor = m_Children.begin(); m_Children.end() != itor; ++itor)
 		{
 			if(UI_TYPE_IMAGE == (*itor)->UIType()) m_pAnimImagesRef[i] = (CN3UIImage*)(*itor);
 			__ASSERT(m_pAnimImagesRef[i]->GetReserved() == (DWORD)i, "animate Image load fail");	// 제대로 정렬이 되지 않았을경우 실패한다.

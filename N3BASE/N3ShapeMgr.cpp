@@ -2,21 +2,16 @@
 //
 //////////////////////////////////////////////////////////////////////
 
+#include "stdafx.h"
+
 #ifdef _N3GAME
 #include "../WarFare/StdAfx.h"
 #include "../WarFare/GameProcedure.h"
-#ifndef _REPENT
 #include "../WarFare/UILoading.h"
-#endif	// _REPENT
-#else
-#include "stdafx.h"
 #endif // end of #ifndef _N3GAME
 
 #include "N3ShapeMgr.h"
-
-#ifndef _3DSERVER
 #include "N3ShapeExtra.h"
-#endif // end of #ifndef _3DSERVER
 
 CN3ShapeMgr::CN3ShapeMgr()
 {
@@ -425,7 +420,8 @@ void CN3ShapeMgr::GenerateCollisionData()
 					if(dwOC0 & dwOC1) bWriteID = false; // 두 끝점이 같은 변의 외부에 있다.
 					else if(dwOC0 == 0 && dwOC1 == 0) bWriteID = true;// 선분이 사각형 내부에 있음
 					else if((dwOC0 == 0 && dwOC1 != 0) || (dwOC0 != 0 && dwOC1 == 0)) bWriteID = true;// 선분 한점은 셀의 내부에 한점은 외부에 있음.
-					else if((dwOC0 & dwOC1) == 0) // 두 L점 모두 셀 외부에 있지만 판단을 다시 해야 한다.
+					else if((dwOC0 & dwOC1) == 0) // 두 
+L점 모두 셀 외부에 있지만 판단을 다시 해야 한다.
 					{
 						float fXCross = vEdge[j][0].x + (fZMax - vEdge[j][0].z) * (vEdge[j][1].x - vEdge[j][0].x) / (vEdge[j][1].z - vEdge[j][0].z); // 위의 변과의 교차점을 계산하고..
 						if(fXCross < fXMin) bWriteID = false; // 완전히 외곽에 있다.
@@ -750,7 +746,7 @@ bool CN3ShapeMgr::CheckCollision(	const __Vector3& vPos,		// 충돌 위치
 			if(iSC > 1) qsort(&(Shapes[0]), iSC, 4, SortByCameraDistance); // 카메라 거리에 따라 정렬하고..
 
 			CN3VMesh* pVMesh = NULL;
-			for(i = 0; i < iSC; i++)
+			for(auto i = 0; i < iSC; i++)
 			{
 				pVMesh = Shapes[i]->CollisionMesh();
 				if(true == pVMesh->CheckCollision(Shapes[i]->m_Matrix, vPos, vPosNext, pvCol, pvNormal)) return true;
@@ -864,7 +860,7 @@ CN3Shape* CN3ShapeMgr::Pick(int iXScreen, int iYScreen, bool bMustHaveEvent, __V
 	for(int i = 0; it != itEnd; it++, i++) { Shapes[i] = *it; }
 	qsort(&(Shapes[0]), iSC, 4, SortByCameraDistance);
 
-	for(i = 0; i < iSC; i++)
+	for(auto i = 0; i < iSC; i++)
 	{
 		if(bMustHaveEvent && Shapes[i]->m_iEventID <= 0) continue; // 이벤트가 있어야 한다면...
 		if(Shapes[i]->CheckCollisionPrecisely(false, vPos, vDir, pvPick) >= 0)
@@ -891,7 +887,7 @@ CN3Shape* CN3ShapeMgr::PickMovable(int iXScreen, int iYScreen, __Vector3* pvPick
 	for(int i = 0; it != itEnd; it++, i++) { Shapes[i] = *it; }
 	qsort(&(Shapes[0]), iSC, 4, SortByCameraDistance);
 
-	for(i = 0; i < iSC; i++)
+	for(auto i = 0; i < iSC; i++)
 	{
 		if(Shapes[i]->CheckCollisionPrecisely(false, vPos, vDir, pvPick) >= 0)
 			return Shapes[i];
@@ -971,7 +967,7 @@ int CN3ShapeMgr::SubCellPathThru(const __Vector3& vFrom, const __Vector3& vAt, i
 			if(dwOC0 & dwOC1) bPathThru = false; // 두 끝점이 같은 변의 외부에 있다.
 			else if(dwOC0 == 0 && dwOC1 == 0) bPathThru = true;// 선분이 사각형 내부에 있음
 			else if((dwOC0 == 0 && dwOC1 != 0) || (dwOC0 != 0 && dwOC1 == 0)) bPathThru = true;// 선분 한점은 셀의 내부에 한점은 외부에 있음.
-			else if((dwOC0 & dwOC1) == 0) // 두 L점 모두 셀 외부에 있지만 판단을 다시 해야 한다.
+			else if((dwOC0 & dwOC1) == 0) // 두 L점 모두 셀 외부에 있지만 판단을 다시 해야 한다.
 			{
 				float fXCross = vFrom.x + (fZMax - vFrom.z) * (vAt.x - vFrom.x) / (vAt.z - vFrom.z); // 위의 변과의 교차점을 계산하고..
 				if(fXCross < fXMin) bPathThru = false; // 완전히 외곽에 있다.
@@ -1384,4 +1380,3 @@ void CN3ShapeMgr::SubCell(const __Vector3& vPos, __CellSub** ppSubCell)			// 해
 		}	// switch
 	}	// for 
 }
-

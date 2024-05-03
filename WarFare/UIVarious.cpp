@@ -1408,7 +1408,7 @@ void CUIFriends::UpdateList()
 	it_FI it = m_MapFriends.begin(), itEnd = m_MapFriends.end();
 	for(int i = 0; i < iSkip; i++, it++);
 
-	for(i = 0; i < iLinePerPage && it != itEnd; i++, it++)
+	for(auto i = 0; i < iLinePerPage && it != itEnd; i++, it++)
 	{
 		__FriendsInfo& FI = it->second;
 		int iIndex = m_pList_Friends->AddString(FI.szName);

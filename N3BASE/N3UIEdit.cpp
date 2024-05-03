@@ -681,7 +681,7 @@ bool CN3UIEdit::Load(HANDLE hFile)
 		ReadFile(hFile, buffer.data(), iSndFNLen, &dwNum, NULL);
 
 		__ASSERT(NULL == m_pSnd_Typing, "memory leak");
-		m_pSnd_Typing = s_SndMgr.CreateObj(buffer.begin(), SNDTYPE_2D);
+		m_pSnd_Typing = s_SndMgr.CreateObj(buffer.data(), SNDTYPE_2D);
 	}
 
 	return true;

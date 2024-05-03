@@ -30,6 +30,8 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+GameDebug/
+Data/Log.txt
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/

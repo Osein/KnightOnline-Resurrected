@@ -92,9 +92,6 @@
     <Filter Include="Procedure - LogIn">
       <UniqueIdentifier>{bffa9acf-d339-4cbe-bff9-02e0dd8259d7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Reference Header">
-      <UniqueIdentifier>{8fdc1b54-12c5-44cb-b521-0669b2300a02}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Knight Character">
       <UniqueIdentifier>{a5213627-69cf-41b8-a13b-e2076c301d54}</UniqueIdentifier>
     </Filter>

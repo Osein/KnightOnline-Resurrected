@@ -58,7 +58,7 @@ void CUIItemExchange::Release()
 		}
 	}
 
-	for( i = 0; i < MAX_ITEM_EX_RE_NPC; i++ )
+	for(auto i = 0; i < MAX_ITEM_EX_RE_NPC; i++ )
 	{
 		if ( m_pMyNpcWnd[i] != NULL )
 		{
@@ -153,7 +153,7 @@ e_UIWND_DISTRICT CUIItemExchange::GetWndDistrict(__IconItemSkill* spItem)
 			return UIWND_DISTRICT_EX_RE_INV;
 	}
 
-	for( i = 0; i < MAX_ITEM_EX_RE_NPC; i++ )
+	for(auto i = 0; i < MAX_ITEM_EX_RE_NPC; i++ )
 	{
 		if ( (m_pMyNpcWnd[i] != NULL) && (m_pMyNpcWnd[i] == spItem) )
 			return UIWND_DISTRICT_EX_RE_NPC;
@@ -440,7 +440,7 @@ void CUIItemExchange::UserPressOK()
 
 	CAPISocket::MP_AddByte(byBuff, iOffset, N3_ITEM_REPAIR_REQUEST);			// 게임 스타트 패킷 커멘드..
 	CAPISocket::MP_AddShort(byBuff, iOffset, iCount);		// 아이디 길이 패킷에 넣기..
-	for( i = 0; i < iCount; i++ )
+	for(auto i = 0; i < iCount; i++ )
 	{
 		CAPISocket::MP_AddByte(byBuff, iOffset, m_pMyNpcWndOriginIndex[i]);		// 아이디 길이 패킷에 넣기..
 		CAPISocket::MP_AddDword(byBuff, iOffset, m_pMyNpcWnd[i]->pItemBasic->dwID+m_pMyNpcWnd[i]->pItemExt->dwID);	// 아이디 문자열 패킷에 넣기..
