@@ -1,0 +1,5 @@
+ResourceName = misc\obj_co_eagle.n3shape
+Pivot = 750.0 50.0 940.0
+Radius = 60.0
+RadiusY = 20
+Speed = 15.0
