@@ -383,6 +383,10 @@ bool CN3UIString::Load(HANDLE hFile)
 		ReadFile(hFile, &(szString[0]), iStrLen, &dwNum, NULL);				// string
 		SetString(szString);
 	}
+	if (m_sUIVersion >= 1)
+	{
+		ReadFile(hFile, &m_iPadding, sizeof(int), &dwNum, NULL);
+	}
 	return true;
 }
 

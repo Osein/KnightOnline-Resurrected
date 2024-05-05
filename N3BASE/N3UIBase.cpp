@@ -220,9 +220,10 @@ bool CN3UIBase::Load(HANDLE hFile)
 	CN3BaseFileAccess::Load(hFile);
 	DWORD dwRWC = NULL;
 
-	// children 정보
-	int iCC = 0;
-	ReadFile(hFile, &iCC, sizeof(iCC), &dwRWC, NULL); // children count
+	// children count
+	int16_t iCC = 0;
+	ReadFile(hFile, &iCC, sizeof(int16_t), &dwRWC, NULL);
+	ReadFile(hFile, &m_sUIVersion, sizeof(int16_t), &dwRWC, NULL);
 	eUI_TYPE eChildUIType;
 	for(int i = 0; i < iCC; i++)
 	{
