@@ -78,7 +78,7 @@ public:
 	__IconItemSkill*	GetHighlightIconItem(CN3UIIcon* pUIIcon);
 	int					GetSkilliOrder(__IconItemSkill* spSkill);
 
-	void				AddSkillToPage(__TABLE_UPC_SKILL* pUSkill, int iOffset = 0);
+	void				AddSkillToPage(__TABLE_UPC_SKILL* pUSkill, int iOffset = 0, bool bHasLevelToUse = true);
 
 	void				SetPageInIconRegion(int iKindOf, int iPageNum);		// 아이콘 역역에서 현재 페이지 설정..
 	void				SetPageInCharRegion();								// 문자 역역에서 현재 페이지 설정..
