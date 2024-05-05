@@ -1523,7 +1523,7 @@ BOOL CServerDlg::MapFileLoad()
 	{
 		sZoneName = ZoneInfoSet.m_strZoneName;
 
-		szFullPath.Format(".\\MAP\\%s", sZoneName);
+		szFullPath.Format("..\\Maps\\%s", sZoneName);
 		
 		if (!file.Open(szFullPath, CFile::modeRead))
 		{
