@@ -11,6 +11,7 @@
 
 #include "../N3Base/N3ShapeMgr.h"
 
+CN3TableBase<__TABLE_TEXTS>*			CGameBase::s_pTbl_Texts = NULL;
 CN3TableBase<__TABLE_ZONE>*				CGameBase::s_pTbl_Zones = NULL;				// Zone 정보에 관한 Table
 CN3TableBase<__TABLE_UI_RESRC>*			CGameBase::s_pTbl_UI = NULL;				// UI FileName Table
 CN3TableBase<__TABLE_ITEM_BASIC>*		CGameBase::s_pTbl_Items_Basic = NULL;			// 각 유저의(내 자신과 주위 다른 사람) 클레스별 장착 아이템 리소스 테이블
@@ -37,10 +38,21 @@ CGameBase::~CGameBase()
 {
 }
 
+void _LoadStringFromResource(DWORD dwID, std::string& szText)
+{
+	if (CGameBase::s_pTbl_Texts == NULL)
+		return;
+
+	TABLE_TEXTS* pText = CGameBase::s_pTbl_Texts->Find(dwID);
+	if (pText != NULL)
+		szText = pText->szText;
+}
+
 void CGameBase::StaticMemberInit()
 {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	// Resource Table 로딩 및 초기화...
+	s_pTbl_Texts			= new CN3TableBase<__TABLE_TEXTS>;
 	s_pTbl_Zones			= new CN3TableBase<__TABLE_ZONE>;			// Zone 정보에 관한 Table
 	s_pTbl_UI				= new CN3TableBase<__TABLE_UI_RESRC>;		// UI Resource File Table loading
 	s_pTbl_UPC_Looks		= new CN3TableBase<__TABLE_PLAYER_LOOKS>;	// 플레이어들의 기본 모습이 되는 NPC Resource Table loading
@@ -59,6 +71,7 @@ void CGameBase::StaticMemberInit()
 	if(0x0404 == iLangID) szLangTail = "_TW.tbl"; // Taiwan Language
 
 	std::string szFN;
+	szFN = "Data\\Texts" + szLangTail;		s_pTbl_Texts->LoadFromFile(szFN.c_str());
 	szFN = "Data\\Zones.tbl";				s_pTbl_Zones->LoadFromFile(szFN.c_str());		// Zone 정보에 관한 Table
 	szFN = "Data\\UIs" + szLangTail;		s_pTbl_UI->LoadFromFile(szFN.c_str());			// UI Resource File Table loading
 	szFN = "Data\\UPC_DefaultLooks.tbl";	s_pTbl_UPC_Looks->LoadFromFile(szFN.c_str());	// 플레이어들의 기본 모습이 되는 NPC Resource Table loading
@@ -89,6 +102,7 @@ void CGameBase::StaticMemberInit()
 void CGameBase::StaticMemberRelease()
 {
 	// Tables ....
+	delete s_pTbl_Texts; s_pTbl_Texts = NULL;
 	delete s_pTbl_Zones; s_pTbl_Zones = NULL;		// Zone 정보에 관한 Table
 	delete s_pTbl_UI; s_pTbl_UI = NULL;					// UI Resource File Table loading
 	delete s_pTbl_UPC_Looks; s_pTbl_UPC_Looks = NULL;	// 플레이어들의 기본 모습이 되는 NPC Resource Table loading

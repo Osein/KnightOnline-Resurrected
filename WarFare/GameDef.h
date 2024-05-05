@@ -538,6 +538,12 @@ struct __InfoPartyBBS // 파티 지원 게시판 구조체..
 enum {	RESRC_UI_LOGIN = 0, RESRC_UI_CHARACTERSELECT, RESRC_UI_CHARACTERCREATE, RESRC_UI_INVENTORY, RESRC_UI_CHAT,
 		RESRC_UI_MYINFORMATION, RESRC_UI_TARGET, RESRC_UI_HOTKEY, RESRC_UI_FUNCTION };
 
+typedef struct __TABLE_TEXTS
+{
+	DWORD		dwID;
+	std::string	szText;
+} TABLE_TEXTS;
+
 typedef struct __TABLE_ZONE
 {
 	DWORD		dwID;									// zone ID
