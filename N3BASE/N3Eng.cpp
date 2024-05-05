@@ -385,7 +385,7 @@ void CN3Eng::Present(HWND hWnd, RECT* pRC)
 //	}
 
 	s_fSecPerFrm = CN3Base::TimerProcess(TIMER_GETELAPSEDTIME);
-	if(s_fSecPerFrm <= 0.001f || s_fSecPerFrm >= 1.0f) s_fSecPerFrm = 0.033333f; // 너무 안나오면 기본 값인 30 프레임으로 맞춘다..
+	if(s_fSecPerFrm >= 1.0f) s_fSecPerFrm = 0.033333f; // 너무 안나오면 기본 값인 30 프레임으로 맞춘다..
 	s_fFrmPerSec = 1.0f / s_fSecPerFrm; // 초당 프레임 수 측정..
 
 //	fTimePrev = fTime;
