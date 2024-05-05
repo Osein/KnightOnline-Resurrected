@@ -54,29 +54,23 @@ void CGameBase::StaticMemberInit()
 	s_pTbl_QuestMenu		= new CN3TableBase<__TABLE_QUEST_MENU>;
 	s_pTbl_QuestTalk		= new CN3TableBase<__TABLE_QUEST_TALK>;
 
-	std::string szLangTail = ".tbl";
-	int iLangID = ::GetUserDefaultLangID();
-	if(0x0404 == iLangID) szLangTail = "_TW.tbl"; // Taiwan Language
-
 	std::string szFN;
 	szFN = "Data\\Zones.tbl";				s_pTbl_Zones->LoadFromFile(szFN.c_str());		// Zone 정보에 관한 Table
-	szFN = "Data\\UIs" + szLangTail;		s_pTbl_UI->LoadFromFile(szFN.c_str());			// UI Resource File Table loading
+	szFN = "Data\\UIs.tbl";		s_pTbl_UI->LoadFromFile(szFN.c_str());			// UI Resource File Table loading
 	szFN = "Data\\UPC_DefaultLooks.tbl";	s_pTbl_UPC_Looks->LoadFromFile(szFN.c_str());	// 플레이어들의 기본 모습이 되는 NPC Resource Table loading
-	szFN = "Data\\Item_Org" + szLangTail;	s_pTbl_Items_Basic->LoadFromFile(szFN.c_str());	// Item Resource Table loading
+	szFN = "Data\\Item_Org.tbl";	s_pTbl_Items_Basic->LoadFromFile(szFN.c_str());	// Item Resource Table loading
 
-	szFN = "Data\\Quest_Menu" + szLangTail;	s_pTbl_QuestMenu->LoadFromFile(szFN.c_str());	// 퀘스트 관련 선택메뉴
-	szFN = "Data\\Quest_Talk" + szLangTail;	s_pTbl_QuestTalk->LoadFromFile(szFN.c_str());	// 퀘스트 관련 지문
+	szFN = "Data\\Quest_Menu.tbl";	s_pTbl_QuestMenu->LoadFromFile(szFN.c_str());	// 퀘스트 관련 선택메뉴
+	szFN = "Data\\Quest_Talk.tbl";	s_pTbl_QuestTalk->LoadFromFile(szFN.c_str());	// 퀘스트 관련 지문
 
 	for(auto i = 0; i < MAX_ITEM_EXTENSION; i++)
 	{
-		char szFNTmp[256] = "";
-		sprintf(szFNTmp, "Data\\Item_Ext_%d", i);
-		szFN = szFNTmp + szLangTail;
+		sprintf(szFN.data(), "Data\\Item_Ext_%d.tbl", i);
 		s_pTbl_Items_Exts[i]->LoadFromFile(szFN.c_str());
 	}
 
 	szFN = "Data\\NPC_Looks.tbl";					s_pTbl_NPC_Looks->LoadFromFile(szFN.c_str());		// NPC Resource Table loading
-	szFN = "Data\\skill_magic_main" + szLangTail;	s_pTbl_Skill->LoadFromFile(szFN.c_str());			// Skill 정보에 관한 Table
+	szFN = "Data\\skill_magic_main.tbl";	s_pTbl_Skill->LoadFromFile(szFN.c_str());			// Skill 정보에 관한 Table
 	szFN = "Data\\Exchange_Quest.tbl";				s_pTbl_Exchange_Quest->LoadFromFile(szFN.c_str());	// 교환 퀘스트에 관한 테이블..
 	szFN = "Data\\fx.tbl";							s_pTbl_FXSource->LoadFromFile(szFN.c_str());
 

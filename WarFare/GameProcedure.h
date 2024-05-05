@@ -51,6 +51,11 @@ class DataPack;
 class CGameProcedure : public CGameBase
 {
 public:
+	CGameProcedure();
+	virtual ~CGameProcedure();
+
+	void LoadingUIChange(int iVictoryNation);
+
 	static class CKnightChrMgr*		s_pKnightChr;		// 나이트 캐릭터..		
 	static class CN3SndObjStream*	s_pSnd_BGM;			// 메인 배경음악 포인터..
 	static class CLocalInput*		s_pLocalInput;		// 마우스와 키보드 입력 객체 .. Direct Input 을 썼다.
@@ -99,7 +104,6 @@ public:
 	static bool		s_bKeyPress;	//키가 눌려졌을때 ui에서 해당하는 조작된적이 있다면
 	static bool		s_bKeyPressed;	//키가 올라갔을때 ui에서 해당하는 조작된적이 있다면
 
-public:
 	static std::string MessageBoxPost(const std::string& szMsg, const std::string& szTitle, int iStyle, e_Behavior eBehavior = BEHAVIOR_NOTHING);
 	static void MessageBoxClose(const std::string& szMsg);
 	static void MessageBoxClose(int iMsgBoxIndex);
@@ -120,8 +124,6 @@ public:
 	virtual void	MsgSend_CharacterSelect();
 	void			MsgSend_AliveCheck();
 
-
-	
 	virtual void Release(); // 리소스 풀어주기..
 	virtual void Init(); // 필요한 요소들을 초기화 및 로딩
 	virtual void Tick();  // 프로시져 인덱스를 리턴한다. 0 이면 그대로 진행
@@ -152,11 +154,6 @@ protected:
 
 private:
 	static std::string GetStrRegKeySetting();
-
-public:
-	void LoadingUIChange(int iVictoryNation);
-	CGameProcedure();
-	virtual ~CGameProcedure();
 };
 
 
