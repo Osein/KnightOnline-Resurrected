@@ -150,7 +150,7 @@ void CDBAgent::MUserInit(int uid)
 	pUser->m_dwTime = 0;
 }
 
-BOOL CDBAgent::LoadUserData(char *userid, int uid)
+BOOL CDBAgent::LoadUserData(char* accountId, char *userid, int uid)
 {
 	SQLHSTMT		hstmt;
 	SQLRETURN		retcode;
@@ -160,7 +160,7 @@ BOOL CDBAgent::LoadUserData(char *userid, int uid)
 	memset(szSQL, 0x00, 1024);
 
 	//wsprintf(szSQL, TEXT("{? = call LOAD_USER_DATA ('%s')}"), userid);
-	wsprintf(szSQL, TEXT("{call LOAD_USER_DATA ('%s', ?)}"), userid);
+	wsprintf(szSQL, TEXT("{call LOAD_USER_DATA ('%s', '%s', ?)}"), accountId, userid);
 	
 	SQLCHAR Nation, Race, HairColor, Rank, Title, Level; 
 	SQLINTEGER Exp, Loyalty, Gold, PX, PZ, PY, dwTime;
