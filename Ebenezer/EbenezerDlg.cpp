@@ -718,7 +718,7 @@ BOOL CEbenezerDlg::AIServerConnect()
 {
 	C3DMap* pMap = NULL;
 
-	strcpy(m_AIServerIP, m_Ini.GetProfileString("AI_SERVER", "IP", "192.203.143.119"));
+	strcpy(m_AIServerIP, m_Ini.GetProfileString("AI_SERVER", "IP", "127.0.0.1"));
 	
 	
 	for( int i=0; i<MAX_AI_SOCKET; i++ ) {
