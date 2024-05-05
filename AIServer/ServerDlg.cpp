@@ -149,7 +149,6 @@ BEGIN_MESSAGE_MAP(CServerDlg, CDialog)
 	ON_WM_QUERYDRAGICON()
 	ON_WM_TIMER()
 	//}}AFX_MSG_MAP
-	ON_MESSAGE( WM_GAMESERVER_LOGIN, OnGameServerLogin )
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1866,17 +1865,6 @@ int CServerDlg::Send(char* pData, int length, int nZone)
 	return 0;
 }
 // ~sungyong 2002.05.23
-
-LRESULT CServerDlg::OnGameServerLogin( WPARAM wParam, LPARAM lParam )
-{
-/*	if( m_bNpcInfoDown ) {
-		m_ZoneNpcList.push_back(wParam);
-		return;
-	}
-
-	AllNpcInfo( wParam );	*/
-	return S_OK;
-}
 
 void CServerDlg::GameServerAcceptThread()
 {

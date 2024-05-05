@@ -28,7 +28,7 @@ CAISocket::~CAISocket()
 
 void CAISocket::Initialize()
 {
-	m_pMain = (CEbenezerDlg*)AfxGetMainWnd();
+	m_pMain = (CEbenezerDlg*)AfxGetApp()->GetMainWnd();
 	m_MagicProcess.m_pMain = m_pMain;
 }
 
@@ -226,7 +226,7 @@ void CAISocket::RecvNpcInfoAll(char* pBuf)
 	short		sSize = 100;				// NPC Size
 	int			iweapon_1;
 	int			iweapon_2;
-	char		szName[MAX_ID_SIZE+1];		// NPC Name
+	char		szName[MAX_NPC_NAME_SIZE+1];		// NPC Name
 	BYTE		byGroup;		// 소속 집단
 	BYTE		byLevel;		// level
 	float		fPosX;			// X Position
@@ -272,7 +272,7 @@ void CAISocket::RecvNpcInfoAll(char* pBuf)
 
 		//TRACE("RecvNpcInfoAll  : nid=%d, szName=%s, count=%d\n", nid, szName, byCount);
 
-		if(nLength < 0 || nLength > MAX_ID_SIZE)	{
+		if(nLength < 0 || nLength > MAX_NPC_NAME_SIZE)	{
 			TRACE("#### RecvNpcInfoAll Fail : szName=%s\n", szName);
 			continue;		// 잘못된 monster 아이디 
 		}
