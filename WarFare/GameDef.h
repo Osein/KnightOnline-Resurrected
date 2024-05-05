@@ -1063,8 +1063,8 @@ const int MAX_ITEM_EX_RE_NPC = 4; // 교환, 수리창 NPC 영역..
 const int MAX_SKILL_FROM_SERVER = 9;		// 서버에게서 받는 정보 슬롯 갯수..			
 
 const int MAX_SKILL_KIND_OF = 5;			// Base Skill 1개, 전문 스킬 4개..			
-const int MAX_SKILL_IN_PAGE = 8;			// 한 페이지 내의 아이콘 갯수..				
-const int MAX_SKILL_PAGE_NUM = 3;			// 스킬 한개가 가지는 최대 페이지수..		
+const int MAX_SKILL_IN_PAGE = 6;			// 한 페이지 내의 아이콘 갯수..				
+const int MAX_SKILL_PAGE_NUM = 5;			// 스킬 한개가 가지는 최대 페이지수..		
 
 
 const int MAX_SKILL_HOTKEY_PAGE = 8;		// Hot Key의 총 페이지 수.. 				
@@ -1150,6 +1150,12 @@ typedef struct __TABLE_FX	// FX 리소스 레코드...
 	DWORD		dwSoundID;	// 효과에 쓰는 사운드 아디.
 	BYTE AffectMeOnly;
 } TABLE_FX;
+
+typedef struct __TABLE_TEXTS
+{
+	DWORD        dwID;
+	std::string    szText;
+} TABLE_TEXTS;
 
 const int	MAX_COMBO = 3;
 
