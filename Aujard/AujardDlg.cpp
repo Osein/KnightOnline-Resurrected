@@ -746,12 +746,33 @@ void CAujardDlg::AllCharInfoReq(char *pBuf)
 	idlen = GetShort( pBuf, index );
 	GetString( accountid, pBuf, idlen, index );
 
+	m_DBAgent.GetAllCharID(accountid, charid1, charid2, charid3, charid4, charid5);
+
 	SetByte( buff, 0x01, buff_index );	// result
 
-	m_DBAgent.GetAllCharID( accountid, charid1, charid2, charid3, charid4, charid5 );
-	m_DBAgent.LoadCharInfo( charid1, buff, buff_index );
-	m_DBAgent.LoadCharInfo( charid2, buff, buff_index );
-	m_DBAgent.LoadCharInfo( charid3, buff, buff_index );
+	uint8_t charCount = 0;
+
+	if (strlen(charid1) > 0) {
+		charCount++;
+	}
+	if (strlen(charid2) > 0) {
+		charCount++;
+	}
+	if (strlen(charid3) > 0) {
+		charCount++;
+	}
+
+	SetByte(buff, charCount, buff_index);
+
+	if (strlen(charid1) > 0) {
+		m_DBAgent.LoadCharInfo(charid1, buff, buff_index);
+	}
+	if (strlen(charid2) > 0) {
+		m_DBAgent.LoadCharInfo(charid2, buff, buff_index);
+	}
+	if (strlen(charid3) > 0) {
+		m_DBAgent.LoadCharInfo(charid3, buff, buff_index);
+	}
 
 	SetByte( send_buff, WIZ_ALLCHAR_INFO_REQ, send_index );
 	SetShort( send_buff, uid, send_index );

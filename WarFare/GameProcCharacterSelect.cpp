@@ -1281,7 +1281,9 @@ void CGameProcCharacterSelect::MsgRecv_AllCharacterInfo(DataPack* pDataPack, int
 	int iResult = CAPISocket::Parse_GetByte(pDataPack->m_pData, iOffset); // 결과..
 	if(0x1 == iResult)
 	{
-		for(int i = 0; i < MAX_AVAILABLE_CHARACTER; i++)
+		uint8_t iCharCount = CAPISocket::Parse_GetByte(pDataPack->m_pData, iOffset);
+
+		for(int i = 0; i < iCharCount; i++)
 		{
 			int iIDLength				= CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset); // 캐릭터 아이디 길이 s,
 			CAPISocket::Parse_GetString(pDataPack->m_pData, iOffset, m_InfoChrs[i].szID, iIDLength);// 캐릭터 아이디 문자열 str
