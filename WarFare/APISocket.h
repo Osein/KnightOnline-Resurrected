@@ -234,10 +234,10 @@ protected:
 	BB_CircularBuffer	m_CB;
 
 #ifdef _DEBUG
-	__SocketStatisics m_Statistics_Send_Sum[255];
-	__SocketStatisics m_Statistics_Recv_Sum[255];
-//	std::vector<__SocketStatisics> m_Statistics_Send[255];
-//	std::vector<__SocketStatisics> m_Statistics_Recv[255];
+	__SocketStatisics m_Statistics_Send_Sum[256];
+	__SocketStatisics m_Statistics_Recv_Sum[256];
+//	std::vector<__SocketStatisics> m_Statistics_Send[256];
+//	std::vector<__SocketStatisics> m_Statistics_Recv[256];
 #endif
 
 
