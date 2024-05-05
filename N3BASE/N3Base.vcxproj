@@ -229,6 +229,7 @@
     <ClCompile Include="N3BaseFileAccess.cpp" />
     <ClCompile Include="N3Board.cpp" />
     <ClCompile Include="N3Camera.cpp" />
+    <ClCompile Include="N3Chr.cpp" />
     <ClCompile Include="N3Cloak.cpp" />
     <ClCompile Include="N3Eng.cpp" />
     <ClCompile Include="N3FXPlug.cpp" />
@@ -274,6 +275,7 @@
     <ClInclude Include="N3BaseFileAccess.h" />
     <ClInclude Include="N3Board.h" />
     <ClInclude Include="N3Camera.h" />
+    <ClInclude Include="N3Chr.h" />
     <ClInclude Include="N3Cloak.h" />
     <ClInclude Include="N3Eng.h" />
     <ClInclude Include="N3FXPlug.h" />

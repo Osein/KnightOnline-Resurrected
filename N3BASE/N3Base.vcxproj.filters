@@ -38,6 +38,7 @@
     <ClCompile Include="N3UITooltip.cpp" />
     <ClCompile Include="N3UITrackBar.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="N3Chr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DFont.h" />
@@ -81,5 +82,6 @@
     <ClInclude Include="N3UITooltip.h" />
     <ClInclude Include="N3UITrackBar.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="N3Chr.h" />
   </ItemGroup>
 </Project>
