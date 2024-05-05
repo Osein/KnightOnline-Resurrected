@@ -514,6 +514,8 @@
 #define IDS_DEAD_REVIVAL_MESSAGE        6603
 #define IDS_DEAD_LOW_LEVEL              6604
 #define IDS_INVEN_WEIGHT                6605
+#define IDS_WARP_ARRIVED                6606
+#define IDS_WARP_REQUIRED_COINS         7612
 
 // Next default values for new objects
 // 
