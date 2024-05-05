@@ -172,13 +172,25 @@ void CN3UIString::WordWrap()
 		// 임시 변수 잡기
 		std::string szNewBuff;
 
-		if (size.cy>iRegionHeight)	// 글자 높이가 해당 영역보다 큰 경우
-		{	
-			m_ptDrawPos.y = m_rcRegion.top;
-			m_pDFont->SetText("글자 높이가 STRING control보다 큽니다.");
-			return;
+		if (size.cy > iRegionHeight)	// 글자 높이가 해당 영역보다 큰 경우
+		{
+			switch (m_dwStyle) 
+			{
+			case UISTYLE_STRING_ALIGNVCENTER:
+				m_ptDrawPos.y = m_rcRegion.top + ((iRegionHeight - size.cy) / 2);
+				break;
+			case UISTYLE_STRING_ALIGNLEFT:
+				m_ptDrawPos.x = m_rcRegion.left;;;
+				break;
+			case UISTYLE_STRING_ALIGNCENTER:
+				m_ptDrawPos.x = m_rcRegion.left + ((iRegionWidth - size.cx) / 2);
+				break;
+			default:
+				m_pDFont->SetText(szString);
+				break;
+			}
 		}
-		else if (size.cx <= iRegionWidth)	// 글자 가로 길이가 영역 길이보다 작을경우
+		if (size.cx <= iRegionWidth)	// 글자 가로 길이가 영역 길이보다 작을경우
 		{
 			szNewBuff = m_szString;
 
