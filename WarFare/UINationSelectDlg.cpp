@@ -3,8 +3,10 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "GameDef.h"
 #include "UINationSelectDlg.h"
 #include "GameProcNationSelect.h"
+#include "../N3BASE/N3UIString.h"
 #include "resource.h"
 
 CUINationSelectDlg::CUINationSelectDlg()
@@ -20,6 +22,8 @@ CUINationSelectDlg::~CUINationSelectDlg()
 	m_pBtnElmorad = nullptr;
 	m_pBtnElmoradNext = nullptr;
 	m_pBtnElmoradExit = nullptr;
+	m_pTextNotice = nullptr;
+	m_pTextNoticeName = nullptr;
 }
 
 bool CUINationSelectDlg::Load(HANDLE hFile)
@@ -32,13 +36,41 @@ bool CUINationSelectDlg::Load(HANDLE hFile)
 	m_pBtnElmorad = GetChildByID("nation_elmo")->GetChildByID("btn_elmo_selection"); __ASSERT(m_pBtnElmorad, "NULL UI Component!!");
 	m_pBtnElmoradNext = GetChildByID("nation_elmo")->GetChildByID("btn_elmo_next"); __ASSERT(m_pBtnElmoradNext, "NULL UI Component!!");
 	m_pBtnElmoradExit = GetChildByID("nation_elmo")->GetChildByID("btn_elmo_close"); __ASSERT(m_pBtnElmoradExit, "NULL UI Component!!");
+
+	m_pTextNotice = (CN3UIString*)GetChildByID("text_notice"); __ASSERT(m_pTextNotice, "NULL UI Component!!");
+	m_pTextNoticeName = (CN3UIString*)GetChildByID("text_notice_name"); __ASSERT(m_pTextNoticeName, "NULL UI Component!!");
 	
+	m_pTextKarusEvent = (CN3UIString*)GetChildByID("nation_karus")->GetChildByID("text_karus_notice"); __ASSERT(m_pTextNotice, "NULL UI Component!!");
+	m_pTextElmoEvent = (CN3UIString*)GetChildByID("nation_elmo")->GetChildByID("text_elmo_notice"); __ASSERT(m_pTextNotice, "NULL UI Component!!");
+
+	SetNation(e_Nation::NATION_ELMORAD);
+
 	RECT rc = this->GetRegion();
 	int iX = ((int)s_CameraData.vp.Width - (rc.right - rc.left))/2;
 	int iY = ((int)s_CameraData.vp.Height - (rc.bottom - rc.top))/2;
 	this->SetPos(iX, iY);
 
 	return bSuccess;
+}
+
+void CUINationSelectDlg::SetNation(e_Nation nation)
+{
+	GetChildByID("nation_karus")->SetVisible(nation == e_Nation::NATION_KARUS);
+	GetChildByID("nation_elmo")->SetVisible(nation == e_Nation::NATION_ELMORAD);
+
+	std::string szNoticeName;
+	::_LoadStringFromResource(
+		nation == e_Nation::NATION_ELMORAD ? IDS_NATION_SELECT_ELMO_TITLE : IDS_NATION_SELECT_KARUS_TITLE, szNoticeName);
+	m_pTextNoticeName->SetString(szNoticeName);
+
+	std::string szNoticeKarus;
+	::_LoadStringFromResource(IDS_NATION_SELECT_KARUS_DESC, szNoticeKarus);
+	std::string szNoticeElmo;
+	::_LoadStringFromResource(IDS_NATION_SELECT_ELMO_DESC, szNoticeElmo);
+
+	m_pTextNotice->SetString(nation == e_Nation::NATION_ELMORAD ? szNoticeElmo : szNoticeKarus);
+	m_pTextKarusEvent->SetString(szNoticeKarus);
+	m_pTextElmoEvent->SetString(szNoticeElmo);
 }
 
 bool CUINationSelectDlg::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
@@ -57,13 +89,11 @@ bool CUINationSelectDlg::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
 		}
 		else if (pSender == m_pBtnKarusNext)
 		{
-			GetChildByID("nation_karus")->SetVisible(false);
-			GetChildByID("nation_elmo")->SetVisible(true);
+			SetNation(e_Nation::NATION_ELMORAD);
 		}
 		else if (pSender == m_pBtnElmoradNext)
 		{
-			GetChildByID("nation_elmo")->SetVisible(false);
-			GetChildByID("nation_karus")->SetVisible(true);
+			SetNation(e_Nation::NATION_KARUS);
 		}
 		if (pSender == m_pBtnKarusExit || pSender == m_pBtnElmoradExit)
 		{

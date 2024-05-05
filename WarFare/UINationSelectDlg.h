@@ -14,18 +14,23 @@
 class CUINationSelectDlg : public CN3UIBase  
 {
 public:
+	CN3UIString* m_pTextNotice;
+	CN3UIString* m_pTextNoticeName;
 	CN3UIBase* m_pBtnKarus;
 	CN3UIBase* m_pBtnKarusNext;
 	CN3UIBase* m_pBtnKarusExit;
 	CN3UIBase* m_pBtnElmorad;
 	CN3UIBase* m_pBtnElmoradNext;
 	CN3UIBase* m_pBtnElmoradExit;
+	CN3UIString* m_pTextKarusEvent;
+	CN3UIString* m_pTextElmoEvent;
 
 	class CGameProcNationSelect* m_pProcNationSelectRef;
 
 public:
 	bool	Load(HANDLE hFile);
 	bool	ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg);
+	void	SetNation(e_Nation);
 
 	CUINationSelectDlg();
 	virtual ~CUINationSelectDlg();

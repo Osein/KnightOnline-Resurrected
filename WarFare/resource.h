@@ -516,6 +516,11 @@
 #define IDS_INVEN_WEIGHT                6605
 #define IDS_WARP_ARRIVED                6606
 #define IDS_WARP_REQUIRED_COINS         7612
+#define IDS_NATION_SELECT_KARUS_TITLE	11403
+#define IDS_NATION_SELECT_ELMO_TITLE	11404
+#define IDS_NATION_SELECT_KARUS_DESC	10421
+#define IDS_NATION_SELECT_ELMO_DESC		10422
+
 
 // Next default values for new objects
 // 

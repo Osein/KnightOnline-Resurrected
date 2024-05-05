@@ -19,6 +19,9 @@ public:
 protected:
 	bool ProcessPacket(DataPack* pDataPack, int& iOffset);
 
+	float					m_fFadeOut;
+	bool					m_bFadeOutRender;
+
 public:
 	void MsgSendNationSelect(e_Nation eNation);
 	
@@ -26,6 +29,8 @@ public:
 	void Init();
 	void Tick();
 	void Render();
+	void FadeOutRender();
+	void FadeOutProcess();
 
 	CGameProcNationSelect();
 	virtual ~CGameProcNationSelect();
