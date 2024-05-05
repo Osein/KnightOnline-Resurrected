@@ -450,7 +450,10 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 						CGameBase::ACT_WORLD->GetSkyRef()->GetGameTime(&iYear, &iMonth, &iDay, &iH, &iM);
 						sprintf(szDebugs[3], "%.2f Frm/Sec, %d hour %d minute %d day %d month %d", CN3Base::s_fFrmPerSec, iYear, iMonth, iDay, iH, iM);
 					}
-					else szDebugs[3][0] = NULL;
+					else
+					{
+						sprintf(szDebugs[3], "%.2f Frm/Sec", CN3Base::s_fFrmPerSec);
+					}
 				}
 
 				for(int i = 0; i < 4; i++)
