@@ -334,7 +334,8 @@ e_ItemType CGameBase::MakeResrcFileNameForUPC(	__TABLE_ITEM_BASIC* pItem,		// �
 												std::string* pszResrcFN,			// Resource FileName
 												std::string* pszIconFN,			// Icon FileName
 												e_PartPosition& ePartPosition,	// Part 일경우 Index
-												e_PlugPosition& ePlugPosition)	// Plug 일경우 Index
+												e_PlugPosition& ePlugPosition,	// Plug 일경우 Index
+												e_Race eRace /*= RACE_UNKNOWN*/)
 {	
 	ePartPosition = PART_POS_UNKNOWN;
 	ePlugPosition = PLUG_POS_UNKNOWN;
@@ -396,12 +397,23 @@ e_ItemType CGameBase::MakeResrcFileNameForUPC(	__TABLE_ITEM_BASIC* pItem,		// �
 	{
 		if(pItem->dwIDResrc) 
 		{
-			sprintf(buffer.data(),	"Item\\%.1d_%.4d_%.2d_%.1d%s",
-				(pItem->dwIDResrc / 10000000), 
-				(pItem->dwIDResrc / 1000) % 10000, 
-				(pItem->dwIDResrc / 10) % 100, 
-				pItem->dwIDResrc % 10,
-				szExt.c_str());
+			if (eRace != RACE_UNKNOWN && ePos >= /*ITEM_POS_DUAL*/ITEM_POS_UPPER && ePos <= ITEM_POS_SHOES) {
+				sprintf(buffer.data(), "Item\\%.1d_%.4d_%.2d_%.1d%s",
+					(pItem->dwIDResrc / 10000000),
+					((pItem->dwIDResrc / 1000) % 10000) + eRace,
+					(pItem->dwIDResrc / 10) % 100,
+					pItem->dwIDResrc % 10,
+					szExt.c_str());
+			}
+			else {
+				sprintf(buffer.data(), "Item\\%.1d_%.4d_%.2d_%.1d%s",
+					(pItem->dwIDResrc / 10000000),
+					(pItem->dwIDResrc / 1000) % 10000,
+					(pItem->dwIDResrc / 10) % 100,
+					pItem->dwIDResrc % 10,
+					szExt.c_str());
+			}
+
 			*pszResrcFN = buffer.data();
 		}
 		else // 아이콘만 있는 플러그나 파트 일수도 있다...
