@@ -4376,7 +4376,7 @@ bool CGameProcMain::MsgRecv_ItemDroppedGetResult(DataPack* pDataPack, int& iOffs
 
 void CGameProcMain::MsgRecv_ZoneChange(DataPack* pDataPack, int& iOffset)
 {
-	int iZone	= CAPISocket::Parse_GetByte(pDataPack->m_pData, iOffset);
+	int iZone	= CAPISocket::Parse_GetByte(pDataPack->m_pData, iOffset)*10;
 	float fX	= (CAPISocket::Parse_GetWord(pDataPack->m_pData, iOffset))/10.0f;
 	float fZ	= (CAPISocket::Parse_GetWord(pDataPack->m_pData, iOffset))/10.0f;
 	float fY	= (CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset))/10.0f;
