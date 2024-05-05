@@ -3862,11 +3862,21 @@ void CGameProcMain::MsgSend_Warp() // 워프 - 존이동이 될수도 있다..
 	int iSel = m_pUIWarp->InfoGetCur(WI);
 	if(iSel < 0 || WI.szName.empty()) return;
 
+	m_pUIWarp->m_CurrWI = WI;
+	if (CGameBase::s_pPlayer->m_InfoExt.iGold < m_pUIWarp->m_CurrWI.iGold) {
+		std::string szMsg;
+		::_LoadStringFromResource(IDS_WARP_REQUIRED_COINS, szMsg);
+		char szMsgBuff[400]{};
+		sprintf(szMsgBuff, szMsg.c_str(), m_pUIWarp->m_CurrWI.szName.c_str(), m_pUIWarp->m_CurrWI.iGold);
+		MsgOutput(szMsgBuff, 0xffff3b3b);
+		return;
+	}
+
 	BYTE byBuff[8];
 	int iOffset = 0;
 
 	CAPISocket::MP_AddByte(byBuff, iOffset, N3_WARP_LIST);
-	CAPISocket::MP_AddByte(byBuff, iOffset, WI.iID); // 워프 아이디 보내기...
+	CAPISocket::MP_AddShort(byBuff, iOffset, WI.iID); // 워프 아이디 보내기...
 	s_pSocket->Send(byBuff, iOffset);
 }
 
@@ -6063,28 +6073,52 @@ void CGameProcMain::MsgRecv_WarpList(DataPack* pDataPack, int& iOffset)		// 워�
 
 	int iStrLen = 0;
 
-	int iListCount = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);
-	for(int i = 0; i < iListCount; i++)
-	{
-		__WarpInfo WI;
-		
-		WI.iID = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset); // 워프 ID
-		iStrLen = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset); // 이름 길이
-		CAPISocket::Parse_GetString(pDataPack->m_pData, iOffset, WI.szName, iStrLen); // 이름
-		iStrLen = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset); // 동의문 길이
-		CAPISocket::Parse_GetString(pDataPack->m_pData, iOffset, WI.szAgreement, iStrLen); // 동의문
-		WI.iZone = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);				// 존번호
-		WI.iMaxUser = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);			// 최대 유저 카운트.
-		WI.iGold = CAPISocket::Parse_GetDword(pDataPack->m_pData, iOffset);				// 돈
-		WI.vPos.x = (CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset))/10.0f;	// 좌표 
-		WI.vPos.z = (CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset))/10.0f;	//
-		WI.vPos.y = (CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset))/10.0f;	// 
+	int bySubOp  = CAPISocket::Parse_GetByte(pDataPack->m_pData, iOffset);
+	if (bySubOp == 1) 
+	{																														
+        int iListCount = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);
+		for (int i = 0; i < iListCount; i++)
+		{
+			__WarpInfo WI;
 
-		m_pUIWarp->InfoAdd(WI);
+			WI.iID = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset); // 워프 ID
+			iStrLen = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset); // 이름 길이
+			CAPISocket::Parse_GetString(pDataPack->m_pData, iOffset, WI.szName, iStrLen); // 이름
+			iStrLen = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset); // 동의문 길이
+			CAPISocket::Parse_GetString(pDataPack->m_pData, iOffset, WI.szAgreement, iStrLen); // 동의문
+			WI.iZone = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset); // 존번호
+			WI.iMaxUser = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset); // 최대 유저 카운트.
+			WI.iGold = CAPISocket::Parse_GetDword(pDataPack->m_pData, iOffset); // 돈
+			WI.vPos.x = (CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset)) / 10.0f; // 좌표 
+			WI.vPos.z = (CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset)) / 10.0f; //
+			WI.vPos.y = (CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset)) / 10.0f; // 
+
+			m_pUIWarp->InfoAdd(WI);
+		}
+
+        m_pUIWarp->UpdateList();
+        m_pUIWarp->SetVisible(true);
 	}
+	else if (bySubOp == 2) 
+	{
+        BYTE bySubSubOp = CAPISocket::Parse_GetByte(pDataPack->m_pData, iOffset);
+        switch (bySubSubOp) 
+		{
+        case 1:
+            std::string szMsg;
+            ::_LoadStringFromResource(IDS_WARP_ARRIVED, szMsg);
+            __WarpInfo WI = m_pUIWarp->m_CurrWI;
+            if (WI.szName.empty()) 
+			{
+                return;
+            }
 
-	m_pUIWarp->UpdateList();
-	m_pUIWarp->SetVisible(true);
+            char szMsgBuff[400];
+            sprintf(szMsgBuff, szMsg.c_str(), WI.szName.c_str());
+            MsgOutput(szMsgBuff, 0xffffff00);
+            break;
+		}
+	}
 }
 
 /*
