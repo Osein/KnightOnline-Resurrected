@@ -169,6 +169,7 @@ int	CUIImageTooltipDlg::CalcTooltipStringNumAndWrite(__IconItemSkill* spItem, bo
 		m_spItemBack = spItem;
 
 		std::string szString;
+		std::string szRed;
 		char szBuff[64] = "";
 
 		if (m_pStr[iIndex])
@@ -888,6 +889,7 @@ int	CUIImageTooltipDlg::CalcTooltipStringNumAndWrite(__IconItemSkill* spItem, bo
 		ERROR_EXCEPTION
 
 		int iNeedValue;
+		bool reduced = false;
 		iNeedValue = spItem->pItemBasic->byNeedStrength;
 		if (iNeedValue != 0)
 			iNeedValue += spItem->pItemExt->siNeedStrength;
@@ -899,7 +901,13 @@ int	CUIImageTooltipDlg::CalcTooltipStringNumAndWrite(__IconItemSkill* spItem, bo
 				m_pStr[iIndex]->SetColor(m_CWhite);
 			else
 				m_pStr[iIndex]->SetColor(m_CRed);
-			sprintf(szBuff, szStr.c_str(), spItem->pItemBasic->byNeedStrength+spItem->pItemExt->siNeedStrength);
+			// Tah Experimental
+			if(spItem->pItemExt->byMagicOrRare == 4 || spItem->pItemExt->byMagicOrRare == 5){
+				if(spItem->pItemExt->siNeedStrength < 0 || spItem->pItemExt->siNeedStamina < 0 ||
+				spItem->pItemExt->siNeedDexterity < 0 || spItem->pItemExt->siNeedInteli < 0 /*|| spItem->pItemExt->siNeedMagicAttack < 0*/)
+				{ ::_LoadStringFromResource(4554, szRed); reduced=true;}}
+			// Tah Experimental
+			sprintf(szBuff, szStr.c_str(), spItem->pItemBasic->byNeedStrength + spItem->pItemExt->siNeedStrength, reduced ? szRed.c_str() : "");
 			m_pstdstr[iIndex] = szBuff;
 			iIndex++;
 		}
@@ -916,7 +924,13 @@ int	CUIImageTooltipDlg::CalcTooltipStringNumAndWrite(__IconItemSkill* spItem, bo
 				m_pStr[iIndex]->SetColor(m_CWhite);
 			else
 				m_pStr[iIndex]->SetColor(m_CRed);
-			sprintf(szBuff, szStr.c_str(), spItem->pItemBasic->byNeedStamina+spItem->pItemExt->siNeedStamina);
+			// Tah Experimental
+			if(spItem->pItemExt->byMagicOrRare == 4 || spItem->pItemExt->byMagicOrRare == 5){
+				if(spItem->pItemExt->siNeedStrength < 0 || spItem->pItemExt->siNeedStamina < 0 ||
+				spItem->pItemExt->siNeedDexterity < 0 || spItem->pItemExt->siNeedInteli < 0 || spItem->pItemExt->siNeedMagicAttack < 0)
+				{ ::_LoadStringFromResource(4554, szRed); reduced=true;}}
+			// Tah Experimental
+			sprintf(szBuff, szStr.c_str(), spItem->pItemBasic->byNeedStamina+spItem->pItemExt->siNeedStamina, reduced ? szRed.c_str() : "");
 			m_pstdstr[iIndex] = szBuff;
 			iIndex++;
 		}
@@ -933,7 +947,13 @@ int	CUIImageTooltipDlg::CalcTooltipStringNumAndWrite(__IconItemSkill* spItem, bo
 				m_pStr[iIndex]->SetColor(m_CWhite);
 			else
 				m_pStr[iIndex]->SetColor(m_CRed);
-			sprintf(szBuff, szStr.c_str(), spItem->pItemBasic->byNeedDexterity+spItem->pItemExt->siNeedDexterity);
+			// Tah Experimental
+			if(spItem->pItemExt->byMagicOrRare == 4 || spItem->pItemExt->byMagicOrRare == 5){
+				if(spItem->pItemExt->siNeedStrength < 0 || spItem->pItemExt->siNeedStamina < 0 ||
+				spItem->pItemExt->siNeedDexterity < 0 || spItem->pItemExt->siNeedInteli < 0 /*|| spItem->pItemExt->siNeedMagicAttack < 0*/)
+				{ ::_LoadStringFromResource(4554, szRed); reduced=true;}}
+			// Tah Experimental
+			sprintf(szBuff, szStr.c_str(), spItem->pItemBasic->byNeedDexterity+spItem->pItemExt->siNeedDexterity, reduced ? szRed.c_str() : "");
 			m_pstdstr[iIndex] = szBuff;
 			iIndex++;
 		}
@@ -950,7 +970,13 @@ int	CUIImageTooltipDlg::CalcTooltipStringNumAndWrite(__IconItemSkill* spItem, bo
 				m_pStr[iIndex]->SetColor(m_CWhite);
 			else
 				m_pStr[iIndex]->SetColor(m_CRed);
-			sprintf(szBuff, szStr.c_str(), spItem->pItemBasic->byNeedInteli+spItem->pItemExt->siNeedInteli);
+			// Tah Experimental
+			if(spItem->pItemExt->byMagicOrRare == 4 || spItem->pItemExt->byMagicOrRare == 5){
+				if(spItem->pItemExt->siNeedStrength < 0 || spItem->pItemExt->siNeedStamina < 0 ||
+				spItem->pItemExt->siNeedDexterity < 0 || spItem->pItemExt->siNeedInteli < 0 || spItem->pItemExt->siNeedMagicAttack < 0)
+				{ ::_LoadStringFromResource(4554, szRed); reduced=true;}}
+			// Tah Experimental
+			sprintf(szBuff, szStr.c_str(), spItem->pItemBasic->byNeedInteli+spItem->pItemExt->siNeedInteli, reduced ? szRed.c_str() : "");
 			m_pstdstr[iIndex] = szBuff;
 			iIndex++;
 		}
@@ -967,7 +993,13 @@ int	CUIImageTooltipDlg::CalcTooltipStringNumAndWrite(__IconItemSkill* spItem, bo
 				m_pStr[iIndex]->SetColor(m_CWhite);
 			else
 				m_pStr[iIndex]->SetColor(m_CRed);
-			sprintf(szBuff, szStr.c_str(), spItem->pItemBasic->byNeedMagicAttack+spItem->pItemExt->siNeedMagicAttack);
+			// Tah Experimental
+			if(spItem->pItemExt->byMagicOrRare == 4 || spItem->pItemExt->byMagicOrRare == 5){
+				if(spItem->pItemExt->siNeedStrength < 0 || spItem->pItemExt->siNeedStamina < 0 ||
+				spItem->pItemExt->siNeedDexterity < 0 || spItem->pItemExt->siNeedInteli < 0 || spItem->pItemExt->siNeedMagicAttack < 0)
+				{ ::_LoadStringFromResource(4554, szRed); reduced=true;}}
+			// Tah Experimental
+			sprintf(szBuff, szStr.c_str(), spItem->pItemBasic->byNeedMagicAttack+spItem->pItemExt->siNeedMagicAttack, reduced ? szRed.c_str() : "");
 			m_pstdstr[iIndex] = szBuff;
 			iIndex++;
 		}
