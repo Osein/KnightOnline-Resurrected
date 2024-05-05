@@ -966,7 +966,7 @@ bool CGameProcedure::MsgRecv_CharacterSelect(DataPack* pDataPack, int& iOffset) 
 		CGameProcedure::LoadingUIChange(iVictoryNation);
 
 		int iZonePrev = 
-		s_pPlayer->m_InfoExt.iZoneCur = iZoneCur;
+		s_pPlayer->m_InfoExt.iZoneCur = iZoneCur * 10;
 		s_pPlayer->PositionSet(__Vector3(fX, fY, fZ), true);
 
 		CLogWriter::Write("MsgRecv_CharacterSelect - name(%s) zone(%d -> %d)", s_pPlayer->m_InfoBase.szID.c_str(), iZonePrev, iZoneCur);
