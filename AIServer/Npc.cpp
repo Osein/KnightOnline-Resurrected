@@ -4351,7 +4351,8 @@ void CNpc::FillNpcInfo(char *temp_send, int &index, BYTE flag)
 	else
 		SetByte(temp_send, 1, index );					// region에 등록		
 	SetShort(temp_send, m_sNid+NPC_BAND, index );
-	SetShort(temp_send, m_sPid, index );
+	SetShort(temp_send, m_sSid, index);
+	SetShort(temp_send, m_sPid, index);
 	SetShort(temp_send, m_sSize, index );
 	SetInt(temp_send, m_iWeapon_1, index );
 	SetInt(temp_send, m_iWeapon_2, index );
@@ -4385,7 +4386,8 @@ void CNpc::SendNpcInfoAll(char *temp_send, int &index, int count)
 	else
 		SetByte(temp_send, 1, index );					// region에 등록		
 	SetShort(temp_send, m_sNid+NPC_BAND, index );
-	SetShort(temp_send, m_sPid, index );
+	SetShort(temp_send, m_sSid, index);
+	SetShort(temp_send, m_sPid, index);
 	SetShort(temp_send, m_sSize, index );
 	SetInt(temp_send, m_iWeapon_1, index );
 	SetInt(temp_send, m_iWeapon_2, index );

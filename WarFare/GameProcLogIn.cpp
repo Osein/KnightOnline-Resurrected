@@ -321,6 +321,7 @@ void CGameProcLogIn::MsgRecv_GameServerGroupList(DataPack* pDataPack, int& iOffs
 void CGameProcLogIn::MsgRecv_AccountLogIn(int iCmd, DataPack* pDataPack, int& iOffset)
 {
 	int iResult = CAPISocket::Parse_GetByte( pDataPack->m_pData, iOffset ); // Recv - b1(0:실패 1:성공 2:ID없음 3:PW틀림 4:서버점검중)
+	_RPT1(_CRT_WARN, "MsgRecv_AccountLogIn iResult: %d", iResult);
 	if(1 == iResult) // 접속 성공..
 	{
 		// 모든 메시지 박스 닫기..
