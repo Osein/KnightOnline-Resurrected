@@ -724,7 +724,7 @@ void CAISocket::RecvNpcInfo(char* pBuf)
 	int			iWeapon_2;		// 왼손  무기
 	short       sZone;			// Current zone number
 	short       sZoneIndex;			// Current zone index
-	char		szName[MAX_ID_SIZE+1];		// NPC Name
+	char		szName[MAX_NPC_NAME_SIZE +1];		// NPC Name
 	BYTE		byGroup;		// 소속 집단
 	BYTE		byLevel;			// level
 	float		fPosX;			// X Position
@@ -753,7 +753,7 @@ void CAISocket::RecvNpcInfo(char* pBuf)
 	sZone = GetShort(pBuf, index);
 	sZoneIndex = GetShort(pBuf, index);
 	int nLength = GetVarString(szName, pBuf, sizeof(BYTE), index);
-	if(nLength < 0 || nLength > MAX_ID_SIZE) return;		// 잘못된 monster 아이디 
+	if(nLength < 0 || nLength > MAX_NPC_NAME_SIZE) return;		// 잘못된 monster 아이디 
 	byGroup = GetByte(pBuf, index);
 	byLevel  = GetByte(pBuf, index);
 	fPosX = Getfloat(pBuf, index);
