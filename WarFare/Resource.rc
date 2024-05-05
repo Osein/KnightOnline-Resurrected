@@ -64,15 +64,15 @@ IDC_CURSOR_ATTACK       CURSOR                  "res\\Cursor_Attack.cur"
 
 IDC_CURSOR_CLICK        CURSOR                  "res\\Cursor_Click.cur"
 
-IDC_CURSOR_CLICK_BLUE   CURSOR                  "res\\cursor_click1.cur"
+IDC_CURSOR_CLICK1   CURSOR                  "res\\cursor_click1.cur"
 
-IDC_CURSOR              CURSOR                  "res\\Cursor_Normal.cur"
+IDC_CURSOR_NORMAL              CURSOR                  "res\\Cursor_Normal.cur"
 
-IDC_CURSOR_BLUE         CURSOR                  "res\\cursor_normal1.cur"
+IDC_CURSOR_NORMAL1         CURSOR                  "res\\cursor_normal1.cur"
 
-IDC_CURSOR_REPAIR       CURSOR                  "res\\repair0.cur"
+IDC_CURSOR_PRE_REPAIR       CURSOR                  "res\\repair0.cur"
 
-IDC_CURSOR_REPAIR_CLICK CURSOR                  "res\\repair1.cur"
+IDC_CURSOR_NOW_REPAIR CURSOR                  "res\\repair1.cur"
 
 
 /////////////////////////////////////////////////////////////////////////////
