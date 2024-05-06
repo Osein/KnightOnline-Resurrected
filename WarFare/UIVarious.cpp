@@ -1188,7 +1188,7 @@ CUIFriends::CUIFriends()
 
 CUIFriends::~CUIFriends()
 {
-	this->SaveListToTextFile(""); // 몽땅 저장..
+
 }
 
 bool CUIFriends::Load(HANDLE hFile)
@@ -1207,61 +1207,7 @@ bool CUIFriends::Load(HANDLE hFile)
 	m_pBtn_Add			= (CN3UIButton*)this->GetChildByID("Btn_Add");		__ASSERT(m_pBtn_Add, "NULL UI Component!!");
 	m_pBtn_Delete		= (CN3UIButton*)this->GetChildByID("Btn_Delete");	__ASSERT(m_pBtn_Delete, "NULL UI Component!!");
 
-	std::string szFN = CGameProcedure::s_szAccount + "_" + CGameProcedure::s_szServer + ".txt"; // 파일이름은 계정_서버.txt 로 한다.
-	FILE* pFile = fopen(szFN.c_str(), "r");
-	if (pFile)
-	{
-		char szLine[256] = "";
-		char* pszResult = fgets(szLine, 256, pFile); // 줄을 읽고..
-		while(pszResult)
-		{
-			int iLen = lstrlen(szLine);
-			if(iLen > 3 && iLen <= 22)
-			{
-				std::string szTmp = szLine;
-				int iTmp = szTmp.find("\r");
-				if(iTmp >= 0) szTmp = szTmp.substr(0, iTmp);
-				iTmp = szTmp.find("\n");
-				if(iTmp >= 0) szTmp = szTmp.substr(0, iTmp);
-
-				if(!szTmp.empty())
-					this->MemberAdd(szTmp, -1, false, false);
-			}
-			pszResult = fgets(szLine, 256, pFile); // 첫째 줄을 읽고..
-		}
-		fclose(pFile);
-
-		this->UpdateList();
-	}
-
 	return true;
-}
-
-void CUIFriends::SaveListToTextFile(const std::string& szID) // 문자열이 있으면 추가하고.. 없으면 몽땅 저장..
-{
-	std::string szFN = CGameProcedure::s_szAccount + "_" + CGameProcedure::s_szServer + ".txt"; // 파일이름은 계정_서버.txt 로 한다.
-	char szFlags[4] = "w";
-	if(!szID.empty()) lstrcpy(szFlags, "a");
-	FILE* pFile = fopen(szFN.c_str(), szFlags);
-	if (NULL == pFile) return;
-
-	std::string szIDTmp;
-	if(szID.empty())
-	{
-		it_FI it = m_MapFriends.begin(), itEnd = m_MapFriends.end();
-		for(; it != itEnd; it++)
-		{
-			szIDTmp = it->second.szName + "\r\n";
-			fputs(szIDTmp.c_str(), pFile);
-		}
-	}
-	else
-	{
-		szIDTmp = szID + "\r\n";
-		fputs(szIDTmp.c_str(), pFile);
-	}
-
-	fclose(pFile);
 }
 
 bool CUIFriends::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
@@ -1312,7 +1258,6 @@ bool CUIFriends::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
 			{
 				if(this->MemberAdd(pUPC->IDString(), pUPC->IDNumber(), true, false)) // 추가 성공이면..
 				{
-					this->SaveListToTextFile(pUPC->IDString()); // 파일에 추가 저장..
 					this->MsgSend_MemberInfo(pUPC->IDString());
 				}
 			}

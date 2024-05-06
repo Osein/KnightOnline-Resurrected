@@ -213,7 +213,6 @@ protected:
 	CN3UIButton* m_pBtn_Delete;
 
 public:
-	void		SaveListToTextFile(const std::string& szID);  // 문자열이 있으면 추가하고.. 없으면 몽땅 저장..
 	void		MsgSend_MemberInfo(bool bDisableInterval); // 현재 페이지 정보 요청
 	void		MsgSend_MemberInfo(const std::string& szID); // 이넘만 요청..
 	void		MsgRecv_MemberInfo(DataPack* pDataPack, int& iOffset);

@@ -39,7 +39,7 @@ void CBirdMng::LoadFromFile(const std::string& szFN)
 #if _DEBUG
 		char szErr[512];
 		wsprintf(szErr, "failed to open file - %s", szFN.c_str());
-		__ASSERT(stream, szErr);
+		//__ASSERT(stream, szErr);
 #endif
 		return;
 	}
