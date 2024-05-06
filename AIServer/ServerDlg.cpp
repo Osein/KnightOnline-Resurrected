@@ -1136,7 +1136,10 @@ BOOL CServerDlg::CreateNpcThread()
 
 					if( pNpc->m_byMoveType >= 2 && NpcPosSet.m_DotCnt == 0 )	{
 						TRACE("##### ServerDlg:CreateNpcThread - Path type Error :  nid=%d, sid=%d, name=%s, acttype=%d, path=%d #####\n", pNpc->m_sNid+NPC_BAND, pNpc->m_sSid, pNpc->m_strName, pNpc->m_byMoveType, pNpc->m_sMaxPathCount);
-						return FALSE;
+						//continue;
+						//return FALSE;
+						// TODO: Fix the line below
+						pNpc->m_byMoveType = 1;
 					}
 
 					int index = 0;
@@ -1545,7 +1548,8 @@ BOOL CServerDlg::MapFileLoad()
 		}
 
 		// dungeon work
-		if( ZoneInfoSet.m_RoomEvent > 0 )	{
+		// TODO: Fix the line below
+		if(false && ZoneInfoSet.m_RoomEvent > 0 )	{
 			if( !pMap->LoadRoomEvent( ZoneInfoSet.m_RoomEvent ) )	{
 				errormsg.Format( "Map Room Event Load 실패 - %s\n", szFullPath );
 				AfxMessageBox(errormsg);
