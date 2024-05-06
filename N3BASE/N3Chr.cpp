@@ -2103,6 +2103,11 @@ int	CN3Chr::AniCurSet(	int iAni,					// Animation 번호,
 	return iAniPrev;
 }
 
+float CN3Chr::AniCurTime()
+{
+	return m_FrmCtrl.GetCurrentAnimTime();
+}
+
 void CN3Chr::AniFixToLastFrame( int iAni ) // 마지막 프레임으로 고정 시켜 버린다.
 {
 	if(NULL == m_pAniCtrlRef) return;

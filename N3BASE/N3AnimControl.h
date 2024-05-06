@@ -136,6 +136,11 @@ public:
 		if(nL > 0) WriteFile(hFile, szName.c_str(), nL, &dwRWC, NULL);
 	}
 
+	float AnimTime()
+	{
+		return (fFrmEnd - fFrmStart) / fFrmPerSec;
+	}
+
 #ifdef _N3TOOL
 	void Offset(float fFrmOffset)
 	{

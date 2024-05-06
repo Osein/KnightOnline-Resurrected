@@ -279,6 +279,11 @@ protected:
 		{
 			__FrmCtrl::Init();
 		}
+
+		float GetCurrentAnimTime()
+		{
+			return pAniData->AnimTime();
+		}
 	};
 	__FrmCtrl		m_FrmCtrl;
 	__FrmCtrl		m_FrmCtrlUpper;	// 상체용...
@@ -343,6 +348,7 @@ public:
 							float fBlendTime = FLT_MIN,			// 블렌딩하는 시간(초단위), 
 							float fFreezeTime = 0, 				// 멈출시간...
 							bool bStopUpperAnimation = true);	// 상체 에니메이션이 있으면.. 멈추도록
+	float		AniCurTime();
 	void		AniUpperSet(int nAni, float fFreezeTime = 0);
 	void		AniFixToLastFrame( int iAni ); // 마지막 프레임으로 고정 시켜 버린다.
 
