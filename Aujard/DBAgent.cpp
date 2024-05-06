@@ -569,7 +569,7 @@ int CDBAgent::AccountLogInReq( char *id, char *pw )
 	SQLSMALLINT		sParmRet;
 	SQLINTEGER		cbParmRet=SQL_NTS;
 
-	wsprintf( szSQL, TEXT( "{call ACCOUNT_LOGIN( \'%s\', \'%s\', ?)}" ), id, pw);
+	wsprintf( szSQL, TEXT( "{call ACCOUNT_GAME_LOGIN( \'%s\', \'%s\', ?)}" ), id, pw);
 
 	DBProcessNumber( 4 );
 
@@ -583,10 +583,7 @@ int CDBAgent::AccountLogInReq( char *id, char *pw )
 			if( retcode == SQL_SUCCESS || retcode == SQL_SUCCESS_WITH_INFO )
 			{
 				SQLFreeHandle((SQLSMALLINT)SQL_HANDLE_STMT,hstmt);
-				if( sParmRet == 0 )
-					return -1;
-				else
-					return sParmRet-1;	// sParmRet == Nation + 1....
+				return sParmRet;
 			}
 			else
 			{
