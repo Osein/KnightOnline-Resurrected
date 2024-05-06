@@ -61,6 +61,13 @@ public:
 	CN3UIBase*	m_pChildUI;		// UI 부속이 아니라 다른 UI를 자식으로 갖는다..
 	CN3UIBase*	m_pParentUI;
 
+	bool m_bFading{ false };
+	bool m_bFadingCompleted{ false };
+	bool m_bPreserveFade{ false };
+	double m_dFadeStartTime{};
+	double m_dFadeCurrentTime{};
+	double m_dFadeAnimationTime{ 0.809016f };
+
 protected:
 	static std::string	s_szStringTmp;		// 임시 문자열.. 포인터를 넘기기 위해서이다..
 
@@ -129,7 +136,9 @@ public:
 	virtual bool	ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg); // 메시지를 받는다.. 보낸놈, msg
 	virtual DWORD	MouseProc(DWORD dwFlags, const POINT& ptCur, const POINT& ptOld);
 	virtual void	Tick();
+	void TickFadeOverlay();
 	virtual void	Render();
+	void RenderFadeOverlay();
 	virtual void	Release(); // 자식 포인터까지 delete 한다..
 	virtual void	Init(CN3UIBase* pParent);
 	virtual bool	OnKeyPress(int iKey) { return false; }
@@ -176,6 +185,11 @@ public:
 
 	virtual bool	ReplaceAllTextures(const std::string& strFind, const std::string& strReplace);
 #endif
+
+	float EaseInOutSine(float time, float duration, float b = 0.0f, float c = 1.0f)
+	{
+		return -c / 2 * (cos(M_PI * time / duration) - 1) + b;
+	}
 };
 
 

@@ -97,8 +97,6 @@ public:
 
 	e_DoProcProcess			m_eCurProcess;
 	float					m_fCurTheta;
-	float					m_fFadeOut;
-	bool					m_bFadeOutRender;
 
 	bool					m_bReceivedCharacterSelect;
 public:
@@ -142,8 +140,6 @@ public:
 	void	IncreseLightFactor();
 	void	DecreseLightFactor();
 	void	ProcessOnReturn();
-	void	FadeOutProcess();
-	void	FadeOutRender();
 protected:
 	bool ProcessPacket(DataPack* pDataPack, int& iOffset);
 };

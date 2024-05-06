@@ -312,6 +312,18 @@ void CN3UIBase::Tick()
 		CN3UIBase* pChild = (*itor);
 		pChild->Tick();
 	}
+
+	if (m_bFading) TickFadeOverlay();
+}
+
+void CN3UIBase::TickFadeOverlay()
+{
+	m_dFadeCurrentTime += s_fSecPerFrm;
+
+	if (m_dFadeCurrentTime >= m_dFadeStartTime + m_dFadeAnimationTime) {
+		m_bFading = false;
+		m_bFadingCompleted = true;
+	}
 }
 
 void CN3UIBase::Render()
@@ -332,6 +344,84 @@ void CN3UIBase::Render()
 			pCUI = pCUI->m_pChildUI;
 		}
 	}
+
+	if (m_bFading || (m_bPreserveFade && m_bFadingCompleted)) RenderFadeOverlay();
+}
+
+void CN3UIBase::RenderFadeOverlay()
+{
+	__VertexTransformedColor pVertices[4];
+
+	BYTE bColor;
+
+	if (m_bPreserveFade && m_bFadingCompleted) {
+		bColor = 255;
+	}
+	else {
+		auto fTimeDiff = m_dFadeCurrentTime - m_dFadeStartTime;
+		bColor = EaseInOutSine(fTimeDiff, m_dFadeAnimationTime) * 255;
+	}
+
+	pVertices[0].Set(0.0f, 0.0f, 0.000002f, 0.99f, D3DCOLOR_ARGB(bColor, 0x00, 0x00, 0x00));
+	pVertices[1].Set(s_CameraData.vp.Width, 0.0f, 0.000002f, 0.99f, D3DCOLOR_ARGB(bColor, 0x00, 0x00, 0x00));
+	pVertices[2].Set(s_CameraData.vp.Width, s_CameraData.vp.Height, 0.000002f, 0.99f, D3DCOLOR_ARGB(bColor, 0x00, 0x00, 0x00));
+	pVertices[3].Set(0.0f, s_CameraData.vp.Height, 0.000002f, 0.99f, D3DCOLOR_ARGB(bColor, 0x00, 0x00, 0x00));
+
+	DWORD dwUsefog = TRUE;
+	CN3Base::s_lpD3DDev->GetRenderState(D3DRS_FOGENABLE, &dwUsefog);
+
+	DWORD dwUseLighting = TRUE;
+	CN3Base::s_lpD3DDev->GetRenderState(D3DRS_LIGHTING, &dwUseLighting);
+
+	DWORD dwUseColorVertex = FALSE;
+	CN3Base::s_lpD3DDev->GetRenderState(D3DRS_COLORVERTEX, &dwUseColorVertex);
+
+	unsigned long  bUseAlphaBlend = TRUE;
+	CN3Base::s_lpD3DDev->GetRenderState(D3DRS_ALPHABLENDENABLE, &bUseAlphaBlend);
+
+	int	bLight[8];
+	for (int i = 0; i < 8; i++)	CN3Base::s_lpD3DDev->GetLightEnable(i, &bLight[i]);
+
+	if (bUseAlphaBlend == FALSE) CN3Base::s_lpD3DDev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+	if (dwUseLighting) CN3Base::s_lpD3DDev->SetRenderState(D3DRS_LIGHTING, FALSE);
+	if (dwUsefog) CN3Base::s_lpD3DDev->SetRenderState(D3DRS_FOGENABLE, FALSE);
+	// set render states
+	if (dwUseColorVertex == FALSE) CN3Base::s_lpD3DDev->SetRenderState(D3DRS_COLORVERTEX, TRUE);
+	for (auto i = 0; i < 8; i++)	CN3Base::s_lpD3DDev->LightEnable(i, FALSE);
+
+	DWORD dwTexStageCO, dwTexStageCARG1, dwTexStageAO, dwTexStageAARG1, dwRSSB, dwRSDB;
+
+	s_lpD3DDev->GetTextureStageState(0, D3DTSS_COLOROP, &dwTexStageCO);
+	s_lpD3DDev->GetTextureStageState(0, D3DTSS_COLORARG1, &dwTexStageCARG1);
+	s_lpD3DDev->GetTextureStageState(0, D3DTSS_ALPHAOP, &dwTexStageAO);
+	s_lpD3DDev->GetTextureStageState(0, D3DTSS_ALPHAARG1, &dwTexStageAARG1);
+	CN3Base::s_lpD3DDev->GetRenderState(D3DRS_SRCBLEND, &dwRSSB);
+	CN3Base::s_lpD3DDev->GetRenderState(D3DRS_DESTBLEND, &dwRSDB);
+
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_DIFFUSE);
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_DIFFUSE);
+	CN3Base::s_lpD3DDev->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+	CN3Base::s_lpD3DDev->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+
+	CN3Base::s_lpD3DDev->SetTexture(0, NULL);
+
+	CN3Base::s_lpD3DDev->SetVertexShader(FVF_TRANSFORMEDCOLOR);
+	CN3Base::s_lpD3DDev->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, pVertices, sizeof(__VertexTransformedColor));
+
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_COLOROP, dwTexStageCO);
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_COLORARG1, dwTexStageCARG1);
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_ALPHAOP, dwTexStageAO);
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_ALPHAARG1, dwTexStageAARG1);
+	CN3Base::s_lpD3DDev->SetRenderState(D3DRS_SRCBLEND, dwRSSB);
+	CN3Base::s_lpD3DDev->SetRenderState(D3DRS_DESTBLEND, dwRSDB);
+
+	CN3Base::s_lpD3DDev->SetRenderState(D3DRS_COLORVERTEX, dwUseColorVertex);
+	CN3Base::s_lpD3DDev->SetRenderState(D3DRS_ALPHABLENDENABLE, bUseAlphaBlend);
+	CN3Base::s_lpD3DDev->SetRenderState(D3DRS_LIGHTING, dwUseLighting);
+	CN3Base::s_lpD3DDev->SetRenderState(D3DRS_FOGENABLE, dwUsefog);
+	for (auto i = 0; i < 8; i++)	CN3Base::s_lpD3DDev->LightEnable(i, bLight[i]);
 }
 
 DWORD CN3UIBase::MouseProc(DWORD dwFlags, const POINT& ptCur, const POINT& ptOld )

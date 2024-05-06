@@ -4,6 +4,8 @@
 
 #include "windows.h"
 
+#define _USE_MATH_DEFINES
+#include <math.h>
 #include "My_3DStruct.h"
 #include <string>
 #include <vector>
