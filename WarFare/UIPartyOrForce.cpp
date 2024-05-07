@@ -22,6 +22,7 @@ CUIPartyOrForce::CUIPartyOrForce()
 		m_pProgress_ETC[i]		= NULL;	// 부대원갯수 만큼... 상태이상
 		m_pStatic_IDs[i]		= NULL;	// 부대원갯수 만큼... 이름들..
 		m_pAreas[i]				= NULL;
+		m_pProgress_MPs[i]		= NULL;
 	}
 
 	m_iIndexSelected = -1; // 현재 선택된 멤버인덱스..
@@ -44,6 +45,7 @@ void CUIPartyOrForce::Release()
 		m_pProgress_ETC[i]		= NULL;	// 부대원갯수 만큼... 상태이상
 		m_pStatic_IDs[i]		= NULL;	// 부대원갯수 만큼... 이름들..
 		m_pAreas[i]				= NULL;
+		m_pProgress_MPs[i]		= NULL;
 	}
 
 }
@@ -84,6 +86,14 @@ bool CUIPartyOrForce::Load(HANDLE hFile)
 		if(m_pStatic_IDs[i]) 
 		{
 			m_pStatic_IDs[i]->SetVisible(false);
+		}
+
+		sprintf(szID, "progress_mp_%d_curse", i); // 
+		m_pProgress_MPs[i] = (CN3UIProgress*)(this->GetChildByID(szID)); __ASSERT(m_pProgress_MPs[i], "NULL UI Component!!!");
+		if (m_pProgress_ETC[i])
+		{
+			m_pProgress_MPs[i]->SetVisible(false);
+			m_pProgress_MPs[i]->SetRange(0, 100);
 		}
 
 		sprintf(szID, "Area_%d", i);
@@ -213,7 +223,7 @@ CPlayerOther* CUIPartyOrForce::MemberGetByNearst(const __Vector3& vPosPlayer)
 	return pTarget;
 }
 
-const __InfoPartyOrForce* CUIPartyOrForce::MemberAdd(int iID, const std::string szID, int iLevel, e_Class eClass, int iHP, int iHPMax)
+const __InfoPartyOrForce* CUIPartyOrForce::MemberAdd(int iID, const std::string szID, int iLevel, e_Class eClass, int iHP, int iHPMax, int iMP, int iMPMax)
 {
 	__InfoPartyOrForce InfoTmp;
 	InfoTmp.iID = iID;
@@ -222,6 +232,8 @@ const __InfoPartyOrForce* CUIPartyOrForce::MemberAdd(int iID, const std::string 
 	InfoTmp.iHP = iHP;
 	InfoTmp.iHPMax = iHPMax;
 	InfoTmp.eClass = eClass;
+	InfoTmp.iMP = iMP;
+	InfoTmp.iMPMax = iMPMax;
 
 	m_Members.push_back(InfoTmp);
 
@@ -261,6 +273,7 @@ void CUIPartyOrForce::MemberDestroy()
 		if(m_pProgress_ETC[i])		m_pProgress_ETC[i]->SetVisible(false);
 
 		if(m_pStatic_IDs[i]) m_pStatic_IDs[i]->SetVisible(false);
+		if (m_pProgress_MPs[i])		m_pProgress_MPs[i]->SetVisible(false);
 	}
 
 	this->MemberInfoReInit();
@@ -272,12 +285,20 @@ void CUIPartyOrForce::MemberInfoReInit() // 파티원 구성이 변경될때.. �
 	__InfoPartyOrForce* pIP = NULL;
 	int i = 0;
 
+	for (i = 0; i < MAX_PARTY_OR_FORCE; i++)
+	{
+		if (m_pProgress_HPs[i])		m_pProgress_HPs[i]->SetVisible(false);
+		if (m_pProgress_HPReduce[i]) m_pProgress_HPReduce[i]->SetVisible(false);
+		if (m_pProgress_ETC[i])		m_pProgress_ETC[i]->SetVisible(false);
+		if (m_pStatic_IDs[i])		m_pStatic_IDs[i]->SetVisible(false);
+		if (m_pProgress_MPs[i])		m_pProgress_MPs[i]->SetVisible(false);
+	}
 	for(; it != itEnd && i < MAX_PARTY_OR_FORCE; it++, i++)
 	{
 		pIP = &(*it); // 디버깅 하기 쉬우라고 이렇게 했다..
 		if(pIP->iHPMax <= 0)
 		{
-			__ASSERT(0, "Invalid Party memeber HP");
+			__ASSERT(0, "Invalid Party member HP");
 			continue;
 		}
 
@@ -301,14 +322,11 @@ void CUIPartyOrForce::MemberInfoReInit() // 파티원 구성이 변경될때.. �
 			m_pStatic_IDs[i]->SetString(pIP->szID);
 			m_pStatic_IDs[i]->SetVisible(true);
 		}
-	}
-
-	for(; i < MAX_PARTY_OR_FORCE; i++)
-	{
-		if(m_pProgress_HPs[i])		m_pProgress_HPs[i]->SetVisible(false);
-		if(m_pProgress_HPReduce[i]) m_pProgress_HPReduce[i]->SetVisible(false);
-		if(m_pProgress_ETC[i])		m_pProgress_ETC[i]->SetVisible(false);
-		if(m_pStatic_IDs[i])		m_pStatic_IDs[i]->SetVisible(false);
+		if (m_pProgress_MPs[i])
+		{
+			m_pProgress_MPs[i]->SetCurValue(pIP->iMP * 100 / pIP->iMPMax);
+			m_pProgress_MPs[i]->SetVisible(true);
+		}
 	}
 
 	if(m_Members.empty()) this->SetVisible(false); // 멤버가 없으면 숨긴다.
@@ -326,7 +344,7 @@ const __InfoPartyOrForce* CUIPartyOrForce::MemberInfoGetSelected()
 	return &(*it);
 }
 
-void CUIPartyOrForce::MemberHPChange(int iID, int iHP, int iHPMax)
+void CUIPartyOrForce::MemberHPChange(int iID, int iHP, int iHPMax, int iMP, int iMPMax)
 {
 	it_PartyOrForce it = m_Members.begin(), itEnd = m_Members.end();
 	__InfoPartyOrForce* pIP = NULL;
@@ -337,10 +355,13 @@ void CUIPartyOrForce::MemberHPChange(int iID, int iHP, int iHPMax)
 		{
 			pIP->iHP = iHP;
 			pIP->iHPMax = iHPMax;
+			pIP->iMP = iMP;
+			pIP->iMPMax = iMPMax;
 
 			if(m_pProgress_HPs[i])		m_pProgress_HPs[i]->SetCurValue(pIP->iHP * 100 / pIP->iHPMax, 0.7f, 50.0f);
 			if(m_pProgress_HPReduce[i]) m_pProgress_HPReduce[i]->SetCurValue(pIP->iHP * 100 / pIP->iHPMax, 0.7f, 50.0f);
 			if(m_pProgress_ETC[i])		m_pProgress_ETC[i]->SetCurValue(pIP->iHP * 100 / pIP->iHPMax, 0.7f, 50.0f);
+			if (m_pProgress_MPs[i])		m_pProgress_MPs[i]->SetCurValue(pIP->iMP * 100 / pIP->iMPMax, 0.7f, 50.0f);
 			break;
 		}
 	}

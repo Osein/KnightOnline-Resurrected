@@ -315,6 +315,8 @@ struct __InfoPlayerBase
 	int			iLevel;			// 레벨
 	int			iHPMax;	
 	int			iHP; 
+	int			iMP;
+	int			iMPMax;
 	int			iAuthority;		// 권한 - 0 관리자, 1 - 일반유저, 255 - 블럭당한 유저...
 
 	bool		bRenderID;		// 화면에 ID 를 찍는지..
@@ -487,6 +489,8 @@ struct __InfoPartyOrForce
 	e_Class		eClass;			// 직업
 	int			iHP;			// Hit Point
 	int			iHPMax;			// Hit Point Max
+	int			iMP;			// Mana Point
+	int			iMPMax;			// Mana Point Max
 	bool		bSufferDown_HP;			// Status - HP 떨어짐...
 	bool		bSufferDown_Etc;		// Status - 저주계열 영향을 받을때
 	std::string szID;		// 파티 이름 문자열

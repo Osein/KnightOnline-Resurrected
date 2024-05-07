@@ -21,6 +21,7 @@ protected:
 	class CN3UIProgress*	m_pProgress_HPs[MAX_PARTY_OR_FORCE];		// 부대원갯수 만큼... HP Gauge
 	class CN3UIProgress*	m_pProgress_HPReduce[MAX_PARTY_OR_FORCE];	// 부대원갯수 만큼... HP Reduce
 	class CN3UIProgress*	m_pProgress_ETC[MAX_PARTY_OR_FORCE];		// 부대원갯수 만큼... 상태이상
+	class CN3UIProgress*	m_pProgress_MPs[MAX_PARTY_OR_FORCE];
 	class CN3UIStatic*		m_pStatic_IDs[MAX_PARTY_OR_FORCE];		// 부대원갯수 만큼... 이름들..
 	class CN3UIArea*		m_pAreas[MAX_PARTY_OR_FORCE];		// 부대원갯수 만큼... 이름들..
 
@@ -35,7 +36,7 @@ public:
 	void Tick();
 	void		MemberClassChange(int iID, e_Class eClass);
 	void		MemberLevelChange(int iID, int iLevel);
-	void		MemberHPChange(int iID, int iHP, int iHPMax);
+	void		MemberHPChange(int iID, int iHP, int iHPMax, int iMP, int iMPMax);
 	void		MemberStatusChange(int iID, e_PartyStatus ePS, bool bSuffer);
 
 	void		MemberInfoReInit(); // 파티원 구성이 변경될때.. 순서 및 각종 정보 업데이트..
@@ -44,7 +45,7 @@ public:
 	const __InfoPartyOrForce*	MemberInfoGetByID(int iID, int& iIndexResult);
 	const __InfoPartyOrForce*	MemberInfoGetByIndex(int iIndex);
 	const __InfoPartyOrForce*	MemberInfoGetSelected(); // 현재 선택된 멤버인덱스..
-	const __InfoPartyOrForce*	MemberAdd(int iID, const std::string szID, int iLevel, e_Class eClass, int iHP, int iHPMax);
+	const __InfoPartyOrForce*	MemberAdd(int iID, const std::string szID, int iLevel, e_Class eClass, int iHP, int iHPMax, int iMP, int iMPMax);
 	class CPlayerOther*			MemberGetByNearst(const __Vector3& vPosPlayer);
 	bool						MemberRemove(int iID);
 	void						MemberDestroy();

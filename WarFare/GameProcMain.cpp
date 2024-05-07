@@ -1404,7 +1404,9 @@ bool CGameProcMain::MsgSend_PartyOrForceCreate(int iPartyOrForce, const std::str
 			s_pPlayer->m_InfoBase.iLevel, 
 			s_pPlayer->m_InfoBase.eClass, 
 			s_pPlayer->m_InfoBase.iHP, 
-			s_pPlayer->m_InfoBase.iHPMax);  // 내건 미리 넣어 놓는다..
+			s_pPlayer->m_InfoBase.iHPMax,  // 내건 미리 넣어 놓는다..
+			s_pPlayer->m_InfoExt.iMSP,
+			s_pPlayer->m_InfoExt.iMSPMax);
 	}
 
 	TRACE ("Party or Force 생성 신청 - Target ID(%s)\n", szID.c_str());
@@ -4532,8 +4534,10 @@ void CGameProcMain::MsgRecv_PartyOrForce(DataPack* pDataPack, int& iOffset)
 				int iHP			= CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);
 				int iLevel		= CAPISocket::Parse_GetByte(pDataPack->m_pData, iOffset);
 				e_Class eClass	= (e_Class)(CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset));
+				int iMPMax		= CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);
+				int iMP			= CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);
 
-				m_pUIPartyOrForce->MemberAdd(iID, szID, iLevel, eClass, iHP, iHPMax); // 다른넘 파티에추가..
+				m_pUIPartyOrForce->MemberAdd(iID, szID, iLevel, eClass, iHP, iHPMax, iMP, iMPMax); // 다른넘 파티에추가..
 				if(iID != s_pPlayer->IDNumber()) // 자기 자신이 아닌 경우 메시지 출력.
 				{
 					std::string szMsg; ::_LoadStringFromResource(IDS_PARTY_INSERT, szMsg);
@@ -4598,8 +4602,10 @@ void CGameProcMain::MsgRecv_PartyOrForce(DataPack* pDataPack, int& iOffset)
 			int iID			= CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);
 			int iHPMax		= CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);
 			int iHP			= CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);
+			int iMPMax = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);
+			int iMP = CAPISocket::Parse_GetShort(pDataPack->m_pData, iOffset);
 
-			m_pUIPartyOrForce->MemberHPChange(iID, iHP, iHPMax);
+			m_pUIPartyOrForce->MemberHPChange(iID, iHP, iHPMax, iMP, iMPMax);
 		}
 		break;
 		
