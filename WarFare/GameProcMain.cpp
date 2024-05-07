@@ -4054,11 +4054,14 @@ void CGameProcMain::InitZone(int iZone, const __Vector3& vPosPlayer)
 
 		m_pLightMgr->LoadZoneLight(pZoneData->szLightObjFN.c_str());
 
+		CN3Camera* pCamera = s_pEng->CameraGetActive();		// 활성화된 카메라 얻기..
+		pCamera->m_fFogScale = pZoneData->fFogMultiplier;
+
 		m_bLoadComplete = true; // 로딩 끝남..
 	}
 		
 	// 카메라 세팅..
-	CN3Camera* pCamera		= s_pEng->CameraGetActive();		// 활성화된 카메라 얻기..
+	CN3Camera* pCamera = s_pEng->CameraGetActive();		// 활성화된 카메라 얻기..
 	if(pCamera)
 	{
 		__Vector3 vPosPlayer = s_pPlayer->Position();

@@ -18,9 +18,10 @@ CN3Camera::CN3Camera()
 
 	m_bFogUse = TRUE;
 	m_FogColor = D3DCOLOR_ARGB(255,255,255,255);
-//	m_fFogDensity = 1.0 / m_Data.fFP;
-//	m_fFogStart = m_Data.fFP * 0.75f;
-//	m_fFogEnd = m_Data.fFP;
+	m_fFogDensity = 1.0 / m_Data.fFP;
+	m_fFogStart = m_Data.fFP * 0.75f;
+	m_fFogEnd = m_Data.fFP;
+	m_fFogScale = 1.0f;
 
 	m_fRadianX = 0.0f;
 	m_bOrtho = false;
@@ -43,9 +44,10 @@ void CN3Camera::Release()
 
 	m_bFogUse = FALSE;
 	m_FogColor = D3DCOLOR_ARGB(255,255,255,255);
-//	m_fFogDensity = 1.0f / m_Data.fFP;
-//	m_fFogStart = m_Data.fFP * 0.75f;
-//	m_fFogEnd = m_Data.fFP;
+	m_fFogDensity = 1.0f / m_Data.fFP;
+	m_fFogStart = m_Data.fFP * 0.75f;
+	m_fFogEnd = m_Data.fFP;
+	m_fFogScale = 1.0f;
 
 	m_fRadianX = 0.0f;
 
@@ -61,9 +63,9 @@ bool CN3Camera::Load(HANDLE hFile)
 	ReadFile(hFile, &m_Data, sizeof(__CameraData), &dwRWC, NULL); // CameraData
 	ReadFile(hFile, &m_bFogUse, 4, &dwRWC, NULL);
 	ReadFile(hFile, &m_FogColor, 4, &dwRWC, NULL);
-//	ReadFile(hFile, &m_fFogDensity, 4, &dwRWC, NULL);
-//	ReadFile(hFile, &m_fFogStart, 4, &dwRWC, NULL);
-//	ReadFile(hFile, &m_fFogEnd, 4, &dwRWC, NULL);
+	ReadFile(hFile, &m_fFogDensity, 4, &dwRWC, NULL);
+	ReadFile(hFile, &m_fFogStart, 4, &dwRWC, NULL);
+	ReadFile(hFile, &m_fFogEnd, 4, &dwRWC, NULL);
 
 	return true;
 }
@@ -370,32 +372,17 @@ void CN3Camera::Apply()
 	s_lpD3DDev->SetTransform(D3DTS_PROJECTION, &m_Data.mtxProjection); // Projection Matrix Setting
 	memcpy(&(CN3Base::s_CameraData), &m_Data, sizeof(__CameraData)); // Static Data Update...
 
-	// 안개 색깔 맞추기..
 	s_lpD3DDev->SetRenderState( D3DRS_FOGENABLE, m_bFogUse);
 	s_lpD3DDev->SetRenderState( D3DRS_FOGCOLOR,  m_FogColor);
-//	s_lpD3DDev->SetRenderState( D3DRS_FOGVERTEXMODE,  D3DFOG_EXP2);
-//	s_lpD3DDev->SetRenderState( D3DRS_FOGTABLEMODE,   D3DFOG_EXP2);
-	s_lpD3DDev->SetRenderState( D3DRS_FOGTABLEMODE,   D3DFOG_NONE);
-	s_lpD3DDev->SetRenderState( D3DRS_FOGVERTEXMODE,  D3DFOG_LINEAR);
+	s_lpD3DDev->SetRenderState( D3DRS_FOGTABLEMODE, D3DFOG_EXP2);
+	s_lpD3DDev->SetRenderState( D3DRS_FOGVERTEXMODE, D3DFOG_EXP2);
 	s_lpD3DDev->SetRenderState( D3DRS_RANGEFOGENABLE, TRUE);
-	// Range Fog : 장점 - 거리기반으로 fog가 적용된다. 단점 - poligon단위로 같은 fog값이 적용된다.(큰 폴리곤이 있을경우 어색한 fog가 될 수 있다.)
-	// range fog = FALSE로 했을때는 depth버퍼 기반으로 fog가 계산되어 적용된다.
 
-	// vertex fog 와 pixel fog(table fog)의 차이 - Dino씀..
-	// vertex fog : vertex의 depth값을 기반으로 vertex사이의 보간으로 계산되는 것 같다.
-	//				따라서 카메라를 돌리다보면 vertex주위를 중심으로 fog가 변하는것이 관찰된다.
-	// pixel fog : pixel의 depth값을 기반으로 fog를 계산하는것 같다.
+	float fogDensity = 1.0f / 180.0f * m_fFogScale;
 
-	// 위의 모든 fog의 차이를 보려면 큰판을 하나 그려서 fog를 넣어보면 쉽게 관찰할 수 있다.
-
-//	s_lpD3DDev->SetRenderState( D3DRS_FOGSTART,   *(DWORD*)&m_fFogStart);
-//	s_lpD3DDev->SetRenderState( D3DRS_FOGEND,     *(DWORD*)&m_fFogEnd);
-//	s_lpD3DDev->SetRenderState( D3DRS_FOGDENSITY, *(DWORD*)&m_fFogDensity);
-	float fFogStart = m_Data.fFP * 0.1f;
-	float fFogEnd = m_Data.fFP;
-	s_lpD3DDev->SetRenderState( D3DRS_FOGSTART,   *(DWORD*)&fFogStart);
-	s_lpD3DDev->SetRenderState( D3DRS_FOGEND,     *(DWORD*)&fFogEnd);
-//	s_lpD3DDev->SetRenderState( D3DRS_FOGDENSITY, *(DWORD*)&m_fFogDensity);
+	s_lpD3DDev->SetRenderState( D3DRS_FOGSTART,   *(DWORD*)&m_fFogStart);
+	s_lpD3DDev->SetRenderState( D3DRS_FOGEND,     *(DWORD*)&m_fFogEnd);
+	s_lpD3DDev->SetRenderState( D3DRS_FOGDENSITY, *(DWORD*)&fogDensity);
 }
 
 void CN3Camera::Render(float fUnitSize)
@@ -515,9 +502,6 @@ void CN3Camera::Tick(float fFrm)
 
 	memcpy(m_Data.fFrustum, frustum, sizeof(float)*6*4);
 }
-
-
-
 
 void CN3Camera::LookAt(const __Vector3 &vEye, __Vector3 &vAt, __Vector3 &vUp)
 {
