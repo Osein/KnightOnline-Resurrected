@@ -75,14 +75,27 @@
 
 #include <io.h>
 
-enum e_ChatCmd { 	CMD_WHISPER, CMD_TOWN, CMD_TRADE, CMD_EXIT, CMD_PARTY,
-					CMD_LEAVEPARTY, CMD_RECRUITPARTY, CMD_JOINCLAN, CMD_WITHDRAWCLAN, CMD_FIRECLAN, 
-					CMD_APPOINTVICECHIEF, CMD_GREETING, CMD_EXCITE, CMD_VISIBLE, CMD_INVISIBLE, 
-					CMD_CLEAN, CMD_RAINING, CMD_SNOWING, CMD_TIME, CMD_CU_COUNT,
-					CMD_NOTICE, CMD_ARREST, CMD_FORBIDCONNECT, CMD_FORBIDCHAT, CMD_PERMITCHAT,
-					CMD_GAME_SAVE, 
-					CMD_COUNT,
-					CMD_UNKNOWN = 0xffffffff };
+enum e_ChatCmd{
+	CMD_WHISPER, CMD_TOWN, CMD_EXIT, CMD_GREETING, CMD_GREETING2, CMD_GREETING3,
+	CMD_PROVOKE, CMD_PROVOKE2, CMD_PROVOKE3, CMD_GAME_SAVE, CMD_RECOMMEND, CMD_INDIVIDUAL_BATTLE,
+	
+
+	CMD_TRADE, CMD_FORBIDTRADE, CMD_PERMITTRADE, CMD_MERCHANT,
+
+	CMD_PARTY, CMD_LEAVEPARTY, CMD_RECRUITPARTY, CMD_FORBIDPARTY, CMD_PERMITPARTY,
+
+	CMD_JOINCLAN, CMD_WITHDRAWCLAN, CMD_FIRECLAN, CMD_COMMAND, CMD_CLAN_WAR,
+	CMD_SURRENDER, CMD_APPOINTVICECHIEF, CMD_CLAN_CHAT, CMD_CLAN_BATTLE,
+
+	CMD_CONFEDERACY, CMD_BAN_KNIGHTS, CMD_QUIT_KNIGHTS, CMD_BASE, CMD_DECLARATION,
+
+	CMD_VISIBLE, CMD_INVISIBLE, CMD_CLEAN, CMD_RAINING, CMD_SNOWING, CMD_TIME, CMD_CU_COUNT,
+	CMD_NOTICE, CMD_ARREST, CMD_FORBIDCONNECT, CMD_FORBIDCHAT, CMD_PERMITCHAT, CMD_NOTICEALL,
+	CMD_CUTOFF, CMD_VIEW, CMD_UNVIEW, CMD_FORBIDUSER, CMD_SUMMONUSER,
+	CMD_ATTACKDISABLE, CMD_ATTACKENABLE, CMD_PLC,
+	CMDSIT_STAND, CMD_WALK_RUN, CMD_LOCATION,
+	CMD_COUNT,
+	CMD_UNKNOWN = 0xffffffff};
 static std::string s_szCmdMsg[CMD_COUNT]; // 게임상 명령어
 
 
@@ -238,9 +251,29 @@ void CGameProcMain::Init()
 	m_pLightMgr->Release();
 	s_pEng->SetDefaultLight(m_pLightMgr->Light(0), m_pLightMgr->Light(1), m_pLightMgr->Light(2));
 
-	for( int i = IDS_CMD_WHISPER ; i <= IDS_CMD_GAME_SAVE ; i++ ) //명령어 로딩...
+	for (int i = 0; i <= 11; i++) // Command loading...
 	{
-		::_LoadStringFromResource(i, s_szCmdMsg[i - IDS_CMD_WHISPER]);
+		::_LoadStringFromResource(8000 + i, s_szCmdMsg[i]);
+	}
+	for (int i = 0; i <= 3; i++) // Command loading...
+	{
+		::_LoadStringFromResource(8200 + i, s_szCmdMsg[12 + i]);
+	}
+	for (int i = 0; i <= 5; i++) // Command loading...
+	{
+		::_LoadStringFromResource(8400 + i, s_szCmdMsg[16 + i]);
+	}
+	for (int i = 0; i <= 9; i++) // Command loading...
+	{
+		::_LoadStringFromResource(8600 + i, s_szCmdMsg[21 + i]);
+	}
+	for (int i = 0; i <= 5; i++) // Command loading...
+	{
+		::_LoadStringFromResource(8800 + i, s_szCmdMsg[30 + i]);
+	}
+	for (int i = 0; i <= 21; i++) // Command loading...
+	{
+		::_LoadStringFromResource(9000 + i, s_szCmdMsg[35 + i]);
 	}
 
 	s_SndMgr.ReleaseStreamObj(&(CGameProcedure::s_pSnd_BGM));
@@ -4467,8 +4500,12 @@ void CGameProcMain::MsgRecv_UserState(DataPack* pDataPack, int& iOffset)
 	}
 	else if(N3_SP_STATE_CHANGE_ACTION == eSP) // 크기 변함
 	{
-		if(1 == iState) pBPC->AnimationAdd(ANI_GREETING0, true); // 인사
-		else if(11 == iState) pBPC->AnimationAdd(ANI_WAR_CRY1, true); // 도발
+		if (1 == iState) pBPC->AnimationAdd(ANI_GREETING0, true); // 인사
+		else if (2 == iState) pBPC->AnimationAdd(ANI_GREETING1, true);
+		else if (3 == iState) pBPC->AnimationAdd(ANI_GREETING2, true);
+		else if (9 == iState) pBPC->AnimationAdd(ANI_WAR_CRY0, true);
+		else if (10 == iState) pBPC->AnimationAdd(ANI_WAR_CRY1, true);
+		else if(11 == iState) pBPC->AnimationAdd(ANI_WAR_CRY4, true); // 도발
 	}
 }
 
@@ -5223,10 +5260,50 @@ void CGameProcMain::ParseChattingCommand(const std::string& szCmd)
 		}
 		break;
 
-		case CMD_EXCITE:
+		case CMD_GREETING2:
+		{
+			if (s_pPlayer->State() == PSA_BASIC &&
+				s_pPlayer->StateMove() == PSM_STOP)
+			{
+				this->MsgSend_StateChange(N3_SP_STATE_CHANGE_ACTION, 2);
+			}
+		}
+		break;
+
+		case CMD_GREETING3:
+		{
+			if (s_pPlayer->State() == PSA_BASIC &&
+				s_pPlayer->StateMove() == PSM_STOP)
+			{
+				this->MsgSend_StateChange(N3_SP_STATE_CHANGE_ACTION, 3);
+			}
+		}
+		break;
+
+		case CMD_PROVOKE:
 		{
 			if(	s_pPlayer->State() == PSA_BASIC && 
 				s_pPlayer->StateMove() == PSM_STOP )
+			{
+				this->MsgSend_StateChange(N3_SP_STATE_CHANGE_ACTION, 9);
+			}
+		}
+		break;
+
+		case CMD_PROVOKE2:
+		{
+			if (s_pPlayer->State() == PSA_BASIC &&
+				s_pPlayer->StateMove() == PSM_STOP)
+			{
+				this->MsgSend_StateChange(N3_SP_STATE_CHANGE_ACTION, 10);
+			}
+		}
+		break;
+
+		case CMD_PROVOKE3:
+		{
+			if (s_pPlayer->State() == PSA_BASIC &&
+				s_pPlayer->StateMove() == PSM_STOP)
 			{
 				this->MsgSend_StateChange(N3_SP_STATE_CHANGE_ACTION, 11);
 			}
@@ -5284,10 +5361,20 @@ void CGameProcMain::ParseChattingCommand(const std::string& szCmd)
 
 		case CMD_NOTICE:
 		{
-			if(szCmd.size() >= 7)
+			if(szCmd.size() >= 9)
 			{
-				std::string szChat = szCmd.substr(6); // "/공지 "를 제외한 나머지 문자열
+				std::string szChat = szCmd.substr(8); // Subtract /notice
 				this->MsgSend_Chat(N3_CHAT_PUBLIC, szChat);
+			}
+		}
+		break;
+
+		case CMD_NOTICEALL:
+		{
+			if(szCmd.size() >= 12)
+			{
+				std::string szChat = szCmd.substr(11); // Subtract /noticeall
+				this->MsgSend_Chat(N3_CHAT_WAR, szChat);
 			}
 		}
 		break;
@@ -5317,7 +5404,7 @@ void CGameProcMain::ParseChattingCommand(const std::string& szCmd)
 		break;
 		
 		case CMD_GAME_SAVE:
-		{
+		{							
 			if(m_fRequestGameSave > 300.0f)
 			{
 				BYTE byBuff[4];												// 버퍼.. 
