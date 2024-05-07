@@ -78,32 +78,40 @@ void CUIImageTooltipDlg::SetPosSomething(int xpos, int ypos, int iNum)
 {
 	int iWidth = 0;
 	// 가로 크기 얻기..
+	int iPadding = 8;
+
 	for (int i = 0; i < iNum; i++)
 	{
 		if (m_pstdstr[i].empty())	continue;
-		if ( m_pStr[0]->GetStringRealWidth(m_pstdstr[i].length()) > iWidth )
-			iWidth = m_pStr[0]->GetStringRealWidth(m_pstdstr[i].length());
+		int currentWidth = m_pStr[0]->GetStringRealWidth(m_pstdstr[i]);
+		if (currentWidth > iWidth)
+		iWidth = currentWidth;
 	}
 
-	iWidth += 22;
-
 //	int iWidth	= m_rcRegion.right-m_rcRegion.left;
-	int iHeight = (m_pStr[iNum-1]->GetRegion().bottom - m_pStr[0]->GetRegion().top)+14;	// 2는 string간의 간격의 절반..
-
+//	int iHeight = (m_pStr[iNum-1]->GetRegion().bottom - m_pStr[0]->GetRegion().top)+14;	// 2는 string간의 간격의 절반..
+	int iHeight = m_pStr[iNum - 1]->GetRegion().bottom - m_pStr[0]->GetRegion().top;
+	
+	iWidth += iPadding * 2;
+	iHeight += iPadding * 1.5;
 	RECT rect, rect2;
 	
 	int iRight, iTop, iBottom, iX, iY;
-	iRight = CN3Base::s_CameraData.vp.Width; iTop = 0; iBottom = CN3Base::s_CameraData.vp.Height;
+	iRight = CN3Base::s_CameraData.vp.Width;
+	iTop = 0;
+	iBottom = CN3Base::s_CameraData.vp.Height;
 
-	if ((xpos+iWidth)<iRight) 
+	if ((xpos+26+iWidth)<iRight)
 	{
-		rect.left = xpos+26; rect.right = xpos+iWidth+26;
-		iX = xpos+26;
+		rect.left = xpos + 26;
+		rect.right = rect.left + iWidth;
+		iX = xpos + 26;
 	}
 	else
 	{
-		rect.left = xpos-iWidth; rect.right = xpos;	
-		iX = xpos-iWidth;
+		rect.left = xpos - iWidth;
+		rect.right = xpos;
+		iX = xpos - iWidth;
 	}
 
 	if ((ypos-iHeight)>iTop)
@@ -126,14 +134,18 @@ void CUIImageTooltipDlg::SetPosSomething(int xpos, int ypos, int iNum)
 	}
 
 	SetPos(iX, iY);
-	SetSize(rect.right - rect.left, rect.bottom - rect.top);
+	SetSize(iWidth, iHeight);
 
 	for (auto i = 0; i < iNum; i++)
 	{
 		if (!m_pStr[i])	continue;		
+
+		// add padding to rects
 		rect2 = m_pStr[i]->GetRegion();
-		rect2.right = rect.right-8;
+		rect2.left = rect.left + iPadding;
+		rect2.right = rect.right - iPadding;
 		m_pStr[i]->SetRegion(rect2);
+
 		if(m_pStr[i]->GetStyle() & UISTYLE_STRING_ALIGNCENTER)
 			m_pStr[i]->SetString(m_pstdstr[i]);
 		else

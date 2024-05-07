@@ -478,6 +478,14 @@ int CN3UIString::GetStringRealWidth(int iNum)
 	return (size.cx*iLength); 
 }
 
+int CN3UIString::GetStringRealWidth(std::string& szText)
+{
+	SIZE size;
+	BOOL bFlag = m_pDFont->GetTextExtent(szText, szText.length(), &size);
+	__ASSERT(bFlag, "cannot get size of dfont");
+	return size.cx;
+}
+
 void CN3UIString::SetStyle(DWORD dwType, DWORD dwStyleEx)
 {
 	if (dwType == UI_STR_TYPE_LINE)

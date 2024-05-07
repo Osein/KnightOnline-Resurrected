@@ -43,6 +43,7 @@ public:
 	int					GetLineCount() const {return m_iLineCount;}
 	int					GetStartLine() const {return m_iStartLine;}
 	int					GetStringRealWidth(int iNum);
+	int					GetStringRealWidth(std::string& szText);
 
 	virtual	DWORD	MouseProc(DWORD dwFlags, const POINT& ptCur, const POINT& ptOld);
 	virtual void	Render();
