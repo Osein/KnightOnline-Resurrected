@@ -241,6 +241,8 @@
     <ClCompile Include="N3PMeshInstance.cpp" />
     <ClCompile Include="N3Shape.cpp" />
     <ClCompile Include="N3ShapeExtra.cpp" />
+    <ClCompile Include="N3Sky.cpp" />
+    <ClCompile Include="N3SkyMng.cpp" />
     <ClCompile Include="N3Texture.cpp" />
     <ClCompile Include="N3Transform.cpp" />
     <ClCompile Include="N3TransformCollision.cpp" />
@@ -288,6 +290,8 @@
     <ClInclude Include="N3PMeshInstance.h" />
     <ClInclude Include="N3Shape.h" />
     <ClInclude Include="N3ShapeExtra.h" />
+    <ClInclude Include="N3Sky.h" />
+    <ClInclude Include="N3SkyMng.h" />
     <ClInclude Include="N3TableBase.h" />
     <ClInclude Include="N3Texture.h" />
     <ClInclude Include="N3Transform.h" />

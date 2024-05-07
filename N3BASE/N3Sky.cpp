@@ -10,24 +10,20 @@
 
 CN3Sky::CN3Sky()
 {
-//	m_pTex = NULL;
-	m_SkyColor.ChangeColor(0xff081021);	//밤
-	m_FogColor.ChangeColor(0xff102942);	//밤
+	m_SkyColor.ChangeColor(0xff081021);
+	m_FogColor.ChangeColor(0xff102942);
 }
 
 CN3Sky::~CN3Sky()
 {
-//	if (m_pTex) {s_MngTex.Delete(m_pTex);	m_pTex = NULL;}
+
 }
 
 void CN3Sky::Release()
 {
 	CN3Base::Release();
-//	m_SkyColor.ChangeColor(0xFF5284DE);	//낮
-//	m_FogColor.ChangeColor(0xFFB5C6DE);	//낮
-	m_SkyColor.ChangeColor(0xff081021);	//밤
-	m_FogColor.ChangeColor(0xff102942);	//밤
-//	if (m_pTex) {s_MngTex.Delete(m_pTex);	m_pTex = NULL;}
+	m_SkyColor.ChangeColor(0xff081021);
+	m_FogColor.ChangeColor(0xff102942);
 }
 
 void CN3Sky::Tick()
@@ -47,23 +43,29 @@ void CN3Sky::Render()
 {
     // Set up a rotation matrix to orient the billboard towards the camera.
 	__Matrix44 matWorld;
-	__Vector3 vDir = s_CameraData.vEye - s_CameraData.vAt;	// 카메라의 방향
+	__Vector3 vDir = s_CameraData.vEye - s_CameraData.vAt;
 	if (0.0f == vDir.x) matWorld.Identity();
 	else if( vDir.x > 0.0f ) matWorld.RotationY(-atanf(vDir.z/vDir.x) - (D3DX_PI * 0.5f));
 	else  matWorld.RotationY(-atanf(vDir.z/vDir.x) + (D3DX_PI * 0.5f));
 	s_lpD3DDev->SetTransform( D3DTS_WORLD, &matWorld );
 
-	// Set the texture stage states
-	s_lpD3DDev->SetTexture(0, NULL);
-	s_lpD3DDev->SetTextureStageState( 0, D3DTSS_COLOROP,   D3DTOP_SELECTARG1 );
-	s_lpD3DDev->SetTextureStageState( 0, D3DTSS_COLORARG1, D3DTA_DIFFUSE );
+	DWORD alphaOp, alphaArg1;
 
-	// Render the skybox
+	s_lpD3DDev->GetTextureStageState(0, D3DTSS_ALPHAOP, &alphaOp);
+	s_lpD3DDev->GetTextureStageState(0, D3DTSS_ALPHAARG1, &alphaArg1);
+
+	s_lpD3DDev->SetTexture(0, nullptr);
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_DIFFUSE);
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG1);
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_DIFFUSE);
+
 	s_lpD3DDev->SetVertexShader(FVF_XYZCOLOR);
-	// 밑판 그리기
 	s_lpD3DDev->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, m_Bottom, sizeof(m_Bottom[0]));
-	// 옆판 그리기
 	s_lpD3DDev->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, m_vFronts, sizeof(m_vFronts[0]));
+
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_ALPHAOP, alphaOp);
+	s_lpD3DDev->SetTextureStageState(0, D3DTSS_ALPHAARG1, alphaArg1);
 }
 
 void CN3Sky::Init()

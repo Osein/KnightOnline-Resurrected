@@ -39,6 +39,8 @@
     <ClCompile Include="N3UITrackBar.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="N3Chr.cpp" />
+    <ClCompile Include="N3SkyMng.cpp" />
+    <ClCompile Include="N3Sky.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DFont.h" />
@@ -83,5 +85,7 @@
     <ClInclude Include="N3UITrackBar.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="N3Chr.h" />
+    <ClInclude Include="N3SkyMng.h" />
+    <ClInclude Include="N3Sky.h" />
   </ItemGroup>
 </Project>
