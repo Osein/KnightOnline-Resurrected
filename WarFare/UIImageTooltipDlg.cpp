@@ -882,7 +882,7 @@ int	CUIImageTooltipDlg::CalcTooltipStringNumAndWrite(__IconItemSkill* spItem, bo
 				m_pStr[iIndex]->SetColor(m_CWhite);
 			else
 				m_pStr[iIndex]->SetColor(m_CRed);
-			sprintf(szBuff, szStr.c_str(), spItem->pItemBasic->byNeedTitle+spItem->pItemExt->siNeedTitle);
+			sprintf(szBuff, szStr.c_str(), std::to_string(spItem->pItemBasic->byNeedTitle+spItem->pItemExt->siNeedTitle).c_str());
 			m_pstdstr[iIndex] = szBuff;
 			iIndex++;
 		}
@@ -1028,7 +1028,7 @@ exceptions:;
 				int iSellPrice = (spItem->pItemBasic->iPrice*spItem->pItemExt->siPriceMultiply/6);
 				if (iSellPrice < 1)
 					iSellPrice = 1;
-				sprintf(szBuff, szStr.c_str(), iSellPrice);	
+				sprintf(szBuff, szStr.c_str(), std::to_string(iSellPrice).c_str());	
 				m_pstdstr[iIndex] = szBuff;
 			}
 			iIndex++;			
