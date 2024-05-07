@@ -40,6 +40,7 @@ protected:
 	bool						m_bAnimationChanged;	// 큐에 넣은 에니메이션이 변하는 순간만 세팅된다..
 
 	CN3Chr						m_Chr;									// 캐릭터 기본 객체...
+	class CN3Shape* m_pLootbox;
 	__TABLE_PLAYER_LOOKS*		m_pLooksRef;							// 기본 참조 테이블 - 캐릭터에 관한 리소스 정보, 관절 위치, 사운드 파일등등..
 	__TABLE_ITEM_BASIC*			m_pItemPartBasics[PART_POS_COUNT];	// 캐릭터에 붙은 무기들..
 	__TABLE_ITEM_EXT*			m_pItemPartExts[PART_POS_COUNT];		// 캐릭터에 붙은 무기들..
@@ -211,6 +212,8 @@ public:
 
 	__Vector3		Max();
 	__Vector3		Min();
+	__Vector3		RawMax();
+	__Vector3		RawMin();
 	__Vector3		Center();
 
 	void			DurationColorSet(const _D3DCOLORVALUE& color, float fDurationTime); // 컬러를 정하는 시간대로 유지하면서 원래색대로 돌아간다.

@@ -122,6 +122,9 @@ CPlayerBase::CPlayerBase()
 	*pIdx++ = 2;  *pIdx++ = 3;  *pIdx++ = 1;
 
 	m_N3Tex.Create(SHADOW_SIZE, SHADOW_SIZE, D3DFMT_A4R4G4B4, 0);	
+
+	m_pLootbox = new CN3Shape();
+	m_pLootbox->LoadFromFile("Misc\\itembox.n3shape");
 }
 
 CPlayerBase::~CPlayerBase()
@@ -135,6 +138,7 @@ CPlayerBase::~CPlayerBase()
 	delete m_pIDFont; m_pIDFont = NULL;
 	delete m_pInfoFont; m_pInfoFont = NULL;
 	delete m_pBalloonFont; m_pBalloonFont = NULL;
+	delete m_pLootbox; m_pLootbox = nullptr;
 
 	m_bSoundAllSet = false;
 	CN3Base::s_SndMgr.ReleaseObj(&m_pSnd_Move);
@@ -825,6 +829,55 @@ void CPlayerBase::Tick()  // 회전, 지정된 에니메이션 Tick 및 색깔 �
 			this->BalloonStringSet("", 0); // 시간 榮?!!
 		}
 	}
+
+	if (m_pLootbox && m_iDroppedItemID > 0 && m_eState == PSA_DEATH)
+	{
+		// Rotate lootbox to face same side as character
+		auto qRotation = this->Rotation();
+		m_pLootbox->RotSet(qRotation);
+
+		// Get radius to position loot box
+		auto fRadius = Radius();
+
+		// Apply logarithm to radius since we don't want loot boxes be too big
+		auto fScale = logf(fmax(1.0f, fRadius + 1.25f));
+		m_pLootbox->ScaleSet(fScale, fScale, fScale);
+
+		// Place radius inside a vector for two axis, it'll be rotated 45 degrees already.
+		auto vTargetLocation = __Vector3(fRadius, 0, fRadius);
+
+		// Rotate target location to align with character's
+		__Vector3 vRotatedPosition;
+		qRotation.RotateVec3(&vRotatedPosition, &vTargetLocation);
+
+		// Add char position to loot box's position related to char
+		m_pLootbox->PosSet(Position() + vRotatedPosition);
+		m_pLootbox->Tick();
+
+		/*
+		* TODO: Remove this when we feel safe with the impl above
+		// Loot boxes get rotated 45 degree more
+		D3DXMATRIX rotationMatrix;
+		D3DXMatrixRotationY(&rotationMatrix, __PI / 4);
+
+		D3DXMATRIX translationMatrix;
+		D3DXMatrixTranslation(&translationMatrix, Position().x, Position().y, Position().z);
+
+		D3DXMATRIX calculationMatrix = rotationMatrix * translationMatrix;
+
+		// Get half of the models width and height
+		auto midXPoint = (RawMax().x - RawMin().x) / 2;
+		auto midZPoint = (RawMax().z - RawMin().z) / 2;
+
+		D3DXVECTOR4 newCoords;
+		D3DXVECTOR4 oldCoords = D3DXVECTOR4(midXPoint, 0, midZPoint, 1);
+
+		D3DXVec4Transform(&newCoords, &oldCoords, &calculationMatrix);
+
+		m_pLootbox->PosSet(__Vector3(newCoords.x, newCoords.y, newCoords.z));
+		m_pLootbox->Tick();
+		*/
+	}
 }
 
 void CPlayerBase::Render(float fSunAngle)
@@ -839,11 +892,6 @@ void CPlayerBase::Render(float fSunAngle)
 	}
 #endif
 
-	
-	
-	
-	
-	
 	float fFactorToApply = 1.0f;
 	if(m_fTimeAfterDeath > TIME_CORPSE_REMAIN - TIME_CORPSE_REMOVE) // 투명하게 만든다..
 		fFactorToApply = (TIME_CORPSE_REMAIN - m_fTimeAfterDeath) / TIME_CORPSE_REMOVE;
@@ -906,24 +954,10 @@ void CPlayerBase::Render(float fSunAngle)
 
 	if (s_Options.iUseShadow) this->RenderShadow(fSunAngle);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	if (m_pLootbox && m_iDroppedItemID > 0 && m_eState == PSA_DEATH)
+	{
+		m_pLootbox->Render();
+	}
 
 #ifdef _DEBUG
 //	if(m_Chr.CollisionMesh()) // 충돌 체크용 박스..
@@ -2492,18 +2526,34 @@ void CPlayerBase::CalcPlug(CN3CPlugBase* pPlug, const __Matrix44* pmtxJoint, __M
 
 __Vector3	CPlayerBase::Max()
 {
-	if(m_pShapeExtraRef) 
+	if (m_pShapeExtraRef)
 		return m_pShapeExtraRef->Max();
 
-	return m_Chr.Max(); 
+	return m_Chr.Max();
 }
 
 __Vector3	CPlayerBase::Min()
 {
-	if(m_pShapeExtraRef)
+	if (m_pShapeExtraRef)
 		return m_pShapeExtraRef->Min();
-	
+
 	return m_Chr.Min();
+}
+
+__Vector3	CPlayerBase::RawMax()
+{
+	if (m_pShapeExtraRef)
+		return m_pShapeExtraRef->RawMax();
+
+	return m_Chr.RawMax();
+}
+
+__Vector3	CPlayerBase::RawMin()
+{
+	if (m_pShapeExtraRef)
+		return m_pShapeExtraRef->RawMin();
+
+	return m_Chr.RawMin();
 }
 
 __Vector3	CPlayerBase::Center()

@@ -106,6 +106,14 @@ public:
 	void AxisAngle(__Vector3& vAxisResult, float& fRadianResult) const;
 	void Slerp(const D3DXQUATERNION& qt1, const D3DXQUATERNION& qt2, float fDelta);
 
+	void RotateVec3(__Vector3* pOut, const __Vector3* pV)
+	{
+		D3DXQUATERNION q1, q2;
+		D3DXQuaternionConjugate(&q1, this);
+		q2 = q1 * D3DXQUATERNION(pV->x, pV->y, pV->z, 1.0f) * *this;
+		*pOut = __Vector3(q2.x, q2.y, q2.z);
+	}
+
 	__Quaternion();
 	__Quaternion(const D3DXMATRIX& mtx);
 	__Quaternion(const D3DXQUATERNION& qt);
