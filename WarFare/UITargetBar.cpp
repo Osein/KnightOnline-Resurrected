@@ -54,9 +54,21 @@ bool CUITargetBar::Load(HANDLE hFile)
 	if(CN3UIBase::Load(hFile)==false) return false;
 
 	m_pProgressHP = (CN3UIProgress*)GetChildByID("pro_target");	__ASSERT(m_pProgressHP, "NULL UI Component!!");
+	m_pProgressHPCurse = (CN3UIProgress*)GetChildByID("pro_curse");	__ASSERT(m_pProgressHPCurse, "NULL UI Component!!");
+	m_pProgressHPPoison = (CN3UIProgress*)GetChildByID("pro_poison");	__ASSERT(m_pProgressHPPoison, "NULL UI Component!!");
 	m_pStringID = (CN3UIString*)GetChildByID("text_target");	__ASSERT(m_pStringID, "NULL UI Component!!");
 	
 	if(m_pProgressHP) m_pProgressHP->SetRange(0, 100);
+	if (m_pProgressHPCurse)
+	{
+		m_pProgressHPCurse->SetRange(0, 100);
+		m_pProgressHPCurse->SetVisible(false);
+	}
+	if(m_pProgressHPPoison)
+	{
+		m_pProgressHPPoison->SetRange(0, 100);
+		m_pProgressHPPoison->SetVisible(false);
+	}
 	if(m_pStringID) // 폰트를 바꾼다.
 	{
 		std::string szFontID; ::_LoadStringFromResource(IDS_FONT_ID, szFontID);
