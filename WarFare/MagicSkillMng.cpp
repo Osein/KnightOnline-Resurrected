@@ -209,16 +209,36 @@ bool CMagicSkillMng::CheckValidSkillMagic(__TABLE_UPC_SKILL* pSkill)
 
 	if(pSkill->iNeedSkill==1055 || pSkill->iNeedSkill==2055)
 	{
-		if((LeftItem != ITEM_CLASS_SWORD && LeftItem != ITEM_CLASS_AXE && LeftItem != ITEM_CLASS_MACE ) ||
-			(RightItem != ITEM_CLASS_SWORD && RightItem != ITEM_CLASS_AXE && RightItem != ITEM_CLASS_MACE) )
+		if ((LeftItem != ITEM_CLASS_SWORD &&
+			LeftItem != ITEM_CLASS_AXE &&
+			LeftItem != ITEM_CLASS_MACE &&
+			LeftItem != ITEM_CLASS_SPEAR) &&
+
+			(RightItem != ITEM_CLASS_SWORD &&
+				RightItem != ITEM_CLASS_AXE &&
+				RightItem != ITEM_CLASS_MACE &&
+				RightItem != ITEM_CLASS_SWORD_2H &&
+				RightItem != ITEM_CLASS_AXE_2H &&
+				RightItem != ITEM_CLASS_MACE_2H &&
+				RightItem != ITEM_CLASS_POLEARM))
 		{
 			return false;
 		}
 	}
 	else if(pSkill->iNeedSkill==1056 || pSkill->iNeedSkill==2056)
 	{
-		if(	RightItem != ITEM_CLASS_SWORD_2H && RightItem != ITEM_CLASS_AXE_2H &&
-			RightItem != ITEM_CLASS_MACE_2H && RightItem != ITEM_CLASS_POLEARM )
+		if ((LeftItem != ITEM_CLASS_SWORD &&
+			LeftItem != ITEM_CLASS_AXE &&
+			LeftItem != ITEM_CLASS_MACE &&
+			LeftItem != ITEM_CLASS_SPEAR) &&
+
+			(RightItem != ITEM_CLASS_SWORD &&
+				RightItem != ITEM_CLASS_AXE &&
+				RightItem != ITEM_CLASS_MACE &&
+				RightItem != ITEM_CLASS_SWORD_2H &&
+				RightItem != ITEM_CLASS_AXE_2H &&
+				RightItem != ITEM_CLASS_MACE_2H &&
+				RightItem != ITEM_CLASS_POLEARM))
 		{
 			return false;
 		}
@@ -229,7 +249,7 @@ bool CMagicSkillMng::CheckValidSkillMagic(__TABLE_UPC_SKILL* pSkill)
 	int LeftItem1 = LeftItem/10;
 	int RightItem1 = RightItem/10;
 	
-	if(pSkill->dwNeedItem!=0 && pSkill->dwNeedItem != LeftItem1 && pSkill->dwNeedItem != RightItem1)
+	/*if(pSkill->dwNeedItem!=0 && pSkill->dwNeedItem != LeftItem1 && pSkill->dwNeedItem != RightItem1)
 	{
 		return false;
 	}
@@ -239,7 +259,7 @@ bool CMagicSkillMng::CheckValidSkillMagic(__TABLE_UPC_SKILL* pSkill)
 		{
 			return false;
 		}		
-	}
+	}*/
 
 	if(pSkill->dwExhaustItem>0)
 	{
@@ -590,8 +610,18 @@ bool CMagicSkillMng::CheckValidCondition(int iTargetID, __TABLE_UPC_SKILL* pSkil
 
 	if(pSkill->iNeedSkill==1055 || pSkill->iNeedSkill==2055)
 	{
-		if((LeftItem != ITEM_CLASS_SWORD && LeftItem != ITEM_CLASS_AXE && LeftItem != ITEM_CLASS_MACE ) ||
-			(RightItem != ITEM_CLASS_SWORD && RightItem != ITEM_CLASS_AXE && RightItem != ITEM_CLASS_MACE) )
+		if ((LeftItem != ITEM_CLASS_SWORD &&
+			LeftItem != ITEM_CLASS_AXE &&
+			LeftItem != ITEM_CLASS_MACE &&
+			LeftItem != ITEM_CLASS_SPEAR) &&
+
+			(RightItem != ITEM_CLASS_SWORD &&
+				RightItem != ITEM_CLASS_AXE &&
+				RightItem != ITEM_CLASS_MACE &&
+				RightItem != ITEM_CLASS_SWORD_2H &&
+				RightItem != ITEM_CLASS_AXE_2H &&
+				RightItem != ITEM_CLASS_MACE_2H &&
+				RightItem != ITEM_CLASS_POLEARM))
 		{
 			std::string buff;
 			::_LoadStringFromResource(IDS_SKILL_FAIL_INVALID_ITEM, buff);
@@ -601,8 +631,18 @@ bool CMagicSkillMng::CheckValidCondition(int iTargetID, __TABLE_UPC_SKILL* pSkil
 	}
 	else if(pSkill->iNeedSkill==1056 || pSkill->iNeedSkill==2056)
 	{
-		if(	RightItem != ITEM_CLASS_SWORD_2H && RightItem != ITEM_CLASS_AXE_2H &&
-			RightItem != ITEM_CLASS_MACE_2H && RightItem != ITEM_CLASS_POLEARM )
+		if ((LeftItem != ITEM_CLASS_SWORD &&
+			LeftItem != ITEM_CLASS_AXE &&
+			LeftItem != ITEM_CLASS_MACE &&
+			LeftItem != ITEM_CLASS_SPEAR) &&
+
+			(RightItem != ITEM_CLASS_SWORD &&
+				RightItem != ITEM_CLASS_AXE &&
+				RightItem != ITEM_CLASS_MACE &&
+				RightItem != ITEM_CLASS_SWORD_2H &&
+				RightItem != ITEM_CLASS_AXE_2H &&
+				RightItem != ITEM_CLASS_MACE_2H &&
+				RightItem != ITEM_CLASS_POLEARM))
 		{
 			std::string buff;
 			::_LoadStringFromResource(IDS_SKILL_FAIL_INVALID_ITEM, buff);
@@ -624,10 +664,13 @@ bool CMagicSkillMng::CheckValidCondition(int iTargetID, __TABLE_UPC_SKILL* pSkil
 	
 	if(pSkill->dwNeedItem!=0 && pSkill->dwNeedItem != LeftItem1 && pSkill->dwNeedItem != RightItem1)
 	{
+		if ((pSkill->dw1stTableType == 1 || pSkill->dw2ndTableType == 1)) 
+		{
 		std::string buff;
 		::_LoadStringFromResource(IDS_SKILL_FAIL_INVALID_ITEM, buff);
 		m_pGameProcMain->MsgOutput(buff, 0xffffff00);
 		return false;
+		}
 	}
 	if(pSkill->dwNeedItem==0 && (pSkill->dw1stTableType==1 || pSkill->dw2ndTableType==1))
 	{

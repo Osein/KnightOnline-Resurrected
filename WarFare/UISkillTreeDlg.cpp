@@ -948,21 +948,37 @@ void CUISkillTreeDlg::TooltipRenderEnable(__IconItemSkill* spSkill)
 	/*} */
 
 	if (!m_pStr_skill_item0->IsVisible())	m_pStr_skill_item0->SetVisible(true);
-	switch (spSkill->pSkill->iNeedSkill)
+
+	if (spSkill->pSkill->dwNeedItem == 9 && (spSkill->pSkill->dw1stTableType == 1) || (spSkill->pSkill->dw2ndTableType == 1))
 	{
+		switch (spSkill->pSkill->iNeedSkill)
+		{
 		case 1055:
+		case 1065:
 		case 2055:
-			::_LoadStringFromResource(IDS_SKILL_TOOLTIP_NEED_ITEM_DUAL, szStr);
-			sprintf(pszDesc, szStr.c_str());		
+		case 2065:
+			::_LoadStringFromResource(IDS_SKILL_TOOLTIP_NEED_ITEM_ID1, szStr);
+			sprintf(pszDesc, szStr.c_str());
 			bFound = true;
 			break;
 
 		case 1056:
+		case 1066:
 		case 2056:
-			::_LoadStringFromResource(IDS_SKILL_TOOLTIP_DOUBLE, szStr);
-			sprintf(pszDesc, szStr.c_str());		
+		case 2066:
+			::_LoadStringFromResource(IDS_SKILL_TOOLTIP_NEED_ITEM_ID1, szStr);
+			sprintf(pszDesc, szStr.c_str());
 			bFound = true;
 			break;
+		case 1057:
+		case 1067:
+		case 2057:
+		case 2067:
+			::_LoadStringFromResource(IDS_SKILL_TOOLTIP_NEED_ITEM_ID1, szStr);
+			sprintf(pszDesc, szStr.c_str());
+			bFound = true;
+			break;
+		}
 	}
 
 	if (!bFound)
