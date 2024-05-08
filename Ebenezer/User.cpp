@@ -7399,12 +7399,24 @@ void CUser::Home()
 		}		
 		else return;
 	}
-// 비러머글 뉴존 >.<
 	else if (m_pUserData->m_bZone > 10 && m_pUserData->m_bZone < 20) {
+		// ESLANT Zones
 		x = 527 + myrand(0, 10);
 		z = 543 + myrand(0, 10);			
 	}
-//
+	else if (m_pUserData->m_bZone == 21)
+	{
+		if (m_pUserData->m_bNation == 1)
+		{
+			x = 299 + myrand(-4, 4);
+			z = 360 + myrand(-4, 4);
+		}
+		else
+		{
+			x = 321.5 + myrand(-4, 4);
+			z = 337.5 + myrand(-4, 4);
+		}
+	}
 	else {	// Your own nation...
 		if (m_pUserData->m_bNation == KARUS) {
 			x = pHomeInfo->KarusZoneX + myrand(0, pHomeInfo->KarusZoneLX);
