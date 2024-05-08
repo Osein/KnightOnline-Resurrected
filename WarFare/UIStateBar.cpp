@@ -25,7 +25,12 @@
 CUIStateBar::CUIStateBar()
 {
 	m_pText_Position = NULL;
+	m_pText_Exp = nullptr;
+	m_pText_Hp = nullptr;
+	m_pText_Mp = nullptr;
 	m_pProgress_HP = NULL;
+	m_pProgress_HPCurse = NULL;
+	m_pProgress_HPPoison = NULL;
 	m_pProgress_MSP = NULL;
 	m_pProgress_ExpC = NULL;
 	m_pProgress_ExpP = NULL;
@@ -81,7 +86,12 @@ void CUIStateBar::Release()
 	CN3UIBase::Release();
 
 	m_pText_Position = NULL;
+	m_pText_Exp = nullptr;
+	m_pText_Hp = nullptr;
+	m_pText_Mp = nullptr;
 	m_pProgress_HP = NULL;
+	m_pProgress_HPCurse = NULL;
+	m_pProgress_HPPoison = NULL;
 	m_pProgress_MSP = NULL;
 	m_pProgress_ExpC = NULL;
 	m_pProgress_ExpP = NULL;
@@ -111,17 +121,25 @@ bool CUIStateBar::Load(HANDLE hFile)
 		sprintf(szVersion, "Ver. %.3f", CURRENT_VERSION / 1000.0f);
 		pText->SetString(szVersion);
 	}
-	m_pText_Position =	(CN3UIString*)(this->GetChildByID("Text_Position"));	__ASSERT(m_pText_Position, "NULL UI Component!!");
+	m_pText_Position =	(CN3UIString*)(GetChildByID("Text_Position"));	__ASSERT(m_pText_Position, "NULL UI Component!!");
+	m_pText_Exp =	(CN3UIString*)(GetChildByID("Text_ExpP"));	__ASSERT(m_pText_Exp, "NULL UI Component!!");
+	m_pText_Hp =	(CN3UIString*)(GetChildByID("Text_HP"));	__ASSERT(m_pText_Hp, "NULL UI Component!!");
+	m_pText_Mp =	(CN3UIString*)(GetChildByID("Text_MSP"));	__ASSERT(m_pText_Mp, "NULL UI Component!!");
 
-	m_pProgress_HP =	(CN3UIProgress*)(this->GetChildByID("Progress_HP"));	__ASSERT(m_pProgress_HP, "NULL UI Component!!");
-	m_pProgress_MSP =	(CN3UIProgress*)(this->GetChildByID("Progress_MSP"));	__ASSERT(m_pProgress_MSP, "NULL UI Component!!");
-	m_pProgress_ExpC =	(CN3UIProgress*)(this->GetChildByID("Progress_ExpC"));	__ASSERT(m_pProgress_ExpC, "NULL UI Component!!");
-	m_pProgress_ExpP =	(CN3UIProgress*)(this->GetChildByID("Progress_ExpP"));	__ASSERT(m_pProgress_ExpP, "NULL UI Component!!");
+	m_pProgress_HP =	(CN3UIProgress*)(GetChildByID("Progress_HP"));	__ASSERT(m_pProgress_HP, "NULL UI Component!!");
+	m_pProgress_HPCurse =	(CN3UIProgress*)(GetChildByID("Progress_HP_curse"));	__ASSERT(m_pProgress_HPCurse, "NULL UI Component!!");
+	m_pProgress_HPPoison =	(CN3UIProgress*)(GetChildByID("Progress_HP_poison"));	__ASSERT(m_pProgress_HPPoison, "NULL UI Component!!");
+	m_pProgress_MSP =	(CN3UIProgress*)(GetChildByID("Progress_MSP"));	__ASSERT(m_pProgress_MSP, "NULL UI Component!!");
+	m_pProgress_ExpC =	(CN3UIProgress*)(GetChildByID("Progress_ExpC"));	__ASSERT(m_pProgress_ExpC, "NULL UI Component!!");
+	m_pProgress_ExpP =	(CN3UIProgress*)(GetChildByID("Progress_ExpP"));	__ASSERT(m_pProgress_ExpP, "NULL UI Component!!");
 	
 	if(m_pProgress_HP) m_pProgress_HP->SetRange(0, 100);
 	if(m_pProgress_MSP) m_pProgress_MSP->SetRange(0, 100);
 	if(m_pProgress_ExpC) m_pProgress_ExpC->SetRange(0, 100);
 	if(m_pProgress_ExpP) m_pProgress_ExpP->SetRange(0, 100);
+
+	if (m_pProgress_HPCurse) m_pProgress_HPCurse->SetVisible(false);
+	if (m_pProgress_HPPoison) m_pProgress_HPPoison->SetVisible(false);
 
 	// MiniMap
 	m_pGroup_MiniMap = GetChildByID("Group_MiniMap"); __ASSERT(m_pGroup_MiniMap, "NULL UI Component!!");
@@ -131,7 +149,7 @@ bool CUIStateBar::Load(HANDLE hFile)
 
 		m_pImage_Map =		(CN3UIImage*)(m_pGroup_MiniMap->GetChildByID("Img_MiniMap"));	__ASSERT(m_pImage_Map, "NULL UI Component!!");
 		m_pBtn_ZoomIn =		(CN3UIButton*)(m_pGroup_MiniMap->GetChildByID("Btn_ZoomIn"));	__ASSERT(m_pBtn_ZoomIn, "NULL UI Component!!");
-		m_pBtn_ZoomOut =	(CN3UIButton*)(m_pGroup_MiniMap->GetChildByID("Btn_ZoomIn"));	__ASSERT(m_pBtn_ZoomOut, "NULL UI Component!!");
+		m_pBtn_ZoomOut =	(CN3UIButton*)(m_pGroup_MiniMap->GetChildByID("Btn_ZoomOut"));	__ASSERT(m_pBtn_ZoomOut, "NULL UI Component!!");
 	}
 
 	return true;
@@ -172,6 +190,10 @@ void CUIStateBar::UpdateExp(int iExp, int iExpNext, bool bUpdateImmediately)
 
 	if(bUpdateImmediately) m_pProgress_ExpP->SetCurValue(iPercentage);	 //SetCurValue --> set경우 
 	else m_pProgress_ExpP->SetCurValue(iPercentage, 0.3f, 100.0f);
+
+	char szMpText[64]{ 0 };
+	sprintf(szMpText, "%d%%", iPercentage);
+	if (m_pText_Exp) m_pText_Exp->SetString(szMpText);
 }
 
 void CUIStateBar::UpdateMSP(int iMSP, int iMSPMax, bool bUpdateImmediately)
@@ -184,6 +206,10 @@ void CUIStateBar::UpdateMSP(int iMSP, int iMSPMax, bool bUpdateImmediately)
 
 	if(bUpdateImmediately) m_pProgress_MSP->SetCurValue(iPercentage);	 //SetCurValue --> set경우 
 	else m_pProgress_MSP->SetCurValue(iPercentage, 0.3f, 100.0f);
+
+	char szMpText[64]{ 0 };
+	sprintf(szMpText, "%d/%d", iMSP, iMSPMax);
+	if (m_pText_Mp) m_pText_Mp->SetString(szMpText);
 }
 
 void CUIStateBar::UpdateHP(int iHP, int iHPMax, bool bUpdateImmediately)
@@ -195,6 +221,10 @@ void CUIStateBar::UpdateHP(int iHP, int iHPMax, bool bUpdateImmediately)
 
 	if(bUpdateImmediately) m_pProgress_HP->SetCurValue(iPercentage);	 //SetCurValue --> set경우 
 	else m_pProgress_HP->SetCurValue(iPercentage, 0.3f, 100.0f);
+
+	char szMpText[64]{ 0 };
+	sprintf(szMpText, "%d/%d", iHP, iHPMax);
+	if (m_pText_Hp) m_pText_Hp->SetString(szMpText);
 }
 
 void CUIStateBar::UpdatePosition(const __Vector3 &vPos, float fYaw)
@@ -484,7 +514,18 @@ bool CUIStateBar::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
 				}
 			}
 		}	
-	}	
+	}
+	else if (dwMsg == UIMSG_BUTTON_CLICK)
+	{
+		if (pSender == (CN3UIBase*)m_pBtn_ZoomIn)
+		{
+			m_fZoom = std::fmin(6.0f, m_fZoom + 0.5f);
+		}
+		else if (pSender == (CN3UIBase*)m_pBtn_ZoomOut)
+		{
+			m_fZoom = std::fmax(3.0f, m_fZoom - 0.5f);
+		}
+	}
 	return false;
 }
 
