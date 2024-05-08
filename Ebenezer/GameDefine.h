@@ -558,6 +558,7 @@ struct _WARP_INFO
 	float	fY;
 	float	fZ;
 	float	fR;
+	short	sNation;
 
 	_WARP_INFO() {
 		sWarpID = 0; sZone = 0;
