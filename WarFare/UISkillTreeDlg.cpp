@@ -1554,6 +1554,7 @@ void CUISkillTreeDlg::SetPageInCharRegion()						// 문자 역역에서 현재 �
 {
 	CN3UIBase* pBaseNonMaster;
 	AllClearImageByName("public", false);
+	AllClearImageByName("master", false);
 
 	switch ( CGameBase::s_pPlayer->m_InfoBase.eNation )
 	{
@@ -1579,18 +1580,22 @@ void CUISkillTreeDlg::SetPageInCharRegion()						// 문자 역역에서 현재 �
 
 				case CLASS_KA_BERSERKER:
 					AllClearImageByName("berserker", true);
+					AllClearImageByName("master", true);
 					break;
 
 				case CLASS_KA_HUNTER:
 					AllClearImageByName("hunter", true);
+					AllClearImageByName("master", true);
 					break;
 
 				case CLASS_KA_SORCERER:
 					AllClearImageByName("sorcerer", true);
+					AllClearImageByName("master", true);
 					break;
 
 				case CLASS_KA_SHAMAN:
 					AllClearImageByName("shaman", true);
+					AllClearImageByName("master", true);
 					break;
 					// master skills
 				case CLASS_KA_GUARDIAN:
@@ -1598,24 +1603,28 @@ void CUISkillTreeDlg::SetPageInCharRegion()						// 문자 역역에서 현재 �
 					AllClearImageByName("Berserker Hero", true);
 					pBaseNonMaster = GetChildBaseByName("img_berserker");
 					if (pBaseNonMaster) pBaseNonMaster->SetVisible(false);
+					AllClearImageByName("master", true);
 					break;
 				case CLASS_KA_PENETRATOR:
 					AllClearImageByName("hunter", true);
 					AllClearImageByName("Shadow Bane", true);
 					pBaseNonMaster = GetChildBaseByName("img_hunter");
 					if (pBaseNonMaster) pBaseNonMaster->SetVisible(false);
+					AllClearImageByName("master", true);
 					break;
 				case CLASS_KA_NECROMANCER:
 					AllClearImageByName("sorcerer", true);
 					AllClearImageByName("Elemental Lord", true);
 					pBaseNonMaster = GetChildBaseByName("img_sorcerer");
 					if (pBaseNonMaster) pBaseNonMaster->SetVisible(false);
+					AllClearImageByName("master", true);
 					break;
 				case CLASS_KA_DARKPRIEST:
 					AllClearImageByName("shaman", true);
 					AllClearImageByName("Shadow Knight", true);
 					pBaseNonMaster = GetChildBaseByName("img_shaman");
 					if (pBaseNonMaster) pBaseNonMaster->SetVisible(false);
+					AllClearImageByName("master", true);
 					break;
 			}
 			break;
@@ -1642,18 +1651,22 @@ void CUISkillTreeDlg::SetPageInCharRegion()						// 문자 역역에서 현재 �
 
 				case CLASS_EL_RANGER:
 					AllClearImageByName("ranger", true);
+					AllClearImageByName("master", true);
 					break;
 
 				case CLASS_EL_BLADE:
 					AllClearImageByName("blade", true);
+					AllClearImageByName("master", true);
 					break;
 
 				case CLASS_EL_MAGE:
 					AllClearImageByName("mage", true);
+					AllClearImageByName("master", true);
 					break;
 
 				case CLASS_EL_CLERIC:
 					AllClearImageByName("cleric", true);
+					AllClearImageByName("master", true);
 					break;
 					// master skills
 				case CLASS_EL_PROTECTOR:
@@ -1661,24 +1674,28 @@ void CUISkillTreeDlg::SetPageInCharRegion()						// 문자 역역에서 현재 �
 					AllClearImageByName("Blade Master", true);
 					pBaseNonMaster = GetChildBaseByName("img_blade");
 					if (pBaseNonMaster) pBaseNonMaster->SetVisible(false);
+					AllClearImageByName("master", true);
 					break;
 				case CLASS_EL_ASSASIN:
 					AllClearImageByName("hunter", true);
 					AllClearImageByName("kasar hood", true);
 					pBaseNonMaster = GetChildBaseByName("img_hunter");
 					if (pBaseNonMaster) pBaseNonMaster->SetVisible(false);
+					AllClearImageByName("master", true);
 					break;
 				case CLASS_EL_ENCHANTER:
 					AllClearImageByName("mage", true);
 					AllClearImageByName("Arc Mage", true);
 					pBaseNonMaster = GetChildBaseByName("img_mage");
 					if (pBaseNonMaster) pBaseNonMaster->SetVisible(false);
+					AllClearImageByName("master", true);
 					break;
 				case CLASS_EL_DRUID:
 					AllClearImageByName("cleric", true);
 					AllClearImageByName("Paladin", true);
 					pBaseNonMaster = GetChildBaseByName("img_cleric");
 					if (pBaseNonMaster) pBaseNonMaster->SetVisible(false);
+					AllClearImageByName("master", true);
 					break;
 			}
 			break;
