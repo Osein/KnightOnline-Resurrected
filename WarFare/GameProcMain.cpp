@@ -4221,6 +4221,7 @@ void CGameProcMain::CommandEnableAttackContinous(bool bEnable, CPlayerBase* pTar
 		if(NULL == pTarget) return;
 		s_pPlayer->RotateTo(pTarget); // 방향을 돌린다.
 		if(pTarget->m_InfoBase.eNation == s_pPlayer->m_InfoBase.eNation) return; // 국가가 같으면 넘어간다..
+		if (pTarget->m_InfoBase.eNation != NATION_NOTSELECTED && s_pWorldMgr->GetActiveWorld()->m_iZoneID == 210) return;
 	}
 	s_pPlayer->m_bAttackContinous = bEnable; // 상태를 기록하고..
 
