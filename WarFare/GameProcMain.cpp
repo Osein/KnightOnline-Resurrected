@@ -2278,8 +2278,11 @@ bool CGameProcMain::MsgRecv_UserIn(DataPack* pDataPack, int& iOffset, bool bWith
 		pUPC->PositionSet(__Vector3(fXPos, fYPos, fZPos), true);
 		return false;
 	}
+
+	__TABLE_ZONE* pZone = s_pTbl_Zones->Find(s_pPlayer->m_InfoExt.iZoneCur);
+	bool bIndicateEnemy = pZone && pZone->bIndicateEnemyPlayer || false;
 	
-	D3DCOLOR crID = (eNation != s_pPlayer->m_InfoBase.eNation) ? D3DCOLOR_XRGB(255,96,96) : D3DCOLOR_XRGB(128,128,255); // 국가에 따라 다른색 적용
+	D3DCOLOR crID = (bIndicateEnemy && eNation != s_pPlayer->m_InfoBase.eNation) ? D3DCOLOR_XRGB(255,96,96) : D3DCOLOR_XRGB(128,128,255);
 
 	pUPC = new CPlayerOther();
 	pUPC->IDSet(iID, szName, crID);
@@ -2550,7 +2553,9 @@ bool CGameProcMain::MsgRecv_NPCIn(DataPack* pDataPack, int& iOffset)
 		return false;
 	}
 
-	D3DCOLOR crID = (eNation != s_pPlayer->m_InfoBase.eNation) ? D3DCOLOR_XRGB(255,128,128) : D3DCOLOR_XRGB(192,192,255);
+	bool bIndicateEnemy = s_pPlayer->m_InfoExt.iZoneCur != 210 || (eNation == NATION_NOTSELECTED);
+
+	D3DCOLOR crID = (bIndicateEnemy && eNation != s_pPlayer->m_InfoBase.eNation) ? D3DCOLOR_XRGB(255, 128, 128) : D3DCOLOR_XRGB(192, 192, 255);
 
 	pNPC = new CPlayerNPC();
 	pNPC->IDSet(iID, szName, crID);				// 초기화.. 및 ID 세팅.
@@ -4742,7 +4747,7 @@ void CGameProcMain::CommandSitDown(bool bLimitInterval, bool bSitDown, bool bImm
 
 void CGameProcMain::CommandTargetSelect_NearstEnemy() // 가장 가까운 적 타겟 잡기..
 {
-	CPlayerNPC* pTarget = s_pOPMgr->CharacterGetByNearstEnemy(s_pPlayer->m_InfoBase.eNation, s_pPlayer->Position());
+	CPlayerNPC* pTarget = s_pOPMgr->CharacterGetByNearstEnemy(s_pPlayer->m_InfoBase.eNation, s_pPlayer->Position(), s_pPlayer->m_InfoExt.iZoneCur == 210);
 	this->TargetSelect(pTarget);
 	s_pPlayer->RotateTo(pTarget);
 }
@@ -4927,7 +4932,7 @@ void CGameProcMain::TargetSelect(CPlayerNPC* pTarget)
 			}
 			else // NPC
 			{
-				if(pTarget->m_InfoBase.eNation != s_pPlayer->m_InfoBase.eNation) crID = 0xffff6060; // 다른 국가이면
+				if(s_pPlayer->m_InfoExt.iZoneCur != 210 && pTarget->m_InfoBase.eNation != s_pPlayer->m_InfoBase.eNation) crID = 0xffff6060; // 다른 국가이면
 				else crID = 0xff1064ff;
 			}
 			

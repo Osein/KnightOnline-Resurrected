@@ -553,8 +553,8 @@ typedef struct __TABLE_ZONE
 	std::string    szOpdExt;                // needs impl.
 	std::string	szMiniMapFN;
 	std::string szSkySetting;                            // 하늘과 분위기 조정한 세팅 정보 파일..
-	BOOL        bIndicateEnemyPlayer;                    // 적국 플레이어를 표시하나??
-	int            iFixedSundDirection;                    // 해의 방향을 고정시키는지..
+	BOOL        bIndicateEnemyPlayer;                    // Does it show enemy players??
+	int            iFixedSundDirection;                    // Does it fix the direction of the sun?
 	std::string szLightObjFN;                            // 지형에 배치되어 있는 라이트정보파일..
 	std::string hGevFile;
 	int            bisDungeon;                // needs impl.

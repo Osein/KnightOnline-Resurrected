@@ -23,6 +23,8 @@ class CN3WorldBase    : public CN3BaseFileAccess ,public CGameBase
 	friend class CN3WorldManager;
 
 public:
+	DWORD m_iZoneID{ 0 };
+
 	//..
 	virtual CN3Terrain* GetTerrainRef() = 0;
 	virtual CN3SkyMng* GetSkyRef() = 0;

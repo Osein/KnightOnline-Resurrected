@@ -1590,7 +1590,7 @@ e_Ani CPlayerBase::JudgeAnimationBreath()
 	{
 		CPlayerBase* pTarget = TargetPointerCheck(false);
 
-		if(pTarget && pTarget->m_InfoBase.eNation != m_InfoBase.eNation) // 타겟이 있고 국가가 다르면..
+		if (pTarget && (pTarget->m_InfoBase.eNation == NATION_NOTSELECTED || (pTarget->m_InfoBase.eNation != m_InfoBase.eNation && ACT_WORLD->m_iZoneID != 210))) // 타겟이 있고 국가가 다르면..
 		{
 			e_ItemClass eICR = this->ItemClass_RightHand();
 			e_ItemClass eICL = this->ItemClass_LeftHand();
