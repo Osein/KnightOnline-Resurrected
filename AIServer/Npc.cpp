@@ -1768,24 +1768,29 @@ BOOL CNpc::FindEnemy()
 		return FALSE;
 	}
 
-	fCompareDis = FindEnemyExpand(m_iRegion_X, m_iRegion_Z, fCompareDis, 1);
+	if (m_byGroup == 0) {
+		fCompareDis = FindEnemyExpand(m_iRegion_X, m_iRegion_Z, fCompareDis, 1);
 
-	int x=0, y=0;
+		int x = 0, y = 0;
 
-	// 이웃해 있는 Region을 검색해서,,  몬의 위치와 제일 가까운 User을 향해.. 이동..
-	for(int l=0; l<4; l++)	{
-		if(m_iFind_X[l] == 0 && m_iFind_Y[l] == 0)		continue;
+		// 이웃해 있는 Region을 검색해서,,  몬의 위치와 제일 가까운 User을 향해.. 이동..
+		for (int l = 0; l < 4; l++) {
+			if (m_iFind_X[l] == 0 && m_iFind_Y[l] == 0)		continue;
 
-		x = m_iRegion_X + (m_iFind_X[l]);
-		y = m_iRegion_Z + (m_iFind_Y[l]);
+			x = m_iRegion_X + (m_iFind_X[l]);
+			y = m_iRegion_Z + (m_iFind_Y[l]);
 
-		// 이부분 수정요망,,
-		if(x < 0 || y < 0 || x > pMap->GetXRegionMax() || y > pMap->GetZRegionMax())		continue;
+			// 이부분 수정요망,,
+			if (x < 0 || y < 0 || x > pMap->GetXRegionMax() || y > pMap->GetZRegionMax())		continue;
 
-		fCompareDis = FindEnemyExpand(x, y, fCompareDis, 1);
+			fCompareDis = FindEnemyExpand(x, y, fCompareDis, 1);
+		}
 	}
 
-	if(m_Target.id >= 0 && (fCompareDis <= fSearchRange))		return TRUE;
+	if (m_Target.id >= 0 && (fCompareDis <= fSearchRange))
+	{
+		return TRUE;
+	}
 
 	fCompareDis = 0.0f;
 
