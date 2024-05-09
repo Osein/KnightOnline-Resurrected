@@ -1704,7 +1704,16 @@ void CNpc::Dead(CIOCPort* pIOCP, int iDeadType)
 //	NPC 주변의 적을 찾는다.
 BOOL CNpc::FindEnemy()
 {
-	if(m_tNpcType == NPC_DOOR || m_tNpcType == NPC_ARTIFACT || m_tNpcType == NPC_PHOENIX_GATE || m_tNpcType == NPC_GATE_LEVER || m_tNpcType == NPC_DOMESTIC_ANIMAL || m_tNpcType == NPC_SPECIAL_GATE || m_tNpcType == NPC_DESTORY_ARTIFACT )		return FALSE;
+	if (m_tNpcType == NPC_DOOR ||
+		m_tNpcType == NPC_ARTIFACT ||
+		m_tNpcType == NPC_PHOENIX_GATE ||
+		m_tNpcType == NPC_GATE_LEVER ||
+		m_tNpcType == NPC_DOMESTIC_ANIMAL ||
+		m_tNpcType == NPC_SPECIAL_GATE ||
+		m_tNpcType == NPC_DESTORY_ARTIFACT)
+	{
+		return FALSE;
+	}
 
 	if(m_ZoneIndex < 0 || m_ZoneIndex > m_pMain->g_arZone.size())	{
 		TRACE("#### Npc-FindEnemy ZoneIndex Fail : [name=%s], zoneindex=%d #####\n", m_strName, m_ZoneIndex);
@@ -1732,7 +1741,10 @@ BOOL CNpc::FindEnemy()
 	int iMonsterNid = 0;
 	if( m_tNpcType == NPC_HEALER )	{		// Heal
 		iMonsterNid = FindFriend( 2 );
-		if( iMonsterNid != 0 )	return TRUE;
+		if (iMonsterNid != 0)
+		{
+			return TRUE;
+		}
 	}
 
 	MAP* pMap = m_pMain->g_arZone[m_ZoneIndex];
@@ -1798,7 +1810,10 @@ BOOL CNpc::FindEnemy()
 		}
 	}
 
-	if(m_Target.id >= 0 && (fCompareDis <= fSearchRange))	return TRUE;
+	if (m_Target.id >= 0 && (fCompareDis <= fSearchRange))
+	{
+		return TRUE;
+	}
 
 	// 아무도 없으므로 리스트에 관리하는 유저를 초기화한다.
 	InitUserList();		
@@ -1952,7 +1967,7 @@ float CNpc::FindEnemyExpand(int nRX, int nRZ, float fCompDis, int nType)
 	int* pIDList = NULL;
 	int iLevelComprison = 0;
 	
-	if(nType == 1)	{		// user을 타겟으로 잡는 경우
+	if(nType == 1)	{		// When targeting user
 		int nUserid = 0, count = 0;
 		CUser* pUser = NULL;
 
@@ -2024,7 +2039,7 @@ float CNpc::FindEnemyExpand(int nRX, int nRZ, float fCompDis, int nType)
 			}
 		}
 	}
-	else if(nType == 2)		{		// 경비병이 몬스터를 타겟으로 잡는 경우
+	else if(nType == 2)		{		// When a guard targets a monster
 		int nNpcid = 0, count = 0;
 		CNpc* pNpc = NULL;
 	
@@ -2061,7 +2076,7 @@ float CNpc::FindEnemyExpand(int nRX, int nRZ, float fCompDis, int nType)
 
 			if( pNpc != NULL && pNpc->m_NpcState != NPC_DEAD && pNpc->m_sNid != m_sNid)	{
 				// 같은 국가의 몬스터는 공격을 하지 않도록 한다...
-				if(m_byGroup == pNpc->m_byGroup)	continue;
+				if(m_byGroup == pNpc->m_byGroup || (m_sCurZone == 21 && pNpc->m_byGroup != 0))	continue;
 
 				vMon.Set(pNpc->m_fCurX, pNpc->m_fCurY, pNpc->m_fCurZ); 
 				fDis = GetDistance(vMon, vNpc);
