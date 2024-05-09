@@ -645,6 +645,17 @@ bool CMagicSkillMng::CheckValidCondition(int iTargetID, __TABLE_UPC_SKILL* pSkil
 		}		
 	}
 
+	if (pSkill->dwNeedItem == 7 && (pSkill->dw1stTableType == 2 || pSkill->dw2ndTableType == 2))
+	{
+		if (LeftItem != 70 && RightItem != 70 && LeftItem != 71 && RightItem != 71 && LeftItem != 80 && RightItem != 80)
+		{
+			std::string buff;
+			::_LoadStringFromResource(IDS_SKILL_FAIL_INVALID_ITEM, buff);
+			m_pGameProcMain->MsgOutput(buff, 0xffffff00);
+			return false;
+		}
+	}
+
 	if(pSkill->dwExhaustItem>0)
 	{
 		int NumItem = m_pGameProcMain->m_pUIInventory->GetCountInInvByID(pSkill->dwExhaustItem);
