@@ -367,7 +367,7 @@ bool CUICharacterCreate::ReceiveMessage(CN3UIBase* pSender, DWORD dwMsg)
 			}
 		}
 
-		__TABLE_NEW_CHR* pTbl = CGameProcedure::s_pProcCharacterCreate->m_Tbl_InitValue.Find(pInfoBase->eRace);
+		__TABLE_NEW_CHR* pTbl = CGameProcedure::s_pProcCharacterCreate->m_Tbl_InitValue.Find(pInfoBase->eRace * 10000 + pInfoBase->eClass);
 		if(pTbl)
 		{
 			//수치 내리기..
@@ -453,6 +453,21 @@ void CUICharacterCreate::Reset()
 	}
 
 	if(m_pStr_Bonus) m_pStr_Bonus->SetStringAsInt(m_iBonusPoint);
+	this->UpdateStats();
+}
+
+void CUICharacterCreate::UpdateStats()
+{
+	__InfoPlayerMySelf* pInfoExt = &(CGameBase::s_pPlayer->m_InfoExt);
+	int iStats[MAX_STATS] = { pInfoExt->iStrength, pInfoExt->iStamina, pInfoExt->iDexterity, pInfoExt->iIntelligence, pInfoExt->iMagicAttak };
+
+	for (int i = 0; i < MAX_STATS; i++)
+	{
+		if (m_pImg_Stats[i]) m_pImg_Stats[i]->SetVisible(false);
+		if (m_pStr_Stats[i]) m_pStr_Stats[i]->SetStringAsInt(iStats[i]);
+	}
+
+	if (m_pStr_Bonus) m_pStr_Bonus->SetStringAsInt(m_iBonusPoint);
 }
 
 DWORD CUICharacterCreate::MouseProc(DWORD dwFlags, const POINT& ptCur, const POINT& ptOld)
@@ -572,6 +587,7 @@ void CUICharacterCreate::UpdateClassButtons(e_Class eClass)
 								UI_STATE_BUTTON_NORMAL  };
 
 	bool bVisibles[MAX_STATS] = { false, false, false, false, false };
+	CGameProcedure::s_pProcCharacterCreate->SetStats();
 
 	switch(eClass)
 	{
