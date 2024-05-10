@@ -85,7 +85,7 @@ void CGameProcCharacterCreate::SetChr()
 {
 	__InfoPlayerBase*	pInfoBase = &(s_pPlayer->m_InfoBase);
 	__InfoPlayerMySelf*	pInfoExt = &(s_pPlayer->m_InfoExt);
-	__TABLE_NEW_CHR* pTbl = m_Tbl_InitValue.Find(pInfoBase->eRace);
+	__TABLE_NEW_CHR* pTbl = m_Tbl_InitValue.Find(pInfoBase->eRace * 10000 + pInfoBase->eClass);
 
 	if(pTbl)
 	{
@@ -120,6 +120,26 @@ void CGameProcCharacterCreate::SetChr()
 
 	s_pPlayer->InventoryChrAnimationInitialize();
 	s_pPlayer->Action(PSA_BASIC, true, NULL, true);
+}
+
+void CGameProcCharacterCreate::SetStats()
+{
+	
+	__InfoPlayerBase* pInfoBase = &(s_pPlayer->m_InfoBase);
+	__InfoPlayerMySelf* pInfoExt = &(s_pPlayer->m_InfoExt);
+	__TABLE_NEW_CHR* pTbl = m_Tbl_InitValue.Find(pInfoBase->eRace * 10000 + pInfoBase->eClass);
+
+	if (pTbl)
+	{
+		pInfoExt->iStrength = pTbl->iStr;
+		pInfoExt->iStamina = pTbl->iSta;
+		pInfoExt->iDexterity = pTbl->iDex;
+		pInfoExt->iIntelligence = pTbl->iInt;
+		pInfoExt->iMagicAttak = pTbl->iMAP;
+		m_pUICharacterCreate->m_iBonusPoint = pTbl->iBonus;
+		m_pUICharacterCreate->m_iMaxBonusPoint = pTbl->iBonus;
+	}
+	m_pUICharacterCreate->UpdateStats();
 }
 
 void CGameProcCharacterCreate::Tick()
