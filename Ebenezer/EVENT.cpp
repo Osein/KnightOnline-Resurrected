@@ -36,7 +36,7 @@ BOOL EVENT::LoadEvent(int zone)
 	EVENT_DATA	*newData = NULL;
 	EVENT_DATA	*eventData = NULL;
 
-	filename.Format( ".\\MAP\\%d.evt", zone);
+	filename.Format( "..\\MAPS\\EBE\\%d.evt", zone);
 
 	m_Zone = zone;
 
