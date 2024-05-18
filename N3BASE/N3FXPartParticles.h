@@ -70,6 +70,11 @@ public:
 	float		m_fScaleVelX;
 	float		m_fScaleVelY;
 
+	// 1298 (12xx+)
+	bool m_bDistanceNumFix;     // Needs Implementation
+	bool m_bParticleYAxisFix;   // Needs Implementation
+	// 1298
+
 protected:
 	void	Rotate();
 	void	Scaling();

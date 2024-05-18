@@ -30,6 +30,10 @@ public:
 	bool		m_bTexLoop;
 	float		m_fMeshFPS;
 
+	// 1298 (12xx+)
+	bool m_bShapeLoop;  // Needs Implementation
+	// 1298
+
 protected:
 	bool	IsDead();
 
