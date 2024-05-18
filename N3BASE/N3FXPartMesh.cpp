@@ -214,7 +214,8 @@ bool CN3FXPartMesh::Load(HANDLE hFile)
 	if(m_iVersion>=3) ReadFile(hFile, &m_vScaleAccel, sizeof(__Vector3), &dwRWC, NULL);
 	if(m_iVersion>=4) ReadFile(hFile, &m_fMeshFPS, sizeof(float), &dwRWC, NULL);
 	if(m_iVersion>=5) ReadFile(hFile, &m_vUnitScale, sizeof(__Vector3), &dwRWC, NULL);
-		
+	if (m_iVersion == 6) { ReadFile(hFile, &m_bShapeLoop, sizeof(bool), &dwRWC, nullptr); }
+
 	if(m_pShape)
 	{
 		for(int i=0;i<m_pShape->PartCount();i++)
