@@ -146,6 +146,7 @@
     <ClCompile Include="MagicType4Set.cpp" />
     <ClCompile Include="MakeDefensiveTableSet.cpp" />
     <ClCompile Include="MakeGradeItemTableSet.cpp" />
+    <ClCompile Include="MakeItemGroupSet.cpp" />
     <ClCompile Include="MakeLareItemTableSet.cpp" />
     <ClCompile Include="MakeWeaponTableSet.cpp" />
     <ClCompile Include="MAP.cpp" />
@@ -192,6 +193,7 @@
     <ClInclude Include="MagicType4Set.h" />
     <ClInclude Include="MakeDefensiveTableSet.h" />
     <ClInclude Include="MakeGradeItemTableSet.h" />
+    <ClInclude Include="MakeItemGroupSet.h" />
     <ClInclude Include="MakeLareItemTableSet.h" />
     <ClInclude Include="MakeWeaponTableSet.h" />
     <ClInclude Include="MAP.h" />

@@ -45,6 +45,8 @@ typedef CSTLMap <_PARTY_GROUP>				PartyArray;
 typedef CSTLMap <_MAKE_WEAPON>				MakeWeaponItemTableArray;
 typedef CSTLMap <_MAKE_ITEM_GRADE_CODE>		MakeGradeItemTableArray;
 typedef CSTLMap <_MAKE_ITEM_LARE_CODE>		MakeLareItemTableArray;
+typedef CSTLMap <_K_MONSTER_ITEM>			NpcItemArray;
+typedef CSTLMap <_MAKE_ITEM_GROUP>			MakeItemGroupArray;
 typedef std::list <int>						ZoneNpcInfoList;
 typedef std::vector <MAP*>				ZoneArray;
 
@@ -69,6 +71,7 @@ private:
 	BOOL GetMonsterTableData();
 	BOOL GetNpcTableData();
 	BOOL GetNpcItemTable();
+	bool GetMakeItemGroupTable();
 	BOOL GetMakeWeaponItemTableData();
 	BOOL GetMakeDefensiveItemTableData();
 	BOOL GetMakeGradeItemTableData();
@@ -138,6 +141,8 @@ public:
 	MakeWeaponItemTableArray	m_MakeDefensiveItemArray;
 	MakeGradeItemTableArray  m_MakeGradeItemArray;
 	MakeLareItemTableArray  m_MakeLareItemArray;
+	NpcItemArray			m_NpcItemArray;
+	MakeItemGroupArray		m_MakeItemGroupArray;
 	ZoneArray g_arZone;
 
 	CWinThread* m_pZoneEventThread;		// zone

@@ -21,6 +21,7 @@
 #include "MakeDefensiveTableSet.h"
 #include "MakeGradeItemTableSet.h"
 #include "MakeLareItemTableSet.h"
+#include "MakeItemGroupSet.h"
 #include "Region.h"
 #include "ini.h"
 
@@ -304,6 +305,11 @@ BOOL CServerDlg::OnInitDialog()
 	}
 
 	if(!GetNpcTableData())	{			// NPC 특성치 테이블 Load
+		EndDialog(IDCANCEL);
+		return FALSE;
+	}
+
+	if (!GetMakeItemGroupTable()) {
 		EndDialog(IDCANCEL);
 		return FALSE;
 	}
@@ -831,6 +837,43 @@ BOOL CServerDlg::GetMonsterTableData()
 
 	return TRUE;
 }
+
+
+bool CServerDlg::GetMakeItemGroupTable()
+{
+	CMakeItemGroupSet	m_MakeItemGroupArray;
+
+	if (!m_MakeItemGroupArray.Open()) {
+		AfxMessageBox(_T("MakeItemGroupSet Open Fail!"));
+		return FALSE;
+	}
+	if (m_MakeItemGroupArray.IsBOF() || m_MakeItemGroupArray.IsEOF()) {
+		AfxMessageBox(_T("MakeItemGroupSet Empty!"));
+		return FALSE;
+	}
+
+	m_MakeItemGroupArray.MoveFirst();
+
+	while (!m_MakeItemGroupArray.IsEOF())
+	{
+		_MAKE_ITEM_GROUP* pData = new _MAKE_ITEM_GROUP;
+
+		pData->iItemGroupNum = m_MakeItemGroupArray.m_iItemGroupNum;
+		for (int i = 1; i <= 30; i++)
+		{
+			uint32_t iItem=0;
+
+			//pData->iItems[i] = m_MakeItemGroupArray.m_item1;
+
+			// Insert regardless of whether it's set or not. This is official behaviour.
+			pData->iItems.push_back(iItem);
+		}
+
+		m_MakeItemGroupArray.MoveNext();
+	}
+	return TRUE;
+}
+
 
 //	NPC Table Data 를 읽는다. (경비병 & NPC)
 BOOL CServerDlg::GetNpcTableData()

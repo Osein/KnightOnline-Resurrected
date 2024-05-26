@@ -137,6 +137,9 @@
     <ClCompile Include="N3ShapeMgr.cpp">
       <Filter>N3Base</Filter>
     </ClCompile>
+    <ClCompile Include="MakeItemGroupSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CircularBuffer.h">
@@ -276,6 +279,9 @@
     </ClInclude>
     <ClInclude Include="N3ShapeMgr.h">
       <Filter>N3Base</Filter>
+    </ClInclude>
+    <ClInclude Include="MakeItemGroupSet.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

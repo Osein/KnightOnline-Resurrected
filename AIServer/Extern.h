@@ -1,6 +1,7 @@
 #ifndef _EXTERN_H_
 #define _EXTERN_H_
-
+#pragma once
+#include <vector>
 // -------------------------------------------------
 // 전역 객체 변수
 // -------------------------------------------------
@@ -46,6 +47,25 @@ struct _MAKE_ITEM_LARE_CODE
 	short	sLareItem;				// lareitem 나올 확률
 	short	sMagicItem;				// magicitem 나올 확률
 	short	sGereralItem;			// gereralitem 나올 확률
+};
+
+struct _K_MONSTER_ITEM
+{
+	__int16 sIndex;
+	__int32 iItem[5];
+	__int16 sPercent[5];
+
+	_K_MONSTER_ITEM()
+	{
+		memset(&iItem, 0, sizeof(iItem));
+		memset(&sPercent, 0, sizeof(sPercent));
+	}
+};
+
+struct _MAKE_ITEM_GROUP
+{
+	__int32	iItemGroupNum;
+	std::vector<__int32> iItems;
 };
 
 struct _MAGIC_TABLE

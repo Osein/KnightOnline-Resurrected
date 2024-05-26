@@ -5301,6 +5301,7 @@ void CNpc::GiveNpcHaveItem(CIOCPort* pIOCP)
 		else	m_GiveItemList[0].count = iMoney;
 	}
 	
+	_K_MONSTER_ITEM* pItem = m_pMain->m_NpcItemArray.GetData(m_iItem);
 
 	for(i = 0; i < m_pMain->m_NpcItem.m_nRow; i++)	{
 		if(m_pMain->m_NpcItem.m_ppItem[i][0] != m_iItem) continue;
@@ -5309,6 +5310,19 @@ void CNpc::GiveNpcHaveItem(CIOCPort* pIOCP)
 			iRandom = myrand(1, 10000);
 			iPer = m_pMain->m_NpcItem.m_ppItem[i][j+1];
 			if(iPer == 0) continue;
+
+
+			if (pItem->iItem[j] < 100)
+				iMakeItemCode = ItemProdution(pItem->iItem[j]);
+			// ItemGroups
+			else if (pItem->iItem[j] < 100000000) {
+				_MAKE_ITEM_GROUP* pGroup = m_pMain->m_MakeItemGroupArray.GetData(pItem->iItem[j]);
+				if (pGroup == nullptr)
+					continue;
+
+				iMakeItemCode = pGroup->iItems[myrand(1, pGroup->iItems.size()) - 1];
+			}
+
 			if(iRandom <= iPer)	{				// 우선 기본테이블를 참조하기위해	
 				if(j == 1)	{					// 아이템 생성..
 					iMakeItemCode = ItemProdution(m_pMain->m_NpcItem.m_ppItem[i][j]);
