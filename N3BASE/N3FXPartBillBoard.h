@@ -40,6 +40,11 @@ public:
 	float				m_fRotBillBoardY;
 	float				m_fRotBillBoardZ;
 
+	// 1298 (12xx+)
+	bool				m_bRotationRate; // Needs Implementation
+	bool				m_bOnScreen;     // Needs Implementation
+	// 1298
+
 protected:
 	__Vector3			m_vUnit[4];
 

@@ -201,6 +201,15 @@ bool CN3FXPartBillBoard::Load(HANDLE hFile)
 
 	if(m_iVersion>=5) ReadFile(hFile, &m_mtxRot, sizeof(m_mtxRot), &dwRWC, NULL);
 
+	if (m_iVersion >= 6) 
+	{
+		ReadFile(hFile, &m_bRotationRate, sizeof(bool), &dwRWC, nullptr);
+	}
+
+	if (m_iVersion >= 7) 
+	{
+		ReadFile(hFile, &m_bOnScreen, sizeof(bool), &dwRWC, nullptr); // is this on screen bool?
+	}
 	CreateVB();
 	Init();
 
